@@ -14,11 +14,15 @@ beforehand)
 
 """
 
-from openpyxl import Workbook
 from openpyxl import load_workbook
 
+# =============================================================================
+# get_rows function:
+#   - go through column S, which indicates if I've read the book or not
+#   - if I've read it, store the row number for create_html_table
+# =============================================================================
 
-def get_rows():
+def get_rows():    
     
     # load workbook
     wb = load_workbook(filename = "goodreads_library_export.xlsx")
@@ -28,17 +32,23 @@ def get_rows():
     row_num = 1
     row_list = []
     
-    # iterate through "read" or "to-read" column (column S)
+    # iterate through "read" or "to-read" column (column letter S)
     for cell in ws["S"]:
         
-        #if I've read it, append row numebr to row_list
+        #if I've read it, append row number to row_list
         if cell.value == ("read"):
             row_list.append(row_num)
         row_num += 1
         
     return row_list
+
         
-            
+# =============================================================================
+# create_html_table function:
+#   - find title/author/rating/review cells
+#   - format cells into html table syntax, add to master string (all_rows) 
+#   - create final_table by adding beginning/end of table and header row
+# =============================================================================
 
 def create_html_table(row_list):
     
@@ -48,9 +58,8 @@ def create_html_table(row_list):
     start_table = "<table>"
     end_table = "</table>"
     final_table = ""
-    header = "<tr><th>Title</th><th>Author</th> \
-                     <th>My Rating</th><th>My Review</th></tr>"
-    rows = ""
+    header = "<tr><th>Title</th><th>Author</th><th>My Rating</th><th>My Review</th></tr>"
+    all_rows = ""
     
     
     for row_num in row_list:
@@ -70,47 +79,62 @@ def create_html_table(row_list):
         end_row = "</tr>"
         
         # add all info to create a single HTML table row
-        rows = rows + start_row + title + author + my_rating + my_review + end_row
+        all_rows = all_rows + start_row + title + author + my_rating + my_review + end_row
     
     # concatenate all strings to create final table
-    final_table = start_table + header + rows + end_table
+    final_table = start_table + header + all_rows + end_table
 
     return final_table
 
-def html_preamble_end():
-    
-    preamble = """<!DOCTYPE html><html><head><title>Book Reviews</title><style> \
-                table, th, td {border: 1px solid black;}.center { \
-                display: block; margin-left: auto; margin-right: auto; \
-                width: 50%;}</style> <link rel="stylesheet" type="text/css" \
-                href="../../main.css"><link rel="icon" href="../../images/ \ 
-                ethan_morse_favicon.png"></head><body>"""
-                
-    end_html = "</body></html>"
-    
-    return preamble, end_html
 
+# =============================================================================
+# delete_append_to_file function:
+#   - delete old table
+#   - append new table
+# =============================================================================
 
-
-def write_to_file(final_table, preamble, end_html):
+def delete_append_to_file(final_table):
     
-    file = open("book_reviews.html", "w")
+    # open html file for reading, assign contents to variable lines
+    with open("book_reviews.html", "r") as html_file:
+        lines = html_file.readlines()
+        
+    # open file for writing, check if "<table>" is in line.
+    # If yes, effectively delete by writing all other lines
+    with open("book_reviews.html", "w") as html_file:
+        for line in lines:
+            if "<table>" not in line:
+                html_file.write(line)
     
-    file_contents = preamble + final_table + end_html
+    # close file before appending     
+    html_file.close()
+    
+    # open file for appending
+    html_file = open("book_reviews.html", "a")
+    
+    # create string with all html info, include closing html tags
+    file_contents = final_table + "</body></html>"
    
-    file.write(file_contents)
+    # append newest table to end of file
+    html_file.write(file_contents)
 
+
+# =============================================================================
+# main function:
+#   - get list of row numbers of read books
+#   - create html table with all read books
+#   - update html table in book_reviews.html
+# =============================================================================
     
 def main():
     
     row_list = get_rows()
     
     final_table = create_html_table(row_list)
+
+    delete_append_to_file(final_table)
     
-    preamble, end_html = html_preamble_end()
-    
-    write_to_file(final_table, preamble, end_html)
-    
+# run main() program
 main()
     
     
