@@ -9,6 +9,9 @@
     margin-right: auto;
     width: 50%;
     }
+    table, th, td {
+      border: 1px solid black;
+      }
   </style>
 
   <link rel="stylesheet" type="text/css" href="../../../main.css">
@@ -16,6 +19,11 @@
   <link rel="icon" href="../../images/ethan_morse_favicon.png">
 
 </head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
 
 <body>
 
@@ -35,7 +43,7 @@
   There are reasons to read this book and <i>not</i> to read this book.
 </p>
 
-<p>
+<p style="color:red;">
   First, the not-reason. From the title, <i>Human Accomplishment</i> details the successes of humans from 800 BCE to 1950—2750 years of achievement by the top-tier of <i>homo sapiens</i>. Statistically speaking, the average person will neither contribute nor perform anything absolutely significant to society. (They may contribute some relatively significant, but nothing absolute.) This book serves as a stark reminder of this fact. Some are uncomfortable with this and prefer to live thinking that they have or eventually will have a profound impact on the world, which is perfectly fine. Don't read this book. [FINISH]
 </p>
 
@@ -71,9 +79,7 @@
 </p>
 
 <p>
-  Another question Murray asks is "Does Importance Equal Excellence in Scientific Accomplishment?" Generally, yes—and Murray agrees. Exceptions include accidental discoveries or inventions, such as <a href="https://www.acs.org/content/acs/en/education/whatischemistry/landmarks/flemingpenicillin.html">Alexander Fleming's discovery of penicillin</a>. After leaving out petri dishes over a number of days, he noticed one petri dish was behaving oddly: one part did not have the bacteria growth he expected. [FINISH]
-
-  This discovery was incredibly important, providing [FINISH]
+  Another question Murray asks is "Does Importance Equal Excellence in Scientific Accomplishment?" Generally, yes—and Murray agrees. Exceptions include accidental discoveries or inventions, such as <a href="https://www.acs.org/content/acs/en/education/whatischemistry/landmarks/flemingpenicillin.html">Alexander Fleming's discovery of Penicillium chrysogenum</a>, which is used to create <a href="https://en.wikipedia.org/wiki/Penicillin">penicillin</a>. After leaving out petri dishes over a number of days, he noticed a single sample was behaving oddly: one part did not have the bacteria growth he expected. It was here that a strain of Penicillium chrysogenum was found, previously unknown to scientists. Fleming published these results without knowing the importance, and left it up to other scientists to further the research. While this discovery was incredibly important, providing us with a powerful new antibiotic, the excellence is not there. No fancy scientific method was performed, nor did Fleming even attempt to find anything remotely close to this. The entire discovery was pure accident.
 </p>
 
 <img src="images/fleming_penicillin.png" alt="fleming_penicillin" class="center">
@@ -81,13 +87,332 @@
   Fleming's famous petri dish
 </figcaption>
 
-
-
-
-
-
-
 <h3 id="excellence_arts">Excellence in the Arts</h3>
+
+Murray uses David Hume (<a href="https://plato.stanford.edu/entries/hume/">Stanford Encyclopedia of Philosophy</a>, <a href="https://en.wikipedia.org/wiki/David_Hume">Wikipedia</a>) to prove his point, providing two different types of taste: sentiment and judgment.
+
+<p>
+  Sentiment is synonymous with what most consider an average "opinion": it can't be right or wrong, it just is.
+</p>
+
+<p>
+  Judgement can be right or wrong and is based on objective truth, despite what some may reject. A few details must be presented to back up this claim.
+</p>
+
+<p>
+  First, there are events and things in nature that are aesthetic for unknown reasons. Take the <a href="https://en.wikipedia.org/wiki/Golden_ratio">golden ratio</a>, a seemingly arbitrary number equal to 1.618 and defined by:
+</p>
+
+\[\frac{a+b}{a} = \frac{a}{b} = \varphi\]
+
+<p>
+  This ratio is found everywhere: <a href="https://en.wikipedia.org/wiki/List_of_works_designed_with_the_golden_ratio#Ancient_and_medieval_architecture">architecture</a> (<a href="https://www.sciencedirect.com/science/article/pii/S1110016815000265">interesting paper</a> discussing why the ratio is often used in design), <a href="https://news.artnet.com/art-world/golden-ratio-in-art-328435">art</a>, and <a href="https://science.howstuffworks.com/math-concepts/fibonacci-nature1.htm">nature</a>.
+</p>
+
+<img src="images/golden_ratio_line.png" alt="golden_ratio_line" class="center">
+<figcaption align="middle">
+  Line showing the golden ratio
+</figcaption>
+
+<p>
+  This proportion is arguably <i>objectively</i> aesthetic, allowing judgment to mark works that use it as better than those that don't. (Of course, other factors come into play. Simply drawing the above picture does not make it better than a <a href="https://www.twoinchbrush.com/all-paintings">Bob Ross painting</a> that didn't use the ratio.) As to understanding our tendency to use and enjoy this number, one professor claims that it is "<a href="https://www.witpress.com/elibrary/dne-volumes/4/2/403">part of an an evolutionary phenomenon that facilitates the flow of information</a>."
+</p>
+
+<p>
+  Second, expertise is proportional to knowledge and appreciation ability. Two examples and an exercise can be used to prove this point:
+</p>
+
+<ul>
+  <li>
+    <b>Slopestyle mountain biking</b>. Riders go off massive jumps and drops, all while doing technical tricks. The average viewer watches and oohs and ahhs at the riders, but only someone who has ridden a bike AND tried to do basic tricks will be able to understand and appreciate the difficulty of what they're doing.
+  </li>
+</ul>
+
+<img src="images/slopestyle.png" alt="slopestyle" class="center">
+<figcaption align="middle">
+  Backflip tuck no-hander
+</figcaption>
+
+<ul>
+  <li>
+    <b>Artwork</b>. Looking at paintings is fun, but it takes someone who has painted and understands the practice to be able to recognize the methods the artist employed in their artwork. <a href="https://www.goodreads.com/book/show/34684622-leonardo-da-vinci?ac=1&from_search=true&qid=9ay8BRN8zo&rank=1"><i>Leonardo da Vinci</i></a> by Walter Isaacson does an excellent job of analyzing most of Leonardo's works, explaining the techniques and thought process in laymen terms.
+  </li>
+</ul>
+
+<ul>
+  <li>
+    <b>Exercise</b>. Think of something you (the reader) are considered good or an expert at, then think of the last time a novice or unexperienced person critiqued it. Were their points valid? Did they consider everything you considered? Likely not.
+  </li>
+</ul>
+
+<p>
+  This ability for experts to judge art allows for measurements to take place.
+</p>
+
+<h2 id="inventories_index_scores">Inventories and Index Scores</h2>
+
+<p>
+  Murray defines the term inventory as the collection of people and vents comprising a specific field, such as Western philosophy. Inventories were made for twelve fields, each with separate subfields (the first number in parentheses is number of sources consulted in creating the inventory and the second number is total number of significant figures for the inventory):
+</p>
+
+<ul>
+  <li>
+    Literature: Arabia (15 sources, 82 significant figures), China (15, 83), India (12, 43), Japan (12, 85), the West (20, 835)
+  </li>
+  <li>
+    Visual arts (sculpture and painting): China (20, 111), Japan (16, 81), the West (13, 479)
+  </li>
+  <li>
+    Music: the West (since 1200) (17, 522)
+  </li>
+  <li>
+    Astronomy (22, 124)
+  </li>
+  <li>
+    Biology (22, 193)
+  </li>
+  <li>
+    Chemistry (22, 204)
+  </li>
+  <li>
+    Earth sciences (22, 85)
+  </li>
+  <li>
+    Physics (22, 218)
+  </li>
+  <li>
+    Mathematics (28, 191)
+  </li>
+  <li>
+    Medicine (20, 160)
+  </li>
+  <li>
+    Technology (19, 239)
+  </li>
+  <li>
+    Philosophy: China (13, 39), India (13, 45), the West (14, 155)
+  </li>
+</ul>
+
+<p>
+  You may ask why Africa, South America, or Oceania were not included in any of the twelve inventories or their subfields, or why China, etc. weren't included as separate subfields? To be frank, they don't have achievements worth listing in the inventories during the time period Murray is examining. For example, <a href="https://www.iep.utm.edu/afric-hi/#H1">African philosophy lacked written documentation up to the 1920s</a>, and even then, its <a href="https://www.iep.utm.edu/afric-hi/#SH6a">content up to 1950 focused on "retrieving and reconstructing African identity"</a>, rather than contributing to philosophy as an entire field of study.
+</p>
+
+<p>
+  It is during this chapter that Murray introduces two of the book's most important terms: <i>signficant figures</i> and <i>index scores</i>.
+</p>
+
+<h3 id="significant_figures">Significant Figures</h3>
+
+<p>
+  The inventories are made up of multiple different sources (see specific numbers in the inventory lists previously mentioned), each with its own set of individuals it deems important. For example, Porter's <i>The Cambridge Illustrated History of Medicine</i> may consider one doctor to be important and mention him, while Magner's <i>A History of Medicine</i> agrees somewhat, but doesn't have enough room since the book is already pushing 1000 pages, so sorry doctor, you're left out.
+</p>
+
+<p>
+  So, how to determine if someone is significant? Murray, while conceding it as an arbitrary percentage, defines significant as "anyone who is mentioned in at least 50 percent of the qualified sources for a given inventory with a <i>qualified source</i> being one that meets certain criteria of comprehensiveness in covering the topic in question." The qualified source qualifier is important, as it gives the English figure a fair chance at being considered significant if the source is written by a non-Englishman (and thus is a bit more focused on, knowledgable about, and partial to his own countrymen).
+</p>
+
+<h3 id="index_scores">Index Scores</h3>
+
+<p>
+  An index score is a simple way to determine a person's amount of significance. Two important notes about index scores:
+</p>
+
+<ol>
+  <li>
+    Index scores cannot be compares across inventories. One individual having an index score of 100 in one inventory does not mean they are more significant than someone having an index score of 75 in another inventory.
+  </li>
+  <li>
+    Index scores measure the significance relative to others within the same field, and field size varies (compare 43 Indian literature figures to 835 Western literature figures).
+  </li>
+</ol>
+
+<p>
+  Murray first calculated the raw score of all individuals, where the raw score is the percentage of "attention distributed among all the significant figures" in that inventory. The raw score was then (linearly) transformed into a common scale of 1-100.
+</p>
+
+<p>
+  Now, how to tell if these scores are reliable? After all, the sources could be flawed and give undue credit to certain figures, skewing the scores. Murray recognizes this and offers two checks on his method:
+</p>
+
+<ul>
+  <li>
+    <i>Face validity</i>. Does it make sense that those figures are there? This obviously works on the more prominent figures, like Aristotle (index score of 100 in Western philosophy and 94 in biology) and Newton (index score of 100 in physics and 89 in mathematics). One issue arises when the reader (and Murray) are unfamiliar with the specific field. Take Chinese painting. Does it make sense that Ma Yuan or Ni Zan are on there? Ni <i>who</i>?
+  </li>
+  <li>
+    <i>Statistical reliability</i>. Murray calculates the <a href="https://en.wikipedia.org/wiki/Reliability_(statistics)">reliability coefficients</a> for all inventories, finding that 13 were greater than 0.90 with a median of 0.93. For reference, a reliability coefficient of 1.00 means there is no error. Murray claims that these values are "typical of the reliability of indexes of eminence", with a note stating "See Simonton 1990 for an account of reliability in historiometry." This is obviously <a href="https://simonton.faculty.ucdavis.edu/research/">Dean Simonton's <i>Psychology, Science, and History: An Introduction to Historiometry</i></a>, but there is no PDF available on the internet, so the claim will have to be accepted.
+  </li>
+</ul>
+
+<p>
+  Simonton also presents the term <i>epochcentric bias</i>, in which more recent work gets more recognition. Murray states that "the cutoff date of 1950 avoids the worst of the potential epochcentric bias" and that if more recent achievements comprised a large portion of the significant figures/events then it would be an issue, but it doesn't, so no harm done. Another method to mitigate this risk would be to use sources from different time periods to allow any epochcentric bias to be balanced with other sources, but a source published in 1930 leaves out achievements from 1930-1950, an obvious problem. It seems that careful vetting of sources is sufficient.
+</p>
+
+<h2 id="lotka_curve">The Lotka Curve</h2>
+
+<p>
+  First, a standard normal distribution must be understood.
+</p>
+
+<img src="images/normal_distribution.png" alt="normal_distribution" class="center">
+<figcaption align="middle">
+  Normal distribution where x-axis is standard deviations and y-axis is density of probability
+</figcaption>
+
+<p>
+  From the plot, 68% of the data is within one standard deviation of the mean, 95% within two standard deviations, and 99.7% within three standard deviations. Only 0.3%, or 3 out of 1000 samples, lie outside of the three standard deviation mark. The further left a score the worse it is and the further right a score the better it is. Zooming in on the right-most tail approximately results in:
+</p>
+
+<img src="images/tail_zoomed_in.png" alt="tail_zoomed_in" class="center">
+<figcaption align="middle">
+  Normal distribution past the third standard deviation
+</figcaption>
+
+<p>
+  where the left-most side is the worst of the best and the right-most side is the best of the best.
+</p>
+
+<p>
+  The probability density can in effect be looked at as a total number of occurrences (higher probability leads to more number of occurrences). Using index score as the dependent variable (x-axis) and finding the number of artists per range of index score, the Lotka curve is created.
+</p>
+
+<p>
+  <a href="https://en.wikipedia.org/wiki/Lotka%27s_law">Lotka's Law</a> (which produces the Lotka curve) is defined as:
+</p>
+\[y = \frac{C}{x^{n}}\]
+
+<p>
+  where \(C\) and \(n\) are field-dependent constants and \(X\) is the number of [items: publications, wins, inventions, etc]. Originally designed with a y-axis of percentage of authors and x-axis of number of publications, Lotka's law has been extended to other disciplines. In simple terms, only a small percentage of individuals in a given field have a high number of [item specific to that field].
+</p>
+
+<img src="images/original_lotka_curve.png" alt="original_lotka_curve" class="center">
+<figcaption align="middle">
+  Original Lotka curve
+</figcaption>
+
+<p>
+  This is a prominent example of the <a href="https://en.wikipedia.org/wiki/The_rich_get_richer_and_the_poor_get_poorer">rich get richer effect</a>. In the case of the original Lotka's law, once a professor gets enough citations and publications, securing their publication for your journal boosts its rating, leading to a perpetual cycle.
+</p>
+
+<h2 id="people_events">The People and the Events</h2>
+
+<p>
+  So, who are the best of the best? The renowned of the renowned? The list is as follows:
+</p>
+
+<table style="width:100%">
+  <caption>Significant figures (index score > 90)</caption>
+  <tr>
+    <th>Inventory</th>
+    <th>Figure</th>
+  </tr>
+  <tr align="middle">
+    <td>Astronomy</td>
+    <td>Galileo, Kepler</td>
+  </tr>
+  <tr align="middle">
+    <td>Biology</td>
+    <td>Darwin, Aristotle</td>
+  </tr>
+  <tr align="middle">
+    <td>Chemistry</td>
+    <td>Lavoisier</td>
+  </tr>
+  <tr align="middle">
+    <td>Earth sciences</td>
+    <td>Lyell</td>
+  </tr>
+  <tr align="middle">
+    <td>Physics</td>
+    <td>Newton, Einstein</td>
+  </tr>
+  <tr align="middle">
+    <td>Mathematics</td>
+    <td>Euler</td>
+  </tr>
+  <tr align="middle">
+    <td>Medicine</td>
+    <td>Pasteur, Hippocrates, Koch</td>
+  </tr>
+  <tr align="middle">
+    <td>Technology</td>
+    <td>Edison, Watt</td>
+  </tr>
+  <tr align="middle">
+    <td>Combined scientific</td>
+    <td>Newton</td>
+  </tr>
+  <tr align="middle">
+    <td>Chinese philosophy</td>
+    <td>Confucius</td>
+  </tr>
+  <tr align="middle">
+    <td>Indian philosophy</td>
+    <td>Sankara</td>
+  </tr>
+  <tr align="middle">
+    <td>Western philosophy</td>
+    <td>Aristotle</td>
+  </tr>
+  <tr align="middle">
+    <td>Western music</td>
+    <td>Beethoven, Mozart</td>
+  </tr>
+  <tr align="middle">
+    <td>Chinese painting</td>
+    <td>Gu Kaizhi, Zhao Mengfu</td>
+  </tr>
+  <tr align="middle">
+    <td>Japanese painting</td>
+    <td>Sesshu, Sotatsu, Korin</td>
+  </tr>
+  <tr align="middle">
+    <td>Western art</td>
+    <td>Michelangelo</td>
+  </tr>
+  <tr align="middle">
+    <td>Arabic literature</td>
+    <td>al-Mutanabbi</td>
+  </tr>
+  <tr align="middle">
+    <td>Chinese literature</td>
+    <td>Du Fu</td>
+  </tr>
+  <tr align="middle">
+    <td>Indian literature</td>
+    <td>Kalidasa</td>
+  </tr>
+  <tr align="middle">
+    <td>Japanese literature</td>
+    <td>Bash, Chikamatsu Monzaemon</td>
+  </tr>
+  <tr align="middle">
+    <td>Western literature</td>
+    <td>Shakespeare</td>
+  </tr>
+</table>
+
+
+
+
+
+
+<!--
+
+To discuss:
+<ul>
+  <li>
+    Lindy effect
+  </li>
+  <li>
+    Rich get richer
+  </li>
+</ul>
+
+-->
+
+
+
 
 
 
