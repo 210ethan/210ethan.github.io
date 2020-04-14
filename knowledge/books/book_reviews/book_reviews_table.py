@@ -50,6 +50,7 @@ def export_library():
     # go to Goodreads sign in page
     driver.get("https://www.goodreads.com/user/sign_in")
 
+    # find buttons for email, pw, login
     user_email = driver.find_element_by_id("user_email")
     user_pw = driver.find_element_by_id("user_password")
     login_button = driver.find_element_by_name("next")
@@ -61,7 +62,6 @@ def export_library():
 
     # navigate to webpage, wait until fully open
     driver.get("https://www.goodreads.com/review/import")
-
 
     # find export button
     export_button = driver.find_element_by_class_name("gr-form--compact__submitButton")
@@ -94,7 +94,7 @@ def csv_to_xlsx():
     # delete existing goodreads export to prevent overwriting
     os.remove("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx")
 
-    # rewrite .csv file contents to .xlsx file using pandas
+    # rewrite .csv file contents to .xlsx file using pandas and xlsxwriter engine
     csv_file = pd.read_csv("/Users/EthanMorse/Downloads/goodreads_library_export.csv")
     csv_file.to_excel("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx", engine = "xlsxwriter")
 
@@ -120,7 +120,7 @@ def get_rows():
     # iterate through "read" or "to-read" column (column letter S)
     for cell in ws["T"]:
 
-        #if I've read it, append row number to row_list
+        #if already red, append row number to row_list
         if cell.value == ("read"):
             row_list.append(row_num)
         row_num += 1
