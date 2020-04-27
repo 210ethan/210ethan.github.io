@@ -6,6 +6,11 @@
   <link rel="icon" href="../../media/ethan_morse_favicon.png">
 </head>
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
 <body>
 
 <h3 id="home"><a href="../../index.html">Home</a></h3>
@@ -15,18 +20,79 @@
 - pump curves
 - pressure gauges
 - what is pressure?
-- vacuum tech: types of chambers/materials, fittings (metal-to-metal, compression, welding)
+- vacuum tech: types of chambers/materials, fittings (metal-to-metal, compression, welding), outgassing, grease/fluids, traps, valves
+- behavior under pressure (submlimation, evaporation)
+- is perfect vacuum possible?
+- leaks and RGAs
+
+https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm
+https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   -->
 
-<h1>Vacuum</h1>
+<h1>Vacuum: Theory and Technologies</h1>
 
+<h2 id="what_is_pressure">What is Pressure?</h2>
 
+<p>
+  Pressure is defined by the simple equation:
+</p>
 
+\[P = \frac{F}{A}\]
 
+<p>
+  where \(P\) is pressure, \(F\) is force, and \(A\) is the area the force is exerted on. A common experiment to show this equation in-action is laying on a bed of nails: if \(F\) (the person's body) stays constant and \(A\) is large (the area of the bed), the pressure exerted on the skin will be minimized, preventing penetration. If it's a single nail on the other hand...
+</p>
 
+<img src="media/bed_nails.jpeg" alt="bed_nails" width="200" class="center">
+<figcaption align="middle">The ultimate torture devi... wait, this doesn't hurt!</figcaption
 
+<p>
+  Now that pressure has been shown with an actual body (literally!) of mass, what about pressure that is invisible, e.g., air?
+</p>
 
+<p>
+  From the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>, which is used to find the speeds of gases, the diatomic N<sub>2</sub> molecule moves at:
+</p>
 
+\[v_{\text{N}_{2}} = \sqrt{\frac{2k_{B}T}{m}} = \sqrt{\frac{2(1.380 \times 10^{-23} \, \text{J}\cdot\text{K}^{-1})(273 \, \text{K})}{2 \times 2.33 \times 10^{-26} \, \text{kg}}} \approx 400 \, \text{m/s}\]
+
+<p>
+  Quite fast! If a human got by a car going the same speed (900 mph or 1500 kph), they would surely die. The difference is the size of the object. The N<sub>2</sub> molecule has an insignificant mass of \(4.6 \times 10^{26}\) kg, resulting in a insignificant kinetic energy and not noticing its collisions. However, the <a href="https://en.wikipedia.org/wiki/Number_density">number density</a> of gases is extremely high, leading to many collisions and the experience of pressure.
+</p>
+
+<p>
+  Pressure has many units:
+</p>
+
+<ul>
+  <li>
+    <b>Torr (symbol: Torr or mmHg, millimeters of mercury)</b>: Named after <a href="https://en.wikipedia.org/wiki/Evangelista_Torricelli">Evangelista Torricelli</a> and his barometer experiments, 1 Torr is the amount of pressure needed to support a 1 mm-tall column of Hg at 0 °C and <a href="https://en.wikipedia.org/wiki/Standard_gravity">standard gravity</a>. 760 Torr is the standard atmospheric pressure at sea-level. Note that "torr" is the unit name and "Torr" is the symbol.
+  </li>
+  <li>
+    <b>Standard atmosphere (symbol: atm)</b>: Pressure at sea-level. 1 atm = 101.325 Pa = 14.7 psi = 760 Torr.
+  </li>
+  <li>
+    <b>Bar (symbol: bar)</b>: 1 bar = 100,000 Pa.
+  </li>
+  <li>
+    <b>Pascal (symbol: Pa)</b>: The derived <a href="https://www.nist.gov/pml/weights-and-measures/metric-si/si-units">SI unit</a> for pressure: \[1 \, \text{Pa} = 1 \, \frac{\text{N}}{\text{m}^{2}}\]
+  </li>
+  <li>
+  <b>Pounds per square inch (symbol: psi)</b>: <a href="https://www.urbandictionary.com/define.php?term=freedom%20units">Freedom units</a> of pressure.
+  </li>
+</ul>
+
+<h2 id="what_is_vacuum">What is Vacuum?</h2>
+
+<p>
+  Vacuum is formally <a href="https://www.merriam-webster.com/dictionary/vacuum">defined</a> as "a space entirely devoid of matter." In regards to practical definitions, it is a space that has a lower pressure (or lower amount of particles) than its surroundings, all other variables kept equal.
+</p>
+
+<h2 id="achieving_vacuum">Achieving Vacuum</h2>
+
+<p>
+  Vacuum is achieved through the use of vacuum pumps.
+</p>
 
 
 
