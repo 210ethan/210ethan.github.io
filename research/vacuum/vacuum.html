@@ -23,7 +23,8 @@
 - vacuum tech: types of chambers/materials, fittings (metal-to-metal, compression, welding), outgassing, grease/fluids, traps, valves
 - behavior under pressure (submlimation, evaporation)
 - is perfect vacuum possible?
-- leaks and RGAs
+- leaks and RGAs]
+- gettering, outgassing
 
 https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm
 https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
@@ -40,25 +41,60 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 \[P = \frac{F}{A}\]
 
 <p>
-  where \(P\) is pressure, \(F\) is force, and \(A\) is the area the force is exerted on. A common experiment to show this equation in-action is laying on a bed of nails: if \(F\) (the person's body) stays constant and \(A\) is large (the area of the bed), the pressure exerted on the skin will be minimized, preventing penetration. If it's a single nail on the other hand...
+  where \(P\) is pressure, \(F\) is force, and \(A\) is the area the force is exerted on. A common experiment to show this equation in-action is laying on a bed of nails: if \(F\) (the person's body) stays constant and \(A\) (the area of the bed) is large, the pressure exerted on the skin will be minimized, preventing penetration. But if it's a single nail...
 </p>
 
 <img src="media/bed_nails.jpeg" alt="bed_nails" width="200" class="center">
-<figcaption align="middle">The ultimate torture devi... wait, this doesn't hurt!</figcaption
+<figcaption align="middle">The ultimate torture devi... wait, this doesn't hurt!</figcaption>
+
+<p></p>
 
 <p>
   Now that pressure has been shown with an actual body (literally!) of mass, what about pressure that is invisible, e.g., air?
 </p>
 
 <p>
-  From the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>, which is used to find the speeds of gases, the diatomic N<sub>2</sub> molecule moves at:
+  From the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>, which is used to find the speeds of gases, the N<sub>2</sub> molecule at a temperature of 0 °C moves at a probable speed of:
 </p>
 
-\[v_{\text{N}_{2}} = \sqrt{\frac{2k_{B}T}{m}} = \sqrt{\frac{2(1.380 \times 10^{-23} \, \text{J}\cdot\text{K}^{-1})(273 \, \text{K})}{2 \times 2.33 \times 10^{-26} \, \text{kg}}} \approx 400 \, \text{m/s}\]
+\[v_{p, \text{N}_{2}} = \sqrt{\frac{2k_{B}T}{m_{\text{N}_{2}}}} = \sqrt{\frac{2(1.380 \times 10^{-23} \, \text{J}\cdot\text{K}^{-1})(273 \, \text{K})}{2 \times 2.33 \times 10^{-26} \, \text{kg}}} \approx 400 \, \text{m/s}\]
 
 <p>
-  Quite fast! If a human got by a car going the same speed (900 mph or 1500 kph), they would surely die. The difference is the size of the object. The N<sub>2</sub> molecule has an insignificant mass of \(4.6 \times 10^{26}\) kg, resulting in a insignificant kinetic energy and not noticing its collisions. However, the <a href="https://en.wikipedia.org/wiki/Number_density">number density</a> of gases is extremely high, leading to many collisions and the experience of pressure.
+  where \(k_{B}\) is the <a href="https://en.wikipedia.org/wiki/Boltzmann_constant">Boltzmann constant</a>, \(T\) is temperature, and \(m\) is the particle's mass.
 </p>
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Root_mean_square#Speed">root-mean-squared speed</a> is found by:
+</p>
+
+\[v_{\text{rms}, \, \text{N}_{2}} = \sqrt{\frac{3k_{B}T}{m_{\text{N}_{2}}}} \approx 500 \, \text{m/s}\]
+
+<p>
+  Quite fast! If a human got hit by a car going the same speed (900 mph, 1500 kph), they would surely die. The difference is the size of the object. The N<sub>2</sub> molecule has an insignificant mass of \(4.6 \times 10^{26}\) kg, resulting in a insignificant kinetic energy and not noticing its collisions. However, the <a href="https://en.wikipedia.org/wiki/Number_density">number density</a> of gases is extremely high, leading to many collisions and the experience of pressure. Number density can be found using the <a href=https://en.wikipedia.org/wiki/Ideal_gas_law>ideal gas law</a>:
+</p>
+
+\[n = N_{A} \times \frac{PV}{RT}\]
+
+<p>
+  where \(N_{A}\) is <a href="https://en.wikipedia.org/wiki/Avogadro_constant">Avogadro's constant</a>, \(R\) is the <a href="https://en.wikipedia.org/wiki/Gas_constant">gas constant</a>, and \(V\) is a unit volume (either 1 cm<sup>3</sup> or 1 m<sup>3</sup>).
+</p>
+
+<p>
+  Two others terms need to be defined:
+</p>
+
+<ul>
+  <li>
+    <b>Mean free path</b>: The average distance a particle travels in a system before colliding with another particle. These distances can vary from &microm all the way up to km for ultra-high vacuum systems. The MFP equation is given by:
+
+    \[\lambda = \frac{k_{B}T}{\sqrt{2}\pi dP}\]
+
+    where \(d\) is the particle diameter and \(P\) is the pressure.
+  </li>
+  <li>
+    <b>Particle flux</b>: The rate at which particles strike a surface, allowing the measurement of pressure within a system.
+  </li>
+
+</ul>
 
 <p>
   Pressure has many units:
@@ -88,16 +124,197 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   Vacuum is formally <a href="https://www.merriam-webster.com/dictionary/vacuum">defined</a> as "a space entirely devoid of matter." In regards to practical definitions, it is a space that has a lower pressure (or lower amount of particles) than its surroundings, all other variables kept equal.
 </p>
 
+<p>
+  There are also two types of pressure:
+</p>
+
+<ul>
+  <li>
+    <b>Positive</b>: Occurs when the space has a higher pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system.
+  </li>
+  <li>
+    <b>Negative</b>: Occurs when the space has a lower pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system. Vacuum systems are always under negative pressure.
+  </li>
+</ul>
+
+<h3 id="vacuum_levels">Vacuum Levels</h3>
+
+<p>
+  There are ranges of pressure that correspond to specific "levels" of vacuum:
+</p>
+
+<table align="center">
+  <caption>
+    Vacuum levels: note that the higher the vacuum, the lower the pressure
+  </caption>
+  <tr>
+    <th>
+      Level
+    </th>
+    <th>
+      Pressure (Torr)
+    </th>
+    <th>
+      Pressure (Pa)
+    </th>
+    <tr align="middle"><td>Atmosphere</td><td>760</td><td>10<sup>5</sup></td></tr>
+    <tr align="middle"><td>Low vacuum</td><td>760 to 25</td><td>10<sup>5</sup> to 3 x 10<sup>3</sup></td></tr>
+    <tr align="middle"><td>Medium vacuum</td><td>25 to 10<sup>-3</sup></td><td>3 &times 10<sup>3</sup> to 10<sup>-1</sup></td></tr>
+    <tr align="middle"><td>High vacuum</td><td>10<sup>-3</sup> to 10<sup>-9</sup></td><td>10<sup>-1</sup> to 10<sup>-7</sup></td></tr>
+    <tr align="middle"><td>Ultra-high vacuum</td><td>10<sup>-9</sup> to 10<sup>-12</sup></td><td>10<sup>-7</sup> to 10<sup>-10</sup></td></tr>
+    <tr align="middle"><td>Extremely-high vacuum</td><td><10<sup>-12</sup></td><td><10<sup>-10</sup></td></tr>
+    <tr align="middle"><td>Perfect vacuum</td><td>0</td><td>0</td></tr>
+  </tr>
+</table>
+
+<p></p>
+
+<img src="media/uhv.jpeg" alt="uhv" width="200" class="center">
+<figcaption align="middle">Ultra-high vacuum system used for microscopy</figcaption>
+
+<h4 id="perfect_vacuum">Is Perfect Vacuum Possible?</h4>
+
+<p>
+  Yes and no, depending on how it is looked at it.
+</p>
+
+<p>
+  Deep space is almost entirely devoid of particles, and there are surely volumes that can be outlined to exclude any surrounding particles, making them "perfect vacuum" volumes. However, there are still some elements contained within the chosen volume—photons, energy, and <a href="https://en.wikipedia.org/wiki/Virtual_particle">virtual particles</a> all exist, preventing an absolutely-perfect vacuum from being achieved.
+</p>
+
+<p>
+  A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-10</sup> Torr than it will be 10<sup>-9</sup> Torr).
+</p>
+
 <h2 id="achieving_vacuum">Achieving Vacuum</h2>
 
 <p>
-  Vacuum is achieved through the use of vacuum pumps.
+  Vacuum is achieved through the use of vacuum pumps. It is important to note that vacuum pumps do not "suck", nor is there is such a force as "suction".
 </p>
 
+<h3 id="mechanical_pump">Mechanical Pumps</h3>
 
 
 
 
+
+
+
+
+<h3 id="turbo_pump">Turbomolecular Pumps</h3>
+
+
+
+
+
+
+
+
+<h3 id="cryo_pump">Cryogenic Pumps</h3>
+
+
+
+
+
+
+
+
+
+
+<h3 id="diffusion_pump">Diffusion Pumps</h3>
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="ion_pump">Ion Pumps</h3>
+
+
+
+
+
+
+
+
+
+<h2 id="measurement">Vacuum Measurement</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="technology">Vacuum Technology: Connections, Valves, and Other</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="leaks_rga">Leaks and Residual Gas Analysis</h2>
+
+<h3 id="leak_detection">Leak Detection</h3></h3>
+
+
+
+
+<h3 id="rga">Residual Gas Analysis</h3>
+
+
+
+
+
+
+
+<h2 id="applications">Applications</h2>
+
+
+
+
+
+
+
+
+
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <i>A User's Guide to Vacuum Technology</i> by John F. O'Hanlon (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>): Arguably the most complete book on vacuum technology. Discusses gas properties, pressure gauges, pumps, and other technologies used in vacuum systems.
+  </li>
+  <li>
+    Kurt J. Lesker's <a href="https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip">vacuum technology menu</a>: A great online resource for learning about basic vacuum concepts to more advanced topics, like <a href="https://www.lesker.com/newweb/traps/traps_technicalnotes.cfm?pgid=0">traps and filters</a>.
+  </li>
+  <li>
+    World's <a href="https://www.nasa.gov/multimedia/imagegallery/image_feature_1281.html">largest vacuum chamber</a> by NASA. Imagine the pumps!
+  </li>
+</ul>
 
 
 
