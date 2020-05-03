@@ -15,6 +15,14 @@
 
 <h3 id="home"><a href="../../index.html">Home</a></h3>
 
+<p>
+  Last modified (mm/dd/yyyy): <span id="demo"></span>
+</p>
+
+<script>
+document.getElementById("demo").innerHTML = document.lastModified;
+</script>
+
 <!--
 - pumps: turbo, cryo, roughing, diffusion
 - pump curves
@@ -72,7 +80,7 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   Quite fast! If a human got hit by a car going the same speed (900 mph, 1500 kph), they would surely die. The difference is the size of the object. The N<sub>2</sub> molecule has an insignificant mass of \(4.6 \times 10^{26}\) kg, resulting in a insignificant kinetic energy and not noticing its collisions. However, the <a href="https://en.wikipedia.org/wiki/Number_density">number density</a> of gases is extremely high, leading to many collisions and the experience of pressure. Number density can be found using the <a href=https://en.wikipedia.org/wiki/Ideal_gas_law>ideal gas law</a>:
 </p>
 
-\[n = N_{A} \times \frac{PV}{RT}\]
+\[\frac{n}{V} = N_{A} \times \frac{P}{RT}\]
 
 <p>
   where \(N_{A}\) is <a href="https://en.wikipedia.org/wiki/Avogadro_constant">Avogadro's constant</a>, \(R\) is the <a href="https://en.wikipedia.org/wiki/Gas_constant">gas constant</a>, and \(V\) is a unit volume (either 1 cm<sup>3</sup> or 1 m<sup>3</sup>).
@@ -84,9 +92,9 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 
 <ul>
   <li>
-    <b>Mean free path</b>: The average distance a particle travels in a system before colliding with another particle. These distances can vary from &microm all the way up to km for ultra-high vacuum systems. The MFP equation is given by:
+    <b>Mean free path</b>: The average distance a particle travels in a system before colliding with another particle. These distances can vary from &#956;m all the way up to km for ultra-high vacuum systems. The MFP equation is given by:
 
-    \[\lambda = \frac{k_{B}T}{\sqrt{2}\pi dP}\]
+    \[\lambda = \frac{k_{B}T}{\sqrt{2}\pi d^{2}P}\]
 
     where \(d\) is the particle diameter and \(P\) is the pressure.
   </li>
@@ -186,15 +194,71 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-10</sup> Torr than it will be 10<sup>-9</sup> Torr).
 </p>
 
+<h2 id="gas_flow">Gas Flow</h2>
+
+<p>
+  There are three flow regimes, based on the <a href="https://en.wikipedia.org/wiki/Knudsen_number">Knudsen number</a>:
+</p>
+
+\[\text{Kn} = \frac{\lambda}{L} = \frac{k_{B}T}{\sqrt{2}\pi d^{2}PL}\]
+
+<ul>
+  <li>
+    <b>Continuum flow</b> (Kn < 0.01): Occurs under high pressure (low MFP) and can be either viscous or turbulent. Gases often collide with each other and chamber walls.
+  </li>
+  <li>
+    <b>Molecular flow</b> (Kn > 1): Occurs under low pressures (high MFP). Gases rarely collide with each other and often collide with the chamber walls.
+  </li>
+  <li>
+    <b>Transition region</b> (0.01 < Kn < 1): Gases collide with each other and chamber walls.
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <h2 id="achieving_vacuum">Achieving Vacuum</h2>
 
 <p>
   Vacuum is achieved through the use of vacuum pumps. It is important to note that vacuum pumps do not "suck", nor is there is such a force as "suction".
 </p>
 
-<h3 id="mechanical_pump">Mechanical Pumps</h3>
+<h3 id="mechanical_pump">Mechanical (Roughing) Pumps</h3>
 
-
+<p>
+  Mechanical pumps
+</p>
 
 
 
@@ -279,6 +343,68 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 <h2 id="leaks_rga">Leaks and Residual Gas Analysis</h2>
 
 <h3 id="leak_detection">Leak Detection</h3></h3>
+
+<p>
+  Before performing any leak testing, the system's pressure characteristics should be characterized: its pressure vs. time curve, base pressure, base leak rate (most chambers will have some type of leak rate if they're not being actively pumped), and base <a href="#rga">RGA</a> results.
+</p>
+
+<p>
+  There are two types of leak detectors: the forward-flow (FFLD) and counter-flow (CFLD). Both use mass spectrometers (MS) calibrated to helium to detect leaks.
+</p>
+
+<h4 id="ffld">Forward-Flow Leak Detector</h4>
+
+<p>
+  The FFLD consists of two vacuum pumps (turbo and roughing), pressure gauge, MS, and inlet port, as well as appropriate valves to isolate the pumps at allowed pressures. The system is pumped down to high vacuum, then He sprayed around possible leaks. A LN<sub>2</sub> trap is used to prevent non-He particles from reaching the MS.
+</p>
+
+<h4 id="cfld">Counter-Flow Leak Detector</h4>
+
+<p>
+  The CFLD has a similar setup to the FFLD, but the MS is at the inlet of the turbo pump and there is no need for a LN<sub>2</sub> trap. The pump must have low compression ratios for He and high compression ratios for all other gases. This allows the high-ratio gases to be pumped more easily and not reach the MS, while He is not and reaches the MS more easily.
+</p>
+
+<img src="media/leak_detection.gif" alt="leak_detection" width="200" class="center">
+<figcaption align="middle">Leak detection schematic</figcaption>
+
+<h4 id="techniques">Leak-Hunting Techniques</h4>
+
+<p>
+  The system being tested should be isolated one part at a time, eliminating sections systematically.
+</p>
+
+<p>
+  First, the pump. Can the tool be brought down to basic roughing pressure? If not, there may be a leak or the pump needs to be serviced. Connect the pump directly to a gauge and check the pressure. If it fails to reach the expected pressure, the pump is likely bad. If it is as expected, move to checking the roughing line and foreline. Reconnect the pump and check each of those for expected base pressure.
+</p>
+
+<p>
+  If neither the roughing pump, roughing line, nor foreline pose any issues, move to the main process chamber. Attempt to pump the chamber down to base pressure. If it fails to reach the expected pressure, there could be a few issues: bad high-vacuum pump, outgassing, and bad pressure gauge are all possible issues. Check the pressure on the pump side of the gate valve. If the pressure is low, then the pump is likely operating fine and there is a problem within the chamber itself. Outgassing will eventually stop, so continue pumping for a number of hours to eliminate that as a possible cause. Cleaning the chamber shields will also decrease outgassing.
+</p>
+
+<p>
+  Once the high-vacuum pump and outgassing are eliminated as possibilities, the leak detector can be used. Begin at the top of the chamber with connections and work down. Once the chamber has been checked, other options may be examined using an RGA.
+</p>
+
+<p>
+  Mass flow controllers (MFC) can pose issues by allowing gases into the chamber. If the tool is used for deposition, this is easily verified by running a non-reactive gas process, such as sputtering with only Ar and analyzing the results via <a href="https://en.wikipedia.org/wiki/X-ray_photoelectron_spectroscopy">x-ray photoelectron spectroscopy (XPS)</a>. If there is significant O<sub>2</sub>/N<sub>2</sub> present in the film but the O<sub>2</sub>/N<sub>2</sub> MFC valve was closed, there may be a leak through the MFC. This should be another characterization performed at regular intervals: when the system is verified to have no leaks, what does the XPS analysis yield for a standard process not using any additional gases.
+</p>
+
+<p>
+  After the entire tool has been checked and eliminated, leaks should be checked all the way back to the gas cylinder (essentially closing the system). The RGA will likely also verify the leak is coming from the atmosphere. The analysis should yield higher values of N<sub>2</sub>, O<sub>2</sub>, etc. Close the gas cylinder and evacuate the gas lines through the leak detector, then begin He testing. It may take a bit for the He to travel from the leak location to the MS, so wait a number of seconds (up to 30 s), between He injections.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
