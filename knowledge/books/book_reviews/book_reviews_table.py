@@ -33,6 +33,8 @@ import pandas as pd
 # sleeping, deleting files
 import time
 import os
+import os.path
+from os import path
 
 
 
@@ -92,7 +94,8 @@ def export_library():
 def csv_to_xlsx():
 
     # delete existing goodreads export to prevent overwriting
-    os.remove("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx")
+    if path.exists("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx"):
+        os.remove("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx")
 
     # rewrite .csv file contents to .xlsx file using pandas and xlsxwriter engine
     csv_file = pd.read_csv("/Users/EthanMorse/Downloads/goodreads_library_export.csv")
