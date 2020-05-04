@@ -126,6 +126,49 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   </li>
 </ul>
 
+<h2 id="gas_flow">Gas Flow</h2>
+
+<p>
+  There are three flow regimes, based on the <a href="https://en.wikipedia.org/wiki/Knudsen_number">Knudsen number</a>:
+</p>
+
+\[\text{Kn} = \frac{\lambda}{L} = \frac{k_{B}T}{\sqrt{2}\pi d^{2}PL}\]
+
+<ul>
+  <li>
+    <b>Continuum flow</b> (Kn < 0.01): Occurs under high pressure (low MFP) and can be either viscous or turbulent. Gases often collide with each other and chamber walls.
+  </li>
+  <li>
+    <b>Molecular flow</b> (Kn > 1): Occurs under low pressures (high MFP). Gases rarely collide with each other and often collide with the chamber walls.
+  </li>
+  <li>
+    <b>Transition region</b> (0.01 < Kn < 1): Gases collide with each other and chamber walls.
+  </li>
+</ul>
+
+<img src="media/gas_flow_regimes.gif" alt="gas_flow_regimes" width="200" class="center">
+<figcaption align="middle">Gas flow regimes illustrated</figcaption>
+
+<p>
+  With these flow regimes come more terms:
+</p>
+
+<ul>
+  <li>
+    <b>Throughput</b> (energy per time): The amount of gas passing through an area in a given time, or the amount of energy required to transport the gas across the area.
+  </li>
+  <li>
+    <b>Mass flow</b> (amount in kg, kg-moles, molecules): Amount passing through the area.
+  </li>
+  <li>
+    <b>Conductance</b> (volume per time): Given a throughput of \(Q\) within a pipe that has a pressure differential, conductance is calculated by:
+    \[C = \frac{Q}{P_{2} - P_{1}}\]
+    Conductances add in parallel and diminish in series:
+    \[C_{p} = C_{1} + ... + C_{n}\]
+    \[\frac{1}{C_{s}} = \frac{1}{C_{1}} + ... + \frac{1}{C_{n}}\]
+  </li>
+</ul>
+
 <h2 id="what_is_vacuum">What is Vacuum?</h2>
 
 <p>
@@ -194,34 +237,16 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-10</sup> Torr than it will be 10<sup>-9</sup> Torr).
 </p>
 
-<h2 id="gas_flow">Gas Flow</h2>
+<h2 id="measurement">Vacuum Measurement</h2>
 
 <p>
-  There are three flow regimes, based on the <a href="https://en.wikipedia.org/wiki/Knudsen_number">Knudsen number</a>:
+  Various gauges are used to measure pressure within a chamber. Direct-reading gauges directly measure the particle flux, while indirect-reading gauges [FINISH]
 </p>
 
-\[\text{Kn} = \frac{\lambda}{L} = \frac{k_{B}T}{\sqrt{2}\pi d^{2}PL}\]
+<img src="media/vacuum_gauge_ranges.jpeg" alt="uhv" width="200" class="center">
+<figcaption align="middle">Ranges of various vacuum gauges</figcaption>
 
-<ul>
-  <li>
-    <b>Continuum flow</b> (Kn < 0.01): Occurs under high pressure (low MFP) and can be either viscous or turbulent. Gases often collide with each other and chamber walls.
-  </li>
-  <li>
-    <b>Molecular flow</b> (Kn > 1): Occurs under low pressures (high MFP). Gases rarely collide with each other and often collide with the chamber walls.
-  </li>
-  <li>
-    <b>Transition region</b> (0.01 < Kn < 1): Gases collide with each other and chamber walls.
-  </li>
-</ul>
-
-
-
-
-
-
-
-
-
+<h3 id="direct_reading_gauges">Direct-Reading Gauges</h3>
 
 
 
@@ -306,8 +331,6 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 
 
 
-
-<h2 id="measurement">Vacuum Measurement</h2>
 
 
 
