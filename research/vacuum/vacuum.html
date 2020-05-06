@@ -41,7 +41,7 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 <h1>Vacuum: Theory and Technologies</h1>
 
 <p>
-  This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>). O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other sources are used where O'Hanlon's textbook is lacking.
+  This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>). O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., O'Hanlon does not discuss it in his book.
 </p>
 
 <h2 id="what_is_pressure">What is Pressure?</h2>
@@ -323,7 +323,7 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 </p>
 
 <p>
-  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. Bayard and Alpert invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="media/extension_of_the_low_pressure_range_of_the_ionization_gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 8 &times 10<sup>-10</sup> Torr.
+  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. Bayard and Alpert invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/Extension%20of%20the%20Low%20Pressure%20Range%20of%20the%20Ionization%20Gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 8 &times 10<sup>-10</sup> Torr.
 </p>
 
 <p>
@@ -352,10 +352,92 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 </p>
 
 <p>
-  To measure a mechanical pump's pumping speed
+  To measure a <a href="#mechanical_pump">mechanical pump</a>s pumping speed, the system is brought down to base pressure, \(P_{b}\), gas, typically N<sub>2</sub>, is flowed into the chamber for a number of minutes, and finally the equilibrium pressure, \(P_{\text{eq}}\) is found, giving a pumping speed of:
 </p>
 
+\[S = \frac{Q}{P_{\text{eq}} - P_{b}}\]
 
+<p>
+  Measuring the pumping speed of higher vacuum pumps, such as the <a href="#turbo_pump">turbo pump</a> and <a href="#cryo_pump">cryo pump</a>, require similar methods due to their lack of pumping capability at high flows.
+</p>
+
+<img src="media/pumping_speed.jpeg" alt="pumping_speed" width="200" class="center">
+<figcaption align="middle">Typical pumping speed vs. pressure curve</figcaption>
+
+<p>
+  Keep in mind that the calculated pumping speed is under idealized conditions. Instead, an effective pumping speed (EPS) is more accurate. Given a port conductance, \(C_{p}\), and ideal pumping speed, \(S\), EPS is calculated by:
+</p>
+
+\[\text{EPS} = \left(\frac{1}{C_{p}} + \frac{1}{S}\right)^{-1}\]
+
+<p>
+  From this equation, the smallest conductance results in the highest effective pumping speed given a fixed ideal pumping speed. Further:
+</p>
+
+\[\text{EPS} = \frac{V}{t} \ln\left(\frac{P_{0}}{P_{f}}\right) \quad (\text{molecular flow only})\]
+
+<p>
+  Where \(V\) is volume, \(t\) is time, \(P_{0}\) is the initial pressure, and \(P_{f}\) is final pressure.
+</p>
+
+<p>
+  A few other, more practical methods are available for calculating EPS. Given a mass flow, MF, and pressure, \(P\), the EPS of either a transfer or capture pump is found by:
+</p>
+
+\[\text{EPS} = \frac{\text{MF}}{P}\]
+
+<p>
+  Another method for transfer pumps measures the throughput at the pump's exhaust then divides by the pressure within the chamber. This assumes no particles are lost between the chamber and exhaust, whether by condensing, a trap, etc. More calculations can be found <a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_12_calceps.cfm">here</a> (where all of this EPS information was taken from).
+</p>
+
+<h3 id="slow_pumping">Slow Pumping</h3>
+
+<p>
+  Slow chamber pump times can be reasonable or indicative of an issue with the chamber or pump itself.
+</p>
+
+<p>
+  First, check if the pump time is reasonable:
+</p>
+
+<ul>
+  <li>
+    Is the chamber large? Large chambers obviously take longer to evacuate than smaller.
+  </li>
+  <li>
+    Is the chamber dirty? Deposition layers allow pockets of moisture and gases to form on the chamber walls, resulting in outgassing and longer pumping times.
+  </li>
+  <li>
+    How big is the vacuum pump? Larger pumps allow faster pumping speeds.
+  </li>
+</ul>
+
+<p>
+  After those three questions have been eliminated in the search for a faster pumping time, examine the possible issues:
+</p>
+
+<ul>
+  <li>
+    Is there a possible outgassing source?
+  </li>
+  <li>
+    Is there a leak? Test the chamber's leak rate and perform <a href="#leak_detection">leak detection</a> techniques to check for possible leaks into the chamber or vacuum lines.
+  </li>
+  <li>
+    Are the pumps bad? The pumps may need servicing.
+  </li>
+  <li>
+    Are there contamination or outgassing sources? Lubrications, oils, and other foreign objects may contribute to rising pressures or poor pump performance.
+  </li>
+</ul>
+
+<p>
+  In addition to all of this, the pump times should be recorded on a regular basis to check for any times that are out of the ordinary. For example, the times it takes to pump down from atmosphere to 100, 1, 10<sup>-3</sup>, 10<sup>-5</sup>, and 10<sup>-7</sup> may all be recorded over time. Pump time behaviors may be more noticeable and easily anticipated after certain events, like chamber cleaning or pump replacement.
+</p>
+
+<p>
+  More ideas on reasons for slow pump times can be found <a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_05_pumpdownslow.cfm">here</a>.
+</p>
 
 
 
@@ -530,31 +612,26 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   After the entire tool has been checked and eliminated, leaks should be checked all the way back to the gas cylinder (essentially closing the system). The RGA will likely also verify the leak is coming from the atmosphere. The analysis should yield higher values of N<sub>2</sub>, O<sub>2</sub>, etc. Close the gas cylinder and evacuate the gas lines through the leak detector, then begin He testing. It may take a bit for the He to travel from the leak location to the MS, so wait a number of seconds (up to 30 s), between He injections.
 </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h3 id="rga">Residual Gas Analysis</h3>
 
+<p>
+  <a href="https://en.wikipedia.org/wiki/Residual_gas_analyzer">Residual gas analyzers (RGA)</a> are simply mass spectrometers used for finding the composition of gases within a volume, e.g., vacuum chamber. "Finding the composition" has a variety of uses:
+</p>
+
+<ul>
+  <li>
+    <a href="#leak_detection"><b>Leak detection</b></a>: RGAs are used for checking if any undesirable gases are leaking into the chamber. If they are, the results provide an idea of where the source of the leak is.
+  </li>
+  <li>
+    Gas purity: Some processes require ultra-high purity gases to work properly. Given the base pressure gas composition, the gas purity can be determined simply by flowing the gas into the chamber.
+  </li>
+</ul>
 
 
 
 
 
-
-<h2 id="applications">Applications</h2>
+<h2 id="vacuum_applications">Vacuum Applications</h2>
 
 
 
