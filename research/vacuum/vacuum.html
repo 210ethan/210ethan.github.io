@@ -36,6 +36,8 @@ document.getElementById("demo").innerHTML = document.lastModified;
 
 https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm
 https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
+https://www.pfeiffer-vacuum.com/en/know-how
+https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.cfm
   -->
 
 <h1>Vacuum: Theory and Technologies</h1>
@@ -167,9 +169,9 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   <li>
     <b>Conductance</b> (volume per time): Given a throughput of \(Q\) within a pipe that has a pressure differential, conductance is calculated by:
     \[C = \frac{Q}{P_{2} - P_{1}}\]
-    Conductances add in parallel and diminish in series:
-    \[C_{p} = C_{1} + ... + C_{n}\]
-    \[\frac{1}{C_{s}} = \frac{1}{C_{1}} + ... + \frac{1}{C_{n}}\]
+    Conductances add directly in parallel and add reciprocally in series:
+    \[C_{p} = C_{1} + \dots + C_{n}\]
+    \[C_{s}= \left(\frac{1}{C_{1}} + \dots + \frac{1}{C_{n}}\right)^{-1}\]
   </li>
 </ul>
 
@@ -180,7 +182,7 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 </p>
 
 <p>
-  There are also two types of pressure:
+  There are also two types of relative pressure:
 </p>
 
 <ul>
@@ -200,7 +202,7 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 
 <table align="center">
   <caption>
-    Vacuum levels: note that the higher the vacuum, the lower the pressure
+    Vacuum levels: note that higher vacuum = lower pressure
   </caption>
   <tr>
     <th>
@@ -238,13 +240,13 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 </p>
 
 <p>
-  A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-10</sup> Torr than it will be 10<sup>-9</sup> Torr).
+  A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa = 10<sup>-15</sup> Torr using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-8</sup> Pa = 10<sup>-9</sup> Torr than it will be 10<sup>-7</sup> Pa = 10<sup>-8</sup> Torr).
 </p>
 
 <h2 id="measurement">Vacuum Measurement</h2>
 
 <p>
-  Various gauges are used to measure pressure within a chamber. Direct-reading gauges directly measure the particle flux, while indirect-reading gauges [FINISH]
+  Various gauges are used to measure pressure within a chamber. Direct-reading gauges directly measure the particle flux, while indirect-reading gauges measure values related to properties of the gas.
 </p>
 
 <img src="media/vacuum_gauge_ranges.jpeg" alt="vacuum_gauge_ranges" width="200" class="center">
@@ -279,10 +281,10 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   The capacitance manometer is a derivative of the diaphragm gauge, where the pressure reading is determined by the change in capacitance between the diaphragm itself and an electrode. Capacitance is found by:
 </p>
 
-\[C = \epsilon \frac{A}{d}\]
+\[C = \varepsilon \frac{A}{d}\]
 
 <p>
-  where \(\epsilon_{0}\) is the <a href="https://en.wikipedia.org/wiki/Permittivity">permittivity</a> of medium, \(A\) is the area of the two plates, and \(d\) is the distance between the plates.
+  where \(\varepsilon\) is the <a href="https://en.wikipedia.org/wiki/Permittivity">permittivity</a> of the medium, \(A\) is the area of the two plates, and \(d\) is the distance between the plates.
 </p>
 
 <p>
@@ -439,54 +441,141 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   More ideas on reasons for slow pump times can be found <a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_05_pumpdownslow.cfm">here</a>.
 </p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<img src="media/skeleton_meme.jpeg" alt="skeleton_meme" width="200" class="center">
+<figcaption align="middle">Everyone's been there</figcaption>
 
 <h2 id="achieving_vacuum">Achieving Vacuum</h2>
 
 <p>
-  Vacuum is achieved through the use of vacuum pumps. It is important to note that vacuum pumps do not "suck", nor is there is such a force as "suction".
+  Vacuum is achieved through the use of vacuum pumps. It is important to note that vacuum pumps do not "suck", nor is there is such a force as "suction". Gas molecules must randomly make it to the intake to be removed. This is why pump speed decreases with pressure—there are less particles in the chamber, decreasing the probability of one entering the intake.
 </p>
 
 <h3 id="mechanical_pump">Mechanical (Roughing) Pumps</h3>
 
 <p>
-  Mechanical pumps
+  Mechanical pumps are used to achieve low to medium vacuum and back high vacuum pumps. Some use oil, while others are "dry" (oil-free).
+</p>
+
+<p>
+  The rotary vane pump has a simple operation: gas enters through an intake, is compressed by a rotating vane, then removed through an exhaust on the other side. Oil is used to help lubricate the vanes. Some rotary vane pumps can be used in two stages, where the exhaust of the first is directly connected to the intake of the second. The two-stage option has higher pumping speeds and can achieve lower pressures than the one-stage. For both options, it is crucial that the seal separating the intake and exhaust is tight. Any leak will significantly worsen the pumping speed and achieveable pressure.
+</p>
+
+<img src="media/rotary_vane_pump.gif" alt="rotary_vane_pump" width="200" class="center">
+<figcaption align="middle">Animation showing the operation of a rotary vane pump</figcaption>
+
+<p>
+  The rotary piston pump is similar to the rotary vane pump.
+</p>
+
+<img src="media/rotary_piston_pump.gif" alt="rotary_piston_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a rotary piston pump
+</figcaption>
+
+<p>
+  The lobe blower uses two rotors to force gases in either direction, improving the pumping speed and and base pressure as compared to the rotary pumps. As the pressure differential between the inlet and outlet increases, the rotors must work harder to pump the gases, causing heat to be generated and the rotors to expand, possibly destroying the pump. To prevent this, an overflow valve is included to act when the manufacturer's recommended maximum pressure differential value is exceeded. Because this maximum differential would be exceeded if the lobe blower was used on a chamber at atmosphere, it must be used with or as a backing pump.
+</p>
+
+<img src="media/lobe_blower.gif" alt="lobe_blower" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a lobe blower (Roots pump)
+</figcaption>
+
+<p>
+  Some lobe blowers are outfitted with a cooler to offset the heat generated by the pump. Gases that make it past the rotors go through a cooler. A fraction of those go back into rotor's chamber to promote cooling, while the remaining continue on to be exhausted.
+</p>
+
+<p>
+  The claw pump is similar to the lobe blower, but uses "claws" instead of the figure-eight rotors. This configuration compresses the gas within the pump, forcing it through an outlet.
+</p>
+
+<img src="media/claw_pump.gif" alt="claw_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a claw pump
+</figcaption>
+
+<p>
+  The scroll pump is composed of two identical helical structures, one of which moves around its stationary counterpart. Gas is introduces at an opening and makes its way to the center's outlet, getting progressively compressed along the way. They are used to back turbo pumps or independently where low vacuum is needed.
+</p>
+
+<img src="media/scroll_pump.gif" alt="scroll_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a scroll pump
+</figcaption>
+
+<p>
+  The screw pump is similar to the scroll pump, using two screws that rotate opposite from one another at the same speed. This transports gas from the inlet to outlet. They are used to back turbo pumps and on systems where corrosive gases are present (the screws can be coated in a corrosion-resistant material).
+</p>
+
+<img src="media/screw_pump.gif" alt="screw_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a screw pump
+</figcaption>
+
+<p>
+  The diaphragm pump is simple: gas enters through an inlet after the diaphragm is at the bottom of its movement and is expelled when the diaphragm moves up. Valves at the inlet and outlet prevent gas from going opposite directions (gas going back in the inlet when it should only go through the outlet). They can be used independently to achieve medium vacuum or as backing for a turbo pump.
+</p>
+
+<img src="media/diaphragm_pump.gif" alt="diaphragm_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a diaphragm pump
+</figcaption>
+
+<p>
+  A summary of mechanical pumps can be found in the following table. The "Purpose" column indicates what the pump is used for, e.g., pumping systems on its own (independent), backing high vacuum pumps (backing), or in combination with another pump (combination). For combination-type pumps, the pump it is combined with is noted in parentheses. The "Backing Needed" indicates if the pump needs another pump backing it.
+</p>
+
+<table align="center">
+  <caption>
+    Mechanical pump capabilities
+  </caption>
+  <tr>
+    <th>Type</th><th>Minimum pressure (Torr)</th><th>Minimum pressure (Pa)</th><th>Purpose</th><th>Backing Needed?</th>
+    <tr align="middle"><td>Rotary vane</td><td>2&times;10<sup>-5</sup> to 8&times;10<sup>-3</sup></td><td>3&times;10<sup>-3</sup> to 1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Rotary piston</td><td>&sim;8&times;10<sup>-3</sup></td><td>&sim;1</td><td>Individual, combination (lobe)</td><td>No</td></tr>
+    <tr align="middle"><td>Lobe blower</td><td>8&times;10<sup>-6</sup></td><td>10<sup>-3</sup> (Lobe-rotary combination)</td><td>Combination (rotary)</td><td>Yes</td></tr>
+    <tr align="middle"><td>Claw</td><td>4&times;10<sup>-3</sup> to 8&times;10<sup>-3</sup></td><td>0.5 to 1 (Craw-lobe combination)</td><td>Combination (lobe)</td><td>No</td></tr>
+    <tr align="middle"><td>Scroll</td><td>8&times;10<sup>-3</sup></td><td>1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Screw</td><td>5&times;10<sup>-3</sup></td><td>0.7</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Diaphragm</td><td>0.37 to 0.60</td><td>50 to 75</td><td>Individual, backing</td><td>No</td></tr>
+  </tr>
+</table>
+
+<h3 id="turbo_pump">Turbomolecular Pumps</h3>
+
+<p>
+  Turbo pumps
 </p>
 
 
 
 
+<img src="media/turbo_pump_cross_section.jpeg" alt="turbo_pump_cross_section" width="200" class="center">
+<figcaption align="middle">
+  Cross-section of a turbo pump
+</figcaption>
 
 
-<h3 id="turbo_pump">Turbomolecular Pumps</h3>
+
+<img src="media/turbo_pump_destroyed.jpeg" alt="turbo_pump_destroyed" width="200" class="center">
+<figcaption align="middle">
+  Turbo pump after venting directly to atmosphere at 30,000 rpm
+</figcaption>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -623,9 +712,32 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
     <a href="#leak_detection"><b>Leak detection</b></a>: RGAs are used for checking if any undesirable gases are leaking into the chamber. If they are, the results provide an idea of where the source of the leak is.
   </li>
   <li>
-    Gas purity: Some processes require ultra-high purity gases to work properly. Given the base pressure gas composition, the gas purity can be determined simply by flowing the gas into the chamber.
+    <b>Gas purity</b>: Some processes require ultra-high purity gases to work properly. Given the base pressure gas composition, the gas purity can be determined simply by flowing the gas into the chamber and checking the changes in the analysis.
+  </li>
+  <li>
+    <b>Environmental composition</b>: RGAs can check the gas composition during a variety of processes: sputtering, etching, ion implantation, etc. For example, an RGA would be especially useful in an ion implanter used phosphorus species. P has an atomic mass of 30.97 amu, while O<sub>2</sub> has an atomic mass of 31.98 amu, only a 3% difference. If there is significant O<sub>2</sub> present in the chamber or the mass analyzer is not properly adjusted, O<sub>2</sub> can be a part of the ion beam.
   </li>
 </ul>
+
+<p style="color:red;">
+  [FINISH, left off at pg 136]
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
