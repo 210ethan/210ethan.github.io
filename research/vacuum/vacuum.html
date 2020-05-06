@@ -40,6 +40,10 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 
 <h1>Vacuum: Theory and Technologies</h1>
 
+<p>
+  This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>). O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other sources are used where O'Hanlon's textbook is lacking.
+</p>
+
 <h2 id="what_is_pressure">What is Pressure?</h2>
 
 <p>
@@ -62,7 +66,7 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 </p>
 
 <p>
-  From the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>, which is used to find the speeds of gases, the N<sub>2</sub> molecule at a temperature of 0 °C moves at a probable speed of:
+  From the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>, which is used to find the distribution of the speeds of particles within an ideal gas, the N<sub>2</sub> molecule at a temperature of 0 °C moves at a probable speed of:
 </p>
 
 \[v_{p, \text{N}_{2}} = \sqrt{\frac{2k_{B}T}{m_{\text{N}_{2}}}} = \sqrt{\frac{2(1.380 \times 10^{-23} \, \text{J}\cdot\text{K}^{-1})(273 \, \text{K})}{2 \times 2.33 \times 10^{-26} \, \text{kg}}} \approx 400 \, \text{m/s}\]
@@ -243,10 +247,120 @@ https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
   Various gauges are used to measure pressure within a chamber. Direct-reading gauges directly measure the particle flux, while indirect-reading gauges [FINISH]
 </p>
 
-<img src="media/vacuum_gauge_ranges.jpeg" alt="uhv" width="200" class="center">
+<img src="media/vacuum_gauge_ranges.jpeg" alt="vacuum_gauge_ranges" width="200" class="center">
 <figcaption align="middle">Ranges of various vacuum gauges</figcaption>
 
 <h3 id="direct_reading_gauges">Direct-Reading Gauges</h3>
+
+<p>
+  Liquid wall manometers use a U-shaped tube liquid to compare a known pressure to an unknown pressure. For example, if P<sub>1</sub> is under an unknown vacuum and P<sub>2</sub> is at atmospheric pressure, then P<sub>2</sub> will "push" harder than P<sub>1</sub>, causing the P<sub>1</sub> liquid level to rise and resulting in a pressure reading of:
+</p>
+
+\[P = \rho gh\]
+
+<p>
+  where \(\rho\) is the fluid's density and \(h\) is the height difference in the liquids.
+</p>
+
+<img src="media/manometer.jpeg" alt="manometer" width="200" class="center">
+<figcaption align="middle">Manometer liquid levels at three different pressures</figcaption>
+
+<p>
+  Solid wall DRGs include the diaphragm gauge, the Bourdon tube, and capacitance manometer.
+</p>
+
+<iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/JnPSeEW-EeA">
+</iframe>
+<figcaption align="middle">
+  An animation showing the operation of the diaphragm and Bourdon gauges
+</figcaption>
+
+<p>
+  The capacitance manometer is a derivative of the diaphragm gauge, where the pressure reading is determined by the change in capacitance between the diaphragm itself and an electrode. Capacitance is found by:
+</p>
+
+\[C = \epsilon \frac{A}{d}\]
+
+<p>
+  where \(\epsilon_{0}\) is the <a href="https://en.wikipedia.org/wiki/Permittivity">permittivity</a> of medium, \(A\) is the area of the two plates, and \(d\) is the distance between the plates.
+</p>
+
+<p>
+  A <a href="https://en.wikipedia.org/wiki/Pressure_sensor">pressure transducer</a> is used to measure the pressure. A diaphragm is fixed between two miniature chambers, one at the unknown pressure, where the electrode is located, and one evacuated. As the pressure changes, the diaphragm moves in one direction, changing the capacitance the electrode senses and sending it to the tool. The diaphragm movement is extremely small, making it susceptible to temperature effects. To counteract this, some transducers are equipped with heaters to maintain a specific temperature.
+</p>
+
+<h3 id="indirect_reading_gauges">Indirect-Reading Gauges</h3>
+
+<h4 id="thermal_conductivity_gauges">Thermal Conductivity Gauges</h4>
+
+<p>
+  The TGC measures pressure by measuring heat transfer between a wire and the closed-volume the wire is in. As pressure increases within a certain range, heat transfer also increases linearly, allowing an accurate, medium-vacuum pressure to be read if characterization is accurate.
+</p>
+
+<p>
+  To form a Pirani gauge, an already-balanced <a href="https://en.wikipedia.org/wiki/Wheatstone_bridge">Wheatstone bridge</a> is used, where one of the resistors is the wire that will be heated in the vacuum. Resistance increases with temperature:
+</p>
+
+\[R(T) = R_{0}\left(1 - \alpha(T - T_{0})\right)\]
+
+<p>
+  where \(R_{0}\) is the initial resistance at initial temperature \(T_{0}\), \(\alpha\) is the <a href="https://en.wikipedia.org/wiki/Temperature_coefficient">temperature coefficient</a>, and \(T\) is the current temperature.
+</p>
+
+<p>
+  As pressure increases on the heating wire, the heat transfer increases (or heat loss occurs) and the resistance decreases. To rebalance the bridge, the voltage source must supply more voltage, thus reheating the wire back to its original resistance and rebalancing the bridge. The voltage can then be read into a transducer to measure the pressure. A compensating wire is used to offset any effects from temperature on the resistance zeroing of the heated wire.
+</p>
+
+<img src="media/pirani_wheatstone.gif" alt="pirani_wheatstone" width="200" class="center">
+<figcaption align="middle">Pirani gauge configuration using a Wheatstone bridge</figcaption>
+
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Thermocouple">thermocouple</a> gauge uses a thermocouple to measure the pressure: higher pressures decrease the wire's temperature. Characterizing this curve allows for accurate measurements.
+</p>
+
+<p>
+  Ionization gauges are used to measure ultra-high vacuum pressures. There are two types: hot cathode and cold cathode.
+</p>
+
+<p>
+  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. Bayard and Alpert invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="media/extension_of_the_low_pressure_range_of_the_ionization_gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 8 &times 10<sup>-10</sup> Torr.
+</p>
+
+<p>
+  In the cold cathode gauge, electric and magnetic fields present within the gauge increase ionization probability. Electron sources are also used to increase the initial number of starting electrons available to ionize the gases. The pressure range is a bit wider than the hot cathode gauge, allowing pressures from 1-10<sup>-9</sup> Pa = 10<sup>-2</sup>-10<sup>-11</sup> Torr to be read.
+</p>
+
+<h2 id="flow_speed">Flow (In and Out)</h2>
+
+<h3 id="mass_flow_measurement">Mass Flow Measurement</h3>
+
+<p>
+  The flow of a gas (which has mass) can be measured by applying heat to a gas flow and checking the temperature increase, which is proportional to the amount of mass flowing. Two types of thermal flow meters can be used: variable temperature and constant temperature. The variable temperature uses two thermocouples placed at either ends of the flow channel. After taking an initial temperature measurement with no gas flowing, gas is flowed through and the thermocouples take another temperature measurement, allowing for an accurate measurement of the mass flow. The constant temperature uses a circuit to maintain a constant temperature throughout the channel, where the applied power is proportional to the mass flow.
+</p>
+
+<p>
+  The mass flow controller (MFC) is an obvious progression from the flow meter. By adding a analog valve that can be fully open, fully closed, or anywhere in between, the amount of mass flowing can easily be controlled. The MFC must be calibrated to the specific gas that it will be used for or have a gas correction factor (GCF) added. For example, an N<sub>2</sub>-based MFC (the most common calibration standard) will have a GCF of 1 when flowing N<sub>2</sub> and a GCF of 1.39 when flowing Ar. The equation for GFC is:
+</p>
+
+\[GCF = formula\]
+
+
+<h3 id="pumping_speed">Pumping Speed</h3>
+
+<p>
+  While pumping speed has the same units as conductance, volume/time (m<sup>3</sup>/s, L/s), they are not the same: conductance is the property of the hardware, while pumping speed is dependent on the pump used, the current pressure, etc.
+</p>
+
+<p>
+  To measure a mechanical pump's pumping speed
+</p>
+
+
+
+
+
+
+
 
 
 
