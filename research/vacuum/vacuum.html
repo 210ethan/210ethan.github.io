@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Thesis Lessons</title>
+  <title>Vacuum</title>
   <link rel="stylesheet" type="text/css" href="../../css/main.css">
   <link rel="icon" href="../../media/ethan_morse_favicon.png">
 </head>
@@ -33,6 +33,7 @@ document.getElementById("demo").innerHTML = document.lastModified;
 - is perfect vacuum possible?
 - leaks and RGAs]
 - gettering, outgassing
+- pump vibration minimization
 
 https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm
 https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
@@ -41,6 +42,124 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   -->
 
 <h1>Vacuum: Theory and Technologies</h1>
+
+<h2 id="table_of_contents">Table of Contents</h2>
+
+<p>
+  <a href="#what_is_pressure">What is Pressure?</a>
+</p>
+
+<p>
+  <a href="#gas_flow">Gas Flow</a>
+</p>
+
+<p>
+  <a href="#what_is_vacuum">What is Vacuum?</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#vacuum_levels">Vacuum Levels</a>
+  </p>
+  <p>
+    <a href="#perfect_vacuum">Is Perfect Vacuum Possible?</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#vacuum_measurement">Vacuum Measurement</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#direct_reading_gauges">Direct Reading Gauges</a>
+  </p>
+  <p>
+    <a href="#indirect_reading_gauges">Indirect Reading Gauges</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#flow_in_out">Flow (In and Out)</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#mass_flow_measurement">Mass Flow Measurement</a>
+  </p>
+  <p>
+    <a href="#pumping_speed">Pumping Speed</a>
+  </p>
+  <p>
+    <a href="#slow_pumping">Slow Pumping</a>
+  </p>
+</ul>
+
+<p>
+  <a href="mechanical_pump">Mechanical Pumps</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#rotary_vane_pump">Rotary Vane Pump</a>
+  </p>
+  <p>
+    <a href="#rotary_piston_pump">Rotary Piston Pump</a>
+  </p>
+  <p>
+    <a href="#lobe_blower">Lobe Blower (Roots Pump)</a>
+  </p>
+  <p>
+    <a href="#scroll_pump">Scroll Pump</a>
+  </p>
+  <p>
+    <a href="#screw_pump">Screw Pump</a>
+  </p>
+  <p>
+    <a href="#diaphragm_pump">Diaphragm Pump</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#turbomolecular_pump">Turbomolecular Pump</a>
+</p>
+
+<p>
+  <a href="#diffusion_pump">Diffusion Pump</a>
+</p>
+
+<p>
+  <a href="#cryogenic_pump">Cryogenic Pump</a>
+</p>
+
+<p>
+  <a href="#ion_pump">Ion Pump</a>
+</p>
+
+<p>
+  <a href="#connections_valves">Connections (Joints) and Valves</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#permanent_joints">Permanent Joints</a>
+  </p>
+  <p>
+    <a href="#removable_joints">Removable Joints</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#leak_detection">Leak Detection</a>
+</p>
+
+<p>
+  <a href="#residual_gas_analysis">Residual Gas Analysis</a>
+</p>
+
+<p>
+  <a href="#see_also">See Also</a>
+</p>
 
 <p>
   This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>). O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., O'Hanlon does not discuss it in his book.
@@ -215,8 +334,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
       Pressure (Pa)
     </th>
     <tr align="middle"><td>Atmosphere</td><td>760</td><td>10<sup>5</sup></td></tr>
-    <tr align="middle"><td>Low vacuum</td><td>760 to 25</td><td>10<sup>5</sup> to 3 x 10<sup>3</sup></td></tr>
-    <tr align="middle"><td>Medium vacuum</td><td>25 to 10<sup>-3</sup></td><td>3 &times 10<sup>3</sup> to 10<sup>-1</sup></td></tr>
+    <tr align="middle"><td>Low vacuum</td><td>760 to 25</td><td>10<sup>5</sup> to 3&times;10<sup>3</sup></td></tr>
+    <tr align="middle"><td>Medium vacuum</td><td>25 to 10<sup>-3</sup></td><td>3&times;10<sup>3</sup> to 10<sup>-1</sup></td></tr>
     <tr align="middle"><td>High vacuum</td><td>10<sup>-3</sup> to 10<sup>-9</sup></td><td>10<sup>-1</sup> to 10<sup>-7</sup></td></tr>
     <tr align="middle"><td>Ultra-high vacuum</td><td>10<sup>-9</sup> to 10<sup>-12</sup></td><td>10<sup>-7</sup> to 10<sup>-10</sup></td></tr>
     <tr align="middle"><td>Extremely-high vacuum</td><td><10<sup>-12</sup></td><td><10<sup>-10</sup></td></tr>
@@ -243,7 +362,7 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa = 10<sup>-15</sup> Torr using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-8</sup> Pa = 10<sup>-9</sup> Torr than it will be 10<sup>-7</sup> Pa = 10<sup>-8</sup> Torr).
 </p>
 
-<h2 id="measurement">Vacuum Measurement</h2>
+<h2 id="vacuum_measurement">Vacuum Measurement</h2>
 
 <p>
   Various gauges are used to measure pressure within a chamber. Direct-reading gauges directly measure the particle flux, while indirect-reading gauges measure values related to properties of the gas.
@@ -274,7 +393,7 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 <iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/JnPSeEW-EeA">
 </iframe>
 <figcaption align="middle">
-  An animation showing the operation of the diaphragm and Bourdon gauges
+  Animation showing the operation of the diaphragm and Bourdon gauges
 </figcaption>
 
 <p>
@@ -332,7 +451,7 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   In the cold cathode gauge, electric and magnetic fields present within the gauge increase ionization probability. Electron sources are also used to increase the initial number of starting electrons available to ionize the gases. The pressure range is a bit wider than the hot cathode gauge, allowing pressures from 1-10<sup>-9</sup> Pa = 10<sup>-2</sup>-10<sup>-11</sup> Torr to be read.
 </p>
 
-<h2 id="flow_speed">Flow (In and Out)</h2>
+<h2 id="flow_in_out">Flow (In and Out)</h2>
 
 <h3 id="mass_flow_measurement">Mass Flow Measurement</h3>
 
@@ -444,17 +563,19 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 <img src="media/skeleton_meme.jpeg" alt="skeleton_meme" width="200" class="center">
 <figcaption align="middle">Everyone's been there</figcaption>
 
-<h2 id="achieving_vacuum">Achieving Vacuum</h2>
+<h2 id="vacuum_pumps">Vacuum Pumps</h2>
 
 <p>
   Vacuum is achieved through the use of vacuum pumps. It is important to note that vacuum pumps do not "suck", nor is there is such a force as "suction". Gas molecules must randomly make it to the intake to be removed. This is why pump speed decreases with pressure—there are less particles in the chamber, decreasing the probability of one entering the intake.
 </p>
 
-<h3 id="mechanical_pump">Mechanical (Roughing) Pumps</h3>
+<h3 id="mechanical_pump">Mechanical (Roughing) Pump</h3>
 
 <p>
   Mechanical pumps are used to achieve low to medium vacuum and back high vacuum pumps. Some use oil, while others are "dry" (oil-free).
 </p>
+
+<h4 id="rotary_vane_pump">Rotary Vane Pump</h4>
 
 <p>
   The rotary vane pump has a simple operation: gas enters through an intake, is compressed by a rotating vane, then removed through an exhaust on the other side. Oil is used to help lubricate the vanes. Some rotary vane pumps can be used in two stages, where the exhaust of the first is directly connected to the intake of the second. The two-stage option has higher pumping speeds and can achieve lower pressures than the one-stage. For both options, it is crucial that the seal separating the intake and exhaust is tight. Any leak will significantly worsen the pumping speed and achieveable pressure.
@@ -462,6 +583,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 
 <img src="media/rotary_vane_pump.gif" alt="rotary_vane_pump" width="200" class="center">
 <figcaption align="middle">Animation showing the operation of a rotary vane pump</figcaption>
+
+<h4 id="rotary_piston_pump">Rotary Piston Pump</h4>
 
 <p>
   The rotary piston pump is similar to the rotary vane pump.
@@ -471,6 +594,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 <figcaption align="middle">
   Animation showing the operation of a rotary piston pump
 </figcaption>
+
+<h4 id="lobe_blower">Lobe Blower (Roots Pump)</h4>
 
 <p>
   The lobe blower uses two rotors to force gases in either direction, improving the pumping speed and and base pressure as compared to the rotary pumps. As the pressure differential between the inlet and outlet increases, the rotors must work harder to pump the gases, causing heat to be generated and the rotors to expand, possibly destroying the pump. To prevent this, an overflow valve is included to act when the manufacturer's recommended maximum pressure differential value is exceeded. Because this maximum differential would be exceeded if the lobe blower was used on a chamber at atmosphere, it must be used with or as a backing pump.
@@ -485,6 +610,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   Some lobe blowers are outfitted with a cooler to offset the heat generated by the pump. Gases that make it past the rotors go through a cooler. A fraction of those go back into rotor's chamber to promote cooling, while the remaining continue on to be exhausted.
 </p>
 
+<h4 id="claw_pump">Claw Pump</h4>
+
 <p>
   The claw pump is similar to the lobe blower, but uses "claws" instead of the figure-eight rotors. This configuration compresses the gas within the pump, forcing it through an outlet.
 </p>
@@ -493,6 +620,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 <figcaption align="middle">
   Animation showing the operation of a claw pump
 </figcaption>
+
+<h4 id="scroll_pump">Scroll Pump</h4>
 
 <p>
   The scroll pump is composed of two identical helical structures, one of which moves around its stationary counterpart. Gas is introduces at an opening and makes its way to the center's outlet, getting progressively compressed along the way. They are used to back turbo pumps or independently where low vacuum is needed.
@@ -503,6 +632,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   Animation showing the operation of a scroll pump
 </figcaption>
 
+<h4 id="screw_pump">Screw Pump</h4>
+
 <p>
   The screw pump is similar to the scroll pump, using two screws that rotate opposite from one another at the same speed. This transports gas from the inlet to outlet. They are used to back turbo pumps and on systems where corrosive gases are present (the screws can be coated in a corrosion-resistant material).
 </p>
@@ -511,6 +642,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 <figcaption align="middle">
   Animation showing the operation of a screw pump
 </figcaption>
+
+<h4 id="diaphragm_pump">Diaphragm Pump</h4>
 
 <p>
   The diaphragm pump is simple: gas enters through an inlet after the diaphragm is at the bottom of its movement and is expelled when the diaphragm moves up. Valves at the inlet and outlet prevent gas from going opposite directions (gas going back in the inlet when it should only go through the outlet). They can be used independently to achieve medium vacuum or as backing for a turbo pump.
@@ -541,27 +674,44 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   </tr>
 </table>
 
-<h3 id="turbo_pump">Turbomolecular Pumps</h3>
+<h3 id="turbomolecular_pump">Turbomolecular Pump</h3>
 
 <p>
-  Turbo pumps
+  Turbo pumps are used to achieve high vacuum and require a backing pump (rotary vane, screw, scroll, or diaphragm) because they must operate in the <a href="#gas_flow">molecular flow</a> region. The pumping speed is high, hydrocarbons are prevented from entering back into the chamber without the need for a trap, and oil is not required for either of the pumps. They are an attractive option for high vacuum system.
 </p>
-
-
-
 
 <img src="media/turbo_pump_cross_section.jpeg" alt="turbo_pump_cross_section" width="200" class="center">
 <figcaption align="middle">
   Cross-section of a turbo pump
 </figcaption>
 
+<p>
+  There are two types of alternating rotor blades within the turbo pump: rotor (rotating) blades and stator (stationary) blades. As rotor blades "hit" the gas molecules, the gas is compressed and forced deeper into the pump, closer to the outlet. The number of rotors can go from 8-20 and may have multiple stages: the first stage's blades are thin, allowing a high pumping speed and low compression ratio, while the remaining stages get progressively larger, resulting in high compression ratios and low pumping speeds at the outlet, near the foreline. The primary way to achieve this is by changing the blade angles. The more "open" a blade is, the more likely gas is to enter that individual set of rotors, resulting in higher pumping speeds, but lower compression ratios. Regardless, each stage is designed such that the flow is constant.
+</p>
 
+<img src="media/turbo_pump.gif" alt="turbo_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a turbo pump's blades (note the small green gas molecule entering on the top left)
+</figcaption>
+
+<p>
+  In an effort to move away from oil-based backing pumps, a molecular drag stage has been added at the end of the turbo's blade to further decrease pressure to an allowable value for dry backing pumps.
+</p>
+
+<p>
+  One variation of the turbo pump is the magnetically-levitated turbo pump. To prevent frictional wear on the bearings supporting the rotors, a <a href="https://en.wikipedia.org/wiki/Magnetic_bearing">magnetic bearing</a> is used.
+</p>
+
+<p>
+  The ultimate pressure is determined by the compression ratio of light gases (based on pump configuration), specifically H<sub>2</sub>, and amount of outgassing, especially if oil is used is the backing pump. Ultimate pressures of 2&times;10<sup>-8</sup> to 5&times;10<sup>-9</sup> Pa = 1.5&times;10<sup>-10</sup> to 4&times;10<sup>-11</sup> Torr have been achieved using a system bake and a high-compression turbo pump.
+</p>
 
 <img src="media/turbo_pump_destroyed.jpeg" alt="turbo_pump_destroyed" width="200" class="center">
 <figcaption align="middle">
   Turbo pump after venting directly to atmosphere at 30,000 rpm
 </figcaption>
 
+<h3 id="diffusion_pump">Diffusion Pump</h3>
 
 
 
@@ -584,8 +734,8 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 
 
 
-<h3 id="cryo_pump">Cryogenic Pumps</h3>
 
+<h3 id="cryogenic_pump">Cryogenic Pump</h3>
 
 
 
@@ -595,7 +745,6 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 
 
 
-<h3 id="diffusion_pump">Diffusion Pumps</h3>
 
 
 
@@ -607,9 +756,9 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 
 
 
-<h3 id="ion_pump">Ion Pumps</h3>
 
 
+<h3 id="ion_pump">Ion Pump</h3>
 
 
 
@@ -630,27 +779,71 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 
 
 
-<h2 id="technology">Vacuum Technology: Connections, Valves, and Other</h2>
 
 
+<h2 id="connections_valves">Connections (Joints) and Valves</h2>
 
+<h3 id="permanent_joints">Permanent Joints</h3>
 
+<h4 id="metal_to_metal">Metal to Metal</h4>
 
+<p>
+  Permanent joints are generally formed using welding, specifically <a href="https://en.wikipedia.org/wiki/Gas_tungsten_arc_welding">tungsten inert gas</a> (TIG, most common), <a href="https://en.wikipedia.org/wiki/Plasma_arc_welding">plasma arc welding</a>, <a href="https://en.wikipedia.org/wiki/Electron-beam_welding">electron-beam welding</a>, or <a href="https://en.wikipedia.org/wiki/Laser_beam_welding">laser beam welding</a>.
+</p>
 
+<p>
+  TIG works especially well on stainless steel, which is the most commonly used material in high vacuum systems. It is vitally important that the weld is of high quality—if not, gas may become trapped inside a gap on the vacuum side and cause a <a href="http://www.normandale.edu/departments/stem-and-education/vacuum-and-thin-film-technology/learning-in-a-vacuum---what-to-expect/articles/understanding-virtual-leaks">virtual leak</a>. To minimize the possibility of a virtual leak forming, the weld should be made on the vacuum side if possible. Additionally, the welding material, i.e., the two pieces of hardware to be welded together, should be free of cracks and grease and as smooth as possible. If this is not possible, the weld beginning on the atmosphere side should go all the way through to the vacuum side.
+</p>
 
+<p>
+  <a href="https://en.wikipedia.org/wiki/Soldering">Soldering</a> is another option of joining two metal parts together, but the use of <a href="https://en.wikipedia.org/wiki/Flux_(metallurgy)">flux</a> poses issues, as it is generally a high vapor pressure material.
+</p>
 
+<p>
+  <a href="https://en.wikipedia.org/wiki/Brazing">Brazing</a> is the last permanent metal-metal joining option. The brazing alloy (the material used to connect the two metal pieces) is generally silver-based or nickel-based.
+</p>
 
+<h4 id="glass_ceramic_to_metal">Glass or Ceramic to Metal</h4>
 
+<p>
+  In order to create <a href="https://www.pfeiffer-vacuum.com/en/know-how/mechanical-components-in-vacuum/components-and-feedthroughs/viewports/">viewports</a> to see into the chamber and <a href="https://www.pfeiffer-vacuum.com/en/know-how/mechanical-components-in-vacuum/components-and-feedthroughs/electrical-feedthroughs/">feedthroughs</a>, glass or ceramics need to be joined with metal. In order to join glass and metal, the <a href="https://en.wikipedia.org/wiki/Thermal_expansion">thermal expansion</a> value of both the glass and metal must be similar. Glass typically has a low expansion coefficient (fused quartz = 0.55, Pyrex glass = 4.0, <a href="https://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html">source</a>), while metals have higher coefficients (stainless steel = 14-17, aluminum = 21-24, <a href="https://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html">source</a>). To better facilitate the connection, alloys have been made to serve as a buffer layer between the glass and metal, allowing a better seal. To join the ceramic and metal, the ceramic is metallized at the connection points then brazed with the metal.
+</p>
 
+<h3 id="removable_joints">Removable Joints</h3>
 
+<p>
+  While a properly-welded joint is the most ideal, it does not allow for easy access, modification, or troubleshooting like a removable joint does. 
+</p>
 
 
 
 
 
-<h2 id="leaks_rga">Leaks and Residual Gas Analysis</h2>
 
-<h3 id="leak_detection">Leak Detection</h3></h3>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="leak_detection">Leak Detection</h2>
 
 <p>
   Before performing any leak testing, the system's pressure characteristics should be characterized: its pressure vs. time curve, base pressure, base leak rate (most chambers will have some type of leak rate if they're not being actively pumped), and base <a href="#rga">RGA</a> results.
@@ -660,13 +853,13 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   There are two types of leak detectors: the forward-flow (FFLD) and counter-flow (CFLD). Both use mass spectrometers (MS) calibrated to helium to detect leaks.
 </p>
 
-<h4 id="ffld">Forward-Flow Leak Detector</h4>
+<h3 id="ffld">Forward-Flow Leak Detector</h3>
 
 <p>
   The FFLD consists of two vacuum pumps (turbo and roughing), pressure gauge, MS, and inlet port, as well as appropriate valves to isolate the pumps at allowed pressures. The system is pumped down to high vacuum, then He sprayed around possible leaks. A LN<sub>2</sub> trap is used to prevent non-He particles from reaching the MS.
 </p>
 
-<h4 id="cfld">Counter-Flow Leak Detector</h4>
+<h3 id="cfld">Counter-Flow Leak Detector</h3>
 
 <p>
   The CFLD has a similar setup to the FFLD, but the MS is at the inlet of the turbo pump and there is no need for a LN<sub>2</sub> trap. The pump must have low compression ratios for He and high compression ratios for all other gases. This allows the high-ratio gases to be pumped more easily and not reach the MS, while He is not and reaches the MS more easily.
@@ -675,7 +868,7 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 <img src="media/leak_detection.gif" alt="leak_detection" width="200" class="center">
 <figcaption align="middle">Leak detection schematic</figcaption>
 
-<h4 id="techniques">Leak-Hunting Techniques</h4>
+<h3 id="leak_hunting_techniques">Leak-Hunting Techniques</h3>
 
 <p>
   The system being tested should be isolated one part at a time, eliminating sections systematically.
@@ -701,7 +894,7 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
   After the entire tool has been checked and eliminated, leaks should be checked all the way back to the gas cylinder (essentially closing the system). The RGA will likely also verify the leak is coming from the atmosphere. The analysis should yield higher values of N<sub>2</sub>, O<sub>2</sub>, etc. Close the gas cylinder and evacuate the gas lines through the leak detector, then begin He testing. It may take a bit for the He to travel from the leak location to the MS, so wait a number of seconds (up to 30 s), between He injections.
 </p>
 
-<h3 id="rga">Residual Gas Analysis</h3>
+<h2 id="residual_gas_analysis">Residual Gas Analysis</h2>
 
 <p>
   <a href="https://en.wikipedia.org/wiki/Residual_gas_analyzer">Residual gas analyzers (RGA)</a> are simply mass spectrometers used for finding the composition of gases within a volume, e.g., vacuum chamber. "Finding the composition" has a variety of uses:
