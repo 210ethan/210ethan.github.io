@@ -34,40 +34,29 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 https://www.beswick.com/resources/the-basics-of-compression-fittings/
   -->
 
-  <h3 id="removable_joints">Removable Joints</h3>
 
-  <h4 id="flanges">Flanges</h4>
+<h3 id="cryogenic_pump">Cryogenic Pump</h3>
 
-  <p>
-    While a properly-welded joint is the most ideal, it does not allow for easy access, modification, or troubleshooting like a removable joint does.
-  </p>
-
-  <p>
-    First, the <a href="https://en.wikipedia.org/wiki/Vacuum_flange">vacuum flange</a> variation must be understood. The three most common flanges used are the CF, KF, and ISO. The <a href="https://www.lesker.com/newweb/flanges/flanges_technicalnotes_conflat_1.cfm">CF flange</a> uses two identical flanges and a metal (Cu) gasket to make the connection and seal. The metal will expand due to the flange's <a href="https://www.mtm-inc.com/av-20150331-how-a-cf-knife-edge-seal-works.html">knife edge</a>, forming the seal. Silver-plated gaskets can be used on systems that are subject to frequent baking and aluminum gaskets can be used on systems with low baking temperatures (<200 °C). Pressures can range from atmosphere (10<sup>5</sup> Pa = 760 Torr) to extremely-high vacuum (10<sup>-10</sup> Pa = 10<sup>-13</sup> Torr). Temperatures are limited by the gasket material used.
-  </p>
-
-  <img src="media/cf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="50" height="400" class="center">
-  <figcaption align="middle">Cross-section of a CF flange</figcaption>
-
-  <p>
-    The KF flange uses two identical flanges and an <a href="https://en.wikipedia.org/wiki/O-ring">O-ring</a> to make the connection and seal. Grooves within the flanges allow the O-ring to be seated uniformly and reliably. However, the O-ring material severely limits the operating pressures and temperature it operates at. For example, <a href="">Viton O-rings</a> have a <a href="https://o-ring.info/en/materials/vitonr--fkm/vitonr-temperature-rating/">temperature range</a> of -26 °C to 200-230 °C. Additionally, the O-ring used should be chosen based on the gases and materials used in the system. Corrosive gases may cause the O-ring to deteriorate, possibly resulting in a dangerous leak. The ISO operation principle is almost identical to the KF flange, except for the use of a stronger external retainer that holds the O-ring in place. The O-ring still limits the pressure and temperature ranges the flange operates at.
-  </p>
-
-  <img src="media/kf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="200" class="center">
-  <figcaption align="middle">Cross-section of a KF (and essentially ISO) flange</figcaption>
-
-  <h4 id="fittings">Fittings</h4>
-
-  <p>
-    In order to connect thin tubes, like those use for process gas delivery, a <a href="https://en.wikipedia.org/wiki/Compression_fitting">compression fitting</a> must be used to make the connection. The current industry standard is the <a href="https://www.swagelok.com/en/product/fittings/vacuum-fittings">Swagelok</a> brand.
-  </p>
+<p>
+  Cryogenic, meaning low temperature, pumps work using the principle of <a href=""
+</p>
 
 
-  <h3 id="valves">Valves</h3>
 
-  <p>
 
-  </p>
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 <h1>Vacuum: Theory and Technologies</h1>
@@ -738,6 +727,20 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <h3 id="diffusion_pump">Diffusion Pump</h3>
 
+<p>
+  The diffusion pump works by vaporizing a fluid, generally oil, and directing it in a certain pattern (stream) using jet nozzles. This stream collides with gases and forces them to downwards, where the pressure is higher, thus compressing them. There are multiple compression stages. As the vapors hit the side walls, they are cooled until condensation and returned to the boiler to repeat the process.
+</p>
+
+<p>
+  A roughing pump, generally <a href="#rotary_vane_pump">rotary vane pump</a>, <a href="#rotary_piston_pump">rotary piston pump</a>, or one of those two in combination with a <a href="#lobe_blower">lobe blower</a>, must be used, as both the boiler and pump itself cannot handle atmospheric pressure.
+</p>
+
+<p>
+  Backstreaming of the vaporizing fluid, especially those with high vapor pressures, into the chamber is an issue. The most common methods of preventing backstreaming are the use of low vapor pressure fluids and <a href="https://en.wikipedia.org/wiki/Cold_trap">cold traps</a> and/or <a href="https://en.wikipedia.org/wiki/Baffle_(heat_transfer)">baffles</a>.
+</p>
+
+<img src="media/diffusion_pump.gif" alt="diffusion_pump" width="200" class="center">
+<figcaption align="middle">Diffusion pump schematic</figcaption>
 
 
 
@@ -760,7 +763,6 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 
 
-<h3 id="cryogenic_pump">Cryogenic Pump</h3>
 
 
 
@@ -834,7 +836,33 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   In order to create <a href="https://www.pfeiffer-vacuum.com/en/know-how/mechanical-components-in-vacuum/components-and-feedthroughs/viewports/">viewports</a> to see into the chamber and <a href="https://www.pfeiffer-vacuum.com/en/know-how/mechanical-components-in-vacuum/components-and-feedthroughs/electrical-feedthroughs/">feedthroughs</a>, glass or ceramics need to be joined with metal. In order to join glass and metal, the <a href="https://en.wikipedia.org/wiki/Thermal_expansion">thermal expansion</a> value of both the glass and metal must be similar. Glass typically has a low expansion coefficient (fused quartz = 0.55, Pyrex glass = 4.0, <a href="https://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html">source</a>), while metals have higher coefficients (stainless steel = 14-17, aluminum = 21-24, <a href="https://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html">source</a>). To better facilitate the connection, alloys have been made to serve as a buffer layer between the glass and metal, allowing a better seal. To join the ceramic and metal, the ceramic is metallized at the connection points then brazed with the metal.
 </p>
 
+<h3 id="removable_joints">Removable Joints</h3>
 
+<h4 id="flanges">Flanges</h4>
+
+<p>
+  While a properly-welded joint is the most ideal, it does not allow for easy access, modification, or troubleshooting like a removable joint does.
+</p>
+
+<p>
+  First, the <a href="https://en.wikipedia.org/wiki/Vacuum_flange">vacuum flange</a> variation must be understood. The three most common flanges used are the CF, KF, and ISO. The <a href="https://www.lesker.com/newweb/flanges/flanges_technicalnotes_conflat_1.cfm">CF flange</a> uses two identical flanges and a metal (Cu) gasket to make the connection and seal. The metal will expand due to the flange's <a href="https://www.mtm-inc.com/av-20150331-how-a-cf-knife-edge-seal-works.html">knife edge</a>, forming the seal. Silver-plated gaskets can be used on systems that are subject to frequent baking and aluminum gaskets can be used on systems with low baking temperatures (<200 °C). Pressures can range from atmosphere (10<sup>5</sup> Pa = 760 Torr) to extremely-high vacuum (10<sup>-10</sup> Pa = 10<sup>-13</sup> Torr). Temperatures are limited by the gasket material used.
+</p>
+
+<img src="media/cf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="50" height="400" class="center">
+<figcaption align="middle">Cross-section of a CF flange</figcaption>
+
+<p>
+  The KF flange uses two identical flanges and an <a href="https://en.wikipedia.org/wiki/O-ring">O-ring</a> to make the connection and seal. Grooves within the flanges allow the O-ring to be seated uniformly and reliably. However, the O-ring material severely limits the operating pressures and temperature it operates at. For example, <a href="">Viton O-rings</a> have a <a href="https://o-ring.info/en/materials/vitonr--fkm/vitonr-temperature-rating/">temperature range</a> of -26 °C to 200-230 °C. Additionally, the O-ring used should be chosen based on the gases and materials used in the system. Corrosive gases may cause the O-ring to deteriorate, possibly resulting in a dangerous leak. The ISO operation principle is almost identical to the KF flange, except for the use of a stronger external retainer that holds the O-ring in place. The O-ring still limits the pressure and temperature ranges the flange operates at.
+</p>
+
+<img src="media/kf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="200" class="center">
+<figcaption align="middle">Cross-section of a KF (and essentially ISO) flange</figcaption>
+
+<h4 id="fittings">Fittings</h4>
+
+<p>
+  In order to connect thin tubes, like those use for process gas delivery, a <a href="https://en.wikipedia.org/wiki/Compression_fitting">compression fitting</a> must be used to make the connection. The current industry standard is the <a href="https://www.swagelok.com/en/product/fittings/vacuum-fittings">Swagelok</a> brand.
+</p>
 
 
 
