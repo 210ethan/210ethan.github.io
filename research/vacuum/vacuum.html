@@ -16,17 +16,6 @@
 <h3 id="home"><a href="../../index.html">Home</a></h3>
 
 <!--
-- pumps: turbo, cryo, roughing, diffusion
-- pump curves
-- pressure gauges
-- what is pressure?
-- vacuum tech: types of chambers/materials, fittings (metal-to-metal, compression, welding), outgassing, grease/fluids, traps, valves
-- behavior under pressure (submlimation, evaporation)
-- is perfect vacuum possible?
-- leaks and RGAs]
-- gettering, outgassing
-- pump vibration minimization
-
 https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm
 https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
 https://www.pfeiffer-vacuum.com/en/know-how
@@ -35,11 +24,55 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   -->
 
 
-<h3 id="cryogenic_pump">Cryogenic Pump</h3>
 
-<p>
-  Cryogenic, meaning low temperature, pumps work using the principle of <a href=""
-</p>
+
+
+
+
+
+
+
+
+
+
+  <p>
+    The RGA's mass spectrometer consist of three parts: an ionizer, mass filter and detector.
+  </p>
+
+  <h3 id="ionizer">Ionizer</h3>
+
+  <p>
+    Either an open (in main vacuum region) or closed (isolated from main vacuum region) ion source, the ionizer uses the principle of <a href="https://en.wikipedia.org/wiki/Electron_ionization">electron ionization</a> (an electron strikes a particle, causing one of its valence electrons to become unbounded and the particle to become an ion) to ionize particles within its vicinity. Open ion sources eject electrons across the chamber towards an anode, allowing the electrons to ionize gases along the way. However, given that the size of the gases are not the same, larger gas molecules are more likely to get ionized, decreasing the accuracy of the RGA. In a closed ion source, gases flow through a tube where they are ionized inside.
+  </p>
+
+  <h3 id="mass_filter">Mass Filter</h3>
+
+  <p>
+    There are two common types of mass filters: the magnetic sector and radio frequency quadrupole (RFQ). The magnetic sector uses a magnetic field to curve the various species orthogonally from their original path, using the equation:
+  </p>
+
+  \[qV_{ext} \times B = \frac{mV_{ext}^{2}}{r} \to r = \frac{1}{B}\sqrt\frac{2mV_{ext}}{q}\]
+
+  <p>
+    Where \(B\) is the magnetic field strength, \(m\) is the species' mass, \(V_{ext}\) is the extracting voltage, and \(q\) is the species' charge. Depending on the species' mass, some may go less than, equal to, or greater than the desired angle.
+  </p>
+
+  <p>
+    The quadrupole uses four identical cylindrical rods of opposing charges evenly spaced from a center. A <a href="https://en.wikipedia.org/wiki/Band-pass_filter">band-pass filter</a> is created via the positive rods (high-pass filter) and negative rods (low-pass filter). In this case, the filtered frequency is actually mass.
+  </p>
+
+  <img src="media/rf_quadrupole.jpeg" alt="rf_quadrupole" width="200" class="center">
+  <figcaption align="middle">RF quadrupole design</figcaption>
+
+  <h3 id="detector">Detector</h3>
+
+  <p>
+    FINISH THIS SECTION KASDFJALSDFHJASKDJFHASLDKJFHASD
+  </p>
+
+
+
+
 
 
 
@@ -98,6 +131,10 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </ul>
 
 <p>
+  <a href="#outgassing">Outgassing</a>
+</p>
+
+<p>
   <a href="#flow_in_out">Flow (In and Out)</a>
 </p>
 
@@ -114,45 +151,51 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </ul>
 
 <p>
-  <a href="mechanical_pump">Mechanical Pumps</a>
+  <a href="#vacuum_pumps">Vacuum Pumps</a>
 </p>
 
 <ul>
   <p>
-    <a href="#rotary_vane_pump">Rotary Vane Pump</a>
+    <a href="mechanical_pump">Mechanical Pumps</a>
   </p>
+  <ul>
+    <p>
+      <a href="#rotary_vane_pump">Rotary Vane Pump</a>
+    </p>
+    <p>
+      <a href="#rotary_piston_pump">Rotary Piston Pump</a>
+    </p>
+    <p>
+      <a href="#lobe_blower">Lobe Blower (Roots Pump)</a>
+    </p>
+    <p>
+      <a href="#scroll_pump">Scroll Pump</a>
+    </p>
+    <p>
+      <a href="#screw_pump">Screw Pump</a>
+    </p>
+    <p>
+      <a href="#diaphragm_pump">Diaphragm Pump</a>
+    </p>
+  </ul>
   <p>
-    <a href="#rotary_piston_pump">Rotary Piston Pump</a>
+    <a href="#high_vacuum_pumps">High Vacuum Pumps</a>
   </p>
-  <p>
-    <a href="#lobe_blower">Lobe Blower (Roots Pump)</a>
-  </p>
-  <p>
-    <a href="#scroll_pump">Scroll Pump</a>
-  </p>
-  <p>
-    <a href="#screw_pump">Screw Pump</a>
-  </p>
-  <p>
-    <a href="#diaphragm_pump">Diaphragm Pump</a>
-  </p>
+  <ul>
+    <p>
+      <a href="#turbomolecular_pump">Turbomolecular Pump</a>
+    </p>
+    <p>
+      <a href="#diffusion_pump">Diffusion Pump</a>
+    </p>
+    <p>
+      <a href="#cryogenic_pump">Cryogenic Pump</a>
+    </p>
+    <p>
+      <a href="#ion_pump">Ion Pump</a>
+    </p>
+  </ul>
 </ul>
-
-<p>
-  <a href="#turbomolecular_pump">Turbomolecular Pump</a>
-</p>
-
-<p>
-  <a href="#diffusion_pump">Diffusion Pump</a>
-</p>
-
-<p>
-  <a href="#cryogenic_pump">Cryogenic Pump</a>
-</p>
-
-<p>
-  <a href="#ion_pump">Ion Pump</a>
-</p>
 
 <p>
   <a href="#connections_valves">Connections (Joints) and Valves</a>
@@ -180,7 +223,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>). O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., O'Hanlon does not discuss it in his book.
+  This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>) without most of the math and models used. O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., it is not discussed in the book.
 </p>
 
 <h2 id="what_is_pressure">What is Pressure?</h2>
@@ -464,11 +507,36 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. Bayard and Alpert invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/Extension%20of%20the%20Low%20Pressure%20Range%20of%20the%20Ionization%20Gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 8 &times 10<sup>-10</sup> Torr.
+  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. <id="bayard_alpert">Bayard and Alpert</id> invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/Extension%20of%20the%20Low%20Pressure%20Range%20of%20the%20Ionization%20Gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 8 &times 10<sup>-10</sup> Torr.
 </p>
 
 <p>
   In the cold cathode gauge, electric and magnetic fields present within the gauge increase ionization probability. Electron sources are also used to increase the initial number of starting electrons available to ionize the gases. The pressure range is a bit wider than the hot cathode gauge, allowing pressures from 1-10<sup>-9</sup> Pa = 10<sup>-2</sup>-10<sup>-11</sup> Torr to be read.
+</p>
+
+<h2 id="outgassing">Outgassing</h2>
+
+<p>
+  In addition to the atmosphere, gases are also present in solids. When released into the atmosphere, this increases the pressure and is called outgassing. Outgassing is caused by vaporization, desorption, diffusion, and permeation.
+</p>
+
+<p>
+  Vaporization occurs when the molecule's temperature is above its condensation temperature at a given pressure. <a href="https://en.wikipedia.org/wiki/Bake-out">Bake-outs</a> are used to vaporize and remove volatile compounds from vacuum systems.
+</p>
+
+<img src="media/phase_diagram.jpeg" alt="phase_diagram" width="200" class="center">
+<figcaption align="middle">Phase diagram</figcaption>
+
+<p>
+  Diffusion occurs when a <a href="https://en.wikipedia.org/wiki/Molecular_diffusion">concentration gradient</a> in a solid forces gas towards the surface, where the <a href="https://en.wikipedia.org/wiki/Desorption">desorb</a> (release from the solid's surface).
+</p>
+
+<p>
+  Desorption can be forced using electrons, ions, or photons.
+</p>
+
+<p>
+  Permeation is the adsorbtion, diffusion, and desorbtion of a gas on, through, then off the chamber wall.
 </p>
 
 <h2 id="flow_in_out">Flow (In and Out)</h2>
@@ -480,11 +548,8 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  The mass flow controller (MFC) is an obvious progression from the flow meter. By adding a analog valve that can be fully open, fully closed, or anywhere in between, the amount of mass flowing can easily be controlled. The MFC must be calibrated to the specific gas that it will be used for or have a gas correction factor (GCF) added. For example, an N<sub>2</sub>-based MFC (the most common calibration standard) will have a GCF of 1 when flowing N<sub>2</sub> and a GCF of 1.39 when flowing Ar. The equation for GFC is:
+  The mass flow controller (MFC) is an obvious progression from the flow meter. By adding a analog valve that can be fully open, fully closed, or anywhere in between, the amount of mass flowing can easily be controlled. The MFC must be calibrated to the specific gas that it will be used for or have a gas correction factor (GCF) added. For example, an N<sub>2</sub>-based MFC (the most common calibration standard) will have a GCF of 1 when flowing N<sub>2</sub> and a GCF of 1.39 when flowing Ar. The GCF can be <a href="https://www.mksinst.com/n/flow-measurement-control-frequently-asked-questions">calculated</a> or determined empirically.
 </p>
-
-\[GCF = formula\]
-
 
 <h3 id="pumping_speed">Pumping Speed</h3>
 
@@ -553,16 +618,13 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <ul>
   <li>
-    Is there a possible outgassing source?
-  </li>
-  <li>
     Is there a leak? Test the chamber's leak rate and perform <a href="#leak_detection">leak detection</a> techniques to check for possible leaks into the chamber or vacuum lines.
   </li>
   <li>
     Are the pumps bad? The pumps may need servicing.
   </li>
   <li>
-    Are there contamination or outgassing sources? Lubrications, oils, and other foreign objects may contribute to rising pressures or poor pump performance.
+    Are there possible contamination or outgassing sources? Lubrications, oils, and other foreign objects may contribute to rising pressures or poor pump performance.
   </li>
 </ul>
 
@@ -688,6 +750,8 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   </tr>
 </table>
 
+<h2 id="high_vacuum_pumps">High Vacuum Pumps</h2>
+
 <h3 id="turbomolecular_pump">Turbomolecular Pump</h3>
 
 <p>
@@ -742,71 +806,42 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 <img src="media/diffusion_pump.gif" alt="diffusion_pump" width="200" class="center">
 <figcaption align="middle">Diffusion pump schematic</figcaption>
 
+<h3 id="cryogenic_pump">Cryogenic Pump</h3>
 
+<p>
+  Cryogenic, meaning low temperature, pumps work using the principle of cryocondensation, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/cryosorption.pdf">cryosorption</a>, and cryotrapping.
+</p>
 
+<p>
+  Because vapor pressure follows a parabolic curve against temperature, vapor pressure decreases with decreasing temperature. <a href="https://en.wikipedia.org/wiki/Residence_time#Surface_science">Residence time</a> is also a factor. Given that residence time is proportional to \(\exp(1/T)\), extremely low temperatures correspond to extremely long residence times, which practically removes the condensed vapor from the system. The system uses no oil, making backstreaming non-existent and the pumping itself clean.
+</p>
 
+<p>
+  Regeneration is the process of releasing the condensed gases. To do this, the surfaces that the condensed particles are on must be warmed up to allow evaporation either directly into an exhaust or a roughing pump. Most cryopump are designed such that the chamber is isolated from the pump during regeneration, else backstreaming of the already-condensed particles may occur.
+</p>
 
+<p>
+  Liquid nitrogen and helium are the most common coolants used. The surfaces used for pumping are directly connected to the liquid refrigerators.
+</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/6IxFH7nnbUc"></iframe>
 
 <h3 id="ion_pump">Ion Pump</h3>
 
+<p>
+  Ion and getter pumps operate similarly to the cryopump: gases are captured and then transported to a surface, removing them from the system.
+</p>
 
+<p>
+  In the getter pump, a reactive metal is used within the chamber to react with (getter) a present gas. Two mechanisms allow this: a reaction that forms metal compound (TiO, TiN, etc) or the diffusion of the gas into the metal. The metal sublimation pump (MSP) generally uses Ti, as it easily sublimes and is relatively cheap. By heating a Ti filament at a low pressure, Ti sublimates and get deposited throughout the chamber. The ambient gases are captured by the Ti, effectively pumping it from the system. The nonevaporable getter pump (NEGP) uses the diffusion of gases into its getter as the pumping mechanism. Given that <a href="https://en.wikipedia.org/wiki/Mass_diffusivity#Solids">diffusivity</a> increases with temperature (based on the <a href="https://en.wikipedia.org/wiki/Arrhenius_equation">Arrhenius equation</a>), the NEGP operates at higher temperatures than the MSP.
+</p>
 
+<img src="media/getter_pump.gif" alt="getter_pump" width="200" class="center">
+<figcaption align="middle">Getter pump schematic</figcaption>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<p>
+  The ion pump follows a similar principle to the <a href="#residual_gas_analysis">residual gas analyzer</a>. The pumping is done using a pressure gauge, like the <a href="#ionization_gauges">Bayard-Alpert gauge</a>. Electric and magnetic fields are designed to maximize the distance electrons travel, increasing the likelihood of the ionization of gases. The mean free path must also be sufficient. After ionization occurs (the gas molecules lose an electron), they have a net positive charge and are attracted to the cathode, where they can become implanted and removed. The anode may also be coated with a getter metal to promote further pumping of non-ionized gases.
+</p>
 
 <h2 id="connections_valves">Connections (Joints) and Valves</h2>
 
@@ -863,33 +898,6 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 <p>
   In order to connect thin tubes, like those use for process gas delivery, a <a href="https://en.wikipedia.org/wiki/Compression_fitting">compression fitting</a> must be used to make the connection. The current industry standard is the <a href="https://www.swagelok.com/en/product/fittings/vacuum-fittings">Swagelok</a> brand.
 </p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 <h2 id="leak_detection">Leak Detection</h2>
 
@@ -968,7 +976,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   The RGA's mass spectrometer consist of three parts:
 </p>
 
-<ul style="color:red";>
+<ul>
   <li>
     <b>Ionizer</b>: Either an open (in main vacuum region) or closed (isolated frm main vacuum region) ion source, the ionizer uses the principle of <a href="https://en.wikipedia.org/wiki/Electron_ionization">electron ionization</a> (an electron strikes a particle, causing one of its valence electrons to become unbounded and the particle to become an ion) to ionize particles within its vicinity. [STOPPED ON PAGE 135 AT OPEN ION SOURCES SECTION]
   </li>
