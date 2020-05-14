@@ -23,52 +23,29 @@ https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.c
 https://www.beswick.com/resources/the-basics-of-compression-fittings/
   -->
 
+<h2 id="vacuum_systems">Vacuum Systems</h2>
 
 
 
+<h3 id="rough_pumping">Rough Pumping</h3>
 
+<p>
+  For systems that require a backing pump for the high vacuum pump, considerations must be made about the roughing pump.
+</p>
 
+<p>
+  Pumping speed should take into account economical and process factors. Is this a shared-user or high-throughput facility? If so, then the pumping speed should be on the higher end to accommodate. How important is the cleanliness of the process? If highly important, then the pumping must be controlled to prevent water from forming within the chamber. (Jun Zhao details this procedure in his dissertation <i>Thermal dynamics and Particle Formation During Vacuum Pump-down</i>, but the document is not available online.)
+</p>
 
+<p>
+  The other consideration is when to switch over to the high-vacuum pump. Pumping to too high a vacuum can cause backstreaming from the roughing pump, while too low a vacuum can prevent the high vacuum pump from performing properly and may even damage it. By this, there exists a range of pressures that allow the switching to take place. Keep in mind that the low vacuum region is different for each of the four previously-discussed high vacuum pumps.
+</p>
 
+<h3 id="high_vacuum_systems">High Vacuum Systems</h3>
 
-
-
-
-
-  <p>
-    The RGA's mass spectrometer consist of three parts: an ionizer, mass filter and detector.
-  </p>
-
-  <h3 id="ionizer">Ionizer</h3>
-
-  <p>
-    Either an open (in main vacuum region) or closed (isolated from main vacuum region) ion source, the ionizer uses the principle of <a href="https://en.wikipedia.org/wiki/Electron_ionization">electron ionization</a> (an electron strikes a particle, causing one of its valence electrons to become unbounded and the particle to become an ion) to ionize particles within its vicinity. Open ion sources eject electrons across the chamber towards an anode, allowing the electrons to ionize gases along the way. However, given that the size of the gases are not the same, larger gas molecules are more likely to get ionized, decreasing the accuracy of the RGA. In a closed ion source, gases flow through a tube where they are ionized inside.
-  </p>
-
-  <h3 id="mass_filter">Mass Filter</h3>
-
-  <p>
-    There are two common types of mass filters: the magnetic sector and radio frequency quadrupole (RFQ). The magnetic sector uses a magnetic field to curve the various species orthogonally from their original path, using the equation:
-  </p>
-
-  \[qV_{ext} \times B = \frac{mV_{ext}^{2}}{r} \to r = \frac{1}{B}\sqrt\frac{2mV_{ext}}{q}\]
-
-  <p>
-    Where \(B\) is the magnetic field strength, \(m\) is the species' mass, \(V_{ext}\) is the extracting voltage, and \(q\) is the species' charge. Depending on the species' mass, some may go less than, equal to, or greater than the desired angle.
-  </p>
-
-  <p>
-    The quadrupole uses four identical cylindrical rods of opposing charges evenly spaced from a center. A <a href="https://en.wikipedia.org/wiki/Band-pass_filter">band-pass filter</a> is created via the positive rods (high-pass filter) and negative rods (low-pass filter). In this case, the filtered frequency is actually mass.
-  </p>
-
-  <img src="media/rf_quadrupole.jpeg" alt="rf_quadrupole" width="200" class="center">
-  <figcaption align="middle">RF quadrupole design</figcaption>
-
-  <h3 id="detector">Detector</h3>
-
-  <p>
-    FINISH THIS SECTION KASDFJALSDFHJASKDJFHASLDKJFHASD
-  </p>
+<p>
+  
+</p>
 
 
 
@@ -218,12 +195,25 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   <a href="#residual_gas_analysis">Residual Gas Analysis</a>
 </p>
 
+<ul>
+  <p>
+    <a href="#mass_spectrometer">Mass Spectrometer</a>
+  </p>
+  <p>
+    <a href="#analysis_results">Analysis of Results</a>
+  </p>
+</ul>
+
+<p>
+  <a href="vacuum_systems">Vacuum Systems</a>
+</p>
+
 <p>
   <a href="#see_also">See Also</a>
 </p>
 
 <p>
-  This article can be described as a long review of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>) without most of the math and models used. O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., it is not discussed in the book.
+  This article can be described as a general summary of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>) without most of the math and models used. Some sections are completely skipped over: pump fluids, materials in vacuum, lubrication. O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., it is not discussed in the book.
 </p>
 
 <h2 id="what_is_pressure">What is Pressure?</h2>
@@ -972,52 +962,55 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   RGAs work by measuring a particle's mass-to-charge ratio, M/z, where M is the mass in <a href="https://en.wikipedia.org/wiki/Dalton_(unit)">atomic mass unit</a> (or Da or u) and z is the charge of the cation (positive ion) formed. Most cations have a charge of +1, so the ratio ends up equaling the mass. (Note that the particle can be a simple monotomic or diatomic element, such as Ar or O<sub>2</sub>, or compound, like CO<sub>2</sub>.)
 </p>
 
+<h3 id="mass_spectrometer">Mass Spectrometer</h3>
+
 <p>
-  The RGA's mass spectrometer consist of three parts:
+  The RGA's mass spectrometer consist of three parts: an ionizer, mass filter and detector.
 </p>
 
-<ul>
-  <li>
-    <b>Ionizer</b>: Either an open (in main vacuum region) or closed (isolated frm main vacuum region) ion source, the ionizer uses the principle of <a href="https://en.wikipedia.org/wiki/Electron_ionization">electron ionization</a> (an electron strikes a particle, causing one of its valence electrons to become unbounded and the particle to become an ion) to ionize particles within its vicinity. [STOPPED ON PAGE 135 AT OPEN ION SOURCES SECTION]
-  </li>
-  <li>
-    <b>Mass filter</b>
-  </li>
-  <li>
-    <b>Detector</b>
-  </li>
-</ul>
+<h4 id="ionizer">Ionizer</h4>
 
+<p>
+  Either an open (in main vacuum region) or closed (isolated from main vacuum region) ion source, the ionizer uses the principle of <a href="https://en.wikipedia.org/wiki/Electron_ionization">electron ionization</a> (an electron strikes a particle, causing one of its valence electrons to become unbounded and the particle to become an ion) to ionize particles within its vicinity. Open ion sources eject electrons across the chamber towards an anode, allowing the electrons to ionize gases along the way. However, given that the size of the gases are not the same, larger gas molecules are more likely to get ionized, decreasing the accuracy of the RGA. In a closed ion source, gases flow through a tube where they are ionized inside.
+</p>
 
+<h4 id="mass_filter">Mass Filter</h4>
 
+<p>
+  There are two common types of mass filters: the magnetic sector and radio frequency quadrupole (RFQ). The magnetic sector uses a magnetic field to curve the various species orthogonally from their original path, using the equation:
+</p>
 
+\[qvB = \frac{mv^{2}}{r} \to r = \frac{1}{B}\sqrt\frac{2mV_{ext}}{q}\]
 
+<p>
+  Where \(B\) is the magnetic field strength, \(m\) is the species' mass, \(V_{ext}\) is the extracting voltage, \(v = \sqrt{\frac{2qV_{ext}}{m}}\) is the ion velocity, and \(q\) is the species' charge. Depending on the species' mass, some may go less than, equal to, or greater than the desired angle.
+</p>
 
+<p>
+  The quadrupole uses four identical cylindrical rods of opposing charges evenly spaced from a center. A <a href="https://en.wikipedia.org/wiki/Band-pass_filter">band-pass filter</a> is created via the positive rods (high-pass filter) and negative rods (low-pass filter). In this case, the filtered frequency is actually mass.
+</p>
 
+<img src="media/rf_quadrupole.jpeg" alt="rf_quadrupole" width="200" class="center">
+<figcaption align="middle">RF quadrupole design</figcaption>
 
+<h4 id="detector">Detector</h4>
 
+<p>
+  The detector used is generally a <a href="https://en.wikipedia.org/wiki/Faraday_cup">Faraday cup</a>. An <a href="https://en.wikipedia.org/wiki/Electron_multiplier">electron multiplier</a> may also be used in addition to the Faraday cup if the current is too small.
+</p>
 
+<h3 id="analysis_results">Analysis of Results</h3>
 
+<p>
+  When a molecule ionizes, it dissociates, "cracks", or fragments into multiple isotopes. For example, the BF<sub>3</sub> gas dissociates into BF<sup>2+</sup>, BF<sup>+</sup>, F<sup>+</sup>, F<sup>+</sup>, and so on. Same with CHF<sub>4</sub>: CH<sub>3</sub><sup>+</sup>, CH<sub>2</sub><sup>+</sup>, CH<sup>+</sup>, and other isotopes result.
+</p>
 
+<img src="media/bf3_spectrum.png" alt="bf3_spectrum" width="200" class="center">
+<figcaption align="middle">Isotope spectrum of BF<sub>3</sub></figcaption>
 
-
-
-
-
-
-
-
-
-<h2 id="vacuum_applications">Vacuum Applications</h2>
-
-
-
-
-
-
-
-
-
+<p>
+  As discussed in the <a href="#leak_detection">leak detection</a> section, examining the spectra of a tool's chamber can point to issues. Take a spectrum that includes a large peak at \(m = 28\) (assuming \(z\), the degree of ionization, is 1). This can include two molecules: CO (12+16=28, resulting from dissociation of CO<sub>2</sub>) and N<sub>2</sub> (14+14=28, present in atmosphere). Other relevant masses should then be examined: N<sup>+</sup>, C<sup>+</sup>, etc. If N<sup>+</sup> contains a peak and C<sup>+</sup> does not, then N<sub>2</sub> is more likely to be the contributor to the \(m = 28\) peak. More examples of cracking patterns' \(m/z\) ratios and relative percentages can be found <a href="https://www.hidenanalytical.com/tech-data/cracking-patterns/">here</a>.
+</p>
 
 <h2 id="see_also">See Also</h2>
 
