@@ -34,7 +34,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  Pumping speed should take into account economical and process factors. Is this a shared-user or high-throughput facility? If so, then the pumping speed should be on the higher end to accommodate. How important is the cleanliness of the process? If highly important, then the pumping must be controlled to prevent water from forming within the chamber. (Jun Zhao details this procedure in his dissertation <i>Thermal dynamics and Particle Formation During Vacuum Pump-down</i>, but the document is not available online.)
+  Pumping speed should take into account economical and process factors. Is this a shared-user or high-throughput facility? If so, then the pumping speed should be on the higher end to accommodate. How important is the cleanliness of the process? If highly important, then the pumping must be controlled to prevent water from forming within the chamber. (O'Hanlon claims that Jun Zhao details this procedure in his dissertation <i>Thermal Dynamics and Particle Formation During Vacuum Pump-down</i>, but the document is not available online for verification.)
 </p>
 
 <p>
@@ -43,8 +43,67 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <h3 id="high_vacuum_systems">High Vacuum Systems</h3>
 
+<h4 id="turbopump_systems">Turbopump Systems</h4>
+
+<h5 id="separate_line_system">Separate Line System</h5>
+
 <p>
-  
+  In the separate line system, there is a dedicated roughing line, foreline, and gate valve to the chamber. Venting occurs directly into the chamber.
+</p>
+
+<img src="media/turbo_separate_line.png" alt="turbo_separate_line" width="200" class="center">
+<figcaption align="middle">Separate line turbopump system: note the vent valve is connected directly to the chamber</figcaption>
+
+<p>
+  To begin pumping down the separate line system from atmosphere, the <a href="https://www.lesker.com/newweb/valves/valves_technicalnotes_1.cfm?pgid=0#GateValve">gate valve</a> (labeled "PC High Vac Valve" in the figure) is closed to prevent the full-speed turbopump from being exposed to high pressures. The foreline valve ("PC Turbo Backing Valve" in the figure) is also closed. The roughing line that directly connects the roughing pump to the chamber is opened via the roughing valve and the chamber's pressure begins to decrease. Once the system is at an adequate pressure (see <a href="#rough_pumping">Rough Pumping</a> section), the roughing valve is closed. The foreline valve is then opened, followed by the gate valve directly into the chamber. The system then looks like it does in the figure: gas is being removed by the turbopump where it enters the foreline and is then picked up by the roughing pump, where it exhausts the gas.
+</p>
+
+<p>
+  To vent, all valves into the chamber are closed and the vent valve opened. This flows in either atmosphere, <a href="https://cagi.org/pdfs/tap106.pdf">clean, dry air (CDA)</a>, or N<sub>2</sub> until the chamber is at atmosphere.
+</p>
+
+<h5 id="single_line_system">Single Line System</h5>
+
+<p>
+  In the single line system, there is no roughing line nor gate valve. Venting occurs through the turbopump.
+</p>
+
+<img src="media/turbo_single_line.png" alt="turbo_single_line" width="200" class="center">
+<figcaption align="middle">Single line turbopump system: note the vent valve is on the other side of the turbopump</figcaption>
+
+<p>
+  To begin pumping down the separate line system from atmosphere, the foreline valve is opened to allow the roughing pump to pump the system. Once the system is at an adequate pressure, the turbo pump is turned on and allowed to accelerate to maximum speed.
+</p>
+
+<p>
+  To vent, the turbo pump speed is set to 0 and allowed to slow down. This can take a long time, as the pump is slowing down in high vacuum. Once it's a sufficiently-low speed, the vent valve can be opened to flow the vent gas into the turbopump. This artificially slows the turbopump while also increasing the chamber pressure to atmosphere.
+</p>
+
+<p>
+  This constant starting and stopping of the turbopump is not healthy and significantly increases the wear on the pump.
+</p>
+
+<h4 id="diffusion_pump_systems">Diffusion Pump Systems</h4>
+
+<p>
+  As discussed in the <a href="#diffusion_pump">diffusion pump</a> section, a mechanical pump must be used prior to the diffusion pump. A gate valve is thus required. Traps are commonly used.
+</p>
+
+<p>
+  The pump and valve sequences for pumping are similar to those of the <a href="#turbopump_systems">turbopump system</a>: the roughing pump decreases the pressure through the roughing line with the foreline valve closed, followed by roughing valve closing and the foreline and gate valves opening to allow the diffusion pump to begin pumping.
+</p>
+
+<p>
+  To vent, the gate valve is closed and the trap and pump are allowed to warm. Once the pump reaches a set temperature, the foreline valve is closed and both pumps can be vented along with the chamber.
+</p>
+
+<img src="media/diffusion_pump_system.png" alt="diffusion_pump_system" width="200" class="center">
+<figcaption align="middle">Schematic of typical diffusion pump system (without trap)</figcaption>
+
+<h4 id="cryopump_systems">Cryopump Systems</h4>
+
+<p>
+
 </p>
 
 
@@ -55,6 +114,13 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 
 
+
+
+<h4 id="ion_pump_systems">Ion Pump Systems</h4>
+
+<p>
+  
+</p>
 
 
 
@@ -205,8 +271,31 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </ul>
 
 <p>
-  <a href="vacuum_systems">Vacuum Systems</a>
+  <a href="#vacuum_systems">Vacuum Systems</a>
 </p>
+
+<ul>
+  <p>
+    <a href="#rough_pumping">Rough Pumping</a>
+  </p>
+  <p>
+    <a href="#high_vacuum_systems">High Vacuum Systems</a>
+    <ul>
+      <p>
+        <a href="#turbopump_systems">Turbopump Systems</a>
+      </p>
+      <p>
+        <a href="#diffusion_pump_systems">Diffusion Pump Systems</a>
+      </p>
+      <p>
+        <a href="#cryopump_systems">Cryopump Systems</a>
+      </p>
+      <p>
+        <a href="#ion_pump_systems">Ion Pump Systems</a>
+      </p>
+    </ul>
+  </p>
+</ul>
 
 <p>
   <a href="#see_also">See Also</a>
