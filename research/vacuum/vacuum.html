@@ -15,126 +15,6 @@
 
 <h3 id="home"><a href="../../index.html">Home</a></h3>
 
-<!--
-https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm
-https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip
-https://www.pfeiffer-vacuum.com/en/know-how
-https://www.lesker.com/newweb/technical_info/vacuumtech/outgas_00_basicconcept.cfm
-https://www.beswick.com/resources/the-basics-of-compression-fittings/
-  -->
-
-<h2 id="vacuum_systems">Vacuum Systems</h2>
-
-
-
-<h3 id="rough_pumping">Rough Pumping</h3>
-
-<p>
-  For systems that require a backing pump for the high vacuum pump, considerations must be made about the roughing pump.
-</p>
-
-<p>
-  Pumping speed should take into account economical and process factors. Is this a shared-user or high-throughput facility? If so, then the pumping speed should be on the higher end to accommodate. How important is the cleanliness of the process? If highly important, then the pumping must be controlled to prevent water from forming within the chamber. (O'Hanlon claims that Jun Zhao details this procedure in his dissertation <i>Thermal Dynamics and Particle Formation During Vacuum Pump-down</i>, but the document is not available online for verification.)
-</p>
-
-<p>
-  The other consideration is when to switch over to the high-vacuum pump. Pumping to too high a vacuum can cause backstreaming from the roughing pump, while too low a vacuum can prevent the high vacuum pump from performing properly and may even damage it. By this, there exists a range of pressures that allow the switching to take place. Keep in mind that the low vacuum region is different for each of the four previously-discussed high vacuum pumps.
-</p>
-
-<h3 id="high_vacuum_systems">High Vacuum Systems</h3>
-
-<h4 id="turbopump_systems">Turbopump Systems</h4>
-
-<h5 id="separate_line_system">Separate Line System</h5>
-
-<p>
-  In the separate line system, there is a dedicated roughing line, foreline, and gate valve to the chamber. Venting occurs directly into the chamber.
-</p>
-
-<img src="media/turbo_separate_line.png" alt="turbo_separate_line" width="200" class="center">
-<figcaption align="middle">Separate line turbopump system: note the vent valve is connected directly to the chamber</figcaption>
-
-<p>
-  To begin pumping down the separate line system from atmosphere, the <a href="https://www.lesker.com/newweb/valves/valves_technicalnotes_1.cfm?pgid=0#GateValve">gate valve</a> (labeled "PC High Vac Valve" in the figure) is closed to prevent the full-speed turbopump from being exposed to high pressures. The foreline valve ("PC Turbo Backing Valve" in the figure) is also closed. The roughing line that directly connects the roughing pump to the chamber is opened via the roughing valve and the chamber's pressure begins to decrease. Once the system is at an adequate pressure (see <a href="#rough_pumping">Rough Pumping</a> section), the roughing valve is closed. The foreline valve is then opened, followed by the gate valve directly into the chamber. The system then looks like it does in the figure: gas is being removed by the turbopump where it enters the foreline and is then picked up by the roughing pump, where it exhausts the gas.
-</p>
-
-<p>
-  To vent, all valves into the chamber are closed and the vent valve opened. This flows in either atmosphere, <a href="https://cagi.org/pdfs/tap106.pdf">clean, dry air (CDA)</a>, or N<sub>2</sub> until the chamber is at atmosphere.
-</p>
-
-<h5 id="single_line_system">Single Line System</h5>
-
-<p>
-  In the single line system, there is no roughing line nor gate valve. Venting occurs through the turbopump.
-</p>
-
-<img src="media/turbo_single_line.png" alt="turbo_single_line" width="200" class="center">
-<figcaption align="middle">Single line turbopump system: note the vent valve is on the other side of the turbopump</figcaption>
-
-<p>
-  To begin pumping down the separate line system from atmosphere, the foreline valve is opened to allow the roughing pump to pump the system. Once the system is at an adequate pressure, the turbo pump is turned on and allowed to accelerate to maximum speed.
-</p>
-
-<p>
-  To vent, the turbo pump speed is set to 0 and allowed to slow down. This can take a long time, as the pump is slowing down in high vacuum. Once it's a sufficiently-low speed, the vent valve can be opened to flow the vent gas into the turbopump. This artificially slows the turbopump while also increasing the chamber pressure to atmosphere.
-</p>
-
-<p>
-  This constant starting and stopping of the turbopump is not healthy and significantly increases the wear on the pump.
-</p>
-
-<h4 id="diffusion_pump_systems">Diffusion Pump Systems</h4>
-
-<p>
-  As discussed in the <a href="#diffusion_pump">diffusion pump</a> section, a mechanical pump must be used prior to the diffusion pump. A gate valve is thus required. Traps are commonly used.
-</p>
-
-<p>
-  The pump and valve sequences for pumping are similar to those of the <a href="#turbopump_systems">turbopump system</a>: the roughing pump decreases the pressure through the roughing line with the foreline valve closed, followed by roughing valve closing and the foreline and gate valves opening to allow the diffusion pump to begin pumping.
-</p>
-
-<p>
-  To vent, the gate valve is closed and the trap and pump are allowed to warm. Once the pump reaches a set temperature, the foreline valve is closed and both pumps can be vented along with the chamber.
-</p>
-
-<img src="media/diffusion_pump_system.png" alt="diffusion_pump_system" width="200" class="center">
-<figcaption align="middle">Schematic of typical diffusion pump system (without trap)</figcaption>
-
-<h4 id="cryopump_systems">Cryopump Systems</h4>
-
-<p>
-
-</p>
-
-
-
-
-
-
-
-
-
-
-
-<h4 id="ion_pump_systems">Ion Pump Systems</h4>
-
-<p>
-  
-</p>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <h1>Vacuum: Theory and Technologies</h1>
 
 <h2 id="table_of_contents">Table of Contents</h2>
@@ -212,6 +92,9 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
       <a href="#lobe_blower">Lobe Blower (Roots Pump)</a>
     </p>
     <p>
+      <a href="#claw_pump">Claw Pump</a>
+    </p>
+    <p>
       <a href="#scroll_pump">Scroll Pump</a>
     </p>
     <p>
@@ -219,6 +102,9 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
     </p>
     <p>
       <a href="#diaphragm_pump">Diaphragm Pump</a>
+    </p>
+    <p>
+      <a href="#mechanical_pump_summary">Mechanical Pump Summary</a>
     </p>
   </ul>
   <p>
@@ -236,6 +122,9 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
     </p>
     <p>
       <a href="#ion_pump">Ion Pump</a>
+    </p>
+    <p>
+      <a href="#high_vacuum_pump_summary">High Vacuum Pump Summary</a>
     </p>
   </ul>
 </ul>
@@ -293,6 +182,9 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
       <p>
         <a href="#ion_pump_systems">Ion Pump Systems</a>
       </p>
+      <p>
+        <a href="#high_vacuum_chambers">High Vacuum Chambers</a>
+      </p>
     </ul>
   </p>
 </ul>
@@ -318,7 +210,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/bed_nails.jpeg" alt="bed_nails" width="200" class="center">
-<figcaption align="middle">The ultimate torture devi... wait, this doesn't hurt!</figcaption>
+<figcaption align="middle">The ultimate torture devi... wait, this doesn't hurt! (<a href="https://entertainment.howstuffworks.com/arts/circus-arts/bed-of-nails.htm">source</a>)</figcaption>
 
 <p></p>
 
@@ -366,7 +258,19 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   <li>
     <b>Particle flux</b>: The rate at which particles strike a surface, allowing the measurement of pressure within a system.
   </li>
+</ul>
 
+<p>
+  There are two types of (relative) pressure:
+</p>
+
+<ul>
+  <li>
+    <b>Positive</b>: Occurs when the space has a higher pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system.
+  </li>
+  <li>
+    <b>Negative</b>: Occurs when the space has a lower pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system. Vacuum systems are always under negative pressure.
+  </li>
 </ul>
 
 <p>
@@ -412,7 +316,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </ul>
 
 <img src="media/gas_flow_regimes.gif" alt="gas_flow_regimes" width="200" class="center">
-<figcaption align="middle">Gas flow regimes illustrated</figcaption>
+<figcaption align="middle">Gas flow regimes illustrated (<a href="https://vacaero.com/information-resources/vacuum-pump-technology-education-and-training/9364-gas-molecules-and-gas-flow.html">source</a>)</figcaption>
 
 <p>
   With these flow regimes come more terms:
@@ -423,7 +327,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
     <b>Throughput</b> (energy per time): The amount of gas passing through an area in a given time, or the amount of energy required to transport the gas across the area.
   </li>
   <li>
-    <b>Mass flow</b> (amount in kg, kg-moles, molecules): Amount passing through the area.
+    <b>Mass flow</b> (kg, kg-moles, molecules): Amount passing through the area.
   </li>
   <li>
     <b>Conductance</b> (volume per time): Given a throughput of \(Q\) within a pipe that has a pressure differential, conductance is calculated by:
@@ -437,21 +341,8 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 <h2 id="what_is_vacuum">What is Vacuum?</h2>
 
 <p>
-  Vacuum is formally <a href="https://www.merriam-webster.com/dictionary/vacuum">defined</a> as "a space entirely devoid of matter." In regards to practical definitions, it is a space that has a lower pressure (or lower amount of particles) than its surroundings, all other variables kept equal.
+  Vacuum is formally <a href="https://www.merriam-webster.com/dictionary/vacuum">defined</a> as "a space entirely devoid of matter." In regards to practical definitions, it is a space that has a lower pressure than its surroundings, all other variables kept equal.
 </p>
-
-<p>
-  There are also two types of relative pressure:
-</p>
-
-<ul>
-  <li>
-    <b>Positive</b>: Occurs when the space has a higher pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system.
-  </li>
-  <li>
-    <b>Negative</b>: Occurs when the space has a lower pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system. Vacuum systems are always under negative pressure.
-  </li>
-</ul>
 
 <h3 id="vacuum_levels">Vacuum Levels</h3>
 
@@ -486,12 +377,12 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 <p></p>
 
 <img src="media/uhv.jpeg" alt="uhv" width="200" class="center">
-<figcaption align="middle">Ultra-high vacuum system used for microscopy</figcaption>
+<figcaption align="middle">Ultra-high vacuum system used for microscopy (<a href="https://www.directindustry.com/prod/scienta-omicron/product-20757-1062699.html">source</a>)</figcaption>
 
 <h4 id="perfect_vacuum">Is Perfect Vacuum Possible?</h4>
 
 <p>
-  Yes and no, depending on how it is looked at it.
+  Technically, no.
 </p>
 
 <p>
@@ -499,7 +390,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa = 10<sup>-15</sup> Torr using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-8</sup> Pa = 10<sup>-9</sup> Torr than it will be 10<sup>-7</sup> Pa = 10<sup>-8</sup> Torr).
+  A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa = 10<sup>-15</sup> Torr using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-8</sup> Pa = 10<sup>-10</sup> Torr than it will be 10<sup>-7</sup> Pa = 10<sup>-9</sup> Torr).
 </p>
 
 <h2 id="vacuum_measurement">Vacuum Measurement</h2>
@@ -509,7 +400,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/vacuum_gauge_ranges.jpeg" alt="vacuum_gauge_ranges" width="200" class="center">
-<figcaption align="middle">Ranges of various vacuum gauges</figcaption>
+<figcaption align="middle">Ranges of various vacuum gauges (<a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm">source</a>)</figcaption>
 
 <h3 id="direct_reading_gauges">Direct-Reading Gauges</h3>
 
@@ -524,7 +415,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/manometer.jpeg" alt="manometer" width="200" class="center">
-<figcaption align="middle">Manometer liquid levels at three different pressures</figcaption>
+<figcaption align="middle">Manometer liquid levels at three different pressures (<a href="https://www.engineeringclicks.com/manometer/">source</a>)</figcaption>
 
 <p>
   Solid wall DRGs include the diaphragm gauge, the Bourdon tube, and capacitance manometer.
@@ -533,7 +424,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 <iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/JnPSeEW-EeA">
 </iframe>
 <figcaption align="middle">
-  Animation showing the operation of the diaphragm and Bourdon gauges
+  Animation showing the operation of the diaphragm and Bourdon gauges (<a href="https://www.youtube.com/embed/JnPSeEW-EeA">source</a>)
 </figcaption>
 
 <p>
@@ -573,7 +464,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/pirani_wheatstone.gif" alt="pirani_wheatstone" width="200" class="center">
-<figcaption align="middle">Pirani gauge configuration using a Wheatstone bridge</figcaption>
+<figcaption align="middle">Pirani gauge configuration using a Wheatstone bridge (<a href="https://www.sciencedirect.com/topics/engineering/pirani-gauge">source</a>)</figcaption>
 
 <p>
   The <a href="https://en.wikipedia.org/wiki/Thermocouple">thermocouple</a> gauge uses a thermocouple to measure the pressure: higher pressures decrease the wire's temperature. Characterizing this curve allows for accurate measurements.
@@ -586,11 +477,11 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. <id="bayard_alpert">Bayard and Alpert</id> invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/Extension%20of%20the%20Low%20Pressure%20Range%20of%20the%20Ionization%20Gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 8 &times 10<sup>-10</sup> Torr.
+  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. <id="bayard_alpert">Bayard and Alpert</id> invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/Extension%20of%20the%20Low%20Pressure%20Range%20of%20the%20Ionization%20Gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 10<sup>-10</sup> Torr.
 </p>
 
 <p>
-  In the cold cathode gauge, electric and magnetic fields present within the gauge increase ionization probability. Electron sources are also used to increase the initial number of starting electrons available to ionize the gases. The pressure range is a bit wider than the hot cathode gauge, allowing pressures from 1-10<sup>-9</sup> Pa = 10<sup>-2</sup>-10<sup>-11</sup> Torr to be read.
+  In the cold cathode gauge, electric and magnetic fields present within the gauge increase ionization probability. Electron sources are also used to increase the initial number of starting electrons available to ionize the gases. The pressure range is a bit wider than the hot cathode gauge, allowing pressures from 10<sup>-9</sup> to 1 Pa = 10<sup>-10</sup> to 10<sup>-2</sup> Torr to be read.
 </p>
 
 <h2 id="outgassing">Outgassing</h2>
@@ -604,7 +495,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/phase_diagram.jpeg" alt="phase_diagram" width="200" class="center">
-<figcaption align="middle">Phase diagram</figcaption>
+<figcaption align="middle">Phase diagram (<a href="https://cnx.org/contents/oFoO44pW@5/Phase-Diagrams">source</a>)</figcaption>
 
 <p>
   Diffusion occurs when a <a href="https://en.wikipedia.org/wiki/Molecular_diffusion">concentration gradient</a> in a solid forces gas towards the surface, where the <a href="https://en.wikipedia.org/wiki/Desorption">desorb</a> (release from the solid's surface).
@@ -637,7 +528,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <p>
-  To measure a <a href="#mechanical_pump">mechanical pump</a>s pumping speed, the system is brought down to base pressure, \(P_{b}\), gas, typically N<sub>2</sub>, is flowed into the chamber for a number of minutes, and finally the equilibrium pressure, \(P_{\text{eq}}\) is found, giving a pumping speed of:
+  To measure a <a href="#mechanical_pump">mechanical pump</a>'s pumping speed, the system is brought down to base pressure, \(P_{b}\), gas, typically N<sub>2</sub>, is flowed into the chamber for a number of minutes, and finally the equilibrium pressure, \(P_{\text{eq}}\) is found, giving a pumping speed of:
 </p>
 
 \[S = \frac{Q}{P_{\text{eq}} - P_{b}}\]
@@ -647,7 +538,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/pumping_speed.jpeg" alt="pumping_speed" width="200" class="center">
-<figcaption align="middle">Typical pumping speed vs. pressure curve</figcaption>
+<figcaption align="middle">Typical pumping speed vs. pressure curve (<a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_00_basicconcept.cfm">source</a>)</figcaption>
 
 <p>
   Keep in mind that the calculated pumping speed is under idealized conditions. Instead, an effective pumping speed (EPS) is more accurate. Given a port conductance, \(C_{p}\), and ideal pumping speed, \(S\), EPS is calculated by:
@@ -708,7 +599,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </ul>
 
 <p>
-  In addition to all of this, the pump times should be recorded on a regular basis to check for any times that are out of the ordinary. For example, the times it takes to pump down from atmosphere to 100, 1, 10<sup>-3</sup>, 10<sup>-5</sup>, and 10<sup>-7</sup> may all be recorded over time. Pump time behaviors may be more noticeable and easily anticipated after certain events, like chamber cleaning or pump replacement.
+  In addition to all of this, the pump times should be recorded on a regular basis to check for any times that are out of the ordinary. For example, the times it takes to pump down from atmosphere to 100, 1, 10<sup>-3</sup>, 10<sup>-5</sup>, and 10<sup>-7</sup> Torr may all be recorded over time. Pump time behaviors may be more noticeable and easily anticipated after certain events, like chamber cleaning or pump replacement.
 </p>
 
 <p>
@@ -737,7 +628,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/rotary_vane_pump.gif" alt="rotary_vane_pump" width="200" class="center">
-<figcaption align="middle">Animation showing the operation of a rotary vane pump</figcaption>
+<figcaption align="middle">Animation showing the operation of a rotary vane pump (<a href="https://gfycat.com/defianthappygoluckyeyas">source</a>)</figcaption>
 
 <h4 id="rotary_piston_pump">Rotary Piston Pump</h4>
 
@@ -747,7 +638,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/rotary_piston_pump.gif" alt="rotary_piston_pump" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a rotary piston pump
+  Animation showing the operation of a rotary piston pump (<a href="https://www.youtube.com/watch?v=fEO8LEGfdgc">source</a>)
 </figcaption>
 
 <h4 id="lobe_blower">Lobe Blower (Roots Pump)</h4>
@@ -758,7 +649,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/lobe_blower.gif" alt="lobe_blower" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a lobe blower (Roots pump)
+  Animation showing the operation of a lobe blower (Roots pump) (<a href="https://www.youtube.com/watch?v=_-fwWrFLiyY">source</a>)
 </figcaption>
 
 <p>
@@ -773,7 +664,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/claw_pump.gif" alt="claw_pump" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a claw pump
+  Animation showing the operation of a claw pump (<a href="https://giphy.com/gifs/series-16-80LaTL51jCfh6">source</a>)
 </figcaption>
 
 <h4 id="scroll_pump">Scroll Pump</h4>
@@ -784,7 +675,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/scroll_pump.gif" alt="scroll_pump" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a scroll pump
+  Animation showing the operation of a scroll pump (<a href="https://www.youtube.com/watch?v=s3xulCRrjos">source</a>)
 </figcaption>
 
 <h4 id="screw_pump">Screw Pump</h4>
@@ -795,7 +686,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/screw_pump.gif" alt="screw_pump" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a screw pump
+  Animation showing the operation of a screw pump (<a href="https://giphy.com/gifs/works-screw-compressor-2TvKRSRuDjdHa">source</a>)
 </figcaption>
 
 <h4 id="diaphragm_pump">Diaphragm Pump</h4>
@@ -806,8 +697,10 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/diaphragm_pump.gif" alt="diaphragm_pump" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a diaphragm pump
+  Animation showing the operation of a diaphragm pump (<a href="https://gfycat.com/aggravatingsilverbarbet">source</a>)
 </figcaption>
+
+<h4 id="mechanical_pump_summary">Mechanical Pump Summary</h4>
 
 <p>
   A summary of mechanical pumps can be found in the following table. The "Purpose" column indicates what the pump is used for, e.g., pumping systems on its own (independent), backing high vacuum pumps (backing), or in combination with another pump (combination). For combination-type pumps, the pump it is combined with is noted in parentheses. The "Backing Needed" indicates if the pump needs another pump backing it.
@@ -819,13 +712,13 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
   </caption>
   <tr>
     <th>Type</th><th>Minimum pressure (Torr)</th><th>Minimum pressure (Pa)</th><th>Purpose</th><th>Backing Needed?</th>
-    <tr align="middle"><td>Rotary vane</td><td>2&times;10<sup>-5</sup> to 8&times;10<sup>-3</sup></td><td>3&times;10<sup>-3</sup> to 1</td><td>Individual, backing</td><td>No</td></tr>
-    <tr align="middle"><td>Rotary piston</td><td>&sim;8&times;10<sup>-3</sup></td><td>&sim;1</td><td>Individual, combination (lobe)</td><td>No</td></tr>
-    <tr align="middle"><td>Lobe blower</td><td>8&times;10<sup>-6</sup></td><td>10<sup>-3</sup> (Lobe-rotary combination)</td><td>Combination (rotary)</td><td>Yes</td></tr>
-    <tr align="middle"><td>Claw</td><td>4&times;10<sup>-3</sup> to 8&times;10<sup>-3</sup></td><td>0.5 to 1 (Craw-lobe combination)</td><td>Combination (lobe)</td><td>No</td></tr>
-    <tr align="middle"><td>Scroll</td><td>8&times;10<sup>-3</sup></td><td>1</td><td>Individual, backing</td><td>No</td></tr>
-    <tr align="middle"><td>Screw</td><td>5&times;10<sup>-3</sup></td><td>0.7</td><td>Individual, backing</td><td>No</td></tr>
-    <tr align="middle"><td>Diaphragm</td><td>0.37 to 0.60</td><td>50 to 75</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Rotary vane</td><td>10<sup>-5</sup> to 10<sup>-2</sup></td><td>10<sup>-3</sup> to 1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Rotary piston</td><td>10<sup>-2</sup></td><td>&sim;1</td><td>Individual, combination (lobe)</td><td>No</td></tr>
+    <tr align="middle"><td>Lobe blower</td><td>10<sup>-5</sup></td><td>10<sup>-3</sup> (Lobe-rotary combination)</td><td>Combination (rotary)</td><td>Yes</td></tr>
+    <tr align="middle"><td>Claw</td><td>10<sup>-3</sup> to 10<sup>-2</sup></td><td>0.1 to 1 (Craw-lobe combination)</td><td>Combination (lobe)</td><td>No</td></tr>
+    <tr align="middle"><td>Scroll</td><td>10<sup>-2</sup></td><td>1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Screw</td><td>10<sup>-2</sup></td><td>1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Diaphragm</td><td>0.1 to 1</td><td>10 to 100</td><td>Individual, backing</td><td>No</td></tr>
   </tr>
 </table>
 
@@ -839,7 +732,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/turbo_pump_cross_section.jpeg" alt="turbo_pump_cross_section" width="200" class="center">
 <figcaption align="middle">
-  Cross-section of a turbo pump
+  Cross-section of a turbo pump (<a href="https://en.wikipedia.org/wiki/Turbomolecular_pump#/media/File:Cut_through_turbomolecular_pump.jpg">source</a>)
 </figcaption>
 
 <p>
@@ -848,7 +741,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/turbo_pump.gif" alt="turbo_pump" width="200" class="center">
 <figcaption align="middle">
-  Animation showing the operation of a turbo pump's blades (note the small green gas molecule entering on the top left)
+  Animation showing the operation of a turbo pump's blades (note the small green gas molecule entering on the top left) (<a href="https://giphy.com/gifs/Cj7eicZjGzjdC/html5">source</a>)
 </figcaption>
 
 <p>
@@ -865,7 +758,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 
 <img src="media/turbo_pump_destroyed.jpeg" alt="turbo_pump_destroyed" width="200" class="center">
 <figcaption align="middle">
-  Turbo pump after venting directly to atmosphere at 30,000 rpm
+  Turbo pump after venting directly to atmosphere at 30,000 rpm (<a href="https://www.reddit.com/r/engineering/comments/1alszx/this_is_what_happens_when_you_vent_a_30000_rpm/">source</a>)
 </figcaption>
 
 <h3 id="diffusion_pump">Diffusion Pump</h3>
@@ -883,7 +776,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/diffusion_pump.gif" alt="diffusion_pump" width="200" class="center">
-<figcaption align="middle">Diffusion pump schematic</figcaption>
+<figcaption align="middle">Diffusion pump schematic (<a href="https://link.springer.com/chapter/10.1007/978-3-662-44395-8_2">source</a>)</figcaption>
 
 <h3 id="cryogenic_pump">Cryogenic Pump</h3>
 
@@ -904,6 +797,9 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/6IxFH7nnbUc"></iframe>
+<figcaption align="middle">
+  Video showing operation of cryopump (<a href="https://www.youtube.com/embed/6IxFH7nnbUc">source</a>)
+</figcaption>
 
 <h3 id="ion_pump">Ion Pump</h3>
 
@@ -916,11 +812,38 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/getter_pump.gif" alt="getter_pump" width="200" class="center">
-<figcaption align="middle">Getter pump schematic</figcaption>
+<figcaption align="middle">Getter pump schematic (<a href="https://www.globalsino.com/EM/page4320.html">source</a>)</figcaption>
 
 <p>
   The ion pump follows a similar principle to the <a href="#residual_gas_analysis">residual gas analyzer</a>. The pumping is done using a pressure gauge, like the <a href="#ionization_gauges">Bayard-Alpert gauge</a>. Electric and magnetic fields are designed to maximize the distance electrons travel, increasing the likelihood of the ionization of gases. The mean free path must also be sufficient. After ionization occurs (the gas molecules lose an electron), they have a net positive charge and are attracted to the cathode, where they can become implanted and removed. The anode may also be coated with a getter metal to promote further pumping of non-ionized gases.
 </p>
+
+<h4 id="high_vacuum_pump_summary">High Vacuum Pump Summary</h4>
+
+<p>
+  A summary of high vacuum pump capabilities can be found in the table below. Note that the minimum pressures depend heavily on the vacuum system's design.
+</p>
+
+<table align="center">
+  <caption>
+    High vacuum pump capabilities
+  </caption>
+  <tr>
+    <th>Type</th><th>Minimum pressure (Torr)</th><th>Minimum pressure (Pa)</th>
+  </tr>
+  <tr align="middle">
+    <td>Turbomolecular</td><td>10<sup>-10</sup> to 10<sup>-7</sup></td><td>10<sup>-8</sup> to 10<sup>-5</sup></td>
+  </tr>
+  <tr align="middle">
+    <td>Diffusion</td><td>10<sup>-7</sup></td><td>10<sup>-5</sup></td>
+  </tr>
+  <tr align="middle">
+    <td>Cryogenic</td><td>10<sup>-9</sup></td><td>10<sup>-7</sup></td>
+  </tr>
+  <tr align="middle">
+    <td>Ion/Getter</td><td>10<sup>-9</sup> to 10<sup>-8</sup></td><td>10<sup>-7</sup> to 10<sup>-6</sup></td>
+  </tr>
+</table>
 
 <h2 id="connections_valves">Connections (Joints) and Valves</h2>
 
@@ -963,14 +886,14 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/cf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="50" height="400" class="center">
-<figcaption align="middle">Cross-section of a CF flange</figcaption>
+<figcaption align="middle">Cross-section of a CF flange (<a href="https://www.lesker.com/newweb/flanges/flanges_technicalnotes_conflat_1.cfm">source</a>)</figcaption>
 
 <p>
   The KF flange uses two identical flanges and an <a href="https://en.wikipedia.org/wiki/O-ring">O-ring</a> to make the connection and seal. Grooves within the flanges allow the O-ring to be seated uniformly and reliably. However, the O-ring material severely limits the operating pressures and temperature it operates at. For example, <a href="">Viton O-rings</a> have a <a href="https://o-ring.info/en/materials/vitonr--fkm/vitonr-temperature-rating/">temperature range</a> of -26 °C to 200-230 °C. Additionally, the O-ring used should be chosen based on the gases and materials used in the system. Corrosive gases may cause the O-ring to deteriorate, possibly resulting in a dangerous leak. The ISO operation principle is almost identical to the KF flange, except for the use of a stronger external retainer that holds the O-ring in place. The O-ring still limits the pressure and temperature ranges the flange operates at.
 </p>
 
-<img src="media/kf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="200" class="center">
-<figcaption align="middle">Cross-section of a KF (and essentially ISO) flange</figcaption>
+<img src="media/kf_flange_cross_section.gif" alt="kf_flange_cross_section" width="200" class="center">
+<figcaption align="middle">Cross-section of a KF (and essentially ISO) flange (<a href="http://www.mdcvacuum.com/searchs/doc/Kwik-Flange-KF-Instal.htm">source</a>)</figcaption>
 
 <h4 id="fittings">Fittings</h4>
 
@@ -1001,7 +924,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/leak_detection.gif" alt="leak_detection" width="200" class="center">
-<figcaption align="middle">Leak detection schematic</figcaption>
+<figcaption align="middle">Leak detector schematic (<a href="https://www.ndt.net/article/ecndt98/offshore/268/268.htm">source</a>)</figcaption>
 
 <h3 id="leak_hunting_techniques">Leak-Hunting Techniques</h3>
 
@@ -1080,7 +1003,7 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/rf_quadrupole.jpeg" alt="rf_quadrupole" width="200" class="center">
-<figcaption align="middle">RF quadrupole design</figcaption>
+<figcaption align="middle">RF quadrupole design (<a href="http://www.chm.bris.ac.uk/ms/quadrupole.xhtml">source</a>)</figcaption>
 
 <h4 id="detector">Detector</h4>
 
@@ -1095,10 +1018,107 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
 </p>
 
 <img src="media/bf3_spectrum.png" alt="bf3_spectrum" width="200" class="center">
-<figcaption align="middle">Isotope spectrum of BF<sub>3</sub></figcaption>
+<figcaption align="middle">Isotope spectrum of BF<sub>3</sub> (<a href="https://www.researchgate.net/figure/Section-of-a-BF3-mass-spectrum_fig2_258385914">source</a>)</figcaption>
 
 <p>
   As discussed in the <a href="#leak_detection">leak detection</a> section, examining the spectra of a tool's chamber can point to issues. Take a spectrum that includes a large peak at \(m = 28\) (assuming \(z\), the degree of ionization, is 1). This can include two molecules: CO (12+16=28, resulting from dissociation of CO<sub>2</sub>) and N<sub>2</sub> (14+14=28, present in atmosphere). Other relevant masses should then be examined: N<sup>+</sup>, C<sup>+</sup>, etc. If N<sup>+</sup> contains a peak and C<sup>+</sup> does not, then N<sub>2</sub> is more likely to be the contributor to the \(m = 28\) peak. More examples of cracking patterns' \(m/z\) ratios and relative percentages can be found <a href="https://www.hidenanalytical.com/tech-data/cracking-patterns/">here</a>.
+</p>
+
+<h2 id="vacuum_systems">Vacuum Systems</h2>
+
+<h3 id="rough_pumping">Rough Pumping</h3>
+
+<p>
+  For systems that require a backing pump for the high vacuum pump, considerations must be made about the roughing pump.
+</p>
+
+<p>
+  Pumping speed should take into account economical and process factors. Is this a shared-user or high-throughput facility? If so, then the pumping speed should be on the higher end to accommodate. How important is the cleanliness of the process? If highly important, then the pumping must be controlled to prevent water from forming within the chamber. (O'Hanlon claims that Jun Zhao details this procedure in his dissertation <i>Thermal Dynamics and Particle Formation During Vacuum Pump-down</i>, but the document is not available online for verification.)
+</p>
+
+<p>
+  The other consideration is when to switch over to the high-vacuum pump. Pumping to too high a vacuum can cause backstreaming from the roughing pump, while too low a vacuum can prevent the high vacuum pump from performing properly and may even damage it. By this, there exists a range of pressures that allow the switching to take place. Keep in mind that the low vacuum region is different for each of the four previously-discussed high vacuum pumps.
+</p>
+
+<h3 id="high_vacuum_systems">High Vacuum Systems</h3>
+
+<h4 id="turbopump_systems">Turbopump Systems</h4>
+
+<p>
+  In the separate line turbopump system, there is a dedicated roughing line, foreline, and gate valve to the chamber. Venting occurs directly into the chamber.
+</p>
+
+<img src="media/turbo_separate_line.png" alt="turbo_separate_line" width="200" class="center">
+<figcaption align="middle">Separate line turbopump system: note the vent valve is connected directly to the chamber</figcaption>
+
+<p>
+  To begin pumping down the separate line system from atmosphere, the <a href="https://www.lesker.com/newweb/valves/valves_technicalnotes_1.cfm?pgid=0#GateValve">gate valve</a> (also called the high vacuum valve, labeled "PC High Vac Valve" in the figure) is closed to prevent the full-speed turbopump from being exposed to high pressures. The foreline valve ("PC Turbo Backing Valve" in the figure) is also closed. The roughing line that directly connects the roughing pump to the chamber is opened via the roughing valve and the chamber's pressure begins to decrease. Once the system is at an adequate pressure (see <a href="#rough_pumping">Rough Pumping</a> section), the roughing valve is closed. The foreline valve is then opened, followed by the high vacuum valve directly into the chamber. The system then looks like it does in the figure: gas is being removed by the turbopump where it enters the foreline and is then picked up by the roughing pump, where it exhausts the gas.
+</p>
+
+<p>
+  To vent, all valves into the chamber are closed and the vent valve opened. This flows in either dry N<sub>2</sub> (preferred), or <a href="https://cagi.org/pdfs/tap106.pdf">clean, dry air (CDA, not preferred)</a>.
+</p>
+
+<p>
+  In the single line turbopump system, there is no roughing line nor high vacuum valve. Venting occurs directly through the turbopump.
+</p>
+
+<img src="media/turbo_single_line.png" alt="turbo_single_line" width="200" class="center">
+<figcaption align="middle">Single line turbopump system: note the vent valve is on the other side of the turbopump</figcaption>
+
+<p>
+  To begin pumping down the separate line system from atmosphere, the foreline valve is opened to allow the roughing pump to pump the system. Once the system is at an adequate pressure, the turbo pump is turned on and allowed to accelerate to maximum speed.
+</p>
+
+<p>
+  To vent, the turbo pump speed is set to 0 and allowed to slow down. This can take a long time, as the pump is slowing down in high vacuum. Once it's a sufficiently-low speed, the vent valve can be opened to flow the vent gas into the turbopump. This artificially slows the turbopump while also increasing the chamber pressure to atmosphere.
+</p>
+
+<p>
+  This constant starting and stopping of the turbopump is not healthy and significantly increases the wear on the pump. Venting it too quickly can cause damage, as seen from the figure in the <a href="#turbomolecular_pump">Turbomolecular Pump</a> section.
+</p>
+
+<h4 id="diffusion_pump_systems">Diffusion Pump Systems</h4>
+
+<p>
+  As discussed in the <a href="#diffusion_pump">diffusion pump</a> section, a mechanical pump must be used prior to the diffusion pump. A high vacuum valve is thus required. Traps are commonly used.
+</p>
+
+<p>
+  The pump and valve sequences for pumping are similar to those of the <a href="#turbopump_systems">turbopump system</a>: the roughing pump decreases the pressure through the roughing line with the foreline valve closed, followed by roughing valve closing and the foreline and high vacuum valves opening to allow the diffusion pump to begin pumping.
+</p>
+
+<p>
+  To vent, the high vacuum valve is closed and the trap and pump are allowed to warm. Once the pump reaches a set temperature, the foreline valve is closed and both pumps can be vented along with the chamber.
+</p>
+
+<img src="media/diffusion_pump_system.png" alt="diffusion_pump_system" width="200" class="center">
+<figcaption align="middle">Schematic of typical diffusion pump system (without trap) (<a href="https://www.researchgate.net/figure/Typical-Diffusion-Pump-System_fig1_242100147">source</a>)</figcaption>
+
+<h4 id="cryopump_systems">Cryopump Systems</h4>
+
+<p>
+  The cryopump system is quite similar to the diffusion pump system: the roughing pump roughs the system through the roughing line, then the gate valve is opened to allow the cryopump to pump the chamber down to high vacuuum. Venting is done by closing the high vacuum valve and flowing in N<sub>2</sub> or another substitute gas.
+</p>
+
+<p>
+  To regenerate the pump, N<sub>2</sub> can be flowed in to warm the captured gases while the roughing pump is pumping. Any vaporized gases will simply be pumped out. Regardless the method, some type of heating and backing pump must be used to vaporize and remove the captured gases.
+</p>
+
+<h4 id="ion_pump_systems">Ion Pump Systems</h4>
+
+<p>
+  Since ion pumps do not need a backing pump, a roughing pump (generally a <a href="https://en.wikipedia.org/wiki/Sorption_pump">sorption pump</a> or <a href="#scroll_pump">scroll pump</a>) is used for rough pumping, then isolated to allow for the ion pump to pump independently.
+</p>
+
+<h4 id="high_vacuum_chambers">High Vacuum Chambers</h4>
+
+<p>
+  Almost all high vacuum chambers are made of <a href="https://en.wikipedia.org/wiki/Stainless_steel">stainless steel</a>.
+</p>
+
+<p>
+  Materials after that should be chosen for their permeability, temperature rating, pressure rating, outgassing rate, and so on, based on the materials, temperatures, and pressures the chamber will be exposed to.
 </p>
 
 <h2 id="see_also">See Also</h2>
@@ -1114,9 +1134,6 @@ https://www.beswick.com/resources/the-basics-of-compression-fittings/
     World's <a href="https://www.nasa.gov/multimedia/imagegallery/image_feature_1281.html">largest vacuum chamber</a> by NASA. Imagine the pumps!
   </li>
 </ul>
-
-
-
 
 </body>
 </html>
