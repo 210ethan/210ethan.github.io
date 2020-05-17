@@ -23,27 +23,32 @@
 - filling intermissions with other activities
 - 2x, 3x, etc up on activities. Ex: soccer with friends outside: exercise, social, health
 - planning for 30 min to save 2 hr
-
-
-
-
 -->
-
-
-
-
-
-
-
-
-
-
-
 
 <h1 id="time_optimization">Time Optimization</h1>
 
 <p>
-  A majority of human life seems to resolve around maintenance. We spend an hour or two grocery shopping every week, an hour every day cooking and eating, <a href="https://data.census.gov/cedsci/table?d=ACS%205-Year%20Estimates%20Data%20Profiles&table=DP03&tid=ACSDP5Y2018.DP03">countless hours commuting</a> (conservative average is approximately 208 hours per year), and so on and so forth. Some of these activities are enjoyable: cooking and savoring a delicious filet mignon brings great satisfaction to some, while others would prefer to make a quick microwave dinner so they can get on with their lives. But why not try to optimize the time spent without sacrificing any of the pleasure?
+  <a href="#automation">Automation</a>
+</p>
+
+<p>
+  <a href="#multiple_activities">Multiple Activities</a>
+</p>
+
+<p>
+  <a href="#filling_intermissions">Filling Intermissions</a>
+</p>
+
+<p>
+  <a href="#bulk_blanking">Bulk [blank]-ing</a>
+</p>
+
+<p>
+  <a href="#see_also">See Also</a>
+</p>
+
+<p>
+  Time is the most valuable asset we have, and yet a majority of our time seems to resolve around maintaining things or mundane tasks. We spend an hour or two grocery shopping every week, an hour every day cooking and eating, <a href="https://data.census.gov/cedsci/table?d=ACS%205-Year%20Estimates%20Data%20Profiles&table=DP03&tid=ACSDP5Y2018.DP03">countless hours commuting</a> (conservative average is approximately 208 hours per year), and so on and so forth. Some of these activities are enjoyable: cooking and savoring a delicious filet mignon brings great satisfaction to some, while others would prefer to make a quick microwave dinner so they can get on with their lives. But why not try to optimize the time spent without sacrificing any of the pleasure?
 </p>
 
 <p>
@@ -60,15 +65,15 @@
 </p>
 
 <p>
-  So take a moment to think: are there things on my computer or in my life that I can easily automate? Here are two personal examples:
+  Here are two personal examples:
 </p>
 
 <ul>
   <li>
-    <a href="https://github.com/ethanmorse/DailyUpdate">DailyUpdate</a>: Python script that automatically sends an email containing the day's weather, top news stories (from multiple choosable sources), stock prices, and to-do lists (if you posted them on Reddit like the author). A <a href="https://en.wikipedia.org/wiki/Cron">cron</a> job was scheduled to execute this task every morning, so anyone running it would wake up to an email with all the day's information. So, instead of having to manually search for the weather, stock prices, and multiple news outlets, it was all done in less than a second.
+    <a href="https://github.com/ethanmorse/DailyUpdate">DailyUpdate</a>: Python script that automatically sends an email containing the day's weather, top news stories (from multiple choosable sources), stock prices, and to-do lists (if you posted them on Reddit like the author). A <a href="https://en.wikipedia.org/wiki/Cron">cron</a> job was scheduled to execute this task every morning, so anyone running it would wake up to an email with all the day's information. So, instead of having to manually search for the weather, stock prices, and multiple news outlets, it was all done in less than a second without doing anything.
   </li>
   <li>
-    Book reviews are collected <a href="../../knowledge/books/book_reviews/book_reviews.html">here</a>. In order to create the HTML table, the Goodreads library <a href="https://help.goodreads.com/s/article/How-do-I-import-or-export-my-books-1553870934590">export file</a> is used. This is a hassle to remember and perform, so another cron job is used on a <a href="../../knowledge/books/book_reviews/book_reviews_table.py">Python script</a> that automatically downloads the most recent library and updates the table to reflect any changes.
+    Book information from Goodreads is collected and archived <a href="../../knowledge/books/book_reviews/book_reviews.html">here</a>. In order to create the HTML table, the Goodreads library <a href="https://help.goodreads.com/s/article/How-do-I-import-or-export-my-books-1553870934590">export file</a> is used. This is a hassle to remember and perform, so another cron job is used on a <a href="../../knowledge/books/book_reviews/book_reviews_table.py">Python script</a> that automatically downloads the most recent library and updates the table to reflect any changes.
   </li>
 </ul>
 
@@ -78,13 +83,13 @@
 
 <ul>
   <li>
-    A <a href="https://www.amazon.com/dp/B00MVWGQX0?tag=aboutcom02thespruceeats-20&linkCode=ogi&th=1&psc=1&ascsubtag=4768672%7Cnb5ab48719e994bfd982d37c21ec967a814">Programmable coffee maker</a> saves you time in the morning by automatically making your coffee at a set time.
+    A <a href="https://www.amazon.com/dp/B00MVWGQX0?tag=aboutcom02thespruceeats-20&linkCode=ogi&th=1&psc=1&ascsubtag=4768672%7Cnb5ab48719e994bfd982d37c21ec967a814">programmable coffee maker</a> saves you time in the morning by automatically making your coffee at a set time.
   </li>
   <li>
     The <a href="https://store.google.com/us/product/nest_learning_thermostat_3rd_gen">Nest Thermostat</a> learns about your tendencies (work time, preferred temperatures, etc) and automatically adjusts the temperature to reflect those. No more adjusting the thermostat before leaving for work or because it's too warm. Time and money saved.
   </li>
   <li>
-    <a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a> is a free book to improve mundane tasks. Tired of doing boring, manual spreadsheet-ing? Read the <a href="https://automatetheboringstuff.com/2e/chapter13/">Excel spreadsheets</a> chapter.
+    <a href="https://automatetheboringstuff.com/">Automate the Boring Stuff with Python</a> is a free e-book to automate tedious and repetitive tasks. Tired of spreadsheet-ing? Read the <a href="https://automatetheboringstuff.com/2e/chapter13/">Excel spreadsheets</a> chapter.
   </li>
   <li>
     Make automatic bill payments for credit cards, mortgages, etc.
@@ -95,19 +100,19 @@
 <figcaption align="middle">Only use coffee makers you're <i>absolutely</i> sure aren't robots trying to take over the world</figcaption>
 
 <p>
-  To make automation work for you, think about things that you do that 1) require the use of the computer, and 2) are boring, repetitive, and/or "maintenance"-like. If something comes to mind that fits those criteria, it can likely be automated.
+  To make automation work for you, think about things that you do that require the use of the computer and are boring, repetitive, and/or maintenance-like. If something comes to mind that fits those criteria, it can likely be automated.
 </p>
 
 <h2 id="multiple_activities">Doing Multiple Activities with One Time Period (or Killing Two Birds with One Stone)</h2>
 
 <p>
-  Some activities can easily be combined with others at no additional cost or detriment and even benefit to the original activity. This <a href="https://www.reddit.com/r/slatestarcodex/comments/ep9ny6/activities_that_optimally_combine_together_unique/">r/slatestarcodex</a> post makes a good case for the doubling-, or even tripling-, up of fundamentally distinct, but combinable, activities: eating + X + Y and exercise + X + Y.
+  Some activities can easily be combined with others at no additional cost or detriment and even benefit to the original activity. This <a href="https://www.reddit.com/r/slatestarcodex/comments/ep9ny6/activities_that_optimally_combine_together_unique/">r/slatestarcodex</a> post makes a good case for the doubling-, or even tripling-, up of fundamentally distinct, but combinable, activities: eating + X (+ Y) and exercise + X (+ Y).
 </p>
 
 <h3 id="mandatory_activities">Mandatory Activities</h3>
 
 <p>
-  Eating, as mentioned in the introduction, is relatively unproductive and serves no benefit besides nourishing the body. So, what else can you add to eating to improve productivity in the same time period?
+  Eating is relatively unproductive and serves no benefit besides nourishing the body. So, what else can you add to eating to improve productivity in the same time period?
 </p>
 
 <ul>
@@ -116,6 +121,9 @@
   </li>
   <li>
     Reading, watching, or listening to books, televisions shows or movies, music, podcasts, or <a href="https://www.reddit.com/r/mealtimevideos/">YouTube videos</a>.
+  </li>
+  <li>
+    Work. Sometimes it's helpful to take a working lunch so you can get out of work sooner or make progress on a project.
   </li>
 </ul>
 
@@ -142,52 +150,70 @@
   As discussed in the aforementioned r/slatestarcodex post, social and healthy activities can be combined. Take your favorite sport that you would normally do alone and invite a friend or group. Can you take it outside? Sunlight has been shown to have <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/thoughts/time_optimization/media/Benefits%20of%20Sunlight%20Focus%20%7C%20Benefits%20of%20Sunlight%20A%20Bright%20Spot%20for%20Human%20Health.pdf">many benefits</a>, especially in the body's production of vitamin D and <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3779905/">serotonin</a>.
 </p>
 
+<img src="media/soccer_friends.jpeg" alt="soccer_friends" width="200" class="center">
+<figcaption align="middle">Arguably one of the best activities you can do</figcaption>
+
 <p>
   Relaxing activities can also be combined with social activities. Playing video games is often seen as a typical wind-down-after-work hobby. Instead of playing by yourself, invite a few friends who you don't get to see in person. You get to relax and hang out with friends.
 </p>
 
-<p style="color:red;">
-  Most of these are based on socialization. [FINISH]
+<p>
+  Most of these are based on socialization, since it takes minimal additional effort to bring friends along on most activities.
 </p>
 
 <h2 id="filling_intermissions">Filling Intermissions</h2>
 
 <p>
-  Some activities have required, built-in intermissions. Instead of spending the time waiting around for the break to be over, other, short activities can be done.
+  Some activities have required, built-in intermissions. Instead of spending the time waiting around for the break to be over, other short activities can be done.
 </p>
 
 <p>
   Take strength training. When training for strength gains, rest periods should be between <a href="https://www.bodybuilding.com/content/what-is-the-optimal-time-between-sets-for-muscle-growth.html">3-5 minutes</a>. Assuming 3-5 sets per exercises and 3-5 exercises per session, the total resting time is:
 </p>
 
-\[t_{\text{rest}} = (3-5) \frac{\text{sets}}{\text{exercise}} \times (3-5) \frac{\text{min rest}}{\text{set}} \times (3-5) \frac{\text{exercise}}{\text{session}} = (27-125) \frac{\text{min rest}}{\text{session}}\]
+\[t_{\text{rest}} = (3-5) \frac{\text{set}}{\text{exercise}} \times (3-5) \frac{\text{min rest}}{\text{set}} \times (3-5) \frac{\text{exercise}}{\text{session}} = (27-125) \frac{\text{min rest}}{\text{session}}\]
 
 <p>
-  In total, 0.5-2 hours of just resting! While some things require more than 5 minutes of dedication at a time, plenty can be done in 3-5 minutes instead of browsing social media or just walking around: reading (books, articles), writing (essays like this), chores (cleaning, organizing), to-do items. Unrelated accessory exercises can even be performed, so long as they don't interfere with the current or future exercises: if you've already finished all lower body work, then lower body mobility exercises are great to do between sets of bench press or chin-ups and vice versa.
+  In total, 0.5-2 hours of just resting! While some things require more than 5 minutes of dedication at a time, plenty can be done in 3-5 minutes instead of browsing social media or just walking around: reading (books, articles), writing (essays, papers, emails), chores (cleaning, organizing), to-do items. Unrelated accessory exercises can even be performed, so long as they don't interfere with the current or future exercises: if you've already finished all lower body work, then lower body mobility exercises are great to do between sets of bench press or chin-ups and vice versa (upper body mobility after upper body work complete).
 </p>
 
 <img src="media/hafthor_resting.jpeg" alt="hafthor_resting" width="200" class="center">
 <figcaption align="middle"><a href="https://www.youtube.com/watch?v=2kEC7X1FUIg">World's strongest man</a> using his rest period to productively pose for a photo</figcaption>
 
 <p>
-  Scientific experiments may  take a long time to do (I know of one researcher whose simulation took over one week to complete). Rather than wait for an experiment or <a href="../../research/vacuum/vacuum.html#slow_pumping">process</a> to complete, you can begin writing the paper the experiment is being performed for, design future experiments, read the literature you've been putting off for weeks, or even concurrently run unrelated experiments.
+  Scientific experiments may take a long time for each trial (I know of one researcher whose simulation took over one week to complete). Rather than wait for an experiment or <a href="../../research/vacuum/vacuum.html#slow_pumping">process</a> to complete, you can begin writing the paper the experiment is being performed for, design future experiments, read the literature you've been putting off for weeks, or even concurrently run unrelated experiments.
 </p>
 
 <p>
-  Applying this to your personal life is simple. Find activities that require small waiting periods and fill those waiting periods with things other than mindless scrolling or basic waiting.
+  Applying this to your personal life is simple. Find activities that require small waiting periods and fill those waiting periods with things other than mindless scrolling or zoned-out waiting.
 </p>
 
+<h2 id="bulk_blanking">Bulk [blank]-ing</h2>
 
+<p>
+  A less impactful method of saving time, planning to do things in bulk can return significant amounts of time in the long run.
+</p>
 
+<p>
+  Grocery shopping takes an average of 1-1.5 hours to complete (15 minutes driving each way, 1 hour in the store). If you shop for two weeks worth of food, the amount of actual shopping time is not notably increased, maybe by 15-30 minutes at most. Thus, the time saved every two weeks is \((2-3) - (1.25-2) = (0.75-1)\) hours and every year is \(26 \times (0.75-1) = (20-26)\) hours.
+</p>
 
+<p>
+  Bulk preparation of food for the week, also called meal prep(aration), is a popular way of minimizing cooking. Cooking a decent meal for dinner 6 days out of the week takes 30-45 minutes, for a total of \(6 \times (0.5-0.75)= (3-4.5)\) hours per week. Preparing meals in bulk takes longer than an individual meal, but not by much (assuming you have the cooking tools to do so). So, if meal prepping takes 2-3 hours one day out of the week, then the time saved is 1-1.5 hours per week, or \(52 \times (1-1.5) = (52-78)\) hours per year. Another method to further save time is using a <a href="https://www.goodhousekeeping.com/appliances/slow-cooker-reviews/g1996/top-rated-slow-cookers/">slow cooker</a>. Requiring only 0.5-1 hours of preparation, the cooker can be programmed to turn on to a certain temperature, hold there for a set time, then turn to "Warm" setting after the time completes, allowing you to meal prep while at work.
+</p>
 
+<img src="media/meal_prep.jpeg" alt="meal_prep" width="200" class="center">
+<figcaption align="middle">5 weeks worth of meal prep and many hours saved</figcaption>
 
+<p>
+  Applying this is also simple. Take things that you do on an hourly, daily, weekly, or monthly basis and see if they can be condensed into one long session that satisfies all of the individual ones.
+</p>
 
 <h2 id="see_also">See Also</h2>
 
 <ul>
   <li>
-
+    <a href="https://www.reddit.com/r/AskReddit/comments/2s9u0s/what_do_insanely_wealthy_people_buy_that_ordinary/cnnmca8/">Power of money and its impact on time</a> (see paragraph beginning with "Time", although entire post is valuable). The more money you have, the more time you can buy back.
   </li>
 </ul>
 
