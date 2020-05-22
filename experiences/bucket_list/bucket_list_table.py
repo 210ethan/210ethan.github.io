@@ -10,9 +10,6 @@ Created on Thu May 21 13:30:49 2020
 from openpyxl import load_workbook
 
 
-
-
-
 def create_html_table():
 
     wb = load_workbook(filename = "bucket_list.xlsx")
@@ -33,7 +30,7 @@ def create_html_table():
         category_cell = "B" + str(row)
         country_cell = "C" + str(row)
         city_cell = "D" + str(row)
-        description_cell = "E" + str(row) 
+        description_cell = "E" + str(row)
         dates_cell = "F" + str(row)
         priority_cell = "G" + str(row)
         notes_cell = "H" + str(row)
@@ -55,7 +52,7 @@ def create_html_table():
 
         # add all info to create a single HTML table row
         all_rows = all_rows + start_row + item + category + country + city + description + dates + priority + notes + complete + end_row
-    
+
     # concatenate all strings to create final table
     final_table = start_table + header + all_rows + end_table
 
@@ -84,7 +81,6 @@ def delete_append_to_file(final_table):
 
     # create string with all html info, include closing html tags
     file_contents = final_table + "</body></html>"
-    print(file_contents)
 
     # append newest table to end of file
     html_file.write(file_contents)
@@ -92,12 +88,11 @@ def delete_append_to_file(final_table):
 
 
 def main():
-    
+
     final_table = create_html_table()
-    
+
     delete_append_to_file(final_table)
-    
-    
+
+
 
 main()
-    
