@@ -1,0 +1,1139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vacuum</title>
+  <link rel="stylesheet" type="text/css" href="../../css/main.css">
+  <link rel="icon" href="../../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../../index.html">Home</a></h3>
+
+<h1>Vacuum: Theory and Technologies</h1>
+
+<h2 id="table_of_contents">Table of Contents</h2>
+
+<p>
+  <a href="#what_is_pressure">What is Pressure?</a>
+</p>
+
+<p>
+  <a href="#gas_flow">Gas Flow</a>
+</p>
+
+<p>
+  <a href="#what_is_vacuum">What is Vacuum?</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#vacuum_levels">Vacuum Levels</a>
+  </p>
+  <p>
+    <a href="#perfect_vacuum">Is Perfect Vacuum Possible?</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#vacuum_measurement">Vacuum Measurement</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#direct_reading_gauges">Direct Reading Gauges</a>
+  </p>
+  <p>
+    <a href="#indirect_reading_gauges">Indirect Reading Gauges</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#outgassing">Outgassing</a>
+</p>
+
+<p>
+  <a href="#flow_in_out">Flow (In and Out)</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#mass_flow_measurement">Mass Flow Measurement</a>
+  </p>
+  <p>
+    <a href="#pumping_speed">Pumping Speed</a>
+  </p>
+  <p>
+    <a href="#slow_pumping">Slow Pumping</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#vacuum_pumps">Vacuum Pumps</a>
+</p>
+
+<ul>
+  <p>
+    <a href="mechanical_pump">Mechanical Pumps</a>
+  </p>
+  <ul>
+    <p>
+      <a href="#rotary_vane_pump">Rotary Vane Pump</a>
+    </p>
+    <p>
+      <a href="#rotary_piston_pump">Rotary Piston Pump</a>
+    </p>
+    <p>
+      <a href="#lobe_blower">Lobe Blower (Roots Pump)</a>
+    </p>
+    <p>
+      <a href="#claw_pump">Claw Pump</a>
+    </p>
+    <p>
+      <a href="#scroll_pump">Scroll Pump</a>
+    </p>
+    <p>
+      <a href="#screw_pump">Screw Pump</a>
+    </p>
+    <p>
+      <a href="#diaphragm_pump">Diaphragm Pump</a>
+    </p>
+    <p>
+      <a href="#mechanical_pump_summary">Mechanical Pump Summary</a>
+    </p>
+  </ul>
+  <p>
+    <a href="#high_vacuum_pumps">High Vacuum Pumps</a>
+  </p>
+  <ul>
+    <p>
+      <a href="#turbomolecular_pump">Turbomolecular Pump</a>
+    </p>
+    <p>
+      <a href="#diffusion_pump">Diffusion Pump</a>
+    </p>
+    <p>
+      <a href="#cryogenic_pump">Cryogenic Pump</a>
+    </p>
+    <p>
+      <a href="#ion_pump">Ion Pump</a>
+    </p>
+    <p>
+      <a href="#high_vacuum_pump_summary">High Vacuum Pump Summary</a>
+    </p>
+  </ul>
+</ul>
+
+<p>
+  <a href="#connections_valves">Connections (Joints) and Valves</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#permanent_joints">Permanent Joints</a>
+  </p>
+  <p>
+    <a href="#removable_joints">Removable Joints</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#leak_detection">Leak Detection</a>
+</p>
+
+<p>
+  <a href="#residual_gas_analysis">Residual Gas Analysis</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#mass_spectrometer">Mass Spectrometer</a>
+  </p>
+  <p>
+    <a href="#analysis_results">Analysis of Results</a>
+  </p>
+</ul>
+
+<p>
+  <a href="#vacuum_systems">Vacuum Systems</a>
+</p>
+
+<ul>
+  <p>
+    <a href="#rough_pumping">Rough Pumping</a>
+  </p>
+  <p>
+    <a href="#high_vacuum_systems">High Vacuum Systems</a>
+    <ul>
+      <p>
+        <a href="#turbopump_systems">Turbopump Systems</a>
+      </p>
+      <p>
+        <a href="#diffusion_pump_systems">Diffusion Pump Systems</a>
+      </p>
+      <p>
+        <a href="#cryopump_systems">Cryopump Systems</a>
+      </p>
+      <p>
+        <a href="#ion_pump_systems">Ion Pump Systems</a>
+      </p>
+      <p>
+        <a href="#high_vacuum_chambers">High Vacuum Chambers</a>
+      </p>
+    </ul>
+  </p>
+</ul>
+
+<p>
+  <a href="#see_also">See Also</a>
+</p>
+
+<p>
+  This article can be described as a general summary of John O'Hanlon's <i>A User's Guide to Vacuum Technology</i> (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>) without most of the math and models used. Some sections are completely skipped over: pump fluids, materials in vacuum, lubrication. O'Hanlon's book is a comprehensive resource on vacuum technology, especially as related to semiconductor processing. Other resources are used where O'Hanlon's textbook is lacking in quality or mention, i.e., it is not discussed in the book.
+</p>
+
+<h2 id="what_is_pressure">What is Pressure?</h2>
+
+<p>
+  Pressure is defined by the simple equation:
+</p>
+
+\[P = \frac{F}{A}\]
+
+<p>
+  where \(P\) is pressure, \(F\) is force, and \(A\) is the area the force is exerted on. A common experiment to show this equation in-action is laying on a bed of nails: if \(F\) (the person's body) stays constant and \(A\) (the area of the bed) is large, the pressure exerted on the skin will be minimized, preventing penetration. But if it's a single nail...
+</p>
+
+<img src="media/bed_nails.jpeg" alt="bed_nails" width="200" class="center">
+<figcaption align="middle">The ultimate torture devi... wait, this doesn't hurt! (<a href="https://entertainment.howstuffworks.com/arts/circus-arts/bed-of-nails.htm">source</a>)</figcaption>
+
+<p></p>
+
+<p>
+  Now that pressure has been shown with an actual body (literally!) of mass, what about pressure that is invisible, e.g., air?
+</p>
+
+<p>
+  From the <a href="https://en.wikipedia.org/wiki/Maxwell%E2%80%93Boltzmann_distribution">Maxwell-Boltzmann distribution</a>, which is used to find the distribution of the speeds of particles within an ideal gas, the N<sub>2</sub> molecule at a temperature of 0 °C moves at a probable speed of:
+</p>
+
+\[v_{p, \text{N}_{2}} = \sqrt{\frac{2k_{B}T}{m_{\text{N}_{2}}}} = \sqrt{\frac{2(1.380 \times 10^{-23} \, \text{J}\cdot\text{K}^{-1})(273 \, \text{K})}{2 \times 2.33 \times 10^{-26} \, \text{kg}}} \approx 400 \, \text{m/s}\]
+
+<p>
+  where \(k_{B}\) is the <a href="https://en.wikipedia.org/wiki/Boltzmann_constant">Boltzmann constant</a>, \(T\) is temperature, and \(m\) is the particle's mass.
+</p>
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Root_mean_square#Speed">root-mean-squared speed</a> is found by:
+</p>
+
+\[v_{\text{rms}, \, \text{N}_{2}} = \sqrt{\frac{3k_{B}T}{m_{\text{N}_{2}}}} \approx 500 \, \text{m/s}\]
+
+<p>
+  Quite fast! If a human got hit by a car going the same speed (900 mph, 1500 kph), they would surely die. The difference is the size of the object. The N<sub>2</sub> molecule has an insignificant mass of \(4.6 \times 10^{26}\) kg, resulting in a insignificant kinetic energy and not noticing its collisions. However, the <a href="https://en.wikipedia.org/wiki/Number_density">number density</a> of gases is extremely high, leading to many collisions and the experience of pressure. Number density can be found using the <a href=https://en.wikipedia.org/wiki/Ideal_gas_law>ideal gas law</a>:
+</p>
+
+\[\frac{n}{V} = N_{A} \times \frac{P}{RT}\]
+
+<p>
+  where \(N_{A}\) is <a href="https://en.wikipedia.org/wiki/Avogadro_constant">Avogadro's constant</a>, \(R\) is the <a href="https://en.wikipedia.org/wiki/Gas_constant">gas constant</a>, and \(V\) is a unit volume (either 1 cm<sup>3</sup> or 1 m<sup>3</sup>).
+</p>
+
+<p>
+  Two others terms need to be defined:
+</p>
+
+<ul>
+  <li>
+    <b>Mean free path</b>: The average distance a particle travels in a system before colliding with another particle. These distances can vary from &#956;m all the way up to km for ultra-high vacuum systems. The MFP equation is given by:
+
+    \[\lambda = \frac{k_{B}T}{\sqrt{2}\pi d^{2}P}\]
+
+    where \(d\) is the particle diameter and \(P\) is the pressure.
+  </li>
+  <li>
+    <b>Particle flux</b>: The rate at which particles strike a surface, allowing the measurement of pressure within a system.
+  </li>
+</ul>
+
+<p>
+  There are two types of (relative) pressure:
+</p>
+
+<ul>
+  <li>
+    <b>Positive</b>: Occurs when the space has a higher pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system.
+  </li>
+  <li>
+    <b>Negative</b>: Occurs when the space has a lower pressure than its surroundings. Leaks will cause the contents of the high-pressure system to diffuse into the low-pressure system. Vacuum systems are always under negative pressure.
+  </li>
+</ul>
+
+<p>
+  Pressure has many units:
+</p>
+
+<ul>
+  <li>
+    <b>Torr (symbol: Torr or mmHg, millimeters of mercury)</b>: Named after <a href="https://en.wikipedia.org/wiki/Evangelista_Torricelli">Evangelista Torricelli</a> and his barometer experiments, 1 Torr is the amount of pressure needed to support a 1 mm-tall column of Hg at 0 °C and <a href="https://en.wikipedia.org/wiki/Standard_gravity">standard gravity</a>. 760 Torr is the standard atmospheric pressure at sea-level. Note that "torr" is the unit name and "Torr" is the symbol.
+  </li>
+  <li>
+    <b>Standard atmosphere (symbol: atm)</b>: Pressure at sea-level. 1 atm = 101.325 Pa = 14.7 psi = 760 Torr.
+  </li>
+  <li>
+    <b>Bar (symbol: bar)</b>: 1 bar = 100,000 Pa.
+  </li>
+  <li>
+    <b>Pascal (symbol: Pa)</b>: The derived <a href="https://www.nist.gov/pml/weights-and-measures/metric-si/si-units">SI unit</a> for pressure: \[1 \, \text{Pa} = 1 \, \frac{\text{N}}{\text{m}^{2}}\]
+  </li>
+  <li>
+  <b>Pounds per square inch (symbol: psi)</b>: <a href="https://www.urbandictionary.com/define.php?term=freedom%20units">Freedom units</a> of pressure.
+  </li>
+</ul>
+
+<h2 id="gas_flow">Gas Flow</h2>
+
+<p>
+  There are three flow regimes, based on the <a href="https://en.wikipedia.org/wiki/Knudsen_number">Knudsen number</a>:
+</p>
+
+\[\text{Kn} = \frac{\lambda}{L} = \frac{k_{B}T}{\sqrt{2}\pi d^{2}PL}\]
+
+<ul>
+  <li>
+    <b>Continuum flow</b> (Kn < 0.01): Occurs under high pressure (low MFP) and can be either viscous or turbulent. Gases often collide with each other and chamber walls.
+  </li>
+  <li>
+    <b>Molecular flow</b> (Kn > 1): Occurs under low pressures (high MFP). Gases rarely collide with each other and often collide with the chamber walls.
+  </li>
+  <li>
+    <b>Transition region</b> (0.01 < Kn < 1): Gases collide with each other and chamber walls.
+  </li>
+</ul>
+
+<img src="media/gas_flow_regimes.gif" alt="gas_flow_regimes" width="200" class="center">
+<figcaption align="middle">Gas flow regimes illustrated (<a href="https://vacaero.com/information-resources/vacuum-pump-technology-education-and-training/9364-gas-molecules-and-gas-flow.html">source</a>)</figcaption>
+
+<p>
+  With these flow regimes come more terms:
+</p>
+
+<ul>
+  <li>
+    <b>Throughput</b> (energy per time): The amount of gas passing through an area in a given time, or the amount of energy required to transport the gas across the area.
+  </li>
+  <li>
+    <b>Mass flow</b> (kg, kg-moles, molecules): Amount passing through the area.
+  </li>
+  <li>
+    <b>Conductance</b> (volume per time): Given a throughput of \(Q\) within a pipe that has a pressure differential, conductance is calculated by:
+    \[C = \frac{Q}{P_{2} - P_{1}}\]
+    Conductances add directly in parallel and reciprocally in series:
+    \[C_{p} = C_{1} + \dots + C_{n}\]
+    \[C_{s}= \left(\frac{1}{C_{1}} + \dots + \frac{1}{C_{n}}\right)^{-1}\]
+  </li>
+</ul>
+
+<h2 id="what_is_vacuum">What is Vacuum?</h2>
+
+<p>
+  Vacuum is formally <a href="https://www.merriam-webster.com/dictionary/vacuum">defined</a> as "a space entirely devoid of matter." In regards to practical definitions, it is a space that has a lower pressure than its surroundings, all other variables kept equal.
+</p>
+
+<h3 id="vacuum_levels">Vacuum Levels</h3>
+
+<p>
+  There are ranges of pressure that correspond to specific "levels" of vacuum:
+</p>
+
+<table align="center">
+  <caption>
+    Vacuum levels: note that higher vacuum = lower pressure
+  </caption>
+  <tr>
+    <th>
+      Level
+    </th>
+    <th>
+      Pressure (Torr)
+    </th>
+    <th>
+      Pressure (Pa)
+    </th>
+    <tr align="middle"><td>Atmosphere</td><td>760</td><td>10<sup>5</sup></td></tr>
+    <tr align="middle"><td>Low vacuum</td><td>760 to 25</td><td>10<sup>5</sup> to 3&times;10<sup>3</sup></td></tr>
+    <tr align="middle"><td>Medium vacuum</td><td>25 to 10<sup>-3</sup></td><td>3&times;10<sup>3</sup> to 10<sup>-1</sup></td></tr>
+    <tr align="middle"><td>High vacuum</td><td>10<sup>-3</sup> to 10<sup>-9</sup></td><td>10<sup>-1</sup> to 10<sup>-7</sup></td></tr>
+    <tr align="middle"><td>Ultra-high vacuum</td><td>10<sup>-9</sup> to 10<sup>-12</sup></td><td>10<sup>-7</sup> to 10<sup>-10</sup></td></tr>
+    <tr align="middle"><td>Extremely-high vacuum</td><td><10<sup>-12</sup></td><td><10<sup>-10</sup></td></tr>
+    <tr align="middle"><td>Perfect vacuum</td><td>0</td><td>0</td></tr>
+  </tr>
+</table>
+
+<p></p>
+
+<img src="media/uhv.jpeg" alt="uhv" width="200" class="center">
+<figcaption align="middle">Ultra-high vacuum system used for microscopy (<a href="https://www.directindustry.com/prod/scienta-omicron/product-20757-1062699.html">source</a>)</figcaption>
+
+<h4 id="perfect_vacuum">Is Perfect Vacuum Possible?</h4>
+
+<p>
+  Technically, no.
+</p>
+
+<p>
+  Deep space is almost entirely devoid of particles, and there are surely volumes that can be outlined to exclude any surrounding particles, making them "perfect vacuum" volumes. However, there are still some elements contained within the chosen volume—photons, energy, and <a href="https://en.wikipedia.org/wiki/Virtual_particle">virtual particles</a> all exist, preventing an absolutely-perfect vacuum from being achieved.
+</p>
+
+<p>
+  A group of German researchers have achieved up to (or down to) 10<sup>-14</sup> Pa = 10<sup>-15</sup> Torr using a <a href="#cryo_pump">cryogenic pump</a> (<a href="https://journals.aps.org/prl/pdf/10.1103/PhysRevLett.106.253001">paper here</a>). Note that it is exponentially more expensive and time-consuming both to achieve and maintain higher-vacuum systems and arguably has <a href="https://en.wikipedia.org/wiki/Diminishing_returns">diminishing returns</a> (the thin film or image you produce will likely not be significantly better at 10<sup>-8</sup> Pa = 10<sup>-10</sup> Torr than it will be 10<sup>-7</sup> Pa = 10<sup>-9</sup> Torr).
+</p>
+
+<h2 id="vacuum_measurement">Vacuum Measurement</h2>
+
+<p>
+  Various gauges are used to measure pressure within a chamber. Direct-reading gauges directly measure the particle flux, while indirect-reading gauges measure values related to properties of the gas.
+</p>
+
+<img src="media/vacuum_gauge_ranges.jpeg" alt="vacuum_gauge_ranges" width="200" class="center">
+<figcaption align="middle">Ranges of various vacuum gauges (<a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pressure_04_bestgauge.cfm">source</a>)</figcaption>
+
+<h3 id="direct_reading_gauges">Direct-Reading Gauges</h3>
+
+<p>
+  Liquid wall manometers use a U-shaped tube liquid to compare a known pressure to an unknown pressure. For example, if P<sub>1</sub> is under an unknown vacuum and P<sub>2</sub> is at atmospheric pressure, then P<sub>2</sub> will "push" harder than P<sub>1</sub>, causing the P<sub>1</sub> liquid level to rise and resulting in a pressure reading of:
+</p>
+
+\[P = \rho gh\]
+
+<p>
+  where \(\rho\) is the fluid's density and \(h\) is the height difference in the liquids.
+</p>
+
+<img src="media/manometer.jpeg" alt="manometer" width="200" class="center">
+<figcaption align="middle">Manometer liquid levels at three different pressures (<a href="https://www.engineeringclicks.com/manometer/">source</a>)</figcaption>
+
+<p>
+  Solid wall DRGs include the diaphragm gauge, the Bourdon tube, and capacitance manometer.
+</p>
+
+<iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/JnPSeEW-EeA">
+</iframe>
+<figcaption align="middle">
+  Animation showing the operation of the diaphragm and Bourdon gauges (<a href="https://www.youtube.com/embed/JnPSeEW-EeA">source</a>)
+</figcaption>
+
+<p>
+  The capacitance manometer is a derivative of the diaphragm gauge, where the pressure reading is determined by the change in capacitance between the diaphragm itself and an electrode. Capacitance is found by:
+</p>
+
+\[C = \varepsilon \frac{A}{d}\]
+
+<p>
+  where \(\varepsilon\) is the <a href="https://en.wikipedia.org/wiki/Permittivity">permittivity</a> of the medium, \(A\) is the area of the two plates, and \(d\) is the distance between the plates.
+</p>
+
+<p>
+  A <a href="https://en.wikipedia.org/wiki/Pressure_sensor">pressure transducer</a> is used to measure the pressure. A diaphragm is fixed between two miniature chambers, one at the unknown pressure, where the electrode is located, and one evacuated. As the pressure changes, the diaphragm moves in one direction, changing the capacitance the electrode senses and sending it to the tool. The diaphragm movement is extremely small, making it susceptible to temperature effects. To counteract this, some transducers are equipped with heaters to maintain a specific temperature.
+</p>
+
+<h3 id="indirect_reading_gauges">Indirect-Reading Gauges</h3>
+
+<h4 id="thermal_conductivity_gauges">Thermal Conductivity Gauges</h4>
+
+<p>
+  The TGC measures pressure by measuring heat transfer between a wire and the closed-volume the wire is in. As pressure increases within a certain range, heat transfer also increases linearly, allowing an accurate, medium-vacuum pressure to be read if characterization is accurate.
+</p>
+
+<p>
+  To form a Pirani gauge, an already-balanced <a href="https://en.wikipedia.org/wiki/Wheatstone_bridge">Wheatstone bridge</a> is used, where one of the resistors is the wire that will be heated in the vacuum. Resistance increases with temperature:
+</p>
+
+\[R(T) = R_{0}\left(1 - \alpha(T - T_{0})\right)\]
+
+<p>
+  where \(R_{0}\) is the initial resistance at initial temperature \(T_{0}\), \(\alpha\) is the <a href="https://en.wikipedia.org/wiki/Temperature_coefficient">temperature coefficient</a>, and \(T\) is the current temperature.
+</p>
+
+<p>
+  As pressure increases on the heating wire, the heat transfer increases (or heat loss occurs) and the resistance decreases. To rebalance the bridge, the voltage source must supply more voltage, thus reheating the wire back to its original resistance and rebalancing the bridge. The voltage can then be read into a transducer to measure the pressure. A compensating wire is used to offset any effects from temperature on the resistance zeroing of the heated wire.
+</p>
+
+<img src="media/pirani_wheatstone.gif" alt="pirani_wheatstone" width="200" class="center">
+<figcaption align="middle">Pirani gauge configuration using a Wheatstone bridge (<a href="https://www.sciencedirect.com/topics/engineering/pirani-gauge">source</a>)</figcaption>
+
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Thermocouple">thermocouple</a> gauge uses a thermocouple to measure the pressure: higher pressures decrease the wire's temperature. Characterizing this curve allows for accurate measurements.
+</p>
+
+<h4 id="ionization_gauges">Ionization Gauges</h4>
+
+<p>
+  Ionization gauges are used to measure ultra-high vacuum pressures. There are two types: hot cathode and cold cathode.
+</p>
+
+<p>
+  In the hot cathode, keeping the temperature constant allows the pressure to be read via the number of positive ions measured by the negatively-biased collector electrode. <id="bayard_alpert">Bayard and Alpert</id> invented the most popular and common design of the ionization gauge in their paper that eliminated the misleading effects of x-ray-generated photocurrent, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/Extension%20of%20the%20Low%20Pressure%20Range%20of%20the%20Ionization%20Gauge.pdf"><i>Extension of the Low Pressure Range of the Ionization Gauge</i></a>. The Bayard-Alpert gauge can measure as low as 10<sup>-8</sup> Pa = 10<sup>-10</sup> Torr.
+</p>
+
+<p>
+  In the cold cathode gauge, electric and magnetic fields present within the gauge increase ionization probability. Electron sources are also used to increase the initial number of starting electrons available to ionize the gases. The pressure range is a bit wider than the hot cathode gauge, allowing pressures from 10<sup>-9</sup> to 1 Pa = 10<sup>-10</sup> to 10<sup>-2</sup> Torr to be read.
+</p>
+
+<h2 id="outgassing">Outgassing</h2>
+
+<p>
+  In addition to the atmosphere, gases are also present in solids. When released into the atmosphere, this increases the pressure and is called outgassing. Outgassing is caused by vaporization, desorption, diffusion, and permeation.
+</p>
+
+<p>
+  Vaporization occurs when the molecule's temperature is above its condensation temperature at a given pressure. <a href="https://en.wikipedia.org/wiki/Bake-out">Bake-outs</a> are used to vaporize and remove volatile compounds from vacuum systems.
+</p>
+
+<img src="media/phase_diagram.jpeg" alt="phase_diagram" width="200" class="center">
+<figcaption align="middle">Phase diagram (<a href="https://cnx.org/contents/oFoO44pW@5/Phase-Diagrams">source</a>)</figcaption>
+
+<p>
+  Diffusion occurs when a <a href="https://en.wikipedia.org/wiki/Molecular_diffusion">concentration gradient</a> in a solid forces gas towards the surface, where the <a href="https://en.wikipedia.org/wiki/Desorption">desorb</a> (release from the solid's surface).
+</p>
+
+<p>
+  Desorption can be forced using electrons, ions, or photons.
+</p>
+
+<p>
+  Permeation is the adsorbtion, diffusion, and desorbtion of a gas on, through, then off the chamber wall.
+</p>
+
+<h2 id="flow_in_out">Flow (In and Out)</h2>
+
+<h3 id="mass_flow_measurement">Mass Flow Measurement</h3>
+
+<p>
+  The flow of a gas (which has mass) can be measured by applying heat to a gas flow and checking the temperature increase, which is proportional to the amount of mass flowing. Two types of thermal flow meters can be used: variable temperature and constant temperature. The variable temperature uses two thermocouples placed at either ends of the flow channel. After taking an initial temperature measurement with no gas flowing, gas is flowed through and the thermocouples take another temperature measurement, allowing for an accurate measurement of the mass flow. The constant temperature uses a circuit to maintain a constant temperature throughout the channel, where the applied power is proportional to the mass flow.
+</p>
+
+<p>
+  The mass flow controller (MFC) is an obvious progression from the flow meter. By adding a analog valve that can be fully open, fully closed, or anywhere in between, the amount of mass flowing can easily be controlled. The MFC must be calibrated to the specific gas that it will be used for or have a gas correction factor (GCF) added. For example, an N<sub>2</sub>-based MFC (the most common calibration standard) will have a GCF of 1 when flowing N<sub>2</sub> and a GCF of 1.39 when flowing Ar. The GCF can be <a href="https://www.mksinst.com/n/flow-measurement-control-frequently-asked-questions">calculated</a> or determined empirically.
+</p>
+
+<h3 id="pumping_speed">Pumping Speed</h3>
+
+<p>
+  While pumping speed has the same units as conductance, volume/time (m<sup>3</sup>/s, L/s), they are not the same: conductance is the property of the hardware, while pumping speed is dependent on the pump used, the current pressure, etc.
+</p>
+
+<p>
+  To measure a <a href="#mechanical_pump">mechanical pump</a>'s pumping speed, the system is brought down to base pressure, \(P_{b}\), gas, typically N<sub>2</sub>, is flowed into the chamber for a number of minutes, and finally the equilibrium pressure, \(P_{\text{eq}}\) is found, giving a pumping speed of:
+</p>
+
+\[S = \frac{Q}{P_{\text{eq}} - P_{b}}\]
+
+<p>
+  Measuring the pumping speed of higher vacuum pumps, such as the <a href="#turbo_pump">turbo pump</a> and <a href="#cryo_pump">cryo pump</a>, require similar methods due to their lack of pumping capability at high flows.
+</p>
+
+<img src="media/pumping_speed.jpeg" alt="pumping_speed" width="200" class="center">
+<figcaption align="middle">Typical pumping speed vs. pressure curve (<a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_00_basicconcept.cfm">source</a>)</figcaption>
+
+<p>
+  Keep in mind that the calculated pumping speed is under idealized conditions. Instead, an effective pumping speed (EPS) is more accurate. Given a port conductance, \(C_{p}\), and ideal pumping speed, \(S\), EPS is calculated by:
+</p>
+
+\[\text{EPS} = \left(\frac{1}{C_{p}} + \frac{1}{S}\right)^{-1}\]
+
+<p>
+  From this equation, the smallest conductance results in the highest effective pumping speed given a fixed ideal pumping speed.
+</p>
+
+<p>
+  A few other, more practical methods are available for calculating EPS. Given a mass flow, MF, and pressure, \(P\), the EPS of either a transfer or capture pump is found by:
+</p>
+
+\[\text{EPS} = \frac{\text{MF}}{P}\]
+
+<p>
+  Another method for transfer pumps measures the throughput at the pump's exhaust then divides by the pressure within the chamber. This assumes no particles are lost between the chamber and exhaust, whether by condensing, a trap, etc. More calculations can be found <a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_12_calceps.cfm">here</a> (where all of this EPS information was taken from).
+</p>
+
+<h3 id="slow_pumping">Slow Pumping</h3>
+
+<p>
+  Slow chamber pump times can be reasonable or indicative of an issue with the chamber or pump itself.
+</p>
+
+<p>
+  First, check if the pump time is reasonable:
+</p>
+
+<ul>
+  <li>
+    Is the chamber large? Large chambers obviously take longer to evacuate than smaller.
+  </li>
+  <li>
+    Is the chamber dirty? Deposition layers allow pockets of moisture and gases to form on the chamber walls, resulting in outgassing and longer pump times.
+  </li>
+  <li>
+    How big is the vacuum pump? Larger pumps allow faster pumping speeds.
+  </li>
+</ul>
+
+<p>
+  After those three questions have been eliminated in the search for a faster pumping time, examine the possible issues:
+</p>
+
+<ul>
+  <li>
+    Is there a leak? Test the chamber's leak rate and perform <a href="#leak_detection">leak detection</a> techniques to check for possible leaks into the chamber or vacuum lines.
+  </li>
+  <li>
+    Are the pumps bad? The pumps may need servicing.
+  </li>
+  <li>
+    Are there possible contamination or outgassing sources? Lubrications, oils, and other foreign objects may contribute to rising pressures or poor pump performance.
+  </li>
+</ul>
+
+<p>
+  In addition to all of this, the pump times should be recorded on a regular basis to check for any times that are out of the ordinary. For example, the times it takes to pump down from atmosphere to 100, 1, 10<sup>-3</sup>, 10<sup>-5</sup>, and 10<sup>-7</sup> Torr may all be recorded over time. Pump time behaviors may be more noticeable and easily anticipated after certain events, like chamber cleaning or pump replacement.
+</p>
+
+<p>
+  More ideas on reasons for slow pump times can be found <a href="https://www.lesker.com/newweb/technical_info/vacuumtech/pumps_05_pumpdownslow.cfm">here</a>.
+</p>
+
+<img src="media/skeleton_meme.jpeg" alt="skeleton_meme" width="200" class="center">
+<figcaption align="middle">Everyone's been there</figcaption>
+
+<h2 id="vacuum_pumps">Vacuum Pumps</h2>
+
+<p>
+  Vacuum is achieved through the use of vacuum pumps. It is important to note that vacuum pumps do not "suck", nor is there is such a force as "suction". Gas molecules must randomly make it to the intake to be removed. This is why pump speed decreases with pressure—as the number of particles within in the chamber decreases, so does the probability of one entering the intake.
+</p>
+
+<h3 id="mechanical_pump">Mechanical (Roughing) Pump</h3>
+
+<p>
+  Mechanical pumps are used to achieve low to medium vacuum and back high vacuum pumps. Some use oil, while others are "dry" (oil-free).
+</p>
+
+<h4 id="rotary_vane_pump">Rotary Vane Pump</h4>
+
+<p>
+  The rotary vane pump has a simple operation: gas enters through an intake, is compressed by a rotating vane, then removed through an exhaust on the other side. Oil is used to help lubricate the vanes. Some rotary vane pumps can be used in two stages, where the exhaust of the first is directly connected to the intake of the second. The two-stage option has higher pumping speeds and can achieve lower pressures than the one-stage. For both options, it is crucial that the seal separating the intake and exhaust is tight. Any leak will significantly worsen the pumping speed and achieveable pressure.
+</p>
+
+<img src="media/rotary_vane_pump.gif" alt="rotary_vane_pump" width="200" class="center">
+<figcaption align="middle">Animation showing the operation of a rotary vane pump (<a href="https://gfycat.com/defianthappygoluckyeyas">source</a>)</figcaption>
+
+<h4 id="rotary_piston_pump">Rotary Piston Pump</h4>
+
+<p>
+  The rotary piston pump is similar to the rotary vane pump.
+</p>
+
+<img src="media/rotary_piston_pump.gif" alt="rotary_piston_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a rotary piston pump (<a href="https://www.youtube.com/watch?v=fEO8LEGfdgc">source</a>)
+</figcaption>
+
+<h4 id="lobe_blower">Lobe Blower (Roots Pump)</h4>
+
+<p>
+  The lobe blower uses two rotors to force gases in either direction, improving the pumping speed and and base pressure as compared to the rotary pumps. As the pressure differential between the inlet and outlet increases, the rotors must work harder to pump the gases, causing heat to be generated and the rotors to expand, possibly destroying the pump. To prevent this, an overflow valve is included to act when the manufacturer's recommended maximum pressure differential value is exceeded. Because this maximum differential would be exceeded if the lobe blower was used on a chamber at atmosphere, it must be used with or as a backing pump.
+</p>
+
+<img src="media/lobe_blower.gif" alt="lobe_blower" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a lobe blower (Roots pump) (<a href="https://www.youtube.com/watch?v=_-fwWrFLiyY">source</a>)
+</figcaption>
+
+<p>
+  Some lobe blowers are outfitted with a cooler to offset the heat generated by the pump. Gases that make it past the rotors go through a cooler. A fraction of those go back into rotor's chamber to promote cooling, while the remaining continue on to be exhausted.
+</p>
+
+<h4 id="claw_pump">Claw Pump</h4>
+
+<p>
+  The claw pump is similar to the lobe blower, but uses "claws" instead of the figure-eight rotors. This configuration compresses the gas within the pump, forcing it through an outlet.
+</p>
+
+<img src="media/claw_pump.gif" alt="claw_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a claw pump (<a href="https://giphy.com/gifs/series-16-80LaTL51jCfh6">source</a>)
+</figcaption>
+
+<h4 id="scroll_pump">Scroll Pump</h4>
+
+<p>
+  The scroll pump is composed of two identical helical structures, one of which moves around its stationary counterpart. Gas is introduces at an opening and makes its way to the center's outlet, getting progressively compressed along the way. They are used to back turbo pumps or independently where low vacuum is needed.
+</p>
+
+<img src="media/scroll_pump.gif" alt="scroll_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a scroll pump (<a href="https://www.youtube.com/watch?v=s3xulCRrjos">source</a>)
+</figcaption>
+
+<h4 id="screw_pump">Screw Pump</h4>
+
+<p>
+  The screw pump is similar to the scroll pump, using two screws that rotate opposite from one another at the same speed. This transports gas from the inlet to outlet. They are used to back turbo pumps and on systems where corrosive gases are present (the screws can be coated in a corrosion-resistant material).
+</p>
+
+<img src="media/screw_pump.gif" alt="screw_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a screw pump (<a href="https://giphy.com/gifs/works-screw-compressor-2TvKRSRuDjdHa">source</a>)
+</figcaption>
+
+<h4 id="diaphragm_pump">Diaphragm Pump</h4>
+
+<p>
+  The diaphragm pump is simple: gas enters through an inlet after the diaphragm is at the bottom of its movement and is expelled when the diaphragm moves up. Valves at the inlet and outlet prevent gas from going opposite directions (gas going back in the inlet when it should only go through the outlet). They can be used independently to achieve medium vacuum or as backing for a turbo pump.
+</p>
+
+<img src="media/diaphragm_pump.gif" alt="diaphragm_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a diaphragm pump (<a href="https://gfycat.com/aggravatingsilverbarbet">source</a>)
+</figcaption>
+
+<h4 id="mechanical_pump_summary">Mechanical Pump Summary</h4>
+
+<p>
+  A summary of mechanical pumps can be found in the following table. The "Purpose" column indicates what the pump is used for, e.g., pumping systems on its own (independent), backing high vacuum pumps (backing), or in combination with another pump (combination). For combination-type pumps, the pump it is combined with is noted in parentheses. The "Backing Needed" indicates if the pump needs another pump backing it.
+</p>
+
+<table align="center">
+  <caption>
+    Mechanical pump capabilities
+  </caption>
+  <tr>
+    <th>Type</th><th>Minimum pressure (Torr)</th><th>Minimum pressure (Pa)</th><th>Purpose</th><th>Backing Needed?</th>
+    <tr align="middle"><td>Rotary vane</td><td>10<sup>-5</sup> to 10<sup>-2</sup></td><td>10<sup>-3</sup> to 1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Rotary piston</td><td>10<sup>-2</sup></td><td>&sim;1</td><td>Individual, combination (lobe)</td><td>No</td></tr>
+    <tr align="middle"><td>Lobe blower</td><td>10<sup>-5</sup></td><td>10<sup>-3</sup> (Lobe-rotary combination)</td><td>Combination (rotary)</td><td>Yes</td></tr>
+    <tr align="middle"><td>Claw</td><td>10<sup>-3</sup> to 10<sup>-2</sup></td><td>0.1 to 1 (Craw-lobe combination)</td><td>Combination (lobe)</td><td>No</td></tr>
+    <tr align="middle"><td>Scroll</td><td>10<sup>-2</sup></td><td>1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Screw</td><td>10<sup>-2</sup></td><td>1</td><td>Individual, backing</td><td>No</td></tr>
+    <tr align="middle"><td>Diaphragm</td><td>0.1 to 1</td><td>10 to 100</td><td>Individual, backing</td><td>No</td></tr>
+  </tr>
+</table>
+
+<h2 id="high_vacuum_pumps">High Vacuum Pumps</h2>
+
+<h3 id="turbomolecular_pump">Turbomolecular Pump</h3>
+
+<p>
+  Turbo pumps are used to achieve high vacuum and require a backing pump (rotary vane, screw, scroll, or diaphragm) because they must operate in the <a href="#gas_flow">molecular flow</a> region. The pumping speed is high, hydrocarbons are prevented from entering back into the chamber without the need for a trap, and oil is not required for either of the pumps. They are an attractive option for high vacuum system.
+</p>
+
+<img src="media/turbo_pump_cross_section.jpeg" alt="turbo_pump_cross_section" width="200" class="center">
+<figcaption align="middle">
+  Cross-section of a turbo pump (<a href="https://en.wikipedia.org/wiki/Turbomolecular_pump#/media/File:Cut_through_turbomolecular_pump.jpg">source</a>)
+</figcaption>
+
+<p>
+  There are two types of alternating rotor blades within the turbo pump: rotor (rotating) blades and stator (stationary) blades. As rotor blades "hit" the gas molecules, the gas is compressed and forced deeper into the pump, closer to the outlet. The number of rotors can go from 8-20 and may have multiple stages: the first stage's blades are thin, allowing a high pumping speed and low compression ratio, while the remaining stages get progressively larger, resulting in high compression ratios and low pumping speeds at the outlet, near the foreline. The primary way to achieve this is by changing the blade angles. The more "open" a blade is, the more likely gas is to enter that individual set of rotors, resulting in higher pumping speeds, but lower compression ratios. Regardless, each stage is designed such that the flow is constant.
+</p>
+
+<img src="media/turbo_pump.gif" alt="turbo_pump" width="200" class="center">
+<figcaption align="middle">
+  Animation showing the operation of a turbo pump's blades (note the small green gas molecule entering on the top left) (<a href="https://giphy.com/gifs/Cj7eicZjGzjdC/html5">source</a>)
+</figcaption>
+
+<p>
+  In an effort to move away from oil-based backing pumps, a molecular drag stage has been added at the end of the turbo's blade to further decrease pressure to an allowable value for dry backing pumps.
+</p>
+
+<p>
+  One variation of the turbo pump is the magnetically-levitated turbo pump. To prevent frictional wear on the bearings supporting the rotors, a <a href="https://en.wikipedia.org/wiki/Magnetic_bearing">magnetic bearing</a> is used.
+</p>
+
+<p>
+  The ultimate pressure is determined by the compression ratio of light gases (based on pump configuration), specifically H<sub>2</sub>, and amount of outgassing, especially if oil is used is the backing pump. Ultimate pressures of 2&times;10<sup>-8</sup> to 5&times;10<sup>-9</sup> Pa = 1.5&times;10<sup>-10</sup> to 4&times;10<sup>-11</sup> Torr have been achieved using a system bake and a high-compression turbo pump.
+</p>
+
+<img src="media/turbo_pump_destroyed.jpeg" alt="turbo_pump_destroyed" width="200" class="center">
+<figcaption align="middle">
+  Turbo pump after venting directly to atmosphere at 30,000 rpm (<a href="https://www.reddit.com/r/engineering/comments/1alszx/this_is_what_happens_when_you_vent_a_30000_rpm/">source</a>)
+</figcaption>
+
+<h3 id="diffusion_pump">Diffusion Pump</h3>
+
+<p>
+  The diffusion pump works by vaporizing a fluid, generally oil, and directing it in a certain pattern (stream) using jet nozzles. This stream collides with gases and forces them to downwards, where the pressure is higher, thus compressing them. There are multiple compression stages. As the vapors hit the side walls, they are cooled until condensation and returned to the boiler to repeat the process.
+</p>
+
+<p>
+  A roughing pump, generally <a href="#rotary_vane_pump">rotary vane pump</a>, <a href="#rotary_piston_pump">rotary piston pump</a>, or one of those two in combination with a <a href="#lobe_blower">lobe blower</a>, must be used, as both the boiler and pump itself cannot handle atmospheric pressure.
+</p>
+
+<p>
+  Backstreaming of the vaporizing fluid, especially those with high vapor pressures, into the chamber is an issue. The most common methods of preventing backstreaming are the use of low vapor pressure fluids and <a href="https://en.wikipedia.org/wiki/Cold_trap">cold traps</a> and/or <a href="https://en.wikipedia.org/wiki/Baffle_(heat_transfer)">baffles</a>.
+</p>
+
+<img src="media/diffusion_pump.gif" alt="diffusion_pump" width="200" class="center">
+<figcaption align="middle">Diffusion pump schematic (<a href="https://link.springer.com/chapter/10.1007/978-3-662-44395-8_2">source</a>)</figcaption>
+
+<h3 id="cryogenic_pump">Cryogenic Pump</h3>
+
+<p>
+  Cryogenic, meaning low temperature, pumps work using the principle of cryocondensation, <a href="https://github.com/ethanmorse/ethanmorse.github.io/blob/master/research/vacuum/media/cryosorption.pdf">cryosorption</a>, and cryotrapping.
+</p>
+
+<p>
+  Because vapor pressure follows a parabolic curve against temperature, vapor pressure decreases with decreasing temperature. <a href="https://en.wikipedia.org/wiki/Residence_time#Surface_science">Residence time</a> is also a factor. Given that residence time is proportional to \(\exp(1/T)\), extremely low temperatures correspond to extremely long residence times, which practically removes the condensed vapor from the system. The system uses no oil, making backstreaming non-existent and the pumping itself clean.
+</p>
+
+<p>
+  Regeneration is the process of releasing the condensed gases. To do this, the surfaces that the condensed particles are on must be warmed up to allow evaporation either directly into an exhaust or a roughing pump. Most cryopump are designed such that the chamber is isolated from the pump during regeneration, else backstreaming of the already-condensed particles may occur.
+</p>
+
+<p>
+  Liquid nitrogen and helium are the most common coolants used. The surfaces used for pumping are directly connected to the liquid refrigerators.
+</p>
+
+<iframe class="center" width="400" height="225" src="https://www.youtube.com/embed/6IxFH7nnbUc"></iframe>
+<figcaption align="middle">
+  Video showing operation of cryopump (<a href="https://www.youtube.com/embed/6IxFH7nnbUc">source</a>)
+</figcaption>
+
+<h3 id="ion_pump">Ion Pump</h3>
+
+<p>
+  Ion and getter pumps operate similarly to the cryopump: gases are captured and then transported to a surface, removing them from the system.
+</p>
+
+<p>
+  In the getter pump, a reactive metal is used within the chamber to react with (getter) a present gas. Two mechanisms allow this: a reaction that forms metal compound (TiO, TiN, etc) or the diffusion of the gas into the metal. The metal sublimation pump (MSP) generally uses Ti, as it easily sublimes and is relatively cheap. By heating a Ti filament at a low pressure, Ti sublimates and get deposited throughout the chamber. The ambient gases are captured by the Ti, effectively pumping it from the system. The nonevaporable getter pump (NEGP) uses the diffusion of gases into its getter as the pumping mechanism. Given that <a href="https://en.wikipedia.org/wiki/Mass_diffusivity#Solids">diffusivity</a> increases with temperature (based on the <a href="https://en.wikipedia.org/wiki/Arrhenius_equation">Arrhenius equation</a>), the NEGP operates at higher temperatures than the MSP.
+</p>
+
+<img src="media/getter_pump.gif" alt="getter_pump" width="200" class="center">
+<figcaption align="middle">Getter pump schematic (<a href="https://www.globalsino.com/EM/page4320.html">source</a>)</figcaption>
+
+<p>
+  The ion pump follows a similar principle to the <a href="#residual_gas_analysis">residual gas analyzer</a>. The pumping is done using a pressure gauge, like the <a href="#ionization_gauges">Bayard-Alpert gauge</a>. Electric and magnetic fields are designed to maximize the distance electrons travel, increasing the likelihood of the ionization of gases. The mean free path must also be sufficient. After ionization occurs (the gas molecules lose an electron), they have a net positive charge and are attracted to the cathode, where they can become implanted and removed. The anode may also be coated with a getter metal to promote further pumping of non-ionized gases.
+</p>
+
+<h4 id="high_vacuum_pump_summary">High Vacuum Pump Summary</h4>
+
+<p>
+  A summary of high vacuum pump capabilities can be found in the table below. Note that the minimum pressures depend heavily on the vacuum system's design.
+</p>
+
+<table align="center">
+  <caption>
+    High vacuum pump capabilities
+  </caption>
+  <tr>
+    <th>Type</th><th>Minimum pressure (Torr)</th><th>Minimum pressure (Pa)</th>
+  </tr>
+  <tr align="middle">
+    <td>Turbomolecular</td><td>10<sup>-10</sup> to 10<sup>-7</sup></td><td>10<sup>-8</sup> to 10<sup>-5</sup></td>
+  </tr>
+  <tr align="middle">
+    <td>Diffusion</td><td>10<sup>-7</sup></td><td>10<sup>-5</sup></td>
+  </tr>
+  <tr align="middle">
+    <td>Cryogenic</td><td>10<sup>-9</sup></td><td>10<sup>-7</sup></td>
+  </tr>
+  <tr align="middle">
+    <td>Ion/Getter</td><td>10<sup>-9</sup> to 10<sup>-8</sup></td><td>10<sup>-7</sup> to 10<sup>-6</sup></td>
+  </tr>
+</table>
+
+<h2 id="connections_valves">Connections (Joints) and Valves</h2>
+
+<h3 id="permanent_joints">Permanent Joints</h3>
+
+<h4 id="metal_to_metal">Metal to Metal</h4>
+
+<p>
+  Permanent joints are generally formed using welding, specifically <a href="https://en.wikipedia.org/wiki/Gas_tungsten_arc_welding">tungsten inert gas</a> (TIG, most common), <a href="https://en.wikipedia.org/wiki/Plasma_arc_welding">plasma arc welding</a>, <a href="https://en.wikipedia.org/wiki/Electron-beam_welding">electron-beam welding</a>, or <a href="https://en.wikipedia.org/wiki/Laser_beam_welding">laser beam welding</a>.
+</p>
+
+<p>
+  TIG works especially well on stainless steel, which is the most commonly used material in high vacuum systems. It is vitally important that the weld is of high quality—if not, gas may become trapped inside a gap on the vacuum side and cause a <a href="http://www.normandale.edu/departments/stem-and-education/vacuum-and-thin-film-technology/learning-in-a-vacuum---what-to-expect/articles/understanding-virtual-leaks">virtual leak</a>. To minimize the possibility of a virtual leak forming, the weld should be made on the vacuum side if possible. Additionally, the welding material, i.e., the two pieces of hardware to be welded together, should be free of cracks and grease and as smooth as possible. If this is not possible, the weld beginning on the atmosphere side should go all the way through to the vacuum side.
+</p>
+
+<p>
+  <a href="https://en.wikipedia.org/wiki/Soldering">Soldering</a> is another option of joining two metal parts together, but the use of <a href="https://en.wikipedia.org/wiki/Flux_(metallurgy)">flux</a> poses issues, as it is generally a high vapor pressure material.
+</p>
+
+<p>
+  <a href="https://en.wikipedia.org/wiki/Brazing">Brazing</a> is the last permanent metal-metal joining option. The brazing alloy (the material used to connect the two metal pieces) is generally silver-based or nickel-based.
+</p>
+
+<h4 id="glass_ceramic_to_metal">Glass or Ceramic to Metal</h4>
+
+<p>
+  In order to create <a href="https://www.pfeiffer-vacuum.com/en/know-how/mechanical-components-in-vacuum/components-and-feedthroughs/viewports/">viewports</a> to see into the chamber and <a href="https://www.pfeiffer-vacuum.com/en/know-how/mechanical-components-in-vacuum/components-and-feedthroughs/electrical-feedthroughs/">feedthroughs</a>, glass or ceramics need to be joined with metal. In order to join glass and metal, the <a href="https://en.wikipedia.org/wiki/Thermal_expansion">thermal expansion</a> value of both the glass and metal must be similar. Glass typically has a low expansion coefficient (fused quartz = 0.55, Pyrex glass = 4.0, <a href="https://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html">source</a>), while metals have higher coefficients (stainless steel = 14-17, aluminum = 21-24, <a href="https://www.engineeringtoolbox.com/linear-expansion-coefficients-d_95.html">source</a>). To better facilitate the connection, alloys have been made to serve as a buffer layer between the glass and metal, allowing a better seal. To join the ceramic and metal, the ceramic is metallized at the connection points then brazed with the metal.
+</p>
+
+<h3 id="removable_joints">Removable Joints</h3>
+
+<h4 id="flanges">Flanges</h4>
+
+<p>
+  While a properly-welded joint is the most ideal, it does not allow for easy access, modification, or troubleshooting like a removable joint does.
+</p>
+
+<p>
+  First, the <a href="https://en.wikipedia.org/wiki/Vacuum_flange">vacuum flange</a> variation must be understood. The three most common flanges used are the CF, KF, and ISO. The <a href="https://www.lesker.com/newweb/flanges/flanges_technicalnotes_conflat_1.cfm">CF flange</a> uses two identical flanges and a metal (Cu) gasket to make the connection and seal. The metal will expand due to the flange's <a href="https://www.mtm-inc.com/av-20150331-how-a-cf-knife-edge-seal-works.html">knife edge</a>, forming the seal. Silver-plated gaskets can be used on systems that are subject to frequent baking and aluminum gaskets can be used on systems with low baking temperatures (<200 °C). Pressures can range from atmosphere (10<sup>5</sup> Pa = 760 Torr) to extremely-high vacuum (10<sup>-10</sup> Pa = 10<sup>-13</sup> Torr). Temperatures are limited by the gasket material used.
+</p>
+
+<img src="media/cf_flange_cross_section.jpeg" alt="kf_flange_cross_section" width="50" height="400" class="center">
+<figcaption align="middle">Cross-section of a CF flange (<a href="https://www.lesker.com/newweb/flanges/flanges_technicalnotes_conflat_1.cfm">source</a>)</figcaption>
+
+<p>
+  The KF flange uses two identical flanges and an <a href="https://en.wikipedia.org/wiki/O-ring">O-ring</a> to make the connection and seal. Grooves within the flanges allow the O-ring to be seated uniformly and reliably. However, the O-ring material severely limits the operating pressures and temperature it operates at. For example, <a href="">Viton O-rings</a> have a <a href="https://o-ring.info/en/materials/vitonr--fkm/vitonr-temperature-rating/">temperature range</a> of -26 °C to 200-230 °C. Additionally, the O-ring used should be chosen based on the gases and materials used in the system. Corrosive gases may cause the O-ring to deteriorate, possibly resulting in a dangerous leak. The ISO operation principle is almost identical to the KF flange, except for the use of a stronger external retainer that holds the O-ring in place. The O-ring still limits the pressure and temperature ranges the flange operates at.
+</p>
+
+<img src="media/kf_flange_cross_section.gif" alt="kf_flange_cross_section" width="200" class="center">
+<figcaption align="middle">Cross-section of a KF (and essentially ISO) flange (<a href="http://www.mdcvacuum.com/searchs/doc/Kwik-Flange-KF-Instal.htm">source</a>)</figcaption>
+
+<h4 id="fittings">Fittings</h4>
+
+<p>
+  In order to connect thin tubes, like those use for process gas delivery, a <a href="https://en.wikipedia.org/wiki/Compression_fitting">compression fitting</a> must be used to make the connection. The current industry standard is the <a href="https://www.swagelok.com/en/product/fittings/vacuum-fittings">Swagelok</a> brand.
+</p>
+
+<h2 id="leak_detection">Leak Detection</h2>
+
+<p>
+  Before performing any leak testing, the system's pressure characteristics should be characterized: its pressure vs. time curve, base pressure, base leak rate (most chambers will have some type of leak rate if they're not being actively pumped), and base <a href="#rga">RGA</a> results.
+</p>
+
+<p>
+  There are two types of leak detectors: the forward-flow (FFLD) and counter-flow (CFLD). Both use mass spectrometers (MS) calibrated to helium to detect leaks.
+</p>
+
+<h3 id="ffld">Forward-Flow Leak Detector</h3>
+
+<p>
+  The FFLD consists of two vacuum pumps (turbo and roughing), pressure gauge, MS, and inlet port, as well as appropriate valves to isolate the pumps at allowed pressures. The system is pumped down to high vacuum, then He sprayed around possible leaks. A LN<sub>2</sub> trap is used to prevent non-He particles from reaching the MS.
+</p>
+
+<h3 id="cfld">Counter-Flow Leak Detector</h3>
+
+<p>
+  The CFLD has a similar setup to the FFLD, but the MS is at the inlet of the turbo pump and there is no need for a LN<sub>2</sub> trap. The pump must have low compression ratios for He and high compression ratios for all other gases. This allows the high-ratio gases to be pumped more easily and not reach the MS, while He is not and reaches the MS more easily.
+</p>
+
+<img src="media/leak_detection.gif" alt="leak_detection" width="200" class="center">
+<figcaption align="middle">Leak detector schematic (<a href="https://www.ndt.net/article/ecndt98/offshore/268/268.htm">source</a>)</figcaption>
+
+<h3 id="leak_hunting_techniques">Leak-Hunting Techniques</h3>
+
+<p>
+  The system being tested should be isolated one part at a time, eliminating sections systematically.
+</p>
+
+<p>
+  First, the pump. Can the tool be brought down to basic roughing pressure? If not, there may be a leak or the pump needs to be serviced. Connect the pump directly to a gauge and check the pressure. If it fails to reach the expected pressure, the pump is likely bad. If it is as expected, move to checking the roughing line and foreline. Reconnect the pump and check each of those for expected base pressure.
+</p>
+
+<p>
+  If neither the roughing pump, roughing line, nor foreline pose any issues, move to the main process chamber. Attempt to pump the chamber down to base pressure. If it fails to reach the expected pressure, there could be a few issues: bad high-vacuum pump, outgassing, and bad pressure gauge are all possible issues. Check the pressure on the pump side of the gate valve. If the pressure is low, then the pump is likely operating fine and there is a problem within the chamber itself. Outgassing will eventually stop, so continue pumping for a number of hours to eliminate that as a possible cause. Cleaning the chamber shields will also decrease outgassing.
+</p>
+
+<p>
+  Once the high-vacuum pump and outgassing are eliminated as possibilities, the leak detector can be used. Begin at the top of the chamber with connections and work down. Once the chamber has been checked, other options may be examined using an RGA.
+</p>
+
+<p>
+  Mass flow controllers (MFC) can pose issues by allowing gases into the chamber. If the tool is used for deposition, this is easily verified by running a non-reactive gas process, such as sputtering with only Ar and analyzing the results via <a href="https://en.wikipedia.org/wiki/X-ray_photoelectron_spectroscopy">x-ray photoelectron spectroscopy (XPS)</a>. If there is significant O<sub>2</sub>/N<sub>2</sub> present in the film but the O<sub>2</sub>/N<sub>2</sub> MFC valve was closed, there may be a leak through the MFC. This should be another characterization performed at regular intervals: when the system is verified to have no leaks, what does the XPS analysis yield for a standard process not using any additional gases.
+</p>
+
+<p>
+  After the entire tool has been checked and eliminated, leaks should be checked all the way back to the gas cylinder (essentially closing the system). The RGA will likely also verify the leak is coming from the atmosphere. The analysis should yield higher values of N<sub>2</sub>, O<sub>2</sub>, etc. Close the gas cylinder and evacuate the gas lines through the leak detector, then begin He testing. It may take a bit for the He to travel from the leak location to the MS, so wait a number of seconds (up to 30 s), between He injections.
+</p>
+
+<h2 id="residual_gas_analysis">Residual Gas Analysis</h2>
+
+<p>
+  <a href="https://en.wikipedia.org/wiki/Residual_gas_analyzer">Residual gas analyzers (RGA)</a> are simply mass spectrometers used for finding the composition of gases within a volume, e.g., vacuum chamber. "Finding the composition" has a variety of uses:
+</p>
+
+<ul>
+  <li>
+    <a href="#leak_detection"><b>Leak detection</b></a>: RGAs are used for checking if any undesirable gases are leaking into the chamber. If they are, the results provide an idea of where the source of the leak is.
+  </li>
+  <li>
+    <b>Gas purity</b>: Some processes require ultra-high purity gases to work properly. Given the base pressure gas composition, the gas purity can be determined simply by flowing the gas into the chamber and checking the changes in the analysis.
+  </li>
+  <li>
+    <b>Environmental composition</b>: RGAs can check the gas composition during a variety of processes: sputtering, etching, ion implantation, etc. For example, an RGA would be especially useful in an ion implanter used phosphorus species. P has an atomic mass of 30.97 amu, while O<sub>2</sub> has an atomic mass of 31.98 amu, only a 3% difference. If there is significant O<sub>2</sub> present in the chamber or the mass analyzer is not properly adjusted, O<sub>2</sub> can be a part of the ion beam.
+  </li>
+</ul>
+
+<p>
+  RGAs work by measuring a particle's mass-to-charge ratio, M/z, where M is the mass in <a href="https://en.wikipedia.org/wiki/Dalton_(unit)">atomic mass unit</a> (or Da or u) and z is the charge of the cation (positive ion) formed. Most cations have a charge of +1, so the ratio ends up equaling the mass. (Note that the particle can be a simple monotomic or diatomic element, such as Ar or O<sub>2</sub>, or compound, like CO<sub>2</sub>.)
+</p>
+
+<h3 id="mass_spectrometer">Mass Spectrometer</h3>
+
+<p>
+  The RGA's mass spectrometer consist of three parts: an ionizer, mass filter and detector.
+</p>
+
+<h4 id="ionizer">Ionizer</h4>
+
+<p>
+  Either an open (in main vacuum region) or closed (isolated from main vacuum region) ion source, the ionizer uses the principle of <a href="https://en.wikipedia.org/wiki/Electron_ionization">electron ionization</a> (an electron strikes a particle, causing one of its valence electrons to become unbounded and the particle to become an ion) to ionize particles within its vicinity. Open ion sources eject electrons across the chamber towards an anode, allowing the electrons to ionize gases along the way. However, given that the size of the gases are not the same, larger gas molecules are more likely to get ionized, decreasing the accuracy of the RGA. In a closed ion source, gases flow through a tube where they are ionized inside.
+</p>
+
+<h4 id="mass_filter">Mass Filter</h4>
+
+<p>
+  There are two common types of mass filters: the magnetic sector and radio frequency quadrupole (RFQ). The magnetic sector uses a magnetic field to curve the various species orthogonally from their original path, using the equation:
+</p>
+
+\[qvB = \frac{mv^{2}}{r} \to r = \frac{1}{B}\sqrt\frac{2mV_{ext}}{q}\]
+
+<p>
+  Where \(B\) is the magnetic field strength, \(m\) is the species' mass, \(V_{ext}\) is the extracting voltage, \(v = \sqrt{\frac{2qV_{ext}}{m}}\) is the ion velocity, and \(q\) is the species' charge. Depending on the species' mass, some may go less than, equal to, or greater than the desired angle.
+</p>
+
+<p>
+  The quadrupole uses four identical cylindrical rods of opposing charges evenly spaced from a center. A <a href="https://en.wikipedia.org/wiki/Band-pass_filter">band-pass filter</a> is created via the positive rods (high-pass filter) and negative rods (low-pass filter). In this case, the filtered frequency is actually mass.
+</p>
+
+<img src="media/rf_quadrupole.jpeg" alt="rf_quadrupole" width="200" class="center">
+<figcaption align="middle">RF quadrupole design (<a href="http://www.chm.bris.ac.uk/ms/quadrupole.xhtml">source</a>)</figcaption>
+
+<h4 id="detector">Detector</h4>
+
+<p>
+  The detector used is generally a <a href="https://en.wikipedia.org/wiki/Faraday_cup">Faraday cup</a>. An <a href="https://en.wikipedia.org/wiki/Electron_multiplier">electron multiplier</a> may also be used in addition to the Faraday cup if the current is too small.
+</p>
+
+<h3 id="analysis_results">Analysis of Results</h3>
+
+<p>
+  When a molecule ionizes, it dissociates, "cracks", or fragments into multiple isotopes. For example, the BF<sub>3</sub> gas dissociates into BF<sup>2+</sup>, BF<sup>+</sup>, F<sup>+</sup>, F<sup>+</sup>, and so on. Same with CHF<sub>4</sub>: CH<sub>3</sub><sup>+</sup>, CH<sub>2</sub><sup>+</sup>, CH<sup>+</sup>, and other isotopes result.
+</p>
+
+<img src="media/bf3_spectrum.png" alt="bf3_spectrum" width="200" class="center">
+<figcaption align="middle">Isotope spectrum of BF<sub>3</sub> (<a href="https://www.researchgate.net/figure/Section-of-a-BF3-mass-spectrum_fig2_258385914">source</a>)</figcaption>
+
+<p>
+  As discussed in the <a href="#leak_detection">leak detection</a> section, examining the spectra of a tool's chamber can point to issues. Take a spectrum that includes a large peak at \(m = 28\) (assuming \(z\), the degree of ionization, is 1). This can include two molecules: CO (12+16=28, resulting from dissociation of CO<sub>2</sub>) and N<sub>2</sub> (14+14=28, present in atmosphere). Other relevant masses should then be examined: N<sup>+</sup>, C<sup>+</sup>, etc. If N<sup>+</sup> contains a peak and C<sup>+</sup> does not, then N<sub>2</sub> is more likely to be the contributor to the \(m = 28\) peak. More examples of cracking patterns' \(m/z\) ratios and relative percentages can be found <a href="https://www.hidenanalytical.com/tech-data/cracking-patterns/">here</a>.
+</p>
+
+<h2 id="vacuum_systems">Vacuum Systems</h2>
+
+<h3 id="rough_pumping">Rough Pumping</h3>
+
+<p>
+  For systems that require a backing pump for the high vacuum pump, considerations must be made about the roughing pump.
+</p>
+
+<p>
+  Pumping speed should take into account economical and process factors. Is this a shared-user or high-throughput facility? If so, then the pumping speed should be on the higher end to accommodate. How important is the cleanliness of the process? If highly important, then the pumping must be controlled to prevent water from forming within the chamber. (O'Hanlon claims that Jun Zhao details this procedure in his dissertation <i>Thermal Dynamics and Particle Formation During Vacuum Pump-down</i>, but the document is not available online for verification.)
+</p>
+
+<p>
+  The other consideration is when to switch over to the high-vacuum pump. Pumping to too high a vacuum can cause backstreaming from the roughing pump, while too low a vacuum can prevent the high vacuum pump from performing properly and may even damage it. By this, there exists a range of pressures that allow the switching to take place. Keep in mind that the low vacuum region is different for each of the four previously-discussed high vacuum pumps.
+</p>
+
+<h3 id="high_vacuum_systems">High Vacuum Systems</h3>
+
+<h4 id="turbopump_systems">Turbopump Systems</h4>
+
+<p>
+  In the separate line turbopump system, there is a dedicated roughing line, foreline, and gate valve to the chamber. Venting occurs directly into the chamber.
+</p>
+
+<img src="media/turbo_separate_line.png" alt="turbo_separate_line" width="200" class="center">
+<figcaption align="middle">Separate line turbopump system: note the vent valve is connected directly to the chamber</figcaption>
+
+<p>
+  To begin pumping down the separate line system from atmosphere, the <a href="https://www.lesker.com/newweb/valves/valves_technicalnotes_1.cfm?pgid=0#GateValve">gate valve</a> (also called the high vacuum valve, labeled "PC High Vac Valve" in the figure) is closed to prevent the full-speed turbopump from being exposed to high pressures. The foreline valve ("PC Turbo Backing Valve" in the figure) is also closed. The roughing line that directly connects the roughing pump to the chamber is opened via the roughing valve and the chamber's pressure begins to decrease. Once the system is at an adequate pressure (see <a href="#rough_pumping">Rough Pumping</a> section), the roughing valve is closed. The foreline valve is then opened, followed by the high vacuum valve directly into the chamber. The system then looks like it does in the figure: gas is being removed by the turbopump where it enters the foreline and is then picked up by the roughing pump, where it exhausts the gas.
+</p>
+
+<p>
+  To vent, all valves into the chamber are closed and the vent valve opened. This flows in either dry N<sub>2</sub> (preferred), or <a href="https://cagi.org/pdfs/tap106.pdf">clean, dry air (CDA, not preferred)</a>.
+</p>
+
+<p>
+  In the single line turbopump system, there is no roughing line nor high vacuum valve. Venting occurs directly through the turbopump.
+</p>
+
+<img src="media/turbo_single_line.png" alt="turbo_single_line" width="200" class="center">
+<figcaption align="middle">Single line turbopump system: note the vent valve is on the other side of the turbopump</figcaption>
+
+<p>
+  To begin pumping down the separate line system from atmosphere, the foreline valve is opened to allow the roughing pump to pump the system. Once the system is at an adequate pressure, the turbo pump is turned on and allowed to accelerate to maximum speed.
+</p>
+
+<p>
+  To vent, the turbo pump speed is set to 0 and allowed to slow down. This can take a long time, as the pump is slowing down in high vacuum. Once it's a sufficiently-low speed, the vent valve can be opened to flow the vent gas into the turbopump. This artificially slows the turbopump while also increasing the chamber pressure to atmosphere.
+</p>
+
+<p>
+  This constant starting and stopping of the turbopump is not healthy and significantly increases the wear on the pump. Venting it too quickly can cause damage, as seen from the figure in the <a href="#turbomolecular_pump">Turbomolecular Pump</a> section.
+</p>
+
+<h4 id="diffusion_pump_systems">Diffusion Pump Systems</h4>
+
+<p>
+  As discussed in the <a href="#diffusion_pump">diffusion pump</a> section, a mechanical pump must be used prior to the diffusion pump. A high vacuum valve is thus required. Traps are commonly used.
+</p>
+
+<p>
+  The pump and valve sequences for pumping are similar to those of the <a href="#turbopump_systems">turbopump system</a>: the roughing pump decreases the pressure through the roughing line with the foreline valve closed, followed by roughing valve closing and the foreline and high vacuum valves opening to allow the diffusion pump to begin pumping.
+</p>
+
+<p>
+  To vent, the high vacuum valve is closed and the trap and pump are allowed to warm. Once the pump reaches a set temperature, the foreline valve is closed and both pumps can be vented along with the chamber.
+</p>
+
+<img src="media/diffusion_pump_system.png" alt="diffusion_pump_system" width="200" class="center">
+<figcaption align="middle">Schematic of typical diffusion pump system (without trap) (<a href="https://www.researchgate.net/figure/Typical-Diffusion-Pump-System_fig1_242100147">source</a>)</figcaption>
+
+<h4 id="cryopump_systems">Cryopump Systems</h4>
+
+<p>
+  The cryopump system is quite similar to the diffusion pump system: the roughing pump roughs the system through the roughing line, then the gate valve is opened to allow the cryopump to pump the chamber down to high vacuuum. Venting is done by closing the high vacuum valve and flowing in N<sub>2</sub> or another substitute gas.
+</p>
+
+<p>
+  To regenerate the pump, N<sub>2</sub> can be flowed in to warm the captured gases while the roughing pump is pumping. Any vaporized gases will simply be pumped out. Regardless the method, some type of heating and backing pump must be used to vaporize and remove the captured gases.
+</p>
+
+<h4 id="ion_pump_systems">Ion Pump Systems</h4>
+
+<p>
+  Since ion pumps do not need a backing pump, a roughing pump (generally a <a href="https://en.wikipedia.org/wiki/Sorption_pump">sorption pump</a> or <a href="#scroll_pump">scroll pump</a>) is used for rough pumping, then isolated to allow for the ion pump to pump independently.
+</p>
+
+<h4 id="high_vacuum_chambers">High Vacuum Chambers</h4>
+
+<p>
+  Almost all high vacuum chambers are made of <a href="https://en.wikipedia.org/wiki/Stainless_steel">stainless steel</a>.
+</p>
+
+<p>
+  Materials after that should be chosen for their permeability, temperature rating, pressure rating, outgassing rate, and so on, based on the materials, temperatures, and pressures the chamber will be exposed to.
+</p>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <i>A User's Guide to Vacuum Technology</i> by John F. O'Hanlon (<a href="https://www.goodreads.com/book/show/802629.A_User_s_Guide_to_Vacuum_Technology?from_search=true&from_srp=true&qid=E2hLJSfe8C&rank=1">Goodreads</a>, <a href="https://www.amazon.com/gp/product/0471270520/ref=x_gr_w_bb_sin?ie=UTF8&tag=x_gr_w_bb_sin-20&linkCode=as2&camp=1789&creative=9325&creativeASIN=0471270520&SubscriptionId=1MGPYB6YW3HWK55XCGG2">Amazon</a>): Arguably the most complete book on vacuum technology. Discusses gas properties, pressure gauges, pumps, and other technologies used in vacuum systems.
+  </li>
+  <li>
+    Kurt J. Lesker's <a href="https://www.lesker.com/newweb/menu_techinfo.cfm?section=tech&init=skip">vacuum technology menu</a>: A great online resource for learning about basic vacuum concepts to more advanced topics, like <a href="https://www.lesker.com/newweb/traps/traps_technicalnotes.cfm?pgid=0">traps and filters</a>.
+  </li>
+  <li>
+    World's <a href="https://www.nasa.gov/multimedia/imagegallery/image_feature_1281.html">largest vacuum chamber</a> by NASA. Imagine the pumps!
+  </li>
+</ul>
+
+</body>
+</html>
