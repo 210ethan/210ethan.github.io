@@ -94,12 +94,12 @@ def export_library():
 def csv_to_xlsx():
 
     # delete existing goodreads export to prevent overwriting
-    if path.exists("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx"):
-        os.remove("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx")
+    if path.exists("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx"):
+        os.remove("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx")
 
     # rewrite .csv file contents to .xlsx file using pandas and xlsxwriter engine
     csv_file = pd.read_csv("/Users/EthanMorse/Downloads/goodreads_library_export.csv")
-    csv_file.to_excel("/Users/EthanMorse/Documents/personal/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx", engine = "xlsxwriter")
+    csv_file.to_excel("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/books/book_reviews/goodreads_library_export.xlsx", engine = "xlsxwriter")
 
     # delete .csv file to prevent future overwriting
     os.remove("/Users/EthanMorse/Downloads/goodreads_library_export.csv")
