@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cost of Ridesharing</title>
+  <link rel="stylesheet" type="text/css" href="../../css/main.css">
+  <link rel="icon" href="../../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../../index.html">Home</a></h3>
+
+<!--
+- average: distance (miles), time spent, payout per trip, number of trips
+
+
+
+
+
+-->
+
+<h1>Cost of Ridesharing</h1>
+
+<p>
+  Participating as a driver in ridesharing companies (Uber and Lyft being the most common, but this article will only examine Uber) is a popular way of creating immediate side income: simply drive for a customer and money goes straight into your bank. But what deferred costs are lurking beneath the surface? (Note that the calculations here are based on limited data, making them extremely rough.)
+</p>
+
+<h2 id="background">Background</h2>
+
+<p>
+  First, a bit of background for those unfamiliar with ridesharing. The rider enters his information into the Uber app: who he is and where he's going. Nearby drivers get an alert and accept it after looking at both the destination and rider's rating. Once accepted the driver picks them up (the rider begins to get charged if the driver is waiting for more than 2 minutes) and "starts" the ride. Uber <a href="https://www.cnbc.com/2019/04/11/uber-paid-google-58-million-over-three-years-for-map-services.html">uses Google Maps</a> to ensure the ride is as short as possible and to avoid possible hazards (accidents, traffic, etc). Once the rider is there, the driver "ends" the ride. The rider then rates the driver from 1-5 stars and leaves a gratuity if they so desire.
+</p>
+
+<p>
+  Fares can be a bit <a href="https://help.uber.com/riders/article/how-are-fares-calculated/?nodeId=d2d43bbc-f4bb-4882-b8bb-4bd8acf03a9d">complicated</a>, but are composed of four main aspects: the base fare, cost per minute, cost per mile, and booking fee. Estimated tolls, surcharges, and a "long pickup fee" may also apply.
+</p>
+
+<img src="media/fare_breakdown.png" alt="fare_breakdown" width="40px" class="center" style="width:300px;height:400px;">
+<figcaption align="middle">Fare breakdown of a basic Uber ride</figcaption>
+
+<p>
+  Drivers take home the first three cost fields: base fare, cost per mile, and cost per minute. The ride above is 5.9 miles away and takes 15 minutes using Google maps. The driver's take-home pay is then:
+</p>
+
+\[\text{pay} = $1.07 \, \text{(base)} + 0.18 \, \frac{$}{\text{min}} \times 15 \, \text{min} + 0.89 \, \frac{$}{\text{mi}}\times 5.9 \, \text{mi} = $9.02\]
+
+<h2 id="averages">A Look at Averages</h2>
+
+<h3 id="average_distance">Average Distance Per Trip</h3>
+
+<p>
+  The only source that was found was from <a href="http://www.sherpashareblog.com/2016/02/uber-trips-are-becoming-longer-and-faster-but-are-they-more-profitable/#more-2583">SherpaShare</a>, who collaborated with <a href="https://ridesharedashboard.com/">Rideshare Dashboard</a>. For some reason, two separate datasets were taken: one from Jan-Mar 2015 and one from Oct-Dec 2015. There's no comment on why the samples are discontinuous. Also note this data is 5 years old at time of writing.
+</p>
+
+<p>
+  Their analysis of 10 large cities found a grand average of 6.0 miles per Uber trip:
+</p>
+
+<table align="center">
+  <caption>Grand average distance of Uber trips for 10 U.S. cities</caption>
+  <tr>
+    <th>City</th>
+    <th>Grand Average Distance (mi)</th>
+  </tr>
+  <tr align="middle">
+    <td>Austin</td>
+    <td>5.5</td>
+  </tr>
+  <tr align="middle">
+    <td>Boston</td>
+    <td>4.2</td>
+  </tr>
+  <tr align="middle">
+    <td>Chicago</td>
+    <td>5.0</td>
+  </tr>
+  <tr align="middle">
+    <td>Dallas</td>
+    <td>7.8</td>
+  </tr>
+  <tr align="middle">
+    <td>Washington, D.C.</td>
+    <td>5.0</td>
+  </tr>
+  <tr align="middle">
+    <td>Los Angeles</td>
+    <td>6.5</td>
+  </tr>
+  <tr align="middle">
+    <td>Orange County</td>
+    <td>7.2</td>
+  </tr>
+  <tr align="middle">
+    <td>Phoenix</td>
+    <td>7.5</td>
+  </tr>
+  <tr align="middle">
+    <td>San Diego</td>
+    <td>6.7</td>
+  </tr>
+  <tr align="middle">
+    <td>San Francisco</td>
+    <td>5.3</td>
+  </tr>
+</table>
+
+<h3 id="average_time">Average Time Per Trip</h3>
+
+<p>
+  The only source that was found was from <a href="http://www.sherpashareblog.com/2016/02/uber-trips-are-becoming-longer-and-faster-but-are-they-more-profitable/#more-2583">SherpaShare</a>, who collaborated with <a href="https://ridesharedashboard.com/">Rideshare Dashboard</a>. For some reason, two separate datasets were taken: one from Jan-Mar 2015 and one from Oct-Dec 2015. There's no comment on why the samples are discontinuous. Also note this data is 5 years old at time of writing.
+</p>
+
+<p>
+  Their analysis of 10 large cities found a grand average of 25 minutes per Uber trip:
+</p>
+
+<table align="center">
+  <caption>Grand average time of Uber trips for 10 U.S. cities</caption>
+  <tr>
+    <th>City</th>
+    <th>Grand Average Time (min)</th>
+  </tr>
+  <tr align="middle">
+    <td>Austin</td>
+    <td>26.0</td>
+  </tr>
+  <tr align="middle">
+    <td>Boston</td>
+    <td>18.5</td>
+  </tr>
+  <tr align="middle">
+    <td>Chicago</td>
+    <td>20.7</td>
+  </tr>
+  <tr align="middle">
+    <td>Dallas</td>
+    <td>30.6</td>
+  </tr>
+  <tr align="middle">
+    <td>Washington, D.C.</td>
+    <td>20.9</td>
+  </tr>
+  <tr align="middle">
+    <td>Los Angeles</td>
+    <td>24.4</td>
+  </tr>
+  <tr align="middle">
+    <td>Orange County</td>
+    <td>29.6</td>
+  </tr>
+  <tr align="middle">
+    <td>Phoenix</td>
+    <td>31.8</td>
+  </tr>
+  <tr align="middle">
+    <td>San Diego</td>
+    <td>30.2</td>
+  </tr>
+  <tr align="middle">
+    <td>San Francisco</td>
+    <td>22.0</td>
+  </tr>
+</table>
+
+<h3 id="average_trips">Average Trips Per Driver</h3>
+
+<p>
+  Using a very gross calculation, the number of drivers in 2019 was <a href="https://www.sec.gov/Archives/edgar/data/1543151/000119312519103850/d647752ds1.htm">3.9 million</a> and the total number of trips was <a href="https://techcrunch.com/2019/06/05/uber-is-finally-trading-above-its-ipo-price/">6.2 billion</a>, giving an average of 1600 trips per driver in 2019, or just over 4 trips per day.
+</p>
+
+<h3 id="average_payout">Average Payout Per Trip</h3>
+
+<p>
+  From <a href="https://www.ridester.com/2020-survey/">Ridester's 2020 independent driver earnings survey</a> (no 2019 survery was performed), the average Uber driver made $18.97 per hour in 2020, compared to $14.73 per hour in 2018, so a bit higher than the <a href="https://www.usinflationcalculator.com/">inflation rate</a>. Assuming a linear rate of increase, the 2019 hourly wage would be $16.85.
+</p>
+
+<h3 id="combining_averages">Combining the Averages</h3>
+
+<p>
+  Using these averages, a clear picture of a year in the life of a driver can be made.
+</p>
+
+<p>
+  The average driver made:
+</p>
+
+\[\text{average total} = 16.85 \, \frac{$}{\text{hr}} \times \frac{25}{60} \, \frac{\text{hr}}{\text{trip}} \times 1600 \, \frac{\text{trip}}{\text{year}} \approx $11000/\text{year}\]
+
+<p>
+  However, this value is misleading. Some people choose to drive full-time, bringing their average working time to 40-50 hours per week. Others choose to do it on the side, making their total time much less, maybe only a few hours per week:
+</p>
+
+\[\text{full-time total} = 16.85 \, \frac{$}{\text{hr}} \times 40 \frac{\text{hr}}{\text{week}} \times 50 \, \frac{\text{week}}{\text{year}} \approx $34000/\text{year}\]
+
+\[\text{on-the-side total} = 16.85 \, \frac{$}{\text{hr}} \times 5 \frac{\text{hr}}{\text{week}} \times 50 \, \frac{\text{week}}{\text{year}} \approx $4500/\text{year}\]
+
+<p>
+  This still doesn't provide the clearest picture, as some drivers work significantly more, others less, etc.
+</p>
+
+<p>
+  What about time spent driving?
+</p>
+
+\[\text{average time} = \frac{25}{60} \, \frac{\text{hr}}{\text{trip}} \times 1600 \, \text{trip} = 650 \, \text{hr}\]
+
+\[\text{full-time average time} = 40 \frac{\text{hr}}{\text{week}} \times 50 \, \frac{\text{week}}{\text{year}} = 2000 \, \text{hr}\]
+
+\[\text{on-the-side average time} = 5 \frac{\text{hr}}{\text{week}} \times 50 \, \frac{\text{week}}{\text{year}} = 250 \, \text{hr}\]
+
+<p>
+  And miles driven?
+</p>
+
+\[\text{average distance} = 6.0 \, \frac{\text{mi}}{\text{trip}} \times 1600 \, \frac{\text{trip}}{\text{year}} = 9600 \, \frac{\text{mi}}{\text{year}}\]
+
+\[\text{full-time distance} = 6.0 \, \frac{\text{mi}}{\text{trip}} \times \frac{60}{25} \, \frac{\text{trip}}{\text{hr}} \times 2000 \, \frac{\text{hr}}{\text{year}} = 29000 \, \text{mi}\]
+
+\[\text{on-the-side distance} = 6.0 \, \frac{\text{mi}}{\text{trip}} \times \frac{60}{25} \, \frac{\text{trip}}{\text{hr}} \times 250 \, \frac{\text{hr}}{\text{year}} = 3600 \, \text{mi}\]
+
+
+
+
+
+
+
+
+</body>
+</html>
