@@ -14,6 +14,10 @@ Updated on 14 April 2020
 - write to book_reviews.html file (ensure all the other info has been added
 beforehand)
 
+To update ChromeDriver:
+- bring up Alfred search, "find ChromeDriver": /Users/EthanMorse/opt/anaconda3/lib/python3.7/site-packages
+- download correct CD packages
+- replace old CD with new CD
 
 """
 
