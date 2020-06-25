@@ -51,7 +51,7 @@
 - damage to lattice
 - http://amasci.com/weird/unusual/e-wall.html
 - predep, drive in
-- alternatives to ion implant: diffusion via furnace
+- alternatives to ion implant: diffusion via furnace, spin on diffusants
 
 -->
 
@@ -101,7 +101,9 @@
   While \(E_{i}\) cannot change, \(E_{F}\) can based on the number of ionized impurities present in the substrate. When an n-type dopant is added, \(E_{F}\) shifts up towards the conduction band, decreasing the \(E_{C} - E_{F}\) gap. Similarly, when a p-type dopant is added, \(E_{F}\) shifts down towards the valence band, decreasing the \(E_{F} - E_{V}\) gap. Because there are now electrons sitting at the new n-type \(E_{F}\) level, even a small amount of thermal energy can excite them into the conduction band, creating current. For the p-type, electrons can also be excited to \(E_{F}\), leaving holes in the valence band, creating currrent.
 </p>
 
-
+<p>
+  It's this change in the \(E_{F}\) value that drives modern-day devices (and, admittedly, some other things). By combining two substrates—one n-type and one p-type—and creating a <a href="https://en.wikipedia.org/wiki/P%E2%80%93n_junction">p-n junction</a>, both of the \(E_{F}\) levels must match up. The p-n junction is the basis for transistors, proving the importance of ion implantation in devices.
+</p>
 
 
 
@@ -315,46 +317,7 @@
 
 
 
-<h3 id="implant_masks">Implant Masks</h3>
 
-<p>
-  Masks are used to block certain areas from being affected by a process. In ion implantation, a mask is used to prevent specific areas of the substrate from being implanted. After all, the source and drain of MOSFET wouldn't necessarily be a source and drain if <i>everywhere</i> around it was doped the same.
-</p>
-
-<p>
-  So, how to decide which mask to use? A few things about the mask must be considered: cost, stopping power, adhesion to the substrate surface, compatibility with the substrate itself (for example, Cu diffuses very quickly into Si, which can pose later issues in devices). <a href="https://en.wikipedia.org/wiki/Amorphous_solid">Amorphous</a> (non-crystalline) and high-density materials are best due to larger stopping powers. Common masks include SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>, photoresist (specific science <a href="https://www.microchemicals.com/technical_information/photoresists_composition_properties.pdf">here</a>), Ti, and W.
-</p>
-
-<p>
-  Masks can also be used when forming shallow implants. Simply by knowing \(R_{p}\) and \(\Delta R_{p}\) of the mask and substrate, the energy can be adjusted to push the ions completely past the mask and only a small depth into the substrate. This will take trial-and-error, as the ion energy as they leave the mask is unknown.
-</p>
-
-<h4 id="photoresist_masks">Photoresist Masks</h4>
-
-<p>
-  Photoresist masks should be chosen based on a few parameters. First, the temperature at which it softens. If being used at a mask, it is likely to have already been post-develop-baked (also called hard bake). Any temperature above the hard bake temperature may cause <a href="https://www.microchemicals.com/technical_information/reflow_photoresist.pdf">reflow</a>, which can easily ruin the entire process. There are multiple ways to avoid this:
-</p>
-
-<ul>
-  <li>
-    If possible, choose a resist with as high of a softening temperature as possible.
-  </li>
-  <li>
-    Improve cooling to the tool's <a href="#endstation"> (where the implanting actually occurs). Instead of using deionized water as a coolant, a mixture of <a href="https://en.wikipedia.org/wiki/Ethylene_glycol">ethylene glycol</a> and water or simply pure ethylene glycol may work better.
-  </li>
-  <li>
-    Choose a metal or dielectric mask that won't have reflow issues. This will add more steps (deposition, etching, photoresist removal) in the fabrication process, but is much better than a completely-ruined process.
-  </li>
-</ul>
-
-<p>
-  High energies can cause strong cross-linking of the resist, making removal more difficult than normal. However, because high-energy ions don't make it to the bottom of the resist, a lift-off process can be performed to more easily remove the strongly-cross-linked parts of the resist.
-</p>
-
-<img src="media/photoresist_removal.png" alt="photoresist_removal" width="200" class="center">
-<figcaption align="middle">Lift-off process to remove strongly-cross-linked photoresist</figcaption>
-
-[finish remaining masks, pull rp drp data]
 
 
 
@@ -582,7 +545,56 @@
 
 
 
-<h4 id="channeling">Channeling</h4>
+
+
+
+
+
+
+<h2 id="process_considerations">Process Considerations</h2>
+
+<h3 id="implant_masks">Implant Masks</h3>
+
+<p>
+  Masks are used to block certain areas from being affected by a process. In ion implantation, a mask is used to prevent specific areas of the substrate from being implanted. After all, the source and drain of MOSFET wouldn't necessarily be a source and drain if <i>everywhere</i> around it was doped the same.
+</p>
+
+<p>
+  So, how to decide which mask to use? A few things about the mask must be considered: cost, stopping power, adhesion to the substrate surface, compatibility with the substrate itself (for example, Cu diffuses very quickly into Si, which can pose later issues in devices). <a href="https://en.wikipedia.org/wiki/Amorphous_solid">Amorphous</a> (non-crystalline) and high-density materials are best due to larger stopping powers. Common masks include SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>, photoresist (specific science <a href="https://www.microchemicals.com/technical_information/photoresists_composition_properties.pdf">here</a>), Ti, and W.
+</p>
+
+<p>
+  Masks can also be used when forming shallow implants. Simply by knowing \(R_{p}\) and \(\Delta R_{p}\) of the mask and substrate, the energy can be adjusted to push the ions completely past the mask and only a small depth into the substrate. This will take trial-and-error, as the ion energy as they leave the mask is unknown.
+</p>
+
+<h4 id="photoresist_masks">Photoresist Masks</h4>
+
+<p>
+  Photoresist masks should be chosen based on a few parameters. First, the temperature at which it softens. If being used at a mask, it is likely to have already been post-develop-baked (also called hard bake). Any temperature above the hard bake temperature may cause <a href="https://www.microchemicals.com/technical_information/reflow_photoresist.pdf">reflow</a>, which can easily ruin the entire process. There are multiple ways to avoid this:
+</p>
+
+<ul>
+  <li>
+    If possible, choose a resist with as high of a softening temperature as possible.
+  </li>
+  <li>
+    Improve cooling to the tool's <a href="#endstation"> (where the implanting actually occurs). Instead of using deionized water as a coolant, a mixture of <a href="https://en.wikipedia.org/wiki/Ethylene_glycol">ethylene glycol</a> and water or simply pure ethylene glycol may work better.
+  </li>
+  <li>
+    Choose a metal or dielectric mask that won't have reflow issues. This will add more steps (deposition, etching, photoresist removal) in the fabrication process, but is much better than a completely-ruined process.
+  </li>
+</ul>
+
+<p>
+  High energies can cause strong cross-linking of the resist, making removal more difficult than normal. However, because high-energy ions don't make it to the bottom of the resist, a lift-off process can be performed to more easily remove the strongly-cross-linked parts of the resist.
+</p>
+
+<img src="media/photoresist_removal.png" alt="photoresist_removal" width="200" class="center">
+<figcaption align="middle">Lift-off process to remove strongly-cross-linked photoresist</figcaption>
+
+[finish remaining masks, pull rp drp data]
+
+<h3 id="channeling">Channeling</h3>
 
 <p>
   Channeling occurs when the ion beam is angled such that there are few obstacles, in this case, atoms, in its path. Take B<sup>+</sup>. Its atomic radius is around <a href="https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_%28data_page%29">85 pm</a> ("p" being pico, or 10<sup>-12</sup>). Viewing the <a href="https://en.wikipedia.org/wiki/Diamond_cubic">diamond cubic structure</a> of Si from the [110] direction provides very wide openings, or channels, for the ion beam to penetrate. Ions can travel extremely far into the lattice if the beam angle is orthogonal to the axis.
@@ -603,7 +615,7 @@
     <b>Surface amorphization</b>: Depositing a thin layer of amorphous material will both slow and scatter the ions once they pass through.
   </li>
   <li>
-    <b>Substrate amorphization</b>: Implanting inert species just below the substrate surface.
+    <b>Substrate amorphization</b>: Implanting inert species, such as Ar, just below the substrate surface.
   </li>
 </ul>
 
@@ -624,9 +636,6 @@
 </p>
 
 \[\theta_{\text{tilt, small}} = \tan^{-1}\left(\frac{10}{100}\right) = 5.71^{\circ} \quad \theta_{\text{tilt, large}} = \tan^{-1}\left(\frac{2000}{1000}\right) = 63.4^{\circ}\]
-
-<p>
-  There is a lot more to consider about <a href="#implant_masks">implantation masks</a>
 
 <p>
   Additionally, there will be a shadowing effect if <i>any</i> tilt angle is used.
@@ -656,30 +665,54 @@
 
 
 
+<h2 id="doping_alternatives">Doping Alternatives</h2>
 
+<p>
+  While doping remains a necessity for device fabrication, ion implantation is not the only method of creating n- or p-type regions.
+</p>
 
+<h3 id="diffusion_doping">Diffusion Doping</h3>
 
+<p>
+  The other primary method of doping is through diffusion via a furnace. The substrate is heated up and a gas source is introduced into the furnace (chamber or tube). The gases used for each common implant are <a href="https://en.wikipedia.org/wiki/Phosphoryl_chloride">POCL<sub>3</sub></a> for P, <a href="https://en.wikipedia.org/wiki/Diborane">B<sub>2</sub>H<sub>6</sub></a> for B, and <a href="https://en.wikipedia.org/wiki/Arsine">AsH<sub>3</sub></a> and <a href="https://www.americanelements.com/tertiarybutylarsine-4262-43-5">C<sub>4</sub>H<sub>11</sub>As (TBA)</a> for As. Using POCL<sub>3</sub> as an example, it reacts with O<sub>2</sub>, to form gaseous <a href="https://en.wikipedia.org/wiki/Phosphorus_pentoxide">P<sub>2</sub>O<sub>5</sub></a>. P<sub>2</sub>O<sub>5</sub> then reacts with the Si surface to form phosphosilicate glass (PSG), (P<sub>2</sub>O<sub>5</sub>)<sub>x</sub>(SiO<sub>2</sub>)<sub>1-x</sub>, which serves as the P diffusion source. (The other source gases also react to form a glass layer on Si.)
+</p>
 
+<p>
+  There are two steps in the diffusion process:
+</p>
 
+<ol>
+  <li>
+    <b>Pre-deposition</b>: The source gas is flowed into the chamber along with a reactive gas (generally O<sub>2</sub>), forming an oxide and finally the glass layer. Some dopants diffuse slightly into the substrate.
+  </li>
+  <li>
+    <b>Drive-in</b>: The source gas is turned off and the dopants are allowed to diffuse into the substrate.
+  </li>
+</ol>
 
+<p>
+  Diffusion is based on <a href="https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion">Fick's laws</a> and increases with temperature:
+</p>
 
+\[D(T) = D_{0} \, \exp\left(-\frac{E_{A}}{kT}\right)\]
 
+<p>
+  where \(D_{0}\) is the element's pre-factor (temperature-independent).
+</p>
 
+<h3 id="spinon_doping">Spin-On Doping</h3>
 
+<p>
+  Spin-on doping (SOD) is the least-common method of doping a substrate. A liquid source is applied to a substrate, then spun at a thousands rpm for a few seconds. This (ideally) provides a uniform film across the surface. The substrate is then heated to allow the dopants to diffuse.
+</p>
 
+<p>
+  Specific application notes and product information can be found <a href="https://www.pdx.edu/pnna/sites/www.pdx.edu.pnna/files/Spin-On%20Diffusants___Catalog_Version-%206.pdf">here</a>.
+</p>
 
-
-
-
-
-
-
-
-
-
-
-
-
+<p>
+  A garage-fab SOD process can be seen <a href="https://youtu.be/s1MCi7FliVY?t=985">here</a>.
+</p>
 
 
 
