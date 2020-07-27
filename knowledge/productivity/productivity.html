@@ -1,10 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Productivity</title>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-168273452-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-168273452-1');
+  </script>
+  <title>Productivity: Technology and Practices</title>
   <link rel="stylesheet" type="text/css" href="../../css/main.css">
   <link rel="icon" href="../../media/ethan_morse_favicon.png">
 </head>
+
 <body>
 
 <h3 id="home"><a href="../../index.html">Home</a></h3>
@@ -20,13 +30,14 @@
 - productivity area: only focus there, no browsing the web, etc.
 - health: good sleep, healthy foods
 - breaks: humans can only work for 4 hrs? pomodoros
+- taking distractions out of life: adblocker, pihole, purging inbox/files
 -->
 
 
 
 
 
-<h1>Productivity</h1>
+<h1>Productivity: Technology and Practices</h1>
 
 <p>
     Productivity boils down to the optimization and efficiency of time. The systems, applications, and methods used should attempt to minimize both time and effort spent doing monotonous or tedious tasks. Some general principles:
@@ -44,7 +55,7 @@
   </li>
 </ul>
 
-<h2 id="time_organization">Time Organization</h2>
+<h2 id="time">Time: Organization, Reduction, Optimization</h2>
 
 <h3 id="calendar">Calendar</h3>
 
@@ -140,11 +151,15 @@
 <figcaption align="middle">Weekly RescueTime email with specific times on apps and websites</figcaption>
 
 <p>
-  While RescueTime is good for overall time tracking, only the <a href="https://www.rescuetime.com/premium">premium version</a> can give you real-time updates as to how much time you are spending on unproductive sites.
+  While RescueTime is good for overall time tracking, only the <a href="https://www.rescuetime.com/premium">premium version</a> can give you real-time updates as to how much time you are spending on unproductive sites. That's where apps like StayFocusd come in.
 </p>
 
 <p>
-  
+  <a href="https://chrome.google.com/webstore/detail/stayfocusd/laankejkbhbdhmipfmgcngdelahlfoji?hl=en">StayFocusd</a> allows for daily time tracking on specific sites that you set. Say YouTube, Reddit, and Twitch are the three websites you spend the most unproductive time on. With StayFocusd, you can limit the aggregate time spent on these three sites. This allows for daily tracking, e.g., if the maximum time allowed is 2 hours and it runs out, you know you've spent 2 hours on unproductive sites for that day. After time runs out, it blocks those sites for the remainder of the active day (unproductive time only contributes to the timer during "Active Hours" on "Active Days").
+</p>
+
+<p>
+  In the case of completely blocking a website, see the Chrome extension <a href="https://chrome.google.com/webstore/detail/block-site-website-blocke/eiimnmioipafcokbfikbljfdeojpcgbh?hl=en">Block Site</a>.
 </p>
 
 
@@ -167,9 +182,7 @@
 
 
 
-
-
-<h2 id="todo_list">To-Do List</h2>
+<h3 id="todo_list">To-Do List</h3>
 
 <p>
   A to-do list (TDL) serves to remind and plan the following day, week, or even month. Any note-taking or word processor will do: Microsoft Word (<a href="https://www.microsoft.com/en-us/microsoft-365/word">website</a>, <a href="https://en.wikipedia.org/wiki/Microsoft_word">Wikipedia</a>), Microsoft OneNote (<a href="https://www.microsoft.com/en-us/microsoft-365/onenote/digital-note-taking-app">website</a>, <a href="https://en.wikipedia.org/wiki/Microsoft_onenote">Wikipedia</a>), and Evernote (<a href="https://evernote.com/">website</a>, <a href="https://en.wikipedia.org/wiki/Evernote">Wikipedia</a>) are all well-known, popular choices.
@@ -218,8 +231,6 @@
   My TDL for a standard week is organized into five sections that are almost identical to the day: education, training, daily/social/other, notes, and training (box). I use fields to keep track of my goals for the week, e.g., reach page 300 of the book I'm reading or make sure I'm doing something fun every day.
 </p>
 
-<h2 id="time_optimization_reduction">Time Optimization and Reduction</h2>
-
 <h3 id="optimization">Optimization</h3>
 
 <p>
@@ -229,22 +240,22 @@
 <h3 id="reduction">Reduction</h3>
 
 <p>
-  The best way to reduce computer task time is through a search app: Alfred (<a href="https://www.alfredapp.com/">website</a>, <a href="https://en.wikipedia.org/wiki/Alfred_(software)">Wikipedia</a>), Quicksilver (<a href="https://qsapp.com/">website</a>, <a href="https://en.wikipedia.org/wiki/Quicksilver_(software)">Wikipedia</a>) are popular applications for MacOS. (Not sure about Windows or Linux apps.)
+  The best way to reduce computer task time is through a search app: Alfred (<a href="https://www.alfredapp.com/">website</a>, <a href="https://en.wikipedia.org/wiki/Alfred_(software)">Wikipedia</a>) and Quicksilver (<a href="https://qsapp.com/">website</a>, <a href="https://en.wikipedia.org/wiki/Quicksilver_(software)">Wikipedia</a>) are popular applications for MacOS. (Not sure about Windows or Linux apps.)
 </p>
 
 <p>
-  These (Alfred, in my case) expedite many processes:
+  These expedite many processes:
 </p>
 
 <ul>
   <li>
-    <b>Internet search</b>: Instead of opening up a browser, opening up a new tab, going to a specific website, then typing in the search, a simple command button + spacebar brings up the Alfred search bar, "wiki + [search element name]" is entered, and the Wikipedia page is brought up.
+    <b>Internet search</b>: Instead of opening up a browser, opening up a new tab, going to a specific website, then typing in the search, a simple command button + spacebar brings up the Alfred search bar, followed by a command to search specific sites, e.g., "w alfred" pulls up Alfred's Wikipedia page and "gr war and peace" searches Goodreads for <i>War and Peace</i>. Commands are customizable.
   </li>
   <li>
     <b>File search</b>: Instead of opening Finder and going through many folders to find the file, a simple "Find + [search element name]" in the Alfred search bar finds it immediately. You can also search within files for strings
   </li>
   <li>
-    <b>Other</b>: Perform math, define custom web searches, and access the dictionary.
+    <b>Other</b>: Perform math, access the dictionary, and control MacOS.
   </li>
 </ul
 
@@ -254,9 +265,35 @@
 
 <h2 id="notetaking">Note-taking</h2>
 
-<p>
 
+
+
+
+
+
+<h2 id="health">Health</h2>
+
+<p>
+  Productivity has been found to directly correlate with a variety of health metrics.
 </p>
+
+<h3 id="sleep">Sleep</h3>
+
+<p>
+  Getting high-quality sleep is extremely important for improving productivity. In their paper, <a href="https://journals.lww.com/joem/Fulltext/2010/01000/The_Effects_of_Workplace_Flexibility_on_Health.13.aspx?casa_token=jrbdF1tsCcYAAAAA:fVpD15uPWZ4OvcnqHDip4tbbO0_cpsRIr2zWzWgSO9XGvyT_HQsZvWitUAkLK0LePjAnJRHOQrkndza9BcZIQWA"><i>The Cost of Poor Sleep: Workplace Productivity Loss and Associated Costs</i></a>, researchers found that "Mean productivity loss (Fig. 2) was significantly higher for the insomnia group (6.1%) than for the at-risk (4.6%) and good-sleep (2.5%) groups (all P  0.05). The ISS group had an intermediate level of productivity loss (5.5%)."
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -273,6 +310,18 @@
 
 
 <h2 id="random_advice">Random Advice</h2>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
