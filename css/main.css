@@ -28,3 +28,12 @@ img {
 	max-width: 75%;
 	height: auto;
 }
+
+.spoiler{
+  color:black;
+  background-color:black;
+}
+
+.spoiler:hover{
+  background-color:white;
+  }
