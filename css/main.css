@@ -37,3 +37,8 @@ img {
 .spoiler:hover{
   background-color:white;
   }
+
+blockquote {
+	border-left: 2px solid #ccc;
+	padding: 0.5em 10px;
+}
