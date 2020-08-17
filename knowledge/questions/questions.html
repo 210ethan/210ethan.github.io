@@ -25,6 +25,89 @@
   This is a place for me to post answers to questions that I think of. Questions in bold.
 </p>
 
+<hr>
+
+<p>
+  I asked this question on r/TheMotte's <a href="https://www.reddit.com/r/TheMotte/comments/iamulv/smallscale_question_sunday_for_the_week_of_august/g1q8o9j?utm_source=share&utm_medium=web2x">Small-Scale Question Sunday for the week of August 16, 2020</a>:
+</p>
+
+<blockquote>
+  <p>
+    How do I get better at determining if a paper's methods and results are reliable and robust? Often when reading a paper (mostly social sciences), I find myself agreeing with their methods and findings, only to find someone who is seemingly qualified rip the methods and results to threads.
+  </p>
+  <p>
+    My probability and statistics backgrounds are average and rudimentary, respectively, which I think has something to do with it. Would learning more about statistics/experimental methods be the best course of action? If so, any suggestions on resources (textbooks, lectures, etc.)? DeGroot and Schervish's Probability and Statistics seems reputable, but I'm open to other recommendations.
+  </p>
+</blockquote>
+
+<p>
+  The answers I got were (each blockquote is an individual user's answer):
+</p>
+
+<blockquote>
+  <ol>
+    <li>
+      Look for confounding effects and whether they were controlled for. All good papers should mention them -- if they don't, it's an indication of agenda. For example, hours worked for the 'earnings gap', power in 'interrupting', Socio-economic-status indications in name studies.
+    </li>
+    <li>
+      You can pretty much dismiss studies that use self-selection (an internet survey) or self-report (e.g. dating preferences).
+    </li>
+    <li>
+      p levels near 0.05 and low or unreported effect sizes are suspicious (but this seems a rarer form of deception).
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  your question remind me of a paul graham quote, which i think is very much applicable to academic papers - and my opinion is that it's more likely to be useful than digging into probability and statistics (although, that's not a waste of time): "Remember the exercises in critical reading you did in school, where you had to look at a piece of writing and step back and ask whether the author was telling the whole truth? If you really want to be a critical reader, it turns out you have to step back one step further, and ask not just whether the author is telling the truth, but why he's writing about this subject at all." -- Paul Graham
+</blockquote>
+
+<blockquote>
+  Some approaches I take:
+
+  <ol>
+    <li>
+      Think about how the results could have been achieved by something other than the proposed mechanism. Look for what is unobserved, much of which will be due to unobservables. For example, if cancer rates are higher in (say) soda drinkers, one could easily craft an explanation that there's some general propensity for unhealthy behavior that causes both soda drinking and other unhealthy eating. Or that poverty correlates with soda consumption and exposure to lead paint.
+    </li>
+    <li>
+      Related to (1): think about causal diagrams. LessWrong has a long description here. The most simplified case: if A and B are correlated, then A could cause B, B could cause A, or some unobserved C could cause A and B.
+    </li>
+    <li>
+      Look not just at statistical significance, but practical significance. You can have significant p-values with effect sizes nobody would care about.
+    </li>
+    <li>
+      For studies demonstrating negatives, think about sample and effect sizes. It's very hard to demonstrate that something causes a low-probability event (like death or cancer) without huge sample size, so finding "no evidence for" low-probability events is easy.
+    </li>
+    <li>
+      Critically evaluate the incentives of the researcher and how they might come through in the published findings. Even with a large-sample-size randomized controlled trial, researchers have broad latitude over which effects to evaluate, whether outliers get trimmed, which subgroups to evaluate, and whether they publish their studies at all. If you see that data collection stopped early, that a drug impacts skin cancer rates when it could've just have easily been tested on 20 other cancers, that an effect is found in men 18-24 but in no other subgroup, etc., this is evidence for p-hacking.
+    </li>
+    <li>
+      Evaluate selection bias. Is there something fundamental in how people were chosen for a study that makes it non-random to begin with? Would they attrit from a study in a non-random way?
+    </li>
+    <li>
+      Look for confirming or contradictory research. Even if there isn't anything studying the exact topic, you can do this in a Bayesian fashion - there may be something that you'd have some level of confidence in generalizing to the topic at hand. For the soda example, if soda is found to be carcinogenic in only one human study and you can find a few other studies showing that the individual ingredients (artificial colors, phosphoric acid) are carcinogenic in mice, this is some level of evidence for their claim.
+    </li>
+  </ol>
+</blockquote>
+
+<blockquote>
+  <p>
+    Honestly? You can't. Not without becoming an expert in the field. From the outside, you could spot egregiously bad statistical errors or total failures of control, but those will be the minority of cases. What look like unfounded assumptions may simply be textbook knowledge so universal in the field and so well replicated that nobody even bothers citing it anymore. Conversely, what seems utterly unremarkable may be a fatal flaw.
+  </p>
+  <p>
+    I recall one paper I peer reviewed. I loved this paper, right up my alley in an area I was interested in, done by people I know and respect. Everything was great...except they used one wrong drug which tainted all of the results. The number of people who are in a situation to use this drug *and* study the result topic which it damages is tiny, maybe 20 of us in the world. But that was it, the study was dead. To the authors' credit, they didn't re-submit and I've never seen the paper anywhere else, so I think they just tossed it. And they were new to the field, so they simply didn't know.
+  </p>
+  <p>
+    There are a lot of downsides to peer review, but the biggest upside, and it's a HUGE one, is that these people have deep knowledge of the topic and have often uses these same experimental techniques themselves. They know the quirks, the weird confounders, that one study from an obscure journal 20 years ago that proves you can't study X with this technique even if it works for all the other letters, but also the difficulties and realistic limitations (e.g. working with dangerous chemicals or endangered species).
+  </p>
+</blockquote>
+
+<blockquote>
+  Learning more about stats wouldn't hurt, but another good approach is reading a lot of teardowns of studies. Go through Gelman's blog archives, for example. There are classes of methodological errors that keep coming up over and over again, and even if you can't identify them on your own the first time you see each one, you can learn to recognize them once you've seen an example or two.
+</blockquote>
+
+<hr>
+
 <ul>
   <li>
     <b>What makes some materials more flammable than others?</b> From <a href="https://chemistry.stackexchange.com/questions/87322/why-are-some-materials-more-flammable-than-others">chemistry.stackexchange</a>: "for a material to be flammable it needs to contain something that is oxidizable by air oxygen, typically carbon ... The more volatile a material is, the more flammable it will be." Volatility is determined by the material's <a href="https://en.wikipedia.org/wiki/Volatility_(chemistry)#Intermolecular_forces">intermolecular forces</a>.
@@ -39,7 +122,7 @@
     <b>What determines the seasonality of a virus?</b> The truth is we don't entirely know. Some diseases increase in the summer, others in the winter. Knowing the functions behind the seasonality will help us combat future viruses.
   </li>
   <li>
-    <b>What is PGP and how does it work?</b> PGP stands for <a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy</a>. Good explanation <a href="https://www.varonis.com/blog/pgp-encryption/">here</a>. 
+    <b>What is PGP and how does it work?</b> PGP stands for <a href="https://en.wikipedia.org/wiki/Pretty_Good_Privacy">Pretty Good Privacy</a>. Good explanation <a href="https://www.varonis.com/blog/pgp-encryption/">here</a>.
   </li>
 </ul>
 
