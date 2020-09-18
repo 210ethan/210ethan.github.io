@@ -16,8 +16,10 @@ beforehand)
 
 To update ChromeDriver:
 - bring up Alfred search, "find ChromeDriver": /Users/EthanMorse/opt/anaconda3/lib/python3.7/site-packages
-- download correct CD packages
-- replace old CD with new CD
+- download correct ChromeDriver (CD) packages: https://chromedriver.chromium.org/downloads
+- unzip
+- replace old CD executable with new CD executable
+- give CD permissions in System Preferences
 
 """
 
