@@ -22,7 +22,6 @@ def create_html_table():
     header = "<tr><th>Item</th><th>Category</th><th>Country</th><th>City</th><th>Description</th><th>Dates</th><th>Priority (1 (high) - 5)</th><th>Notes</th><th>Complete?</th></tr>"
     all_rows = ""
 
-
     for row in range(2, num_row+1):
 
         # find specific cell values for information
@@ -59,16 +58,15 @@ def create_html_table():
     return final_table
 
 
-
 def delete_append_to_file(final_table):
 
     # open html file for reading, assign contents to variable lines
-    with open("bucket_list.html", "r") as html_file:
+    with open("bucketlist.html", "r") as html_file:
         lines = html_file.readlines()
 
     # open file for writing, check if "<table>" is in line.
     # If yes, effectively delete by writing all other lines
-    with open("bucket_list.html", "w") as html_file:
+    with open("bucketlist.html", "w") as html_file:
         for line in lines:
             if "<table>" not in line:
                 html_file.write(line)
@@ -77,7 +75,7 @@ def delete_append_to_file(final_table):
     html_file.close()
 
     # open file for appending
-    html_file = open("bucket_list.html", "a")
+    html_file = open("bucketlist.html", "a")
 
     # create string with all html info, include closing html tags
     file_contents = final_table + "</body></html>"
@@ -86,13 +84,10 @@ def delete_append_to_file(final_table):
     html_file.write(file_contents)
 
 
-
 def main():
 
     final_table = create_html_table()
 
     delete_append_to_file(final_table)
-
-
 
 main()
