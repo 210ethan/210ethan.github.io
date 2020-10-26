@@ -31,6 +31,7 @@
   - X publish or perish
   - peer review
   - p hacking
+  - https://www.ncbi.nlm.nih.gov/books/NBK547524/
 -->
 
 <h1 id="problems">Problems with Modern Science</h1>
@@ -524,6 +525,23 @@ https://arxiv.org/abs/2006.14979
     <blockquote>
       if it were a requirement of every accredited Ph.D. program, then no single graduate student could be at a disadvantage for conducting replications compared against her peers in other programs.
     </blockquote>
+    This can be approximately quantified. The National Science Foundation (NSF) publishes a <a href="https://www.nsf.gov/statistics/doctorates/">list detailing doctorate recipients</a> for the past year. In 2018, 55,195 doctorates were awarded in the U.S. As grouped by relevant fields (not including "Humanities and arts" nor "Other [other non-science and engineering fields not shown separately]"):
+    <table align="center">
+      <caption>
+        Ph.D. degrees awarded by field in 2018
+      </caption>
+      <tr>
+        <th align="middle">Field</th>
+        <th align="middle">Degrees Awarded</th>
+        <tr align="middle"><td>Life sciences</td><td>12,780</td></tr>
+        <tr align="middle"><td>Physical sciences</td><td>6,335</td></tr>
+        <tr align="middle"><td>Mathematics and computer</td><td>4,030</td></tr>
+        <tr align="middle"><td>Psychology and social sciences</td><td>8,899</td></tr>
+        <tr align="middle"><td>Engineering</td><td>10,183</td></tr>
+        <tr align="middle"><td>Total</td><td>42,227</td></tr>
+      </tr>
+    </table>
+    I was not able to find any information about the the amount of reproduced studies published each year. Regardless, this would result in at most around 40,000 new reproductions, which is <i>likely</i> significantly more than the amount currently published.
   </li>
   <li>
     Require journals to publish at least one reproduction in each issue. This has obvious issues. There is no overarching journal entity that can enforce this rule, so it would take cooperation from everyone, forming a sort-of <a href="https://slatestarcodex.com/2014/07/30/meditations-on-moloch/">Moloch</a> situation. As said before, reproductions are unsexy and journals most likely wouldn't want to publish one in lieu of something like <a href="https://arxiv.org/abs/1312.7128"><i>Searching the Internet for evidence of time travelers</i></a>.
@@ -556,12 +574,42 @@ https://arxiv.org/abs/2006.14979
 </p>
 
 <p>
-  As of now (25 October 2020), the standard for statistically significant is <i>p</i> < 0.05.
+  As of now (25 October 2020), the standard for statistically significant is <i>p</i> < 0.05, meaning 5 out of 100 studies with <i>p</i> < 0.05 being statistically significant have false positive results. Plenty of others find this experimentally significant (in a negative way): in the 2017 paper <a href="https://www.nature.com/articles/s41562-017-0189-z"><i>Redefine statistical significance</i></a>, over 50 scientists provide their rationale for decreasing the accepted <i>p</i>-value across science.
+</p>
+
+<h3 id="data_repositories">Data Repositories</h3>
+
+<p>
+  It's not the norm to share raw data and analyses from experiments. The final results are often the only data-related information included in studies. Occasionally a separate file includes an appendix with all relevant data that makes reproduction a bit easier. Being transparent with the data allows comparison at every step of the experiment, not just the end.
+</p>
+
+<p>
+  <a href="https://osf.io/">Open Science Framework</a> is leading the charge for this by allowing study designs and data to be stored on their servers or connected with the reseacher's personal file-sharing service. It doesn't even have to be OSF. Using a public Github repository or hosting it on a publicly-available Google Drive is still better than nothing and something researchers should implement as common practice.
 </p>
 
 
 
+<h3 id="reproduction_funding">Reproduction Funding</h3>
 
+<p>
+  As discussed in the <a href="#publish_perish">publish or perish section</a>, researchers go where the money is, and there isn't much going towards reproduction studies. There are very few opportunities available for funding, as seen below:
+</p>
+
+<ul>
+  <li>
+    <a href="https://www.nwo.nl/en/news-and-events/news/2016/nwo-makes-3-million-available-for-replication-studies-pilot.html">€3 million by Dutch Research Council</a> was the "first special funding programme in the world for the repetition of such 'cornerstone research'."
+  </li>
+  <li>
+    <a href="https://ies.ed.gov/funding/ncer_rfas/systematic_replications.asp">IES for systematic replication</a>
+  </li>
+  <li>
+    <a href="https://www.wired.com/2017/01/john-arnold-waging-war-on-bad-science/">Laura and John Arnold Foundation</a> funded Brian Nosek's <a href="https://osf.io/ezcuj/">Reproducibility Project</a> (<a href="https://en.wikipedia.org/wiki/Reproducibility_Project">Wikipedia</a>), which attempted to reproduce 100 psychology studies. Only 35 out of the 100 successfully reproduced, but even then not to the same significance as the original studies.
+  </li>
+</ul>
+
+<p>
+  Outside of these three examples, I found little else available on Google discussing funding for reproduction studies. Until funding is made available for replicating, it will continue to be unattractive and put on the back burner in favor of novel research.
+</p>
 
 
 
