@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Space: How Do Objects Collide?</title>
+  <link rel="stylesheet" type="text/css" href="../../css/main.css">
+  <link rel="icon" href="../../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../../index.html">Home</a></h3>
+
+<!--
+  - Check specific bands of orbit? Both around earth and depth (e.g. 100-200 km above surface)
+  - How much surface area increases per kilometer above earth
+  - how many objects in orbit
+  - run simulation to see how many objects collide?
+  - how do objects stay in orbit and what determines their orbit
+  - https://maps.esri.com/rc/sat2/index.html
+  - https://en.wikipedia.org/wiki/List_of_orbits
+  - https://www.google.com/search?q=surface+area+of+strip+of+sphere&oq=surface+area+of+strip+of+sphere&aqs=chrome..69i57j33i22i29i30l7.5523j0j9&sourceid=chrome&ie=UTF-8
+  - https://en.wikipedia.org/wiki/Apsis
+-->
+
+<h1 id="space">Space: How <i>Do</i> Objects Collide?</h1>
+
+<p>
+  After reading about <a href="https://en.wikipedia.org/wiki/Kessler_syndrome">Kessler syndrome</a> and <a href="https://www.newyorker.com/magazine/2020/09/28/the-elusive-peril-of-space-junk"><i>The Elusive Peril of Space Junk</i></a>, my first thought was "how the heck <i>do</i> objects in orbit collide?". There's so much space (no pun intended) up there! A few days later, here we are.
+  </p>
+
+
+<h2 id="background">Background</h2>
+
+<p>
+  First, orbitals need to be understood, as they are not perfectly circular about an axis.
+</p>
+
+
+
+
+
+
+<h2 id="working_area">Working Area</h2>
+
+<p>
+  The most simple model of the orbit is the surface area of a sphere, where the radius is the radius of Earth plus the distance above Earth's surface the objects orbit it. The <a href="https://en.wikipedia.org/wiki/Earth">mean radius of Earth</a> is 6371 km and the <a href="https://en.wikipedia.org/wiki/International_Space_Station">International Space Station (ISS)</a> orbits at around <a href="https://www.space.com/34650-track-astronauts-space-new-interactive-map.html">400 km</a> above Earth's surface. This results in a working surface area of:
+</p>
+
+\[\begin{align*}
+  \text{SA} &= 4 \pi \left(r_{\text{earth}} + r_{\text{orbit-surface}}\right)^{2} \\
+            &= 4 \pi \left(6371 + 400\right)^{2} \\
+            &= 5.76 \times 10^{8} \, \text{km}^{2} \\
+  \end{align*}
+\]
+
+<p>
+  This model assumes point-like objects that can move two-dimensionally throughout the surface area—they cannot move towards or away from Earth.
+</p>
+
+<p>
+  The issue with this is differing orbits. The ISS orbits in <a href="https://en.wikipedia.org/wiki/Low_Earth_orbit">low Earth orbit</a>, <a href="http://www.unoosa.org/documents/pdf/spacelaw/sd/IADC-2002-01-IADC-Space_Debris-Guidelines-Revision1.pdf">defined as 0-2000 km</a> above the Earth's surface. There are a few other types of orbits:
+</p>
+
+<ul>
+  <li>
+    Low Earth (LEO): 0-2000 km
+  </li>
+  <li>
+    Medium Earth (MEO): 2,000-35,786 km
+  </li>
+  <li>
+    Geosynchronous and geostationary (GSO, GEO): 35,786 km
+  </li>
+  <li>
+    High Earth (HEO): >35,786 km
+  </li>
+</ul>
+
+<p>
+  Using these ranges, a shell of permissible space can be found, assuming the lowest possible orbit altitude is <a href="http://www.asahi.com/ajw/articles/AJ202001210011.html">200 km</a> and the highest is :
+</p>
+
+\[\begin{align*}
+    V_{\text{shell}} &= \frac{4}{3} \pi \left(r_{\text{HEO}} - r_{\text{LEO}}\right) \\
+                     &= \frac{4}{3} \pi \left(xxxxx - 200\right) \\
+                     &=   \, \text{km}^{3}
+  \end{align*}
+\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="objects">Objects</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="simulations">Simulation</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
