@@ -30,6 +30,12 @@
   <li>
     <a href="#birthday_paradox">Birthday Paradox</a>
   </li>
+  <li>
+    <a href="#three_squares_triangle">Three Squares in a Triangle</a>
+  </li>
+  <li>
+    <a href="#river_crossing">River Crossing</a>
+  </li>
 </ul>
 
 <h3 id="potato_paradox">Potato Paradox</h3>
@@ -64,6 +70,50 @@
 
 <img src="media/three_squares_triangle.png" class="center">
 
+<h3 id="river_crossing">River Crossing</h3>
+
+<p>
+  <a href="#river_crossing_solution">SOLUTION</a>
+</p>
+
+<p>
+  There are many variations to this, but I will give one of the more famous ones: <a href="https://en.wikipedia.org/wiki/Wolf,_goat_and_cabbage_problem">the wolf, goat, and cabbage</a>.
+</p>
+
+<p>
+  Once upon a time a farmer went to a market and purchased a wolf, a goat, and a cabbage. On his way home, the farmer came to the bank of a river and rented a boat. But crossing the river by boat, the farmer could carry only himself and a single one of his purchases: the wolf, the goat, or the cabbage. If left unattended together, the wolf would eat the goat, or the goat would eat the cabbage. The farmer's challenge was to carry himself and his purchases to the far bank of the river, leaving each purchase intact. How did he do it?
+</p>
+
+<p>
+  (In other words, the wolf and goat cannot be together and the goat and cabbage cannot be together. Assume he starts on the left side of the river and needs to get to the right side.)
+</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="solutions">Solutions</h2>
 
@@ -85,7 +135,25 @@
   <span class="spoiler">a = 0.120. Basic trigonometry is used. To find the bottom side's portion next to the smallest square: \(s_{s} = \frac{a}{\sqrt{3}}\). To find the bottom side's portion next to the largest square: \(s_{l} = \frac{3a}{\sqrt{3}}\). Sum all lengths together and set equal to 1: \(1 =  \frac{a}{\sqrt{3}} + a + 2a + 3a + \frac{3a}{\sqrt{3}} = 8.31a\). Solve for a: a = 0.120.</span>
 </p>
 
+<h3 id="river_crossing_solution">River Crossing Solution</h3>
 
+<ul>
+  <li>
+    <span class="spoiler">(L: WGCF, R: [empty])</span>
+  </li>
+  <li>
+    <span class="spoiler">Take goat across, go back empty-handed (L: WCF, R: G)</span>
+  </li>
+  <li>
+    <span class="spoiler">Take cabbage across, take goat back (L: WGF, R: C)</span>
+  </li>
+  <li>
+    <span class="spoiler">Take wolf across, go back empty-handed (L: GF, R: CW)</span>
+  </li>
+  <li>
+    <span class="spoiler">Take goat across (R: CWGF)</span>
+  </li>
+</ul>
 
 
 
