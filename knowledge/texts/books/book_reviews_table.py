@@ -190,12 +190,12 @@ def create_html_table(row_list):
 def delete_append_to_file(final_table):
 
     # open html file for reading, assign contents to variable lines
-    with open("book_reviews.html", "r") as html_file:
+    with open("books.html", "r") as html_file:
         lines = html_file.readlines()
 
     # open file for writing, check if "<table>" is in line.
     # If yes, effectively delete by writing all other lines
-    with open("book_reviews.html", "w") as html_file:
+    with open("books.html", "w") as html_file:
         for line in lines:
             if "<table>" not in line:
                 html_file.write(line)
@@ -204,7 +204,7 @@ def delete_append_to_file(final_table):
     html_file.close()
 
     # open file for appending
-    html_file = open("book_reviews.html", "a")
+    html_file = open("books.html", "a")
 
     # create string with all html info, include closing html tags
     file_contents = final_table + "</body></html>"
@@ -224,7 +224,7 @@ def delete_append_to_file(final_table):
 
 def main():
 
-    export_library()
+    #export_library()
 
     csv_to_xlsx()
 
