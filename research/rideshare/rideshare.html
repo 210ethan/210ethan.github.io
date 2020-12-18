@@ -488,19 +488,53 @@
 </p>
 
 <p>
-  This question is easily answered by seeing how much it costs to own a car per year and how much it costs to rideshare in lieu of personal driving. A breakeven point in expected number of miles driven per year will be found.
+  This question is easily answered by seeing how much it costs to own a car per year and how much it costs to rideshare in lieu of personal driving. One assumption I will make is that someone even considering doing full-time ridesharing instead of owning a car will be driving fewer miles than the average person. Let's call this 5,000 miles, or roughly 2.7x less than the average American.
 </p>
-
-<h3 id="owning">Owning</h3>
 
 <p>
-  From the <a href="#maintenance">maintenance</a> section, it's seen that the average cost per 25k miles is $3,000. From the <a href="#fuel_costs">fuel costs</a> section, the average American drives <a href="https://www.fhwa.dot.gov/ohim/onh00/bar8.htm">13,500 miles per year</a>, the average vehicle (only looking at cars and light trucks/vans) has a fuel economy of <a href="https://afdc.energy.gov/data/10310">20.9 mpg</a>, and the average price of a gallon of regular grade gasoline over the past year is <a href="https://gasprices.aaa.com/">$2.68/gallon</a>
+  Using <a href="https://www.aaa.com/AAA/common/AAR/files/AAA-Your-Driving-Costs.pdf">AAA's Your Driving Costs</a>'s weighted averages for yearly costs, the cost per year of driving 5,000 miles can be found:
 </p>
 
+\[\begin{align*}
+  \text{cost(mile)} &= 0.27(\text{mile}) + 5190 \\
+                   &= 0.27(5000) + 5190 \\
+                   &= $6540
+\end{align*}\]
 
+<p>
+  Now for the rideshare cost per year and making a lot of assumptions:
+</p>
 
+<ul>
+  <li>
+    Drives six days out of the week, totaling 300 days per year
+  </li>
+  <li>
+    Each drive is to and from the location, totaling 600 rideshares per year
+  </li>
+  <li>
+    Average rideshare distance is 6 miles (see <a href="#average_distance">average distance per trip</a>)
+  </li>
+  <li>
+    Average rideshare time is 25 minutes (see <a href="#average_time">average time per trip</a>)
+  </li>
+</ul>
 
+<p>
+  Using the most current (18 December 2020) fare prices, the average trip price can be found:
+</p>
 
+\[\text{trip}_{\text{avg}} = 1.07 + 0.17 \times 25 + 0.86 \times 6 + 2.85 = $13.33\]
+
+<p>
+  Multiply by 600 to get total cost per year:
+</p>
+
+\[\text{trip}_{\text{yr total}} = $13.33 \times 600 = $8000\]
+
+<p>
+  For the interested reader wanting to find out their personal situation, simply input personal values.
+</p>
 
 <h2 id="see_also">See Also</h2>
 
