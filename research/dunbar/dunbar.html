@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checking Dunbar</title>
+  <link rel="stylesheet" type="text/css" href="../../css/main.css">
+  <link rel="icon" href="../../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../../index.html">Home</a></h3>
+
+<!--
+- https://www.sciencedirect.com/science/article/pii/S0378873316301095
+
+
+-->
+
+
+<h1 id="dunbar">Checking Dunbar</h1>
+
+<p>
+  In his 1992 paper, <a href="https://www.sciencedirect.com/science/article/abs/pii/004724849290081J?via%3Dihub">Neocortex size as a constraint on group size in primates</a>, Dunbar argues there is a limit of group size (read: social contacts) one can have—limited by their mental processing power. With this <a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">Dunbar's</a> number of 150 was born, stating there is "suggested cognitive limit to the number of people with whom one can maintain stable social relationships—relationships in which an individual knows who each person is and how each person relates to every other person". In short, you can only have so many friendships before you aren't able to maintain all of them.
+</p>
+
+<hr>
+
+<p>
+  For those curious, 150 was calculated via the following regression equation:
+</p>
+
+\[\log_{10}(N) = 0.093 + 3.389 \log_{10}(C_{R, homo})\]
+
+<p>
+  Where \(N\) is the mean group size and \(C_{R}\) is the neocortex ratio of homo (humans). Solving for \(N\) and substituting \(C_{R} = 4.1\) (last entry of Table 1):
+</p>
+
+\[\begin{align*}
+  N &= 10^{0.0.93} C_{R, homo}^{3.39} \\
+    &= 1.24 C_{R, homo}^{3.39} \\\
+    &= 1.24 (4.1)^{3.39} \\\
+    &= 148.2
+\end{align*}\]
+
+<hr>
+
+<p>
+  It's important to note that 150 is an estimated upper-bound, not a recommendation or absolute. The number can vary based on a few variables, discussed later.
+</p>
+
+<p>
+  In another article, <a href="https://www.ft.com/content/c5ce0834-9a64-11e8-9702-5946bae86e6d">Why drink is the secret to humanity's success</a>, Dunbar provides two more specific numbers:
+</p>
+
+<blockquote>
+	Our studies suggest that we devote about 40 per cent of our available social time (and the same proportion of our emotional capital) to an inner core of about five shoulders-to-cry-on. And we devote another 20 per cent to the next 10 people who are socially most important to us. In other words, about two-thirds of our total social effort is devoted to just 15 people.
+</blockquote>
+
+<p>
+  And in yet another paper, <a href="https://royalsocietypublishing.org/doi/abs/10.1098/rspb.2004.2970">Discrete hierarchical organization of social group sizes</a>, Dunbar proposes yet more specific numbers:
+</p>
+
+<blockquote>
+  <p>
+    First, we denote S1 as the mean support clique size, S2 the mean sympathy group size, S3 the mean band size, S4 the mean community group size, and S5 and S6 the mean sizes of mega-bands and large tribes, respectively. Averaging across these grouping levels, the data give mean values of S0 = 1 (individual or ego), S1 = 4.6, S2 = 14.3, S3 = 42.6, S4 = 132.5, S5 = 566.6 and S6 = 1728.
+  </p>
+  <p>
+    This suggests that humans form groups according to a discrete hierarchy with a preferred scaling ratio between 3 and 4 (the mean of Si/Si-1 is 3.52).
+  </p>
+</blockquote>
+
+<p>
+  Each Sx can be described as and rounded to the following (descriptions taken from BBC's <a href="https://www.bbc.com/future/article/20191001-dunbars-number-why-we-can-only-maintain-150-relationships">Dunbar's number: Why we can only maintain 150 relationships</a>):
+</p>
+
+<ul>
+  <li>
+    S0: Self, 1
+  </li>
+  <li>
+    S1: Loved ones, 5
+  </li>
+  <li>
+    S2: Good friends, 15
+  </li>
+  <li>
+    S3: Friends, 50
+  </li>
+  <li>
+    S4: Meaningful contacts, 150
+  </li>
+  <li>
+    S5: Acquaintances, 500
+  </li>
+  <li>
+    S6: People you can recognize, 1500
+  </li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+<h2 id="math">Do I Have Time to Be Your Friend? Let Me Check...</h2>
+
+<p>
+  Here I do some super rough math with three methods to check Dunbar's number based on my friendship requirements and figure out my own number.
+</p>
+
+<p>
+  Below are some basic assumptions about an average person's life (who lives alone and is not subject to seeing a family every day) that I do not think are unreasonable to apply to the general population:
+</p>
+
+<ul>
+  <li>
+    Sleep: 8 hr/day
+  </li>
+  <li>
+    Non-friendly work (no social aspect to it): 4 hr/day
+  </li>
+  <li>
+    Exercise: 0-1 hr/day
+  </li>
+  <li>
+    Solitary time: 2-4 hr/day
+  </li>
+  <li>
+    Remaining: 7-10 hr/day or 50-70 hr/week
+  </li>
+</ul>
+
+<p>
+  Now we can apply weekly time requirements to maintain friendship levels across each Sx group, assuming Dunbar's mean Sx values are approximately correct.
+</p>
+
+<ul>
+  <li>
+    S1: 1 hr/person/1 week &#215; 5 person = 5 hr/week
+  </li>
+  <li>
+    S2: 1 hr/person/3 week &#215; 15 person = 5 hr/week
+  </li>
+  <li>
+    S3: 1 hr/person/12 week &#215; 50 person = 4 hr/week
+  </li>
+  <li>
+    S4: 1 hr/person/26 week &#215; 150 person = 6 hr/week
+  </li>
+  <li>
+    Total: 20 hr/week
+  </li>
+</ul>
+
+<p>
+  With these values, one can maintain a network of 220 relationships with a mere 20 hr/week, or 3 hr/day, of socializing! While possible, it is challenging, even if you <a href="../../thoughts/time/time.html#multiple_activities">combine multiple activities</a>. What about working backwards from the average socialization time, then finding a Dunbar number from that?
+</p>
+
+<p>
+  In their <a href="https://www.bls.gov/news.release/atus.nr0.htm#:~:text=--Socializing%20and%20communicating%2C%20such,leisure%20activity%20after%20watching%20TV.">American Time Use Survey</a>, the U.S. Bureau of Labor Statistics found that:
+</p>
+
+<blockquote>
+  Socializing and communicating, such as visiting with friends or attending or hosting social events, accounted for an average of 38 minutes per day, and was the next most common leisure activity after watching TV. Individuals spent twice as much time socializing on weekend days (58 minutes) as on weekdays (29 minutes).
+</blockquote>
+
+<p>
+  Assuming the loved ones are taken care of outside of the 38-minute average, the starting point is the S2 level. With a mere 5 hr (rounded up from 4.4 hr) of socialization per week, priorities must be chosen. S2 individuals can be focused on at the expense of S3, or a mix of the two can be formed. The number of friendship then ranges from 15 (only S2) to 53 (all of S3 + 3 S2s).
+</p>
+
+<p>
+  This forms a piecewise function with number of hours devoted to socialization as the independent variable and total number of relationships as the dependent variable, assuming you completely satisfy each Sx in order:
+</p>
+
+<img src="media/dunbar_plot.png" alt="dunbar_plot" class="center">
+
+<p>
+  The intersection of Dunbar's original 150 and the function is at 17.2 hr/week, or 2.5 hr/day, of socialization. This is not an unreasonable amount of time to spend socializing, given that the average person gets 16 hr/day of possible socialization time.
+</p>
+
+
+
+
+
+
+
+
+
+<h3 id="personal_number">Personal Number</h3>
+
+<p>
+  I currently (25 January 2021) live alone, do not have a girlfriend, and do not get much social interaction outside of work due to COVID-19.
+</p>
+
+
+
+
+
+
+
+<h2 id="variation_from_150">Variation from 150</h2>
+
+<!--
+- introversion/extroversion
+- activities that people will think you're more fun
+- profession: required to be more cordial and know about people
+- amount of effort put into being frineds (remembering certain things, etc)
+-->
+
+<p>
+  Of course, the 150 is just
+</p>
+
+
+
+\[\log_{10}(N) = 0.093 + 3.389 \log_{10}(C_{R})\]
+\[N = 10^{0.093} C_{R}^{3.39}\]
+\[N = 1.24 C_{R}^{3.39}\]
+
+
+
+
+
+
+
+
+
+<h2 id="increasing">Increasing Your Dunbar Number</h2>
+
+
+
+
+
+
+</body>
+</html>
