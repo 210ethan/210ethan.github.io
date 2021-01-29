@@ -25,7 +25,7 @@
 <h1 id="dunbar">Checking Dunbar</h1>
 
 <p>
-  In his 1992 paper, <a href="https://www.sciencedirect.com/science/article/abs/pii/004724849290081J?via%3Dihub">Neocortex size as a constraint on group size in primates</a>, Dunbar argues there is a limit of group size (read: social contacts) one can have—limited by their mental processing power. With this <a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">Dunbar's</a> number of 150 was born, stating there is "suggested cognitive limit to the number of people with whom one can maintain stable social relationships—relationships in which an individual knows who each person is and how each person relates to every other person". In short, you can only have so many friendships before you aren't able to maintain all of them.
+  In his 1992 paper, <a href="https://www.sciencedirect.com/science/article/abs/pii/004724849290081J?via%3Dihub">Neocortex size as a constraint on group size in primates</a>, Dunbar argues there is a limit of social contacts one can have due to limited mental processing power (neocortex size). With this <a href="https://en.wikipedia.org/wiki/Dunbar%27s_number">Dunbar's</a> number of 150 was born, stating there is "suggested cognitive limit to the number of people with whom one can maintain stable social relationships—relationships in which an individual knows who each person is and how each person relates to every other person". In short, you can only have so many friendships before you aren't able to maintain all of them.
 </p>
 
 <hr>
@@ -37,7 +37,7 @@
 \[\log_{10}(N) = 0.093 + 3.389 \log_{10}(C_{R, homo})\]
 
 <p>
-  Where \(N\) is the mean group size and \(C_{R}\) is the neocortex ratio of homo (humans). Solving for \(N\) and substituting \(C_{R} = 4.1\) (last entry of Table 1):
+  Where \(N\) is the mean group size and \(C_{R, homo}\) is the neocortex ratio of homo (humans). Solving for \(N\) and substituting \(C_{R, homo} = 4.1\) (last entry of Table 1):
 </p>
 
 \[\begin{align*}
@@ -46,6 +46,30 @@
     &= 1.24 (4.1)^{3.39} \\\
     &= 148.2
 \end{align*}\]
+
+<p>
+  As for the confidence interval value of 100-230... I am not able to figure out the exact calculation. Dunbar confirms the value in his preprint <a href="https://pages.ucsd.edu/~johnson/COGS184/3Dunbar93.pdf">Coevolution of neocrotical size, group size and language in humans</a> (see paragraph four of "Results" section):
+</p>
+
+<blockquote>
+  Because the equation is log-transformed and we are extrapolating well beyond the range of neocortex ratios on which it is based, the 95% confidence limits around this prediction (from formulae given by Rayner 1985) are moderately wide (100.2-231.1).
+</blockquote>
+
+<p>
+  Rayner's referenced <a href="https://zslpublications.onlinelibrary.wiley.com/doi/epdf/10.1111/j.1469-7998.1985.tb05668.x">Linear relations in biomechanics: the statistics of scaling functions</a> is above my statistics skill level.
+</p>
+
+<p>
+  Dunbar responded to my question:
+</p>
+
+<blockquote>
+  In this case, they are calculated in the usual way: two standard deviations from the predicted value, with SDs are determined from the original graph and its moments. You will obviously be alert enough to notice that the original graph is a double log plot, so when you convert these back into raw scores, the value on the RHS will always be larger than that on the LHS.
+</blockquote>
+
+<p>
+  Please <a href="../../about/about/about.html#contact">contact me</a> if you can do the math.
+</p>
 
 <hr>
 
@@ -102,22 +126,9 @@
   </li>
 </ul>
 
-
-
-
-
-
-
-
-
-
-
-
 <h2 id="math">Do I Have Time to Be Your Friend? Let Me Check...</h2>
 
-<p>
-  Here I do some super rough math with three methods to check Dunbar's number based on my friendship requirements and figure out my own number.
-</p>
+<!--
 
 <p>
   Below are some basic assumptions about an average person's life (who lives alone and is not subject to seeing a family every day) that I do not think are unreasonable to apply to the general population:
@@ -141,8 +152,10 @@
   </li>
 </ul>
 
+-->
+
 <p>
-  Now we can apply weekly time requirements to maintain friendship levels across each Sx group, assuming Dunbar's mean Sx values are approximately correct.
+  Weekly time requirements can be applied to maintain friendship levels across each Sx group, assuming Dunbar's mean Sx values are approximately correct.
 </p>
 
 <ul>
@@ -164,7 +177,21 @@
 </ul>
 
 <p>
-  With these values, one can maintain a network of 220 relationships with a mere 20 hr/week, or 3 hr/day, of socializing! While possible, it is challenging, even if you <a href="../../thoughts/time/time.html#multiple_activities">combine multiple activities</a>. What about working backwards from the average socialization time, then finding a Dunbar number from that?
+  With these values, one can maintain a network of 220 relationships with 20 hr/week, or 3 hr/day, of socializing. While possible, it is challenging, even if you <a href="../../thoughts/time/time.html#multiple_activities">combine multiple activities</a>.
+</p>
+
+<p>
+  This forms a piecewise function with number of hours devoted to socialization as the independent variable and total number of relationships as the dependent variable, assuming you completely satisfy each Sx in order:
+</p>
+
+<img src="media/dunbar_plot.png" alt="dunbar_plot" class="center">
+
+<p>
+  The intersection of Dunbar's original 150 and the function is at 17.2 hr/week, or 2.5 hr/day, of socialization. This is not an unreasonable amount of time to spend socializing, given that the average person gets 7-10 hr/day of possible socialization time.
+</p>
+
+<p>
+  A Dunbar number can also be found by working backwards from the average socialization time.
 </p>
 
 <p>
@@ -179,35 +206,6 @@
   Assuming the loved ones are taken care of outside of the 38-minute average, the starting point is the S2 level. With a mere 5 hr (rounded up from 4.4 hr) of socialization per week, priorities must be chosen. S2 individuals can be focused on at the expense of S3, or a mix of the two can be formed. The number of friendship then ranges from 15 (only S2) to 53 (all of S3 + 3 S2s).
 </p>
 
-<p>
-  This forms a piecewise function with number of hours devoted to socialization as the independent variable and total number of relationships as the dependent variable, assuming you completely satisfy each Sx in order:
-</p>
-
-<img src="media/dunbar_plot.png" alt="dunbar_plot" class="center">
-
-<p>
-  The intersection of Dunbar's original 150 and the function is at 17.2 hr/week, or 2.5 hr/day, of socialization. This is not an unreasonable amount of time to spend socializing, given that the average person gets 16 hr/day of possible socialization time.
-</p>
-
-
-
-
-
-
-
-
-
-<h3 id="personal_number">Personal Number</h3>
-
-<p>
-  I currently (25 January 2021) live alone, do not have a girlfriend, and do not get much social interaction outside of work due to COVID-19.
-</p>
-
-
-
-
-
-
 
 <h2 id="variation_from_150">Variation from 150</h2>
 
@@ -215,22 +213,47 @@
 - introversion/extroversion
 - activities that people will think you're more fun
 - profession: required to be more cordial and know about people
-- amount of effort put into being frineds (remembering certain things, etc)
+- amount of effort put into being friends (remembering certain things, etc)
 -->
 
 <p>
-  Of course, the 150 is just
+  As stated before, 150 is just an estimate based on literal monkey brains mapped to human brains via a regression equation. The confidence interval of 100-230 proves the possible variation. There are a few more causes of variation that aren't based on biological factors, but personal ones.
 </p>
 
-
-
-\[\log_{10}(N) = 0.093 + 3.389 \log_{10}(C_{R})\]
-\[N = 10^{0.093} C_{R}^{3.39}\]
-\[N = 1.24 C_{R}^{3.39}\]
+<h3 id="intro_extroversion">Intro/Extroversion</h3>
 
 
 
 
+
+<h3 id="profession">Profession</h3>
+
+<p>
+  Working longer hours or in a role that doesn't allow as much socialization decreases the amount of hours available for socializing. For example, a friend works at a <a href="https://en.wikipedia.org/wiki/Big_Four_accounting_firms">Big Four company</a> in a management role and consistently works 12-14 hr/day and sleeps 6 hr/night, leaving him with 4-6 hr of free time per day. While he can still maintain the aforementioned 220 relationships, it would require 50-75% of his free time, way too much. (This doesn't take into account his working relationships, which I am unsure about.) It's easy to see that more hours limits the number of possible relationships by causing socialization to take up a greater percentage of free time.
+</p>
+
+<table align="center">
+  <caption>
+    Number of relationships based on 6 hours of free time
+  </caption>
+  <tr>
+    <th align="middle">% Free Time Spent Socializing</th>
+    <th align="middle">Number of Relationships</th>
+    <tr align="middle"><td>10</td><td>4</td></tr>
+    <tr align="middle"><td>25</td><td>26</td></tr>
+    <tr align="middle"><td>50</td><td>220</td></tr>
+  </tr>
+</table>
+
+<p>
+  The other factor is the nature of the profession. Working the night shift as a custodian provides less opportunities for forming relationships than being a sales rep for a company and having to maintain business relationships, which can often morph into personal friendships.
+</p>
+
+<h3 id="effort">Effort</h3>
+
+<p>
+  Putting effort into friendships makes a world of difference. Showing interest in someone's life makes them <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People#Six_Ways_to_Make_People_Like_You">like you more</a> and thus easier to maintain relationships, i.e., less time is required. After all, who would want to remain friends with someone they don't like?
+</p>
 
 
 
@@ -238,8 +261,30 @@
 
 <h2 id="increasing">Increasing Your Dunbar Number</h2>
 
+<p>
+  Below are some concrete suggestions for increasing your Dunbar number or making maintaining your current one easier:
+</p>
+
+<ul>
+  <li>
+    <a href="../../thoughts/time/time.html#multiple_activities">Combine multiple activities</a>: Driving home after work? Call a friend instead of listening to that garbage on the radio. Cooking? Call a friend. The ideas are endless. Free time activities can be also formed around this concept. Enjoy soccer? Invite S(1-3) friends, fulfilling the weekly time requirement simultaneously.
+  </li>
+  <li>
+    Find ways to make people like you more.
+  </li>
+</ul>
 
 
+
+
+
+
+
+
+
+
+
+<h2 id="see_also">See Also</h2>
 
 
 
