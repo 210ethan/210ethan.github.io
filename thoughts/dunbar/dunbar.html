@@ -25,7 +25,7 @@
 <h1 id="dunbar">Checking Dunbar</h1>
 
 <p>
-  Note that Dunbar's number is used loosely in this post. It's used for group size limit due to either biological, social, or psychological constraints.
+  Note that Dunbar's number is used loosely in this post. It will mean group size limit due to either biological, social, or psychological constraints.
 </p>
 
 <p>
@@ -45,8 +45,8 @@
 </p>
 
 \[\begin{align*}
-  N &= 10^{0.0.93} C_{R, homo}^{3.39} \\
-    &= 1.24 C_{R, homo}^{3.39} \\\
+  N_{\text{homo}} &= 10^{0.0.93} C_{R, \text{homo}}^{3.39} \\
+    &= 1.24 C_{R, \text{homo}}^{3.39} \\\
     &= 1.24 (4.1)^{3.39} \\\
     &= 148.2
 \end{align*}\]
@@ -132,32 +132,6 @@
 
 <h2 id="math">Do I Have Time to Be Your Friend? Let Me Check...</h2>
 
-<!--
-
-<p>
-  Below are some basic assumptions about an average person's life (who lives alone and is not subject to seeing a family every day) that I do not think are unreasonable to apply to the general population:
-</p>
-
-<ul>
-  <li>
-    Sleep: 8 hr/day
-  </li>
-  <li>
-    Non-friendly work (no social aspect to it): 4 hr/day
-  </li>
-  <li>
-    Exercise: 0-1 hr/day
-  </li>
-  <li>
-    Solitary time: 2-4 hr/day
-  </li>
-  <li>
-    Remaining: 7-10 hr/day or 50-70 hr/week
-  </li>
-</ul>
-
--->
-
 <p>
   Weekly time requirements can be applied to maintain friendship levels across each Sx group, assuming Dunbar's mean Sx values are approximately correct.
 </p>
@@ -187,11 +161,11 @@
 </ul>
 
 <p>
-  With these values, one can maintain a network of 220 relationships with 20 hr/week, or 3 hr/day, of socializing. While possible, it is challenging, even if <a href="../time/time.html#multiple_activities">combining multiple activities</a>.
+  With these values, one can maintain a network of 220 relationships with 20 hr/week, or 3 hr/day, of socializing. While possible, it is challenging, even when <a href="../time/time.html#multiple_activities">combining multiple activities</a>.
 </p>
 
 <p>
-  This forms a piecewise function with number of hours devoted to socialization as the independent variable and total number of relationships as the dependent variable, assuming each Sx is completely satisfied in order:
+  These requirements form a piecewise function with number of hours devoted to socialization as the independent variable and total number of relationships as the dependent variable, assuming each Sx is completely satisfied in order:
 </p>
 
 <img src="media/dunbar_plot.png" alt="dunbar_plot" class="center">
@@ -216,15 +190,7 @@
   Assuming the loved ones are taken care of outside of the 38-minute average, the starting point is the S2 level. With a mere 5 hr (rounded up from 4.4 hr) of socialization per week, priorities must be chosen. S2 individuals can be focused on at the expense of S3, or a mix of the two can be formed. The number of friendship then ranges from 15 (only S2) to 53 (all of S3 + 3 S2s).
 </p>
 
-
-<h2 id="variation">Variation from 150</h2>
-
-<!--
-- introversion/extroversion
-- activities that people will think you're more fun
-- profession: required to be more cordial and know about people
-- amount of effort put into being friends (remembering certain things, etc)
--->
+<h2 id="variation">How Are You So Popular?!</h2>
 
 <p>
   As stated before, 150 is just an estimate based on literal monkey brains mapped to human brains via a regression equation. The confidence interval of 100-230 proves the possible variation. There are a few more causes of variation that aren't based on biological factors, but personal ones.
@@ -233,10 +199,8 @@
 <h3 id="intro_extroversion">Intro/Extroversion</h3>
 
 <p>
-
+  Extroverts typically enjoy seeking out new friends, while introverts don't as much. This seeking out can either increase the socialization time spent per week or make the other person more likely to enjoy the extrovert's company with the same amount of time spent, since outgoing people are generally more likable than not.
 </p>
-
-[FINISH]
 
 <h3 id="profession">Profession</h3>
 
@@ -267,11 +231,13 @@
   Putting effort into friendships makes a world of difference. Showing interest in someone's life makes them <a href="https://en.wikipedia.org/wiki/How_to_Win_Friends_and_Influence_People#Six_Ways_to_Make_People_Like_You">like you more</a> and thus easier to maintain relationships, i.e., less time is required. After all, who would want to remain friends with someone they don't like?
 </p>
 
-[FINISH, IF NEEDED]
+<h3 id="signaling">Signaling</h3>
 
+<p>
+  Being honest, someone's likability is correlated with their status, thus signaling high personal value will lead to more people wanting to be friends with you.
+</p>
 
-
-<h2 id="increasing">Increasing Your Dunbar Number</h2>
+<h2 id="increasing">Increasing Your Dunbar Number, or How to Have More Friends</h2>
 
 <p>
   Below are some concrete suggestions for increasing one's personal Dunbar number or making maintaining the current one easier:
@@ -282,26 +248,12 @@
     <a href="../time/time.html#multiple_activities">Combine multiple activities</a>: Driving home after work? Call a friend instead of listening to that garbage on the radio. Cooking? Call a friend. The ideas are endless. Free time activities can be also formed around this concept. Enjoy soccer? Invite S(1-3) friends, fulfilling the weekly time requirement simultaneously.
   </li>
   <li>
-    Find ways to make people like you more. Be the "fun" guy whenever you go out, take interest in their lives, etc.
+    Find ways to make people like you more. Be the "fun" guy whenever you go out, take interest in their lives, etc. This decreases the amount of time needed per friend while keeping satisfaction roughly constant.
   </li>
   <li>
-    Take notes about friends. Dunbar's number is literally based off of our processing power, or lack thereof. Taking notes about friends is an easy way to take the load off the brain from working to remember. I use <a href="https://github.com/JacobEvelyn/friends">friends</a>, a simple, easy-to-use CLI app that allows tracking of friends and activities.
+    Take notes about friends. Dunbar's number is literally based off of our processing power, or lack thereof. Taking notes about friends is an easy way to take the load off the brain from working to remember details. I use <a href="https://github.com/JacobEvelyn/friends">friends</a>, a simple, easy-to-use CLI app that allows tracking of friends and activities.
   </li>
 </ul>
-
-
-
-
-
-
-
-
-
-
-
-<h2 id="see_also">See Also</h2>
-
-
 
 </body>
 </html>
