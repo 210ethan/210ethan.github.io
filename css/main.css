@@ -46,3 +46,7 @@ blockquote {
 ul ul {
     list-style-type: disc;
 }
+
+code {
+  background-color: #e5e5e5;
+}
