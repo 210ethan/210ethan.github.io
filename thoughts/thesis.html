@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Thesis Lessons</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<h1 id="thesis">Thesis Lessons</h1>
+
+<p>
+  During my last two semesters of my undergraduate career, I was required to write a thesis in lieu of a "senior design project". My topic was "Deep Reactive-Ion Etching Process Development and Mask Selection". The final thesis document can be found <a href="https://github.com/ethanmorse/thesis/blob/master/ethan_morse_thesis.pdf">here</a>.
+</p>
+
+<p>
+  The thesis option is preferable to some, including me: I got to choose my own research topic and advisor and there were no sloppy, irresponsible teammates to slowly drag my grade down. But the eight months I spent working on it were quite different—in both good and bad ways—from what I initially anticipated while staring down at the timeline I created for myself in August 2019.
+</p>
+
+<h2 id="contents">Contents</h2>
+
+<p>
+  <a href="#lesson1">Lesson 1: If something is available and you have to do it eventually, do it as soon as possible</a>
+</p>
+<p>
+  <a href="#lesson2">Lesson 2: Plan things out thoroughly. If stuck, stop and develop plan</a>
+</p>
+<p>
+  <a href="#lesson3">Lesson 3: Don't offer to do things people don't expect you to do if they won't care</a>
+</p>
+<p>
+  <a href="#lesson4">Lesson 4: Get started early and finish early</a>
+</p>
+<p>
+  <a href="#lesson5">Lesson 5: Your research probably doesn't matter</a>
+</p>
+<p>
+  <a href="#lesson6">Lesson 6: Compatible managers matter</a>
+</p>
+<p>
+  <a href="#conclusion">Conclusion</a>
+</p>
+<p>
+  <a href="#see_also">See Also</a>
+</p>
+
+<h2 id="lesson1">Lesson 1: If something is available and you have to do it eventually, do it as soon as possible</h2>
+
+<p>
+  My research revolved primarily around a single tool, but also used a few others to help prepare the samples I was testing. All of these are rather high-end and have many, many moving parts, making it all the more miraculous that they work so consistently.
+</p>
+
+<p>
+  On more than one occasion, I became exhausted after a long day of working in the cleanroom, as humans do. So instead of choosing to spend one more hour inside doing some final sample preparation before testing, I opted to leave for video games, reading, or almost anything else, thinking that the tool would be fine in the morning. But sometimes it wasn't. Being an open-user facility, tools were in constant use by many others, some of whom were not very responsible or capable. This adds another chaotic variable that can easily mess up the balance of the tool-operating-just-fine equation.
+</p>
+
+<img src="media/oxford_rie.jpg" alt="oxford_rie" width="200" class="center">
+<figcaption align="middle">The tool that caused me both oh-so-much pain and indescribable amounts of joy</figcaption>
+
+<p>
+  On the few occasions that this happened, my stress levels went through the roof. I told myself the tool would never work, my advisor would be dissatisfied with the extent of my work, and I wouldn't graduate, relinquishing my already-accepted job offer, forcing me to find alternative work that I would most likely hate. (One small note: I am not a traditional electrical engineer. I do not enjoy circuit/digital design, power, or software engineering, the three fields most EEs from my university go into. Instead, I like the unsexy field of devices. This pigeonholes me into a career within an extremely cyclical industry.) After I got the tool working again through both luck and skill, I vowed never to leave until I was finished with sample prep.
+</p>
+
+<h2 id="lesson2">Lesson 2: Plan things out thoroughly. If stuck, stop and develop plan</h2>
+
+<p>
+  As I look back to the beginning of the thesis, I shake my head and bring my palm to my forehead. So much effort was wasted due to lack of planning. So many hours could have been saved had I sat down for an hour to sketch out a detailed roadmap, complete with numbers, dates, and expectations, of the months ahead. Instead, I dove head-first into experiments, not thinking about the bigger picture and how those experiments fit in.
+</p>
+
+<p>
+  My research focused on process development. The most basic method of process development is getting baseline measurements, changing a single variable while keeping the others constant, and seeing how the measurements change. Using this method across a number of variables and range of values provides a roadmap of how different variable values work together.
+</p>
+
+<table style="width:100%">
+  <caption>Basic process development table</caption>
+  <tr>
+    <th>Experiment Number</th>
+    <th>Measurement 1</th>
+    <th>Measurement 2</th>
+    <th>Measurement 3</th>
+  </tr>
+  <tr align="middle">
+    <td>1 (baseline)</td>
+    <td>X</td>
+    <td>Y</td>
+    <td>Z</td>
+  </tr>
+  <tr align="middle">
+    <td>2</td>
+    <td>X+1</td>
+    <td>Y+2</td>
+    <td>Z+5</td>
+  </tr>
+  <tr align="middle">
+    <td>3</td>
+    <td>X-3</td>
+    <td>Y+8</td>
+    <td>Z+1</td>
+  </tr>
+</table>
+
+<p>
+  In order to create this roadmap, variables and their respective values should be chosen <b>before</b> experiments begin, so they are known and there is no wondering what should be done next (unless multiple experiments are not working as planned, then something needs to be changed - more on that below). I did not follow this logical rule. I chose four variables, which was fine, and a few numbers for each, also fine. What I did not do was take a few minutes to sit back and reflect on exactly why I chose these variables and numbers. Why did I decide to vary RF power between 20, 25, 30, and 35, instead of 10, 20, and 40? Why was SF<sub>6</sub> gas flow rate kept constant and O<sub>2</sub> gas flow rate varied, instead of both or just SF<sub>6</sub>?
+</p>
+
+<p>
+  What happens when you've planned everything out methodically and diligently, only to have the experiments fail? You do the same thing you did in the beginning: sit down, (attempt to) figure out exactly why it failed, and adjust future experiments to avoid or mitigate failure.
+</p>
+
+<p>
+  A quick approximation can tell me just how many hours I wasted. Wasted is the correct term to use, as I reset my experiment values deep into the semester and disregarded past results. I also failed to do mass sample prep on a few occasions. The subscripts are the specific areas I messed up on.
+</p>
+
+<p>
+  \[\begin{align*}
+    t_{\text{etch}} &= \left(30 \, \frac{\text{min}}{\text{experiment}}\right) \times \left(10 \, \text{experiment}\right) + \left(30 \frac{\text{min}}{\text{clean}}\right) \times \left(3 \, \text{clean}\right) = 390 \, \text{min} \\
+    t_{\text{photo}} &= \left(180 \, \frac{\text{min}}{\text{experiment}}\right) \times \left(2 \, \text{experiment}\right) = 360 \, \text{min} \\
+    t_{\text{total}} &= t_{\text{etch}} + t_{\text{photo}} \\
+    &= \text{750 min} \\
+    &\approx \text{13 hr}
+  \end{align*}\]
+</p>
+
+<p>
+  Ouch! 13 uncomfortable hours of my life I'll never get back because I didn't sit down to plan things out.
+</p>
+
+<h2 id="lesson3">Lesson 3: Don't offer to do things people don't expect you to do if they won't care</h2>
+
+<p>
+  My advisor could not care less about my project. He is so involved with his own research and priorities as a professor that a measly undergraduate thesis that has no bearing on his career serves him no benefit to put effort into. This leads to rather low expectations.
+</p>
+
+<p>
+  During these meetings and a few email exchanges, he asked me questions about the project and I offered to do things to answer those questions, e.g. Q: how is this defined? A: Like this, but I can reach out to X or research Y to verify. This initiative was not expected or overtly appreciated by him and only put more burden on me.
+</p>
+
+<p>
+  This lesson does not apply when actions are guaranteed to be appreciated by the other. If a friend is moving and doesn't expect help yet I still offer and follow through, that will improve our friendship.
+</p>
+
+<h2 id="lesson4">Lesson 4: Get started early and finish early</h2>
+
+<p>
+  This was already well-known to me, but was reinforced over the course of the project. Some things were out of my control, forcing Parkinson compression (see below).
+</p>
+
+<p>
+  <a href="https://en.wikipedia.org/wiki/Parkinson%27s_law">Parkinson's Law</a> states that "work expands so as to fill the time available for its completion". While the work generally expands (less work per unit time), I propose a two-word addition to the quote to make it: "work expands or compresses so as to fill the time available for its completion". This allows for more work per unit time, hence the term "compress".
+</p>
+<p>
+  First, the expansion part. If you have a lot of work to get done and a lot of time to do it, it is human nature that this work will be spread out over the course of the "lot of time" and not be finished well before the end. Everyone in this program had two full semesters (224 days or 3600 working hours (16 * 224)), and yet some are still finalizing research with days until the end. I experienced Parkinson expansion to a minor degree.
+</p>
+
+<p>
+  Have you ever realized a homework or deadline is due much sooner than you thought? It could be the same day or next week (but a month earlier than you expected) and you are freaking out. Yet, somehow you are able to finish in time, despite you thinking there's absolutely no way this can get finished. This is the <a href="https://books.google.com/books?id=QhBMlKelYloC&pg=PA65#v=onepage&q&f=false">Stock-Sanford corollary</a> (or as I call it, Parkinson compression): "If you wait until the last minute, it only takes a minute to do so." I experienced Parkinson compression to a major degree.
+</p>
+
+<p>
+  Assuming the equation for work is \(W = E \times t\), where \(W\) is a constant work, \(E\) is effort, and
+  \(t\) is time, both laws hold.
+</p>
+
+<ol>
+  <li>
+    Expansion: Long \(t\) gives lower effort across the time period.
+  </li>
+  <li>
+    Compression: Short \(t\) gives higher effort across the time period.
+  </li>
+</ol>
+
+<p>
+  Below are three separate time periods plotted with constant work value of 40 units.
+</p>
+<ul>
+  <li>
+    Grey has time period of 10, giving an effort value of 4.
+  </li>
+  <li>
+    Orange has time period of 20, giving an effort value of 2.
+  </li>
+  <li>
+    Blue has time period of 40, giving an effort value of 1.
+  </li>
+</ul>
+
+<img src="media/parkinsons_law.png" alt="parkinsons_law" width="200" class="center" style="border:1px solid black">
+<figcaption align="middle">Parkinson expansion and compression plotted</figcaption>
+
+<p>
+  These plots are ideal. A more realistic plot would act as a piecewise function, with periods of all three levels of effort:
+
+  \[W = \left\{\begin{array}{cc}
+    2t \quad &0 \leq t \leq 5 \\
+    t \quad &5 < t \leq 15 \\
+    4t \quad &15 < t \leq 20 \\
+  \end{array}\right.\]
+</p>
+
+<img src="media/parkinsons_law_piecewise.png" alt="parkinsons_law_piecewise" width="200" class="center" style="border:1px solid black">
+<figcaption align="middle">Realistic Parkinson expansion and compression plotted</figcaption>
+
+<p>
+  Some suggestions on how to avoid Parkinson's Law:
+</p>
+<ul>
+  <li>
+    Set up a fake deadline that is some percentage sooner than the original. For example, if a project is due in 100 days, set the new deadline to be 25% sooner, or 75 days. Effort increases to a mere 1.33, but 25 days are given back, allowing you to polish or add material to the project. Additionally, every project has unforeseen obstacles that can significantly slow down or even halt progress. The extra 25 days allows a buffer when these obstacles occur.
+  </li>
+  <li>
+    Set up a schedule that gets some amount of set work done per day. Start from Day 1 and set task lists for each day thereafter. The schedule's last day should be some percentage sooner than the actual deadline to accommodate for any obstacles. Reevaluate the schedule on a regular basis and add or remove any items as needed.
+  </li>
+</ul>
+
+<h2 id="lesson5">Lesson 5: Your research probably doesn't matter</h2>
+
+<p>
+  A bit cynical, I know, but hear me out. Over <a href="https://science.sciencemag.org/content/251/4989/25.1">72% of papers in engineering aren't cited</a> within five years of their publication. Well, aren't some papers only read and not cited? So the percentage that go unread has to be less than the 72% that are uncited, right? Likely, yes, but <a href="https://www.gwern.net/Scanners#citogenesis-how-often-do-researchers-not-read-the-papers-they-cite">not as much as you'd like to think</a>.
+
+  While number of citations is not the be-all and end-all of quantifying or qualifying usefulness, it is one measure. What does no citations mean? I see three explanations:
+  <ol>
+    <li>
+      <b>Saturation of published papers</b>. An <a href="https://www.stm-assoc.org/2012_12_11_STM_Report_2012.pdf">estimated 1.8 million scientific papers are published every year</a> (see section 2.5). The subject of these papers varies wildly, with some being quite similar to others. Me, being a regular ol' researcher, am not going to cite multiple studies that all say similar things. Instead, I will only cite a few of them, leaving the others uncited.
+    </li>
+    <li>
+      <b>Specificity of published papers</b>. Some papers go into extremely minute detail. For example, <a href="https://scholar.google.com/citations?user=AgEKSKsAAAAJ&hl#d=gs_md_cita-d&u=%2Fcitations%3Fview_op%3Dview_citation%26hl%3Den%26user%3DAgEKSKsAAAAJ%26cstart%3D200%26pagesize%3D100%26citation_for_view%3DAgEKSKsAAAAJ%3ALjlpjdlvIbIC%26tzom%3D300">Analog and Mixed Mode Circuits and Systems-An Injection-Locked Frequency Divider With Multiple Highly Nonlinear Injection Stages and Large Division Ratios</a>. 0 citations, despite being published in 2007 (13 years ago) in a <a href="https://www.scimagojr.com/journalsearch.php?q=9500153930&tip=sid">journal with a 1.985 impact factor</a> at the time of writing. The <a href="https://scholar.google.com/citations?user=AgEKSKsAAAAJ&hl">last author's</a> credentials from 1993-2006 were decent, with a total of 1246 citations. This leads me to believe he is at least somewhat-known in his field and likely produces good papers, leaving the specificity reason to explain the lack of citations.
+    </li>
+    <li>
+      <b>Bad science</b>. In one of my courses, Dr. Edward Dougherty (<a href="https://scholar.google.com/citations?user=DvTVkcEAAAAJ&hl=en">Google Scholar</a>, <a href="https://en.wikipedia.org/wiki/Edward_R._Dougherty">Wikipedia</a>), spoke to us about good versus bad science (covered in his <a href="https://spie.org/Publications/Book/2263361?WT.mc_id=MSPIEPROGBW&SSO=1">new book</a> (free as an eBook)). He believes the quality of science—and by extension, scientific papers—has significantly decreased over the years. Researchers sacrifice quality to achieve quantity of published papers in order to maintain funding. This leads to a vicious cycle. Luckily, there are still journal reviewers out there that are quite strict and do a good job of filtering out hastily-written papers.
+    </li>
+  </ol>
+</p>
+
+<p>
+  Up to now, my research has helped two researchers wanting to perform DRIE on the same tool. While this is exciting, their research will likely have no great impact and therefore "doesn't matter".
+</p>
+
+<p>
+  This is all assuming a practical, immediate effect. I am not taking into account personal satisfaction, skills learned while performing said research, or tertiary or greater effects (A cites you, B cites A, C cites B and wins the Nobel Prize).
+</p>
+
+<h3 id="lesson5_perspectives">Perspectives</h3>
+
+<p>
+  <a href="http://trettel.us">Ben Trettel</a> sent me his opinion on this lesson:
+</p>
+
+<blockquote>
+  <p>
+    There's an additional component to this problem that I think is typically ignored. The vast majority of researchers do only a cursory literature review. As far as I can tell, people find some popular papers and then don't look much deeper. If there's a great paper that was never "canonized" by mention in a popular review or book, this paper might as well not exist. I try really hard to do detailed literature reviews because great ideas are frequently missed.
+  </p>
+  <p>
+    Most people focus on well-known papers. I try instead to focus on finding papers which are likely good but missed for quality-independent reasons like being written in a foreign language (or not appearing online, not appearing on Google despite being online, etc.). By taking this approach I read about the popular papers and I also see many things that were missed. (This partly why the vast majority of the items on my list of papers to find are not written in English or are English translations of foreign literature. The other reason is that foreign literature can be hard to obtain.)
+  </p>
+</blockquote>
+
+<p>
+  My response:
+</p>
+
+<blockquote>
+  <p>
+    Your argument is a good one that I’ve seen over the years, but didn’t note down. I’ve updated the link to include your comment. Please let me know if I can link your website or mention your name—I’ve left your name as “a reader” for now.
+  </p>
+  <p>
+    I see it as a variant of the <a href="https://en.wikipedia.org/wiki/Matthew_effect">Matthew effect</a>, or “the rich get richer and the poor get poorer”. As citations increase, the likelihood they are seen by future researchers and get cited increases, too. Finding niche papers in Google Scholar is difficult as the top search results contain high-citation papers (assuming the search words are general).
+  </p>
+  <p>
+    Lazy researchers don’t feel the need to go in depth on their literature review, like you said, leading them to pick the easy papers (read: top Google Scholar results that are at least somewhat related). Because if it works, why put in more effort? /s
+  </p>
+  <p>
+    That leads to the obvious question: how to find “papers which are likely good but missed for quality-independent reasons”? Scour Google Scholar’s forgotten second, third, fourth (*gasp*) page? Increase the search specificity? I’m sure some would argue the benefit is not worth the effort, but those are likely the same ones who pick the top papers for their review. So—I’m curious—how do you find those obscure papers listed on your unfound papers page?
+  </p>
+</blockquote>
+
+<p>
+  His response:
+</p>
+
+<blockquote>
+  <p>
+    You're right that it's a variant of the Matthew effect. As for how to find the missed papers, there are a variety of strategies. I'll give you a brain dump. I won't claim what I write below to be comprehensive (or interesting, or well written), but it's a start.
+  </p>
+  <p>
+    To find missed papers, one could start by doing deeper Google searches. Beyond going deeper in terms of the number of pages, trying a wider variety of keywords helps. I've long recognized that information is often "siloed" in different fields, so I've tried hard to identify fields adjacent to my own. I spent a fair amount of time examining the terminology in each field partly to understand what terms to search for as well, as different fields often use different terminology. You might have exhausted Google Scholar for a particular field's terminology, but have encountered little of the relevant papers in another field.
+  </p>
+  <p>
+    I've seen the saying "If isn't on Google, it doesn't exist" attributed to Jimmy Wales. Papers that aren't listed on Google "don't exist" in a practical sense. The UT libraries are slowly moving books from the libraries to off-site storage because people are checking books less (and also because off-site storage is cheaper and has better climate controls for book preservation). I imagine the reduction in book use is not exclusive to UT. Many great papers never made the transition online, so these papers are basically disappearing in a practical sense.
+  </p>
+  <p>
+    So how do you find items that never made the transition online? Following the citation trail is one classic approach. One article you have cites another that sounds interesting. You follows this back. Try collecting reviews, books, and bibliographies in your field and then scouring these for citations to anything that sounds interesting. I have over 150 reviews and books saved on the topic of my PhD! I particularly find foreign language reviews and books to be good sources of references to missed papers. I first heard about this series of 3 papers that I translated into English in an English translation of a major Russian book on the subject of my PhD.
+  </p>
+  <p>
+    An aside: This reminds of a question I made to check whether a scientific field is progressing: Can a good but unknown 50+ year old paper be published with minimal modifications today? If the answer is yes, that's not a good sign for scientific progress. Unfortunately I think each of the 3 papers I mentioned in the last paragraph are still publishable today, 82 years later. You'd have to add some newer data and maybe fancier figures, but the core of each paper is still publishable in principle.
+  </p>
+  <p>
+    Another particularly fruitful approach for me is to search Google Books. If I see that a particular page of a print-only journal has a keyword I find interesting, I'll check the journal at the library. This is slow, but I've found tons of great articles this way.
+  </p>
+  <p>
+    I had previously mentioned foreign language articles as unjustly ignored. I've found that doing Google searches in German and Russian to be worthwhile in my field. You can keep track of foreign language terminology where you keep track of the terminology in different fields. The language barrier does present a major obstacle, but I've written a Stack Exchange post about how to handle this. (A lot of what's on my list was found through methods described in the Stack Exchange post.)
+  </p>
+  <p>
+    Grey literature is also often not indexed on Google. You can find a lot of it through WorldCat, any number of bibliographic databases, or through the citation trail. Unfortunately grey literature can be particularly hard to locate, but it's a lot easier if you have access to a good ILL service. Related, if the grey literature is a US government report that's not publicly available, you might have some luck filing the right FOIA request.
+  </p>
+  <p>
+    Checking online bibliographic databases that aren't indexed on Google also can be quite useful. Late in my PhD I encountered Compendex and Inspec, which are licensed to various companies (ask your librarian about these and other bibliographic databases to be aware of). This lead to one of the last "rich veins" of literature I encountered on the subject of my PhD. I suspect now that I've at least touched most papers on the subject of my PhD, though I might mistakenly believe that a particular paper is irrelevant. (Recently I've realized that a particular oceanography paper is important to my research, despite encountering this paper in 2019 and apparently not thinking much of it.)
+  </p>
+  <p>
+    Various governments also have government-only bibliographic and report databases. I've had great luck filing FOIA requests to DTIC for "report bibliographies" for particular keywords. If you're interested, you should ask for U2 and UL citations at the very least. U2 is unclassified/unlimited, which is set for public release. UL is unclassified but has some sort of limitation, which is often copyright, so the government can't release the report but they can tell you of its existence. My personal experience is that currently classified reports don't contain information of interest to me, so I rarely ask for citations to classified reports.
+  </p>
+  <p>
+    Before bibliographic databases existed, there were review journals. After becoming familiar with some Russian terminology in my field, I checked hundreds of issues of Referativny Zhurnal: Mekhanika at UT. (I suspect that the library staff were amused by this as I had to request the books from storage, and I did this for months.) This is a Russian journal with abstracts of scientific papers. I was surprised to find not only good Russian articles that I missed, but also many English articles that I missed. I would scan the sections on the topics I was interested in for keywords that I recognized, take a photo of the abstract, and translate the titles later.
+  </p>
+  <p>
+    Also, it's worth noting that just because a paper is well-cited does not imply that it is well-read. An entire class of poorly-read but well-cited papers are "classic" papers written in languages other than English. These are rarely read, even if they're still relevant. I translated this paper into English and I'm somewhat amazed by how many downloads it has received. (Someone recently even asked me for permission to use a figure in the paper, when I translated the paper partly because I knew it was wrong and that figure should not be used. :-)
+  </p>
+  <p>
+    You probably get the impression that this is a lot of work. It is, but it's worthwhile when you consider how much it improves the quality of the science in my experience. Also, keep in mind that I'm not advocating that everyone does this. You start getting diminishing returns after more than a few people in a sub-field start doing this. Right now basically zero people go in-depth, so I think this is worthwhile to anyone interested.
+  </p>
+</blockquote>
+
+<h2 id="lesson6">Lesson 6: Compatible managers matter</h2>
+
+<p>
+  I've had two "real" managers in my lifetime: one during my summer internship at Texas Instruments and the other during my 2.5 year tenure as a student technician in a research lab (the same one I used during this thesis's research). Both were stellar and set an expectation that I am unsure will be met in the future. The three main qualities I found so appealing were their willingness to make sure I was doing okay (project-wise, mentality-wise), taking time out of their day to help me, and valuing my input.
+</p>
+
+<p>
+  My thesis advisor checked none of those boxes. (I acknowledge it may just be his advising style and the lack of importance of my project.)
+</p>
+
+<p>
+  I am convinced that this lack of involvement and moral support made the research much more stressful. I felt like I was annoying him if I was having trouble, which left me to brood about my worries alone. My improved ability to work and solve problems independently was the silver lining, but in the future I will seek out managers who are more compatible with my desired managing style.
+</p>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>
+  Despite the pain, anxiety, monotony, and stress this program brought me, I'm glad I did it. The main thing I learned is that I do not want to go to graduate school. Research is not for me. Maybe it was the nature of the project that turned me off (process development can be boring, especially when it's on a single tool). Maybe it was my advisor. Maybe it was a mix of both, or other factors I'm not considering. Either way, I will be done with formal education in May 2020 and won't be looking back.
+</p>
+
+<p>
+  I also learned a significant amount about productivity, planning, and organization and how to implement it in my personal and professional life.
+</p>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <a href="https://en.wikipedia.org/wiki/Reactive-ion_etching">Reactive-ion etching</a>. The general process that my thesis worked on. See (cryogenic) <a href="https://en.wikipedia.org/wiki/Deep_reactive-ion_etching">deep reactive-ion etching (DRIE)</a> for my specific version of RIE.
+  </li>
+  <li>
+    <a href="https://www.benkuhn.net/11/">The unreasonable effectiveness of one-on-ones</a>. The author's significant other claims that their one-on-ones <a href="https://twitter.com/benskuhn/status/1129821723312971777">sped up her dissertation</a> by at least one year.
+  </li>
+  <li>
+    <a href="https://en.wikipedia.org/wiki/Lotka%27s_law">Lotka's Law</a>. The general law describes the relative frequency of a variable, \(Y\), versus a total number. It was initially used to describe the percentage of authors as a function of number of papers written, i.e. very few authors have published many papers and very many authors have published few papers. It can also be applied to other disciplines, like <a href="https://www.frontiersin.org/articles/10.3389/fpsyg.2019.01927/full">sports</a>. Charles Murray details the general Lotka function and its applications in his book <a href="https://en.wikipedia.org/wiki/Human_Accomplishment"><i>Human Accomplishment</i></a> (<a href="https://www.goodreads.com/book/show/282085.Human_Accomplishment">Goodreads</a>).
+  </li>
+  <li>
+    <a href="https://science.sciencemag.org/content/342/6154/60.full">Who's Afraid of Peer Review?</a> John Bohannon creates a blatantly fake paper and submits it to <a href="https://en.wikipedia.org/wiki/Open_access">open-access</a> journals with (not) surprising results.
+  </li>
+  <li>
+    <a href="https://en.wikipedia.org/wiki/The_Mythical_Man-Month"><i>The Mythical Man-Month</i></a> (<a href="https://www.goodreads.com/book/show/13629.The_Mythical_Man_Month">Goodreads</a>) by Fred Brooks. Focused on software engineering, but applicable to any field with major projects.
+  </li>
+</ul>
+
+</body>
+</html>

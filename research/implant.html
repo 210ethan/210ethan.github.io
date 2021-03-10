@@ -1,0 +1,717 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <title>Ion Implantation: Theory, Equipment, Process, Alternatives</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<h1 id="implant">Ion Implantation: Theory, Equipment, Process, Alternatives</h1>
+
+<p>
+  Ion implantation is a common process used in the semiconductor industry to change the properties of a material, namely silicon (the substrate). Physics, equipment used, process considerations, alternatives, and further resources are discussed.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#physics">Physics</a>
+    <ul>
+      <li>
+        <a href="#dose_concentration">Dose vs. Concentration</a>
+      </li>
+      <li>
+        <a href="#stopping">Stopping</a>
+      </li>
+      <li>
+        <a href="#activation_anneal">Activation Anneal</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#equipment">Equipment</a>
+    <ul>
+      <li>
+        <a href="#sources">Sources</a>
+      </li>
+      <li>
+        <a href="#mass_analyzer">Mass Analyzer</a>
+      </li>
+      <li>
+        <a href="#acceleration">Acceleration</a>
+      </li>
+      <li>
+        <a href="#endstation">Endstation</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#process_considerations">Process Considerations</a>
+    <ul>
+      <li>
+        <a href="#implant_masks">Implant Masks</a>
+      </li>
+      <li>
+        <a href="#channeling">Channeling</a>
+      </li>
+      <li>
+        <a href="#uniformity">Uniformity</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#doping_alternatives">Doping Alternatives</a>
+    <ul>
+      <li>
+        <a href="#diffusion_doping">Diffusion Doping</a>
+      </li>
+      <li>
+        <a href="#spinon_doping">Spin-On Doping</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#further_resources">Further Resources</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="physics">Physics</h2>
+
+<p>
+  First, why are ions shot into Si? What does it do from a physics perspective?
+</p>
+
+<p>
+  The reason has to do with the <a href="https://en.wikipedia.org/wiki/Band_gap">band gap</a>, the energy range between the valence band and conduction band.
+</p>
+
+<p>
+  Within Si exist both <a href="https://en.wikipedia.org/wiki/Electron">electrons</a> (negatively-charged) and <a href="https://en.wikipedia.org/wiki/Electron_hole">electron hole</a> (positively-charged). The hole is a bit of an oddity: it's an unoccupied space where an electron <i>could</i> exist, but doesn't at that moment. While not literally a particle, they can be treated and thought of as such. Current can be viewed as the flow of electrons or holes. When a bias is applied, electrons begin to move and occupy holes. When electron A moves to hole B, hole A is formed. This propagates and creates the flow of charge, or current.
+</p>
+
+<p>
+  What does this have to do with Si? Si has four valence electrons in its four states of 3s<sup>2</sup>3p<sup>2</sup>. Those four valence electrons <a href="https://en.wikipedia.org/wiki/Covalent_bond">covalently bond</a> with the surrounding Si <a href="https://en.wikipedia.org/wiki/Crystal_structure">crystal lattice</a> structure, effectively filling that Si atom's valence shell. So, when an ion is introduced into the lattice that does not have four valence electrons, one of two things happen: there are free electrons (if the number of valence electrons is >4, such as in phosphorus's case) or free holes (valence electrons <4, such as boron). In the first case, four of P's electrons have bonded to surrounding Si atoms' valence electrons, leaving the fifth one free and able to contribute to current—a <i>donor</i> impurity, because it donates an electron. This creates an n(egative)-type semiconductor. In the second case, three of B's electrons have bonded to surrounding Si atoms, but one Si atom and the B atom both have incomplete valence shells (7/8, 6/8 filled, respectively). To fill the vacancy, the Si and B will pull a free electron from the lattice, leaving a hole in its place—an <i>acceptor</i> impurity, because it accepts an electron. This creates an p(ositive)-type semiconductor.
+</p>
+
+<p>
+  The Fermi energy level, \(E_{F}\), is the energy level at which the probability an electron exists there is 0.5, based on the <a href="https://en.wikipedia.org/wiki/Fermi%E2%80%93Dirac_statistics#Fermi%E2%80%93Dirac_distribution">Fermi-Dirac distribution</a>:
+</p>
+
+\[f(E) = \frac{1}{1 + \exp\left(\frac{E - E_{F}}{k_{B}T}\right)}\]
+
+<p>
+  \(E_{F}\) for an intrinsic semiconductor (no impurities added) is given by:
+</p>
+
+\[E_{F} = E_{i} = \frac{E_{C} + E_{V}}{2} + \frac{k_{B}T}{2}\ln\left(\frac{N_{V}}{N_{C}}\right)\]
+
+<p>
+  where \(E_{i}\) is the intrinsic Fermi level, a constant, and \(N_{C}\) and \(N_{V}\) are the effective <a href="https://ecee.colorado.edu/~bart/book/book/chapter2/ch2_4.htm">density of states</a>. (Note that the link only shows you <i>density of states</i>, \(g(E)\), not <i>effective DOS</i>. The effective DOS derivation can be found <a href="https://ecee.colorado.edu/~bart/book/book/chapter2/ch2_6.htm">here</a>.)
+</p>
+
+<p>
+  While \(E_{i}\) cannot change, \(E_{F}\) can based on the number of ionized impurities present in the substrate. When an n-type dopant is added, \(E_{F}\) shifts up towards the conduction band, decreasing the \(E_{C} - E_{F}\) gap. Similarly, when a p-type dopant is added, \(E_{F}\) shifts down towards the valence band, decreasing the \(E_{F} - E_{V}\) gap. Because there are now electrons sitting at the new n-type \(E_{F}\) level, even a small amount of thermal energy can excite them into the conduction band, creating current. For the p-type, electrons can also be excited to \(E_{F}\), leaving holes in the valence band, creating currrent.
+</p>
+
+<p>
+  It's this change in the \(E_{F}\) value that drives modern-day devices (admittedly, some other things help, too). By combining two substrates—one n-type and one p-type—and creating a <a href="https://en.wikipedia.org/wiki/P%E2%80%93n_junction">p-n junction</a>, both of the \(E_{F}\) levels must match up. The p-n junction is the basis for transistors, proving the importance of ion implantation in devices.
+</p>
+
+<h3 id="dose_concentration">Dose vs. Concentration</h3>
+
+<p>
+  Two common terms used are dose and concentration. They are similar, but not synonymous. Dose is number of ions per unit area (cm<sup>2</sup>), while concentration is number of ions per unit volume (cm<sup>3</sup>).
+</p>
+
+<p>
+  Given beam current, \(I\) (charge/time), and time spent implanting, \(t\), the total amount of implanted charge is simply \(Q = It\). Dose, \(\phi\) (number/area), can be multiplied by the elementary charge, \(q\), and scan area, \(A\), to also get the total implanted charge. Integrating the current with respect to time can also calculate dose, which is actually how the tool itself calculates dose (see <a href="#dose_measurement">dose measurement</a>). Equating the first two and solving for dose gives:
+</p>
+
+\[\phi = \frac{It}{qA} = \frac{1}{qA} \int I(t) \, dt\]
+
+<p>
+  Dose can also be found be integrating the concentration, \(N(x)\), with respect to depth:
+</p>
+
+\[\phi = \int N(x) \, dx\]
+
+<p>
+  The concentration of an implant can be approximated if the range, \(R_{p}\), and straggle, \(\Delta R_{p}\), are known (range and straggle values are experimentally-determined and based on energy):
+</p>
+
+\[N(x) = N_{0} \exp\left(-\frac{(x - R_{p})^{2}}{2\Delta R_{p}^{2}}\right) = \frac{\phi}{\Delta R_{p} \sqrt{2\pi}} \exp\left(-\frac{(x - R_{p})^{2}}{2\Delta R_{p}^{2}}\right)\]
+
+<p>
+  The \(N(x)\) equation above is a simple <a href="https://en.wikipedia.org/wiki/Gaussian_function">Gaussian function</a>, but is not entirely representative of how actual implant profiles look. To better simulate real profiles, the <a href="https://en.wikipedia.org/wiki/Pearson_distribution">Pearson IV distribution</a> and <a href="https://en.wikipedia.org/wiki/Moment_(mathematics)">moments</a> are used, which accomodate for the skewness that often occurs.
+</p>
+
+<img src="media/boron_pearson_iv.png" alt="boron_pearson_iv" width="200" class="center">
+<figcaption align="middle">Boron distribution in Si at 30, 100, 300, 800 keV - the skewness becomes more obvious (<a href="https://inis.iaea.org/collection/NCLCollectionStore/_Public/07/234/7234550.pdf?r=1#page=62">source</a>)</figcaption>
+
+<p>
+  The respective moments are as follows:
+</p>
+
+<ol>
+  <li>
+    \(R_{p}\): <a href="https://en.wikipedia.org/wiki/Mean">Average</a> depth of an implanted ion from the surface of the substrate.
+  </li>
+
+  \[m_{1} = \int_{0}^{\infty} xN(x) \, dx\]
+
+  <li>
+    \(\Delta R_{p}\): <a href="https://en.wikipedia.org/wiki/Variance">Variance</a> of the depth.
+  </li>
+
+  \[m_{2} = \int_{0}^{\infty} (x - R_{p})^{2} N(x) \, dx\]
+
+  <li>
+    \(\gamma\): <a href="https://en.wikipedia.org/wiki/Skewness">Skewness</a>, or how much the profile leans to one side (on a distance x-axis, meaning towards or away from the surface). A distribution that is skewed left (long tail on left side) has negative skewness (higher concentration towards the surface), while a distribution that is skewed right has positive skewness (higher concentration deeper in the substrate). A perfect Gaussian distribution has no skewness because it is perfectly symmetrical.
+  </li>
+
+  \[m_{3} = \int_{0}^{\infty} (x - R_{p})^{3} N(x) \, dx\]
+
+  <li>
+    \(\beta\): <a href="https://en.wikipedia.org/wiki/Kurtosis">Kurtosis</a>, or heaviness (or fatness) of the tails.
+  </li>
+
+  \[m_{4} = \int_{0}^{\infty} (x - R_{p})^{4} N(x) \, dx\]
+</ol>
+
+<p>
+  The integral limits are from 0 to \(\infty\) because a negative number would not make sense when referring to depth. Using all of those, the Pearson equation can be solved and specific values substituted in to the IV solution. For specifics, see <a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion Implantation.pdf#page=8">pages 8-12</a> of Dr. Alan Doolittle's lecture.
+</p>
+
+<img src="media/range_straggle_values.png" alt="range_straggle_values" width="200" class="center">
+<figcaption align="middle">Range and straggle values as a function of energy for common dopant species (<a href="http://tuttle.merc.iastate.edu/ee432/topics/doping/ion_implant.pdf">source</a>)</figcaption>
+
+<p>
+  A typical concentration vs. depth Gaussian curve is shown below:
+</p>
+
+<img src="media/p_implant_profile.png" alt="p_implant_profile" width="200" class="center">
+<figcaption align="middle">Concentration vs. depth for a P<sup>+</sup> implant through a SiO<sub>2</sub> mask into a Si substrate (<a href="https://www.researchgate.net/figure/Ion-implantation-of-boron-Profile4_fig4_267370002">source</a>)</figcaption>
+
+<p>
+  The concentration profile makes intuitive sense, especially if you rotate the image 90° and superimpose the mask and substrate onto it:
+</p>
+
+<img src="media/p_implant_profile_superimposed.png" alt="p_implant_profile_superimposed" width="200" class="center">
+<figcaption align="middle">Depth vs. concentration for a P<sup>+</sup> implant with mask and substrate superimposed (<a href="https://www.researchgate.net/figure/Ion-implantation-of-boron-Profile4_fig4_267370002">source</a>)</figcaption>
+
+<p>
+  It is seen that the peak concentration occurs about halfway through the SiO<sub>2</sub>. The concentration steadily decreases from there as it exits the SiO<sub>2</sub> and enters the Si. As seen in the graph above for range and straggle vs. energy, increasing energy will result in deeper implants and a shifting of the Gaussian curve to the right, while also flattening it due to increased straggle.
+</p>
+
+<h4 id="junction_depth">Junction Depth</h4>
+
+<p>
+  The junction depth, \(x_{j}\), is the depth at which the impurity concentration equals the substrate concentration, or:
+</p>
+
+\[N_{\text{imp}}(x_{j}) = N_{\text{sub}}\]
+
+<p>
+  This is the location of the p-n junction, where \(N_{A} = N_{D}\). To find this depth, simply find the substrate concentration, trace a horizontal line on the concentration vs. depth plot, find the intersection of the two, then simply draw another line vertically down to the x-axis. This is the junction depth.
+</p>
+
+<p>
+  Desired junction depth can be achieved by choosing the energy and species based off their range and straggle values:
+</p>
+
+\[\begin{align*}
+  N_{\text{sub}} &= N_{\text{imp}}(x_{j}) \\
+                 &= N_{0} \exp\left(-\frac{(x_{j} - R_{p})^{2}}{2\Delta R_{p}^{2}}\right) \\
+  \ln\left(\frac{N_{\text{sub}}}{N_{0}}\right) &= -\frac{(x_{j} - R_{p})^{2}}{2\Delta R_{p}^{2}} \\
+  (x_{j} - R_{p})^{2} &= 2\Delta R_{p}^{2}\ln\left(\frac{N_{0}}{N_{\text{sub}}}\right) \\
+  x_{j} &= R_{p} \pm \sqrt{2\Delta R_{p}^{2}\ln\left(\frac{N_{\text{sub}}}{N_{0}}\right)} \\
+\end{align*}\]
+
+<p>
+  Based on this, there can be two junction depths if a more complete Gaussian curve describes the concentration and/or the substrate concentration is high enough (\(N_{\text{sub}} > N_{\text{imp}}(x = 0)\)).
+</p>
+
+<p>
+  One rudimentary way of calculating junction depth is the groove-and-stain method. After grinding a shallow cylindrical groove into the substrate surface, a dye is applied that only reacts with one type of present impurity, staining that area. There will then be two distinct areas: one dyed and one plain. The junction depth can then be found using basic geometry:
+</p>
+
+\[x_{j} = \sqrt{R^{2} - \frac{w_{2}^{2}}{4}} - \sqrt{R^{2} - \frac{w_{1}^{2}}{4}}\]
+
+<img src="media/groove_stain_method.png" alt="groove_stain_method" width="200" class="center">
+<figcaption align="middle">Groove-and-stain method (Source: Texas A&M University <a href="https://catalog.tamu.edu/undergraduate/course-descriptions/ecen/">ECEN 472</a> Laboratory Manual)</figcaption>
+
+<h3 id="stopping">Stopping</h3>
+
+<p>
+  Once the ions enter the lattice, they have to stop somehow. Two mechanisms cause stopping: nuclear stopping and electronic stopping. The <a href="https://en.wikipedia.org/wiki/Stopping_power_(particle_radiation)">stopping power</a> is then just the sum of both the nuclear and electron stopping components, measured in energy loss per unit path length of the ion:
+</p>
+
+\[S(E) = S_{n} + S_{e} = \frac{dE_{n}}{dx} + \frac{dE_{e}}{dx}\]
+
+<img src="media/stopping_power_vs_velocity.png" alt="stopping_power_vs_velocity" width="200" class="center">
+<figcaption align="middle">Stopping power as function of ion velocity (ion energy) (<a href="https://www.researchgate.net/figure/Nuclear-and-electronic-components-of-the-ion-stopping-power-as-a-function-of-ion_fig1_265496484">source</a>)</figcaption>
+
+<p>
+  More detailed derivations can be found <a href="https://www.iue.tuwien.ac.at/phd/wittmann/node8.html#SECTION00811000000000000000">here</a>.
+</p>
+
+<h4 id="nuclear_stopping">Nuclear Stopping</h4>
+
+<p>
+  Nuclear stopping is caused by the collision of the ion into the substrate's nuclei. If the incoming ion's energy exceeds the substrate's <a href="https://en.wikipedia.org/wiki/Threshold_displacement_energy">displacement energy</a>, the substrate atom will break its four covalent bonds and become displaced from its original position. Depending on the ion's initial energy, a <a href="https://en.wikipedia.org/wiki/Collision_cascade">collision cascade</a> can occur: both the ion and first-displaced atom will knock into more atoms and displace those. This continues until both the ion energy and last-displaced atom energy are less than the displacement energy.
+</p>
+
+<p>
+  Heavier atoms, such as As<sup>+</sup>, will slow down primarily because of nuclear stopping. Their collisions with substrate atoms are more elastic, so energy loss will be less than the electronic component. For low energies (low velocity), nuclear stopping is the primary mechanism up to a certain point, but electronic stopping will eventually take over.
+</p>
+
+<p>
+  Nuclear stopping damages the lattice (even causing sputtering) and calls for an <a href="#activation_anneal">activation anneal</a>.
+</p>
+
+<h4 id="electronic_stopping">Electronic Stopping</h4>
+
+<p>
+  Electron stopping is caused by the interaction between the ion and both bound and free electrons (<a href="https://www.scienceabc.com/pure-sciences/what-is-the-electron-cloud.html">electron cloud</a>) within the substrate. Given that all implantable ions are cations, they will all react similarly to electrons. The ion continually slows down due to the attraction to/drag of the electrons, eventually stopping.
+</p>
+
+<p>
+  High velocity ions slow down primarily due to electronic stopping. Their collisions with substrate atoms are highly inelastic. Electronic stopping dominates at moderate energies.
+</p>
+
+<p>
+  The <a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf#page=6">approximation</a> for electron stopping power is:
+</p>
+
+\[S_{e} = 4\left(\frac{Z_{1}^{7/6}Z_{2}}{\left(Z_{1}^{2/36} + Z_{2}^{2/3}\right)^{3/2}}\right)a_{0}Nv\]
+
+<p>
+  where \(Z_{1}\) is the ion atomic number, \(Z_{2}\) is the substrate atomic number, \(a_{0}\) is the <a href="https://en.wikipedia.org/wiki/Bohr_radius">Bohr radius</a>, \(N\) is the substrate atomic density (atoms per unit volume), and \(v\) is the ion velocity. (I can't seem to find a source on this. Seems to be from one of Lin53, Lin61a, Lin61b from <a href="https://repository.up.ac.za/bitstream/handle/2263/25616/02chapter3.pdf?sequence=3#page=22">this references section</a>, but even digital copies don't seem to exist.)
+</p>
+
+<h3 id="activation_anneal">Activation Anneal</h3>
+
+<p>
+  Because of the damage caused by <a href="#nuclear_stopping">nuclear stopping</a>, the lattice must be repaired to improve conduction and integrate the impurities into the lattice. The defects that result are primarily <a href="https://en.wikipedia.org/wiki/Vacancy_defect">vacancies</a> and <a href="https://en.wikipedia.org/wiki/Interstitial_defect">interstitials</a>. In a vacancy defect, a lattice point is missing an atom: this is caused by either the ion or substrate atom collision (as in the collision cascade). However, this missing atom leaves a place for an implanted ion to become part of the lattice structure, thus "activating" it (the <a href="https://en.wikipedia.org/wiki/Activation_energy">activation energy</a> has to be met). Interstitials refer to atoms that are present in the lattice, but not at a normal lattice point.
+</p>
+
+<p>
+  Annealing is a high-temperature process, and with high temperature comes movement from the atoms. The previous Gaussian estimation can then be modeled by including the ion <a href="https://en.wikipedia.org/wiki/Thermal_diffusivity">diffusivity</a> multiplied by the anneal time in the straggle terms:
+</p>
+
+\[N(x) = \frac{\phi}{\sqrt{\Delta R_{p}^{2} + 2D_{\text{ion}}t} \sqrt{2\pi}} \exp\left(-\frac{(x - R_{p})^{2}}{2\left(\Delta R_{p}^{2} + 2D_{\text{ion}}t\right)}\right)\]
+
+<p>
+  While skewness remains 0, straggle and kurtosis increase as the curve flattens out.
+</p>
+
+<hr>
+
+<h2 id="equipment">Equipment</h2>
+
+<h3 id="sources">Sources</h3>
+
+<p>
+  The most common dopants are boron, phosphorus, and arsenic. Aluminum and antimony are occassionally used, but their high <a href="https://en.wikipedia.org/wiki/Thermal_diffusivity">diffusivity</a> pose issues for devices.
+</p>
+
+<p>
+  Gases, such as AsH<sub>3</sub>, PH<sub>3</sub>, and BF<sub>3</sub>, are used to form the ions. Gas is flowed into a small chamber that contains a basic thermionic filament. Electrons are emitted and collide with the gas, ionizing it and forming positive ions within the chamber.
+</p>
+
+<p>
+  Ionization is the process of adding or removing an electron from a neutral atom, e.g., F becomes F <sup>-</sup>. In elements that lose an electron, the <a href="https://en.wikipedia.org/wiki/Ionization_energy">ionization energy</a> is the amount of energy required to remove one electron from the atom's valence band. To remove the first of He's two valence electrons, <a href="https://en.wikipedia.org/wiki/Ionization_energies_of_the_elements_(data_page)">24.6 eV</a> (eV is <a href="https://en.wikipedia.org/wiki/Electronvolt">electronvolts</a>, the amount of energy produced by accelerating one electron through one volt). Ionization energy increases for each valence electron removed. For example, to remove Ne's eighth valence electron requires 239 eV, compared to 21.5 eV for its first. For an implant gas like arsine (AsH<sub>3</sub>), around <a href="https://webbook.nist.gov/cgi/cbook.cgi?ID=C7784421&Mask=20">15 eV</a> is required to dissociate the molecule into a As<sup>+</sup> cation (positively-charged ion).
+</p>
+
+<p>
+  Multiple ions can form from the same source gas. For example, BF<sub>3</sub> may ionize into <sup>10</sup>B<sup>+</sup>, <sup>11</sup>B<sup>+</sup>, <sup>10</sup>BF<sup>+</sup>, <sup>11</sup>BF<sup>+</sup>, F<sub>2</sub><sup>+</sup>, <sup>10</sup>BF<sub>2</sub><sup>+</sup>, and <sup>11</sup>BF<sub>2</sub><sup>+</sup>. To find the relative percentage of each in the plasma, the gas spectrum, which shows the beam current vs. atomic masses, needs to be analyzed.
+</p>
+
+<img src="media/bf3_gas_spectrum.png" alt="bf3_gas_spectrum" width="200" class="center">
+<figcaption align="middle">Gas spectrum of BF<sub>3</sub> (<a href="https://www.researchgate.net/figure/Section-of-a-BF3-mass-spectrum_fig2_258385914">source</a>)</figcaption>
+
+<p>
+  To increase the probability of ionization, magnets are used to make the electron follow a <a href="http://www.schoolphysics.co.uk/age16-19/Atomic%20physics/Electron%20physics/text/Electron_motion_in_electric_and_magnetic_fields/index.html">helical path</a> from one end to the other, rather than just a straight line from anode to cathode.
+</p>
+
+<p>
+  This continuous ionization of the source gas forms a <a href="https://en.wikipedia.org/wiki/Plasma_%28physics%29">plasma</a> within the ion source chamber. A vacuum line connected to a <a href="vacuum.html">vacuum pump</a> is connected to maintain millitorr levels of pressure. Once there is a sufficient amount of ions to form the beam, a large voltage is used to extract the positive ions from the chamber and direct them towards the mass analyzer.
+</p>
+
+<h4 id="safety">Safety</h4>
+
+<p>
+  Most source gases are highly toxic and carcinogenic. See PEL/TLV data for almost all implant gases <a href="http://devwww.axcelis.com/sites/default/files/docs/axcelis_safetyconsiderationsimplanter.pdf#page=6">here</a>.
+
+<h3 id="mass_analyzer">Mass Analyzer</h3>
+
+<p>
+  There are two common types of mass filters: the magnetic sector and radio frequency quadrupole (RFQ). The magnetic sector uses a magnetic field to curve the various species orthogonally from their original path, using the equation:
+</p>
+
+\[qvB = \frac{mv^{2}}{r} \to r = \frac{1}{B}\sqrt\frac{2mV_{ext}}{q}\]
+
+<p>
+  Where \(B\) is the magnetic field strength, \(m\) is the species' mass, \(V_{ext}\) is the extracting voltage, \(v = \sqrt{\frac{2qV_{ext}}{m}}\) is the ion velocity, and \(q\) is the species' charge. Depending on the species' mass, some may go less than, equal to, or greater than the desired angle.
+</p>
+
+<img src="media/magnetic_sector.png" alt="magnetic_sector" width="200" class="center">
+<figcaption align="middle">Magnetic sector operation (<a href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Instrumental_Analysis/Mass_Spectrometry/Mass_Spectrometers_(Instrumentation)/Mass_Analyzers_(Mass_Spectrometry)">source</a>)</figcaption>
+
+<p>
+  While the magnetic sector is a relatively robust method, it does pose issues. Take a P<sup>+</sup> cation and a diatomic O<sub>2</sub><sup>+</sup> cation. P<sup>+</sup> has an atomic mass of <a href="https://www.periodic-table.org/phosphorus-atomic-mass/">30.9738 amu</a> (an electron has a mass of <a href="https://en.wikipedia.org/wiki/Electron_rest_mass">0.0005 amu</a>, which is negligible). O<sub>2</sub><sup>+</sup> has an atomic mass of <a href="https://www.periodic-table.org/oxygen-atomic-mass/">31.9988 amu</a>. Given a constant extraction voltage and magnetic field strength, the differences in radii will be only 1.61%. This minute difference can cause oxygen to be present in the beam, possibly ruining the implantation.
+</p>
+
+<h3 id="acceleration">Acceleration</h3>
+
+<p>
+  After the desired ions have been sorted from the undesired, they are accelerated, <a href="https://en.wikipedia.org/wiki/Collimated_beam">collimated</a>, and condensed into the final beam.
+</p>
+
+<p>
+  The acceleration column is kept under as high of vacuum as possible to minimize the amount of stray particles the beam hits, which can cause it to be deflected. The final ion energy is a simple calculation:
+</p>
+
+\[E_{f} = q\left(V_{ext} + V_{acc}\right)\]
+
+<p>
+  Graphite apertures are commonly used in forming the beam. By designing slits correctly in successive apertures, parts of the beam that stray out are eliminated, leaving only the most parallel ions. They are replaced as needed.
+</p>
+
+<h3 id="endstation">Endstation</h3>
+
+<p>
+  The endstation is where the actual implantation takes place. Because each substrate has millions of places (read: transistors) that need implanting and the ion beam is not large enough to cover the entire substrate uniformly, scanning needs to occur. (Sometimes the term <a href="https://en.wikipedia.org/wiki/Raster_scan">rastering</a> is used synonymously, but that is a specific type of scanning. "Scanning" will be used to avoid confusion.)
+</p>
+
+<h4 id="beam_stop">Beam Stop</h4>
+
+<p>
+  Because the magnetic sector only distinguishes based on mass and not charge, some neutrals may be a part of the beam. In order to prevent them from being implanted, some implanters include a small bend at the end of the acceleration column, where an electric field deflects the charged particles one way while the neutrals continue on to nowhere.
+</p>
+
+<h4 id="mechanical_scanning">Mechanical Scanning</h4>
+
+<p>
+  In mechanical scanning, the substrate is attached via clamping or centrifugal force to a robotic arm and moves around a stationary beam. The substrate holder also needs tilting capabilities, otherwise the tilt angle will be 0° (beam is naturally orthogonal to substrate). The primary advantage is a constant tilt angle to ensure consistent implanting across the wafers.
+</p>
+
+<p>
+  Mechanical scanning is preferred for high dose implants, which use high beam currents.
+</p>
+
+<h4 id="electrostatic_scanning">Electrostatic Scanning</h4>
+
+<p>
+  In electrostatic scanning, variable electric fields in both the x and y direction scan the beam across a stationary wafer. This requires a narrow beam, which is generally given by low dose and low current implants. Electrostatic scanning is avoided on high current tools because the beam tends to expand with higher currents, causing poor scanning control. The tilt angle will also vary as the beam scans over the wafer, causing channeling and uniformity issues.
+</p>
+
+<img src="media/scanning_figures.png" alt="scanning_figures" width="200" class="center">
+<figcaption align="middle">Electrostatic and semi-electrostatic/mechanical scanning (<a href="https://www.amazon.com/Fabrication-Engineering-Nanoscale-Electrical-Computer/dp/0195320174">source</a>)</figcaption>
+
+
+<h4 id="dose_measurement">Dose Measurement</h4>
+
+<p>
+  To actively measure the dose, a <a href="https://en.wikipedia.org/wiki/Faraday_cup">Faraday cup</a> is used. Using the equation from the <a href="#dose_concentration">dose vs. concentration</a> section, the dose is able to be found using an <a href="https://en.wikipedia.org/wiki/Integrator">integrator</a>:
+</p>
+
+\[\phi = \frac{1}{qA} \int I(t) \, dt\]
+
+<h4 id="plasma_flood_gun">Plasma Flood Gun</h4>
+
+<p>
+  When positive ions strike an insulator, e.g., SiO<sub>2</sub>, an electric field can form. If this field becomes large enough, the device can be damaged or even ruined altogether. To prevent this electric field from forming, the positive ions need to be neutralized simply by adding an electron. To this, a plasma is struck using the same method as in the <a href="#sources">ion source</a>: a filament emits electrons that ionize the nearby gas(es). Ar is commonly used. The plasma, being filled with electrons, diffuses into the beam path and the electrons combine with the positive ions directly before they reach the the substrate.
+</p>
+
+<p>
+  Varian, arguably the leader in ion implantation technology, has published a paper explaining the plasma flood gun and its operation <a href="https://www.academia.edu/30134136/Advanced_Charge_Control_for_Single_Wafer_Implanters">here</a>.
+</p>
+
+<h3 id="vacuum">Vacuum</h3>
+
+<p>
+  High vacuum is required to prevent beam deflection or contaminants being implanted. This <a href="https://www.sciencedirect.com/science/article/abs/pii/0168583X91962083">paper</a> discusses vacuum system design for ion implanters.
+</p>
+
+<hr>
+
+<h2 id="process_considerations">Process Considerations</h2>
+
+<h3 id="implant_masks">Implant Masks</h3>
+
+<p>
+  Masks are used to block certain areas from being affected by a process. In ion implantation, a mask is used to prevent specific areas of the substrate from being implanted. After all, the source and drain of MOSFET wouldn't necessarily be a source and drain if <i>everywhere</i> around it was doped the same.
+</p>
+
+<p>
+  So, how to decide which mask to use? A few things about the mask must be considered: cost, stopping power, adhesion to the substrate surface, compatibility with the substrate itself (for example, Cu diffuses very quickly into Si, which can pose later issues in devices). <a href="https://en.wikipedia.org/wiki/Amorphous_solid">Amorphous</a> (non-crystalline) and high-density materials are best due to larger stopping powers. Common masks include SiO<sub>2</sub>, Si<sub>3</sub>N<sub>4</sub>, photoresist (specific science <a href="https://www.microchemicals.com/technical_information/photoresists_composition_properties.pdf">here</a>), Ti, and W.
+</p>
+
+<p>
+  Masks can also be used when forming shallow implants. Simply by knowing \(R_{p}\) and \(\Delta R_{p}\) of the mask and substrate, the energy can be adjusted to push the ions completely past the mask and only a small depth into the substrate. This will take trial-and-error, as the ion energy as they leave the mask is unknown.
+</p>
+
+<h4 id="photoresist_masks">Photoresist Masks</h4>
+
+<p>
+  Photoresist masks should be chosen based on a few parameters. First, the temperature at which it softens. If being used at a mask, it is likely to have already been post-develop-baked (also called hard bake). Any temperature above the hard bake temperature may cause <a href="https://www.microchemicals.com/technical_information/reflow_photoresist.pdf">reflow</a>, which can easily ruin the entire process. There are multiple ways to avoid this:
+</p>
+
+<ul>
+  <li>
+    If possible, choose a resist with as high of a softening temperature as possible.
+  </li>
+  <li>
+    Improve cooling to the tool's <a href="#endstation">(where the implanting actually occurs)</a>. Instead of using deionized water as a coolant, a mixture of <a href="https://en.wikipedia.org/wiki/Ethylene_glycol">ethylene glycol</a> and water or simply pure ethylene glycol may work better.
+  </li>
+  <li>
+    Choose a metal or dielectric mask that won't have reflow issues. This will add more steps (deposition, etching, photoresist removal) in the fabrication process, but is much better than a completely-ruined process.
+  </li>
+</ul>
+
+<p>
+  High energies can cause strong cross-linking of the resist, making removal more difficult than normal. However, because high-energy ions don't make it to the bottom of the resist, a lift-off process can be performed to more easily remove the strongly-cross-linked parts of the resist.
+</p>
+
+<img src="media/photoresist_removal.png" alt="photoresist_removal" width="200" class="center">
+<figcaption align="middle">Lift-off process to remove strongly-cross-linked photoresist</figcaption>
+
+<h4 id="dielectric_metal_masks">Dielectric and Metal Masks</h4>
+
+<p>
+  If the photoresist mask has been ruled out, the other two options are dielectric, such as SiO<sub>2</sub> or Si<sub>3</sub>N<sub>4</sub>, or metals, such as Ti, W, or silicides of either (TiSi<sub>2</sub>, WSi<sub>2</sub>). Range and straggle of the implanted species into the selected material should be chosen. Denser materials are obviously better masks.
+</p>
+
+<img src="media/implant_mask_data.png" alt="implant_mask_data" width="200" class="center">
+<figcaption align="middle">Boron ranges in various masking materials (<a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf">source</a>)</figcaption>
+
+<p>
+  Other materials have been analyzed using a range of energies and species:
+</p>
+
+<img src="media/sio2_implant_mask.png" alt="sio2_implant_mask" width="200" class="center">
+<figcaption align="middle">Range and straggle of various species into SiO<sub>2</sub> (<a href="https://www.worldcat.org/title/projected-range-statistics-semiconductors-and-related-materials/oclc/682061198?referer=di&ht=edition">source</a>)</figcaption>
+
+<p></p>
+
+<img src="media/az111_implant_mask.png" alt="az111_implant_mask" width="200" class="center">
+<figcaption align="middle">Range and straggle of various species into AZ111 photoresist (<a href="https://www.worldcat.org/title/projected-range-statistics-semiconductors-and-related-materials/oclc/682061198?referer=di&ht=edition">source</a>)</figcaption>
+
+<p>
+  Using data like this, both the mask thickness and material can be chosen based on the species and energy.
+</p>
+
+<h3 id="channeling">Channeling</h3>
+
+<p>
+  Channeling occurs when the ion beam is angled such that there are few obstacles, in this case, atoms, in its path. Take B<sup>+</sup>. Its atomic radius is around <a href="https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_%28data_page%29">85 pm</a> ("p" being pico, or 10<sup>-12</sup>). Viewing the <a href="https://en.wikipedia.org/wiki/Diamond_cubic">diamond cubic structure</a> of Si from the [110] direction provides very wide openings, or channels, for the ion beam to penetrate. Ions can travel extremely far into the lattice if the beam angle is orthogonal to the axis.
+</p>
+
+<img src="media/si_channeling.png" alt="si_channeling" width="200" class="center">
+<figcaption align="middle">Si lattice as viewed from [110] direction (<a href="https://www.youtube.com/watch?v=x3VTw9vojvc">source</a>)</figcaption>
+
+<p>
+  There are a few methods to prevent channeling:
+</p>
+
+<ul>
+  <li>
+    <b>Tilting</b>: By tilting the substrate slightly, the beam is no longer orthogonal to the substrate, causing the ions to collide with the atoms and stop more easily. A common tilt angle is 7°.
+  </li>
+  <li>
+    <b>Surface amorphization</b>: Depositing a thin layer of amorphous material will both slow and scatter the ions once they pass through.
+  </li>
+  <li>
+    <b>Substrate amorphization</b>: Implanting inert species, such as Ar, just below the substrate surface.
+  </li>
+</ul>
+
+<p>
+  The mask height and channel width must be considerd when tilting. Basic trigonometry requires a tilt angle no larger than:
+</p>
+
+\[\theta_{\text{tilt}} = \tan^{-1}\left(\frac{w_{\text{channel}}}{h_{\text{mask}}}\right)\]
+
+<p>
+  In practice, this limitation is essentially negligible. The mask (generally photoresist or a dielectric like SiO<sub>2</sub>/Si<sub>3</sub>N<sub>4</sub>) is between 100-1000 nm and the channel width to be implanted is 10-2000 nm (no sources on either of these despite combing through Google Scholar, but I've heard these numbers thrown around). These give minimum and maximum angles of:
+</p>
+
+\[\theta_{\text{tilt, small}} = \tan^{-1}\left(\frac{10}{1000}\right) = 0.57^{\circ} \quad \theta_{\text{tilt, large}} = \tan^{-1}\left(\frac{2000}{100}\right) = 87^{\circ}\]
+
+<p>
+  Again, these numbers are extreme. No manufacturer will be creating 10 nm source/drain widths with 1000 nm mask heights, nor 2000 nm S/D widths with 100 nm mask heights. More appropriate numbers would be 100 nm mask for 10 nm width and 1000 nm mask with 2000 nm width, giving:
+</p>
+
+\[\theta_{\text{tilt, small}} = \tan^{-1}\left(\frac{10}{100}\right) = 5.71^{\circ} \quad \theta_{\text{tilt, large}} = \tan^{-1}\left(\frac{2000}{1000}\right) = 63.4^{\circ}\]
+
+<p>
+  Additionally, there will be a shadowing effect if <i>any</i> tilt angle is used.
+</p>
+
+<img src="media/tilt_shadowing.png" alt="tilt_shadowing" width="200" class="center">
+<figcaption align="middle">Shadowing as a result of tilting</figcaption>
+
+<p>
+  To fix this, a twist angle is added. The twist rotates the substrates so the shadowed region will be exposed to the ion beam. A <a href="http://eprints.usm.my/9830/1/THE_EFFECT_OF_IMPLANT_ANGLE_AND_RESIST_SHADOWING_IN_SUBMICRON_IMPLANT_TECHNOLOGY.pdf#page=21">"quad" implant</a> may also be performed by implanting at 0, 90°, 180°, and 270°.
+</p>
+
+<img src="media/twist_tilt_angle.png" alt="twist_tilt_angle" width="200" class="center">
+<figcaption align="middle">Twist and tilt angle (ignore the crystal orientations) (<a href="https://www.iue.tuwien.ac.at/phd/wittmann/node7.html#SECTION00723200000000000000">source</a>)</figcaption>
+
+<p id="critical_angle">
+  To find the minimum angle (critical angle) to prevent channeling, the following equation is claimed (<a href="http://www.lithoguru.com/scientist/CHE323/Lecture18.pdf">1</a>, <a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf#page=15">2</a>, <a href="http://www.cityu.edu.hk/phy/appkchu/AP6120/9.PDF">3</a>):
+</p>
+
+\[\Psi = 9.73^{\circ} \sqrt{\frac{Z_{\text{ion}}Z_{\text{sub}}}{E_{\text{ion}}d}}\]
+
+<p>
+  where \(Z_{\text{ion/sub}}\) are the ion and substrate atomic numbers, \(E_{0}\) is the ion energy in keV, and \(d\) is the substrate atomic spacing along the ion path in angstroms. However, the sources that use this equation provide no references to where this came from, nor do the square root argument's dimensions make sense. For this equation to provide units of degrees, the argument needs to be unitless, but it's not:
+</p>
+
+\[\begin{align*}
+  \Psi &= [^{\circ}] \sqrt{\frac{[][]}{[\frac{\text{C} \cdot \text{kg} \cdot \text{m}^{2}}{\text{s}^{3} \cdot \frac{\text{C}}{\text{s}}}][\text{m}]}} \\
+       &= [^{\circ}] \sqrt{\frac{1}{[\frac{\text{kg} \cdot \text{m}^{3}}{\text{s}^{2}}]}} \\
+       &= [^{\circ}] \sqrt{\frac{\text{s}^{2}}{\text{kg} \cdot \text{m}^{3}}}
+\end{align*}\]
+
+<p>
+  This equation has also been <a href="https://youtu.be/x3VTw9vojvc?t=1992">claimed</a> for critical angle:
+</p>
+
+\[\begin{align*}
+  \Psi &= \sqrt{\frac{2Z_{\text{ion}}Z_{\text{sub}}q^{2}}{E_{\text{ion}}d}} \\
+       &= \sqrt{\frac{\text{C}^{2} \cdot \text{s}^{2}}{\text{kg} \cdot \text{m}^{3}}}
+\end{align*}\]
+
+<p>
+  As seen, the dimensions do not cancel out, so neither equation holds in that regard. <a href="http://campbell.umn.edu/">Dr. Stephen Campbell</a> (author of <a href="https://www.amazon.com/Fabrication-Engineering-Nanoscale-Electrical-Computer/dp/0195320174">Fabrication Engineering</a>, one textbook where this equation is used) said via email:
+</p>
+
+<blockquote>
+  That equation came from the first edition of the book, now more than 20 years ago. As I remember it, it was strictly empirical. You will find a few equations like this in the book. The truth about this field, however inconvenient, is that the development of detailed understanding of fabrication processes often lags a decade or more compared to the development of these processes. I don't know of a theoretical analysis of this topic.
+</blockquote>
+
+<p>
+  (If you have an original source for this equation, please <a href="../about/about.html#contact">contact me</a>.)
+</p>
+
+<h3 id="uniformity">Uniformity</h3>
+
+<p>
+  Modern implanters have both good angle and dose uniformity (see "Representative Ion Implantation Systems" section <a href="https://www.researchgate.net/publication/330357221_Commercial_Ion_Implantation_Systems">here</a>): less than 0.1° and one &sigma; &lt; 0.5%. The dose uniformity is primarily a function of the <a href="#dose_measurement">dose measurement</a> system, which can adjust in real-time for any errors that occur (beam turning off, spiking in current, etc).
+</p>
+
+<hr>
+
+<h2 id="doping_alternatives">Doping Alternatives</h2>
+
+<p>
+  While doping remains a necessity for device fabrication, ion implantation is not the only method of creating n- or p-type regions.
+</p>
+
+<h3 id="diffusion_doping">Diffusion Doping</h3>
+
+<p>
+  The other primary method of doping is through diffusion via a furnace. The substrate is heated up and a gas source is introduced into the furnace (chamber or tube). The gases used for each common implant are <a href="https://en.wikipedia.org/wiki/Phosphoryl_chloride">POCL<sub>3</sub></a> for P, <a href="https://en.wikipedia.org/wiki/Diborane">B<sub>2</sub>H<sub>6</sub></a> for B, and <a href="https://en.wikipedia.org/wiki/Arsine">AsH<sub>3</sub></a> and <a href="https://www.americanelements.com/tertiarybutylarsine-4262-43-5">C<sub>4</sub>H<sub>11</sub>As (TBA)</a> for As. Using POCL<sub>3</sub> as an example, it reacts with O<sub>2</sub>, to form gaseous <a href="https://en.wikipedia.org/wiki/Phosphorus_pentoxide">P<sub>2</sub>O<sub>5</sub></a>. P<sub>2</sub>O<sub>5</sub> then reacts with the Si surface to form phosphosilicate glass (PSG), (P<sub>2</sub>O<sub>5</sub>)<sub>x</sub>(SiO<sub>2</sub>)<sub>1-x</sub>, which serves as the P diffusion source. (The other source gases also react to form a glass layer on Si.)
+</p>
+
+<p>
+  There are two steps in the diffusion process:
+</p>
+
+<ol>
+  <li>
+    <b>Pre-deposition</b>: The source gas is flowed into the chamber along with a reactive gas (generally O<sub>2</sub>), forming an oxide and finally the glass layer. Some dopants diffuse slightly into the substrate.
+  </li>
+  <li>
+    <b>Drive-in</b>: The source gas is turned off and the dopants are allowed to diffuse into the substrate.
+  </li>
+</ol>
+
+<p>
+  Diffusion is based on <a href="https://en.wikipedia.org/wiki/Fick%27s_laws_of_diffusion">Fick's laws</a> and increases with temperature:
+</p>
+
+\[D(T) = D_{0} \, \exp\left(-\frac{E_{A}}{kT}\right)\]
+
+<p>
+  where \(D_{0}\) is the element's pre-factor (temperature-independent).
+</p>
+
+<h3 id="spinon_doping">Spin-On Doping</h3>
+
+<p>
+  Spin-on doping (SOD) is the least-common method of doping a substrate. A liquid source is applied to a substrate, then spun at a thousands rpm for a few seconds. This (ideally) provides a uniform film across the surface. The substrate is then heated to allow the dopants to diffuse.
+</p>
+
+<p>
+  Specific application notes and product information can be found <a href="https://www.pdx.edu/pnna/sites/www.pdx.edu.pnna/files/Spin-On%20Diffusants___Catalog_Version-%206.pdf">here</a>.
+</p>
+
+<p>
+  A garage-fab SOD process can be seen <a href="https://youtu.be/s1MCi7FliVY?t=985">here</a>.
+</p>
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf">Lecture</a> by Dr. Alan Doolittle of Georgia Tech.
+  </li>
+  <li>
+    Applied Materials' lecture series on ion implantation: <a href="https://www.youtube.com/watch?v=V-U3v9QBPO4">Part 1</a>, <a href="https://www.youtube.com/watch?v=zLcNJvWbbHc">Part 2</a>.
+  </li>
+  <li>
+    <a href="https://www-inst.eecs.berkeley.edu//~ee143/fa10/lectures/Lec_08.pdf">Lecture</a> by Dr. Nathan Cheung of U.C. Berkeley.
+  </li>
+  <li>
+    <a href="http://eprints.usm.my/9830/1/THE_EFFECT_OF_IMPLANT_ANGLE_AND_RESIST_SHADOWING_IN_SUBMICRON_IMPLANT_TECHNOLOGY.pdf">The Effect of Implant Angle and Resist Shadowing in Submicron Implant Technology</a>.
+  </li>
+  <li>
+    <a href="http://diyhpl.us/~nmz787/mems/unorganized/IMPLANT.pdf">Lecture</a> by Dr. Lynn Fuller of Rochester IT.
+  </li>
+  <li>
+    <a href="https://books.google.com/books/about/Ion_implantation.html?id=hx5RAAAAMAAJ">Ion Implantation: Science and Technology</a> by Dr. James Ziegler.
+  </li>
+  <li>
+    <a href="https://en.wikipedia.org/wiki/Anatoli_Bugorski">Anatoli Bugorski</a>, a Soviet researcher whose head was hit with 76 GeV proton beam ("G" being giga, or 10<sup>9</sup>, so 76 <i>billion</i> eV!) and survived.
+  </li>
+  <li>
+    <a href="http://www.infobarrel.com/The_Most_Bizarre_Nano_Images_Ever_Made">Funny images</a> made using an ion beam. These <a href="https://www.raith.com/solutions/focused-ion-beam-nanofabrication.html">systems</a> generally don't use the same species as ion implantation, but rather He, Ne, or Ga.
+  </li>
+  <li>
+    <a href="http://srim.org/">Stopping and Range of Ions in Matter</a>. This program allows the user to run their very own implantation Monte Carlo simulations from their (Windows) computer. It is even used in industrial settings.
+  </li>
+  <li>
+    <a href="http://tuttle.merc.iastate.edu/ee432/topics/doping/ion_implant_examples.pdf">Example ion implantation problems</a> for students. Corresponding lecture found <a href="http://tuttle.merc.iastate.edu/ee432/topics/doping/ion_implant.pdf">here</a>.
+  </li>
+  <li>
+    <a href="https://www.researchgate.net/publication/330357221_Commercial_Ion_Implantation_Systems">Summary</a> of commercial ion implantation technology. Written by two of the industry's top companies (<a href="https://www.axcelis.com/">Axcelis</a> and <a href="http://www.appliedmaterials.com/semiconductor/products/ion-implant">Applied Materials</a>). The history and development of implanters is discussed.
+  </li>
+  <li>
+    <a href="vacuum.html">Vacuum</a>: Discussion of vacuum concepts, technologies, pumps, etc. Useful for an equipment engineer in the semiconductor industry.
+  </li>
+</ul>
+
+</body>
+</html>
