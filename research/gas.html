@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ads and Gas Pumping Rate</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+
+
+
+-->
+
+<h1 id="gas">Ads and Gas Pumping Rate</h1>
+
+<p>
+  Does gas pumping rate correlate to whether or not there is a screen playing ads?
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#background">Background</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>
+  I used to drive a lot. Almost 600 miles every or every other weekend, plus a 14-mile round trip commute to work three to five times a week. Even the most fuel-efficient car would be gasping for fuel, and my Camry was no exception. That's when I noticed that the gas pumping rate seemed dramatically lower than what I remember. I may have been more patient back in the day or at least didn't stare at the gallon counter going up trying to figure out when it would be done so I could get on with my day, but what's definitely new is the presence of screens that play a variety of videos: sometimes they're funny, sometimes they're ads, sometimes it's even a vocabulary lesson (I'm serious).
+</p>
+
+<p>
+  That got me thinking: have companies deliberately slowed pumping rates to expose their customers to more ads per pump? In theory, it makes sense. There aren't enough customers throughout the day to merit the fastest safe pumping rate possible, and intuition tells us more ads means the consumer is more likely to see something that interests him and/or possibly become more convinced that they should purchase the advertised product.
+</p>
+
+<p>
+  In checking to see if this has been reported before, I found there is an upper limit on pumping rate as <a href="https://www.law.cornell.edu/cfr/text/40/80.22#:~:text=(j)%20After%20July%201%2C,(37.9%20liters%20per%20minute)">decreed by the EPA</a>:
+</p>
+
+<blockquote>
+  (j) After July 1, 1996 every retailer and wholesale purchaser-consumer handling over 10,000 gallons (37,854 liters) of fuel per month shall limit each nozzle from which gasoline or methanol is introduced into motor vehicles to a maximum fuel flow rate not to exceed 10 gallons per minute (37.9 liters per minute). The flow rate may be controlled through any means in the pump/dispenser system, provided the nozzle flow rate does not exceed 10 gallons per minute (37.9 liters per minute).
+</blockquote>
+
+<p>
+  No mention is made of a lower limit for pumping rate, meaning it's possible rates are being throttled.
+</p>
+
+<hr>
+
+<h2 id="collection">Data Collection</h2>
+
+<p>
+  The data collection was simple: every time I filled up my gas tank, no matter the amount, I noted the following:
+</p>
+
+<ul>
+  <li>
+    Date: The date the gas was pumped
+  </li>
+  <li>
+    Gallons per second: Pumping rate [gal/s]
+  </li>
+  <li>
+    Video: was the video of ads, other, or no video?
+  </li>
+  <li>
+    Company: Name of gas station, e.g., Shell
+  </li>
+</ul>
+
+<p>
+  I set the trigger to automatically pump and left it until the fill was complete.
+</p>
+
+<p>
+  In order to expedite data collection, I filled up much more frequently than my normal 1/4-remaining amount.
+</p>
+
+<h3 id="confounders">Confounders</h3>
+
+<p>
+  I see a few confounding variables that can affect pumping speed, causing some issues with my data. Unless I find a way to understand these, I will assume they are the same across stations and companies.
+</p>
+
+<p>
+  First, a fuel filter is present in the gas line to prevent direct contamination of the vehicle's fuel tank. Clogging can occur, impeding the flow of gas and slowing the pumping rate. I have no way of checking the filter status, short of asking the attendant, which I will not do.
+</p>
+
+<p>
+  Second, a poor or old pump can provide sub-optimal performance, regardless of the rate the station is calling for. There's no way to convenient way to verify the pump model and status.
+</p>
+
+<p>
+  Third, overall station design. Does each nozzle have its own pump, or are they shared across multiple nozzles? Too much pump sharing reduces the pumping capability and thus pump rate per nozzle. How wide and long are the delivery lines?
+</p>
+
+
+<hr>
+
+<h2 id="analysis">Data Analysis</h2>
+
+
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>
