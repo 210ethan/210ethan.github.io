@@ -52,5 +52,8 @@ ol ul {
 }
 
 code {
-  background-color: #e5e5e5;
+    background-color: #eee;
+    border-radius: 3px;
+    font-family: courier, monospace;
+    padding: 0 3px;
 }
