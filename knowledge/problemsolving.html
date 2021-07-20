@@ -18,11 +18,12 @@
 <!--
 
 - reactive:
-  - making assumptions
-  - finding commonalities
-  - partition testing
-  - 8x5 why
-  - fishbone
+  -
+
+- proactive:
+  - 
+
+- quality tools: https://asq.org/quality-resources/seven-basic-quality-tools
 
 
 -->
@@ -53,6 +54,15 @@
       <li>
         <a href="#reactive_partition_testing">Partition Testing</a>
       </li>
+      <li>
+        <a href="#reactive_differences">Differences</a>
+      </li>
+      <li>
+        <a href="#reactive_ishikawa">Ishikawa (Fishbone) Diagram</a>
+      </li>
+      <li>
+        <a href="#reactive_3x5">3x5 Why</a>
+      </li>
     </ul>
   </li>
   <li>
@@ -73,7 +83,7 @@
 <h2 id="background_philosophy">Background/Philosophy</h2>
 
 <p>
-  I currently (18 July 2021) work as an equipment engineer at a major semiconductor company's fab. My days are often filled with problem solving (PS): why did this happen, how can we prevent this, etc. And yet I continually find myself missing or overlooking things that are related to problems I've solved before, because I either forgot or just didn't apply a certain technique. I distinguish between two types of PS: reactive and proactive. Reactive PS involves finding why something suddenly stopped working. Proactive PS involves finding how to accomplish something. Some techniques overlap between the two, but will only be entered in one.
+  I currently (18 July 2021) work as an equipment engineer at a major semiconductor company's fab. My days are often filled with problem solving (PS): why did this happen, how can we prevent this, etc. And yet I continually find myself missing or overlooking things that are related to problems I've solved before, because I either forgot or just didn't apply a certain technique. I distinguish between two types of PS: reactive and proactive. Reactive PS (RPS) involves finding why something suddenly stopped working. Proactive PS (PPS) involves finding how to accomplish something. Some techniques overlap between the two, but will only be entered in one.
 </p>
 
 <p>
@@ -94,16 +104,6 @@
   Writing down a complete list of assumptions before PS can be helpful, albeit a bit awkward and momentum-stopping. Can any of these assumptions be quickly verified? Have any of these assumptions been false in the past, whether in this system or another?
 </p>
 
-<p>
-  Examples:
-</p>
-
-<ul>
-  <li>
-    PSer subliminally assumed the connector pins were inserted all the way and making good contact with the female end. They weren't. This led to looking at other non-issues.
-  </li>
-</ul>
-
 <h3 id="reactive_changes">Changes</h3>
 
 <p>
@@ -113,16 +113,6 @@
 <p>
   Often times, maintenance on the system can cause a problem to occur, whether due to the operator performing the maintenance doing something incorrectly, a replacement part being bad, etc. If there is a clear change in the before-after values/conditions/etc, then whatever occurred on that date is worth looking into.
 </p>
-
-<p>
-  Examples:
-</p>
-
-<ul>
-  <li>
-
-  </li>
-</ul>
 
 <h3 id="reactive_partition_testing">Partition Testing</h3>
 
@@ -145,7 +135,7 @@
     Post-scan wafers for particles
   </li>
   <li>
-    If no change in particles, go back to step 2 and set n += 1 (post-scan for n<sub>i</sub> can be used for pre-scan of n<sub>i+1</sub>)
+    If no change in particles, go back to step 2 and set n += 1 (post-scan for movement n<sub>i</sub> can be used for pre-scan of movement n<sub>i+1</sub>)
   </li>
 </ol>
 
@@ -153,15 +143,64 @@
   Note that partitioning only works for individual or grouped pairs of components within a system. If two components only normally work when paired with one another, they must be paired during partitioning.
 </p>
 
+<h3 id="reactive_differences">Differences</h3>
+
 <p>
-  Examples:
+  As discussed in the <a href="#proactive_standardization">Standardization</a> section below, systems should be as identical as possible to one another to improve PS capabilities. In some cases, identical systems is not possible, but can still be helpful. With two systems—A and B—that are identical with the exception of one component, if A begins acting up while B continues to operate fine, efforts can be focused on A's different component.
+</p>
+
+<h3 id="reactive_ishikawa">Ishikawa (Fishbone) Diagram</h3>
+
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Ishikawa_diagram">Ishikawa diagram</a>, also known as a fishbone diagram, lists the causes of a problem by the following topics:
 </p>
 
 <ul>
   <li>
-
+    Methods
+  </li>
+  <li>
+    Machine
+  </li>
+  <li>
+    People
+  </li>
+  <li>
+    Materials
+  </li>
+  <li>
+    Measurement
+  </li>
+  <li>
+    Environment
   </li>
 </ul>
+
+<p>
+  This forces the PSer to examine each topic's possible causes, instead of glossing over or not even considering them.
+</p>
+
+<h3 id="reactive_3x5">3x5 Why</h3>
+
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Five_whys">five whys</a> method continually asks "why?" (it can be more than five times) until the root cause of a problem is found. <a href="https://www.clarios.com/docs/default-source/default-document-library/3-legged-5-why-analysis-training.pdf?sfvrsn=9ea28ada_5">3x5 Why</a> extends it to a manufacturing and quality setting with the following three questions:
+</p>
+
+<ol>
+  <li>
+    Why did we have this problem?
+  </li>
+  <li>
+    Why did this problem reach the customer?
+  </li>
+  <li>
+    Why did our system allow it to occur?
+  </li>
+</ol>
+
+<p>
+  The first question finds the root cause of the problem itself. The root cause should be as low-level as possible. The second and third questions take both the root cause and the answers to all of the "Why?"s and looks for the evident gaps in the system that were not able to detect the failure. In the end, a few improvements can/should be made: the procedure and the detection.
+</p>
 
 <hr>
 
@@ -170,33 +209,16 @@
 <h3 id="proactive_standardization">Standardization</h3>
 
 <p>
-  The ultimate idea of reactive PS is finding the variable that is causing the problem. Finding this can be done two ways: getting lucky by guessing the variable or systematically eliminating variables until only the problem one is remaining. The latter method is significantly easier when there are fewer variables involved. The lower number prevents time from being wasted, and some variables can be immensely complex, causing undue headache when trying to relate them back to the original problem. For example, if a procedure calls for 10 items to be completed, it is much easier to pinpoint the issue if there is variation on two items rather than all 10.
+  Standardization helps future troubleshooting efforts by minimizing variability of variables. The ultimate idea of reactive PS is finding the variable that is causing the problem. Finding this can be done two ways: getting lucky by guessing the variable or systematically eliminating variables until only the problem one is remaining. The latter approach is significantly easier when there are fewer variables involved. The lower number prevents time from being wasted, and some variables can be immensely complex, causing undue headache when trying to relate them back to the original problem. For example, if a procedure calls for 10 items to be completed, it is much easier to pinpoint the issue if there is variation on two items rather than all 10.
 </p>
 
 <p>
-  Standardization helps future troubleshooting efforts by minimizing variability of variables.
-</p>
-
-[FINISH]
-
-<p>
-  Further, standardizing data collection and reporting making sifting through data
+  Another aspect of RPS is sorting through data, often massive amounts of it. Standardizing data collection and reporting makes data analysis much easier.
 </p>
 
 <p>
-  [standardization allows for comparing to another system]
+  Finally, standardization between systems allows comparison between the two, something that's not nearly as useful when the systems are slightly different. If they are different, the number of differences should again be minimized.
 </p>
-
-<p>
-  Examples:
-</p>
-
-<ul>
-  <li>
-
-  </li>
-</ul>
-
 
 <hr>
 
