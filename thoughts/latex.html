@@ -18,14 +18,15 @@
 <!--
 - quote JHW: "it's basically the same thing"
 - niplav: don't cite papers that use word
--
+- allows you to review your work much more easily
+- graders will love you
 
 -->
 
 <h1 id="latex">For <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>, Against Word</h1>
 
 <p>
-
+  Pros and cons of using <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> vs. Microsoft Word, including ideas on how to increase its usage.
 </p>
 
 <hr>
@@ -38,6 +39,15 @@
   </li>
   <li>
     <a href="#differences">Differences</a>
+  </li>
+  <li>
+    <a href="#downfalls">Downfalls</a>
+  </li>
+  <li>
+    <a href="#usage">Increasing Usage</a>
+  </li>
+  <li>
+    <a href="#resources">Resources</a>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -81,7 +91,7 @@
 </blockquote>
 
 <p>
-  In short, LaTeX allows for a) beautiful documents to be written, and b) the user to be in control of every aspect of it. Want to add a <a href="http://legacy.hanno-rein.de/hanno-rein.de/index.html?p=349">coffee stain</a> to a page? LaTeX's got you covered. Want to put in a <a href="https://www.overleaf.com/learn/latex/CircuiTikz_package">circuit diagram</a>? Easy. Want your equations to not look like absolute garbage? LaTeX is your guy. Want to be made fun of and belittled in front of all of your closest friends, family, and colleagues at your first public conference because your paper formatting is ugly? Word's the way to go!
+  In short, LaTeX allows for beautiful documents to be written and the user to be in control of every aspect of it. Want to add a <a href="http://legacy.hanno-rein.de/hanno-rein.de/index.html?p=349">coffee stain</a> to a page? LaTeX's got you covered. Want to put in a <a href="https://www.overleaf.com/learn/latex/CircuiTikz_package">circuit diagram</a> without having to add a picture? Easy, albeit practice is required. Want your equations to not look like absolute garbage? LaTeX is your guy. Want to be made fun of and belittled in front of all of your closest friends, family, and colleagues at your first public conference because your paper formatting is ugly? Word's the way to go!
 </p>
 
 <p>
@@ -95,17 +105,23 @@
 <h3 id="equations">Equations</h3>
 
 <p>
-  First, let's look at equations in both LaTeX and Word:
+  First, a look at equations in both LaTeX and Word, the purpose for which the former was created:
 </p>
 
 <img src="media/word_binomial.png" style="width:250px" class="center">
-<figcaption align="middle">Option 1: Created using <span class="spoiler">Word</span></figcaption>
+<figcaption align="middle">
+  Option 1: Created using <span class="spoiler">Word</span>
+</figcaption>
+
+<p></p>
 
 <img src="media/latex_binomial.png" style="width:250px" class="center">
-<figcaption align="middle">Option 2: Created using <span class="spoiler">LaTeX</span></figcaption>
+<figcaption align="middle">
+  Option 2: Created using <span class="spoiler">LaTeX</span>
+</figcaption>
 
 <p>
-  Can you guess which one is Word and which is LaTeX? The answer should be glaringly obvious, but can be revealed by hovering over the black box.
+  Can you guess which one is Word and which is LaTeX? The answer should be glaringly obvious, but can be revealed by hovering over the black spoiler box.
 </p>
 
 <p>
@@ -117,12 +133,38 @@
     Lettering: Word has thicker letters with less resolution. LaTeX's letters are thin, have higher resolution, and are arguably more aesthetic.
   </li>
   <li>
-    Spacing: Word's spacing is too compact, causing the "k = 0" lower index to touch the sigma and the open parenthesis of the binomial term to come very close to the "n". LaTeX provides sufficient spacing between symbols and terms to avoid contact while maintaining readability.
-  </li>
-  <li>
-    Symbols: [does latex produce better symbols than word?? need to find correct way for greek symbols if any]
+    Spacing: Word's spacing is too compact, causing the "k = 0" lower index to touch the sigma and the open parenthesis of the binomial term to come very close to the "n". LaTeX provides sufficient spacing between symbols and terms to avoid contact while maintaining readability and an appropriate amount of whitespace.
   </li>
 </ul>
+
+<p>
+  What about Greek symbols?
+</p>
+
+<img src="media/latex_greek.png" style="width:250px" class="center">
+<figcaption align="middle">
+  Option 1: Created using <span class="spoiler">LaTeX</span>
+</figcaption>
+
+<p></p>
+
+<img src="media/word_greek.png" style="width:250px" class="center">
+<figcaption align="middle">
+  Option 2: Created using <span class="spoiler">Word</span>
+</figcaption>
+
+<p>
+  The answer is again obvious. However, I couldn't find any official specifications on how Greek letters (or similar symbols) are supposed to be written. Is upper-case sigma supposed to have a specific proportion ratio, i.e., X height to Y width? Given no official ruling, the LaTeX symbols reign supreme.
+</p>
+
+<h3 id="customizability">Customizability</h3>
+
+
+
+
+
+
+
 
 
 
@@ -132,8 +174,122 @@
 
 <hr>
 
+<h2 id="downfalls">Downfalls</h2>
+
+<p>
+  The most apparent issue with LaTeX is the steep learning curve beginners face. In the land of a gagillion commands, packages, and preamble requirements, it is easy to get both overwhelmed and confused amid the chaos. In the beginning, almost all the commands will need to be looked up, syntax checked, and regular trial-and-error performed to see if the code is producing what's desired. Googling the question returns a <a href="https://tex.stackexchange.com/questions/399482/better-looking-equations">plethora of answers</a>, all slightly different in their own ways.
+</p>
+
+<p>
+  Word is mostly the opposite. Any Microsoft Bro can open up Word, start typing, and get roughly what they want with minimal instructions. Inserting pictures, creating tables, aligning objects/text, and customizing the layout are all fairly straightforward, if not easily Google-able.
+</p>
+
+<p>
+  But redemption! In my experience, the commands used follow a rough Pareto distribution/rule: a majority of the commands used during actual writing are only a small minority of the commands available. (I refuse to provide numbers.) For example, my most commonly-used commands were as follows after glancing through old homework assignments:
+</p>
+
+<ul>
+  <li>
+    <code>\frac</code>: Fraction
+  </li>
+  <li>
+    <code>align</code>: Environment used to align related equations to one another
+  </li>
+  <li>
+    <code>\cdot</code>: Dot used for multiplication
+  </li>
+  <li>
+    <code>\int</code>: Integral
+  </li>
+  <li>
+    <code>\hspace</code>: Manually sets whitespace between elements
+  </li>
+  <li>
+    <code>\tr</code>: Formats text to be normal in math environments
+  </li>
+</ul>
+
+<p>
+  I occasionally use <code>\infty</code> (infinity symbol), select Greek letters, and select math objects (<code>\partial</code>, matrix environments). That's really it (at least for the average university STEM student, which I was). Unique, one-off commands can easily be found via Google or <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">reference sheets</a>.
+</p>
+
+
+
+
+
+<hr>
+
+<h2 id="usage">Increasing Usage</h2>
+
+<h3 id="citations">Citations</h3>
+
+<p>
+  Yet another one of <a href="https://niplav.github.io/">niplav</a>'s great ideas is for researchers to simply stop citing papers published in Word. It's that simple. No Word papers, regardless of the quality. If you want to get published, sit down for a few hours and learn the basics. Or better yet, solicit an undergrad and disguise their slave labor as a "valuable volunteering experience".
+</p>
+
+<p>
+  This would take an immense amount of cooperation from researchers everywhere, as well as journals to not actually publish Word manuscripts.
+</p>
+
+<h3 id="publishing">Publishing</h3>
+
+<p>
+  Similar to not citing Word papers, journals should also immediately stop accepting Word manuscripts.
+</p>
+
+<p>
+  First, it decreases the prestige of the journal. It's like allowing déclassé people to dine in a fancy restaurant. Sure, they showed up in a foreign car and wear the designer clothing, but at a closer look, they are just as rotten as their counterparts eating at Waffle House. LaTeX is the patron that causes people to give five stars to the restaurant for a "quiet, professional atmosphere" that leads to a "quality experience". Does anyone really want to spend an hour reading <i>Word equations</i>? Unfortunately, even some of the most prestigious journals (<a href="https://www.nejm.org/author-center/new-manuscripts">1</a>, <a href="https://www.nature.com/nature/for-authors/formatting-guide">2</a>, <a href="https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript">3</a>) still prefer Word. (I understand this if the content is not formula- nor formatting heavy. Word can do just fine for basic text.)
+</p>
+
+<p>
+  Second, if there is some type of <a href="https://launch.tamu.edu/Undergraduate-Research/URS/Resources">standardized template</a> authors are requested to use for submission, the journal only needs to update the LaTeX version.
+</p>
+
+<h3 id="universities">Universities</h3>
+
+<p>
+  Practically all researchers who publish went to some type of university that offered courses. A mandatory course titled "Scientific Writing" can be implemented, which teaches the writing process while learning LaTeX along the way. The final project would be a complete manuscript (content doesn't necessarily need to be there, but the formatting does) written in LaTeX on the student's topic of choice, related to their research or not.
+</p>
+
+
+
+
+
+<hr>
+
+<h2 id="resources">Resources</h2>
+
+<p>
+  Some resources for learning LaTeX:
+</p>
+
+<ul>
+  <li>
+    <a href="https://www.tug.org/begin.html">Getting started with TeX, LaTeX, and friends</a>: Read this before opening anything else. Provides an explanation of TeX, how to install it, online/physical resources, and other resource/help options.
+  </li>
+  <li>
+    <a href="https://en.wikibooks.org/wiki/LaTeX">LaTeX Wikibook</a>: "This is a guide to the LaTeX typesetting system. It is intended as a useful resource for everybody, from new users who wish to learn, to old hands who need a quick reference."
+  </li>
+  <li>
+    <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">Learn LaTeX in 30 minutes</a>: Overleaf's guide to LaTeX.
+  </li>
+</ul>
+
+
+
+
+<hr>
+
 <h2 id="see_also">See Also</h2>
 
+<ul>
+  <li>
+    <a href="https://www.tug.org/texshowcase/">The TeX showcase</a>: Examples of what can be done with TeX.
+  </li>
+  <li>
+    <a href="https://tex.stackexchange.com/questions/1319/showcase-of-beautiful-typography-done-in-tex-friends">Showcase of beautiful typography done in TeX & friends</a>: Thread of beautiful documents made using LaTeX.
+  </li>
+</ul>
 
 
 </body>
