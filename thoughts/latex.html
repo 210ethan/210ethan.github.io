@@ -159,14 +159,50 @@
 
 <h3 id="customizability">Customizability</h3>
 
+<p>
+  LaTeX offers hundreds, if not thousands, of packages designed to customize a document. CTAN has their comprehensive list <a href="https://www.ctan.org/pkg">here</a>. Take the <a href="https://www.ctan.org/pkg/memoir">memoir class</a>, used for "typesetting poetry, fiction, non-fiction, and mathematical works." Its basic user manual is 615 pages long and covers anything and everything one would need to know. (Note: a class is the document format, while packages provide specific commands. Classes can include multiple packages. More info <a href="https://texfaq.org/FAQ-clsvpkg.html">here</a>.)
+</p>
 
+<p>
+  Word offers <a href="https://docs.microsoft.com/en-us/office/dev/add-ins/word/word-add-ins-programming-overview">add-ins</a>, which are a bit different than what LaTeX is designed for:
+</p>
 
+<blockquote>
+  Word add-ins are one of the many development options that you have on the Office Add-ins platform. You can use add-in commands to extend the Word UI and launch task panes that run JavaScript that interacts with the content in a Word document. Any code that you can run in a browser can run in a Word add-in. Add-ins that interact with content in a Word document create requests to act on Word objects and synchronize object state.
+</blockquote>
 
+<p>
+  Again, the purpose of LaTeX is to prepare and focus on the content of a document, not to interact with the content like the add-ins do. Packages and add-ins serve two separate functions, the latter of which is irrelevant to LaTeX.
+</p>
 
+<h3 id="version_control">Version Control</h3>
 
+<p>
+  Git works fairly well with .tex files, but not with .doc nor .docx files. Terry Lambert <a href="https://www.quora.com/Can-I-use-Git-or-Github-to-version-control-my-Microsoft-Word-doc-and-docx-documents">explains the difference</a>:
+</p>
 
+<blockquote>
+  <p>
+    This is unsurprising [in regards to Git being a poor option for Word version control], because Git is actually an SCCS/VCS (Source Code Control System/Version Control System), and not a DMS (Document Management System).
+  </p>
+  <p>
+    Git is a version control system primarily for plain text files containing program source code.
+  </p>
+  <p>
+    Microsoft Word Documents have in-band markup, along with the text data, and are stored as binary files — this is true for both .doc and .docx files.
+  </p>
+  <p>
+    What this means is that the deltas and other features of Git will treat the files as opaque binary blobs, and will not be able to tell you the differences between one revision of the file and another revision of the file, even if the differences are relatively small.
+  </p>
+</blockquote>
 
+<p>
+  In comparison, a .tex file is straight text that gets converted to PDF when built. This is what makes .tex files work so well: there's no "hidden" formatting like there is in Word—what the user sees is what Git sees.
+</p>
 
+<p>
+  This feature depends heavily on the user(s), but should absolutely be considered if version control is important to the document or group.
+</p>
 
 
 
@@ -213,10 +249,6 @@
   I occasionally use <code>\infty</code> (infinity symbol), select Greek letters, and select math objects (<code>\partial</code>, matrix environments). That's really it (at least for the average university STEM student, which I was). Unique, one-off commands can easily be found via Google or <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">reference sheets</a>.
 </p>
 
-
-
-
-
 <hr>
 
 <h2 id="usage">Increasing Usage</h2>
@@ -224,7 +256,7 @@
 <h3 id="citations">Citations</h3>
 
 <p>
-  Yet another one of <a href="https://niplav.github.io/">niplav</a>'s great ideas is for researchers to simply stop citing papers published in Word. It's that simple. No Word papers, regardless of the quality. If you want to get published, sit down for a few hours and learn the basics. Or better yet, solicit an undergrad and disguise their slave labor as a "valuable volunteering experience".
+  Yet another one of <a href="https://niplav.github.io/">niplav</a>'s great ideas is for researchers to simply stop citing papers published in Word. It's that simple. No Word papers, regardless of the quality. If you want to get published, sit down for a few hours and learn the basics of LaTeX. Or better yet, solicit an undergrad and disguise their slave labor as a "valuable volunteering experience".
 </p>
 
 <p>
@@ -238,11 +270,15 @@
 </p>
 
 <p>
-  First, it decreases the prestige of the journal. It's like allowing déclassé people to dine in a fancy restaurant. Sure, they showed up in a foreign car and wear the designer clothing, but at a closer look, they are just as rotten as their counterparts eating at Waffle House. LaTeX is the patron that causes people to give five stars to the restaurant for a "quiet, professional atmosphere" that leads to a "quality experience". Does anyone really want to spend an hour reading <i>Word equations</i>? Unfortunately, even some of the most prestigious journals (<a href="https://www.nejm.org/author-center/new-manuscripts">1</a>, <a href="https://www.nature.com/nature/for-authors/formatting-guide">2</a>, <a href="https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript">3</a>) still prefer Word. (I understand this if the content is not formula- nor formatting heavy. Word can do just fine for basic text.)
+  First, it decreases the prestige of the journal. It's like allowing déclassé people to dine in a fancy restaurant. Sure, they showed up in a foreign car and wear the designer clothing, but at a closer look, they are just as rotten as their counterparts eating at Waffle House. LaTeX is the patron that causes people to give five stars to the restaurant for a "quiet, professional atmosphere" that leads to a "quality experience". Does anyone really want to spend an hour reading Word equations? Unfortunately, even some of the most prestigious journals (<a href="https://www.nejm.org/author-center/new-manuscripts">1</a>, <a href="https://www.nature.com/nature/for-authors/formatting-guide">2</a>, <a href="https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript">3</a>) still prefer Word. (I understand this if the content is not formula- nor formatting heavy. Word can do just fine for basic text.)
 </p>
 
 <p>
   Second, if there is some type of <a href="https://launch.tamu.edu/Undergraduate-Research/URS/Resources">standardized template</a> authors are requested to use for submission, the journal only needs to update the LaTeX version.
+</p>
+
+<p>
+  Some users on the Academia Stack Overflow provide some insight as to why journals prefer Word over LaTeX <a href="https://academia.stackexchange.com/questions/30160/why-do-some-journals-prefer-ms-word">here</a>.
 </p>
 
 <h3 id="universities">Universities</h3>
