@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>For LaTeX, Against Word</title>
+  <title>For LaTeX</title>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <link rel="icon" href="../media/ethan_morse_favicon.png">
 </head>
@@ -15,18 +15,10 @@
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
 
-<!--
-- quote JHW: "it's basically the same thing"
-- niplav: don't cite papers that use word
-- allows you to review your work much more easily
-- graders will love you
-
--->
-
-<h1 id="latex">For <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span>, Against Word</h1>
+<h1 id="latex">For <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span></h1>
 
 <p>
-  Pros and cons of using <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> vs. Microsoft Word, including ideas on how to increase its usage.
+  Pros and cons of using <span class="latex">L<sup>a</sup>T<sub>e</sub>X</span> vs. Microsoft Word, ideas on how to increase its usage.
 </p>
 
 <hr>
@@ -91,16 +83,20 @@
 </blockquote>
 
 <p>
-  In short, LaTeX allows for beautiful documents to be written and the user to be in control of every aspect of it. Want to add a <a href="http://legacy.hanno-rein.de/hanno-rein.de/index.html?p=349">coffee stain</a> to a page? LaTeX's got you covered. Want to put in a <a href="https://www.overleaf.com/learn/latex/CircuiTikz_package">circuit diagram</a> without having to add a picture? Easy, albeit practice is required. Want your equations to not look like absolute garbage? LaTeX is your guy. Want to be made fun of and belittled in front of all of your closest friends, family, and colleagues at your first public conference because your paper formatting is ugly? Word's the way to go!
-</p>
-
-<p>
-  Yes, I am absolutely biased, but for good reason, as will be shown.
+  In short, LaTeX allows for beautiful documents to be written and the user to be in control of every aspect of it. Want to add a <a href="http://legacy.hanno-rein.de/hanno-rein.de/index.html?p=349">coffee stain</a> to a page? LaTeX's got you covered. Want to put in a <a href="https://www.overleaf.com/learn/latex/CircuiTikz_package">circuit diagram</a> without having to add a picture? Easy, albeit practice is required. Want your equations to not look like absolute garbage? LaTeX is your guy. Want to be made fun of and belittled in front of all of your closest friends, family, and colleagues at your first public conference because your paper formatting is atrocious and the equations mangled? Word's the way to go!
 </p>
 
 <hr>
 
 <h2 id="differences">Differences</h2>
+
+<blockquote>
+  It's basically the same thing.
+</blockquote>
+
+<p>
+  —Someone who has never used LaTeX
+</p>
 
 <h3 id="equations">Equations</h3>
 
@@ -154,13 +150,13 @@
 </figcaption>
 
 <p>
-  The answer is again obvious. However, I couldn't find any official specifications on how Greek letters (or similar symbols) are supposed to be written. Is upper-case sigma supposed to have a specific proportion ratio, i.e., X height to Y width? Given no official ruling, the LaTeX symbols reign supreme.
+  The answer is again obvious. However, I couldn't find any official specifications on how Greek letters (or similar symbols) are supposed to be written, e.g., is upper-case sigma supposed to have a specific proportion ratio, i.e., X height to Y width? Given no official ruling, the LaTeX symbols reign supreme.
 </p>
 
 <h3 id="customizability">Customizability</h3>
 
 <p>
-  LaTeX offers hundreds, if not thousands, of packages designed to customize a document. CTAN has their comprehensive list <a href="https://www.ctan.org/pkg">here</a>. Take the <a href="https://www.ctan.org/pkg/memoir">memoir class</a>, used for "typesetting poetry, fiction, non-fiction, and mathematical works." Its basic user manual is 615 pages long and covers anything and everything one would need to know. (Note: a class is the document format, while packages provide specific commands. Classes can include multiple packages. More info <a href="https://texfaq.org/FAQ-clsvpkg.html">here</a>.)
+  LaTeX offers thousands of packages designed to customize a document. CTAN has an alphabetical comprehensive list <a href="https://www.ctan.org/pkg">here</a>. Take the <a href="https://www.ctan.org/pkg/memoir">memoir class</a>, used for "typesetting poetry, fiction, non-fiction, and mathematical works." Its basic user manual is 615 pages long and covers anything and everything one would need to know. (Note: a class is the document format, while packages provide specific commands. Classes can include multiple packages. More info <a href="https://texfaq.org/FAQ-clsvpkg.html">here</a>.)
 </p>
 
 <p>
@@ -178,7 +174,7 @@
 <h3 id="version_control">Version Control</h3>
 
 <p>
-  Git works fairly well with .tex files, but not with .doc nor .docx files. Terry Lambert <a href="https://www.quora.com/Can-I-use-Git-or-Github-to-version-control-my-Microsoft-Word-doc-and-docx-documents">explains the difference</a>:
+  Git works fairly well with .tex files, but not with Word (.doc, .docx, .docm) files. Terry Lambert <a href="https://www.quora.com/Can-I-use-Git-or-Github-to-version-control-my-Microsoft-Word-doc-and-docx-documents">explains the difference</a> (highlights taken from his reply):
 </p>
 
 <blockquote>
@@ -201,7 +197,7 @@
 </p>
 
 <p>
-  This feature depends heavily on the user(s), but should absolutely be considered if version control is important to the document or group.
+  This feature should absolutely be considered if version control is important to the document or group. After all, if it ain't Git, it ain't version control.
 </p>
 
 <img src="media/latex_versioncontrol.png" style="width:500px" class="center">
@@ -216,7 +212,23 @@
   .docx file on GitHub desktop
 </figcaption>
 
+<h3 id="longevity">Longevity</h3>
 
+<p>
+  ESultanik explains <a href="https://tex.stackexchange.com/a/1854">LaTeX's longevity abilities</a>:
+</p>
+
+<blockquote>
+  <p>
+    TeX has been around for over thirty years, and the underlying language hasn't changed very much in that time. Has anyone ever tried using Word 2007 to load a file that was originally written in Word '97? Even if the file imports properly, chances are some of the page/line breaks are going to be off, possibly skewing the entire layout.
+  </p>
+  <p>
+    What if you had decided to write your document in Lotus Word Pro back in 1990? Would you be able to view/edit that document today? These problems almost never occur with (La)TeX.
+  </p>
+  <p>
+    A document that is typeset in (La)TeX today is likely to look exactly the same when you re-typeset it 10, 20, or 30 years down the road. Since TeX is stored in a human-readable plain text file, you also have the knowledge that you will always be able to edit the file in the future.
+  </p>
+</blockquote>
 
 <hr>
 
@@ -231,7 +243,7 @@
 </p>
 
 <p>
-  But redemption! In my experience, the commands used follow a rough Pareto distribution/rule: a majority of the commands used during actual writing are only a small minority of the commands available. (I refuse to provide numbers.) For example, my most commonly-used commands were as follows after glancing through old homework assignments:
+  But redemption! In my experience, the commands used follow a rough Pareto distribution/rule: a majority of the commands used during actual writing are only a small minority of the commands available. For example, my most commonly-used commands were as follows after glancing through old homework assignments:
 </p>
 
 <ul>
@@ -256,7 +268,7 @@
 </ul>
 
 <p>
-  I occasionally use <code>\infty</code> (infinity symbol), select Greek letters, and select math objects (<code>\partial</code>, matrix environments). That's really it (at least for the average university STEM student, which I was). Unique, one-off commands can easily be found via Google or <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">reference sheets</a>.
+  I occasionally use <code>\infty</code> (infinity symbol), Greek letters, and select math objects (<code>\partial</code>, matrix environments). That's really it for the average university STEM student, which I was. Unique, one-off commands can easily be found via Google or <a href="https://oeis.org/wiki/List_of_LaTeX_mathematical_symbols">reference sheets</a>.
 </p>
 
 <hr>
@@ -266,7 +278,7 @@
 <h3 id="citations">Citations</h3>
 
 <p>
-  Yet another one of <a href="https://niplav.github.io/">niplav</a>'s great ideas is for researchers to simply stop citing papers published in Word. It's that simple. No Word papers, regardless of the quality. If you want to get published, sit down for a few hours and learn the basics of LaTeX. Or better yet, solicit an undergrad and disguise their slave labor as a "valuable volunteering experience".
+  Yet another one of <a href="https://niplav.github.io/">niplav</a>'s great ideas is for researchers to simply stop citing papers published in Word. It's that simple. No Word papers, regardless of the quality of work. If you want to get published, sit down for a few hours and learn the basics of LaTeX. Or better yet, solicit an undergrad or intern and disguise their slave labor as a "valuable volunteering experience".
 </p>
 
 <p>
@@ -280,7 +292,7 @@
 </p>
 
 <p>
-  First, it decreases the prestige of the journal. It's like allowing déclassé people to dine in a fancy restaurant. Sure, they showed up in a foreign car and wear the designer clothing, but at a closer look, they are just as rotten as their counterparts eating at Waffle House. LaTeX is the patron that causes people to give five stars to the restaurant for a "quiet, professional atmosphere" that leads to a "quality experience". Does anyone really want to spend an hour reading Word equations? Unfortunately, even some of the most prestigious journals (<a href="https://www.nejm.org/author-center/new-manuscripts">1</a>, <a href="https://www.nature.com/nature/for-authors/formatting-guide">2</a>, <a href="https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript">3</a>) still prefer Word. (I understand this if the content is not formula- nor formatting heavy. Word can do just fine for basic text.)
+  First, it decreases the prestige of the journal. It's like allowing déclassé people to dine in a fancy restaurant. Sure, they showed up in a foreign car and wear the designer clothing, but at a closer look, they are just as tacky as their counterparts tearing up the local Waffle House. LaTeX is the patron that causes people to give five stars to the restaurant for a "quiet, professional atmosphere" that leads to a "quality experience". Unfortunately, even some of the most prestigious journals (<a href="https://www.nejm.org/author-center/new-manuscripts">1</a>, <a href="https://www.nature.com/nature/for-authors/formatting-guide">2</a>, <a href="https://www.sciencemag.org/authors/instructions-preparing-initial-manuscript">3</a>) still prefer Word-based submissions. (I understand this if the content is not formula- nor formatting-heavy. Word can do just fine for basic text.)
 </p>
 
 <p>
@@ -294,12 +306,8 @@
 <h3 id="universities">Universities</h3>
 
 <p>
-  Practically all researchers who publish went to some type of university that offered courses. A mandatory course titled "Scientific Writing" can be implemented, which teaches the writing process while learning LaTeX along the way. The final project would be a complete manuscript (content doesn't necessarily need to be there, but the formatting does) written in LaTeX on the student's topic of choice, related to their research or not.
+  Practically all researchers who publish went to some type of university that required coursework for graduation. A mandatory course titled "Scientific Writing" can be implemented, which teaches the writing process while learning LaTeX along the way. The final project would be a complete manuscript (content doesn't necessarily need to be there, but the formatting does) written in LaTeX on the student's topic of choice, related to their research or not. This would be a first-semester course to set the expectation for the remaining years.
 </p>
-
-
-
-
 
 <hr>
 
@@ -319,10 +327,16 @@
   <li>
     <a href="https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes">Learn LaTeX in 30 minutes</a>: Overleaf's guide to LaTeX.
   </li>
+  <li>
+    <a href="https://www.texstudio.org/">TeXstudio</a>: My preferred LaTeX editor:
+    <blockquote>
+      TeXstudio is an integrated writing environment for creating LaTeX documents. Our goal is to make writing LaTeX as easy and comfortable as possible. Therefore TeXstudio has numerous features like syntax-highlighting, integrated viewer, reference checking, and various assistants. For more details see the <a href="https://www.texstudio.org/#features">features</a>.
+    </blockquote>
+  </li>
+  <li>
+    <a href="https://www.overleaf.com/learn/latex/Beamer">Beamer</a>: A LaTeX class used to create presentations. No more PowerPoint!
+  </li>
 </ul>
-
-
-
 
 <hr>
 
