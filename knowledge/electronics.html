@@ -21,7 +21,8 @@
 
 - components:
   - relays
-  - encoders: absolute
+  - drivers
+  - motors: brushed vs brushless
 
 -->
 
@@ -51,7 +52,10 @@
     <a href="#components">Components</a>
     <ul>
       <li>
-        <a href="#components_relays">Relays</a>
+        <a href="#motors">Motors</a>
+      </li>
+      <li>
+        <a href="#components_encoders">Encoders</a>
       </li>
     </ul>
   </li>
@@ -132,12 +136,29 @@
 
 <h2 id="components">Components</h2>
 
-<h3 id="components_relays">Relays</h3>
+<h3 id="components_motors">Motors</h3>
 
 <p>
-
+  <a href="https://www.allaboutcircuits.com/technical-articles/how-to-choose-the-right-motor-driver-ic/">Motor drivers</a> serve to boost low current signals into high current signals, allowing motors to be powered (driven). The driver must also allow for heat to dissipate properly—larger currents produce more heat, and some components can't handle the heat.
 </p>
 
+
+
+<h3 id="components_encoders">Encoders</h3>
+
+<p>
+  <a href="https://www.dynapar.com/technology/absolute-rotary-encoders/">Absolute encoders</a> provide speed and position (up/down, forward/back, rotation) "by outputting a digital word or bit in relation to motion".
+</p>
+
+<p>
+  Position can be found optically by shining a light through a code disc marked with unique binary positions, each providing unique feedback to the controller.
+</p>
+
+<p>
+  A good summary of absolute vs. incremental encoders and their differences can be found here:
+</p>
+
+<iframe width="560" height="315" class="center" src="https://www.youtube.com/embed/-Qk--Sjgq78"></iframe>
 
 
 
