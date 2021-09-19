@@ -6,6 +6,11 @@
   <link rel="icon" href="../media/ethan_morse_favicon.png">
 </head>
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
 <body>
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
@@ -93,6 +98,11 @@ technology:
   </li>
   <li>
     <a href="#technology">Technology</a>
+    <ul>
+      <li>
+        <a href="#technology_mass_flow_controllers">Mass Flow Controllers</a>
+      </li>
+    </ul>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -328,15 +338,72 @@ technology:
 <h2 id="technology">Technology</h2>
 
 
+<h3 id="technology_mass_flow_controllers">Mass Flow Controllers</h3>
 
+<p>
+  Mass flow controllers (MFC) are used to flow a gas or liquid (gas is used throughout this section) at a specific rate. In contrast, mass flow meters do not allow for control of the gas, only measurement. Most industrial-grade MFCs are thermal MFCs.
+</p>
 
+<p>
+  The most reliable method of MFC calibration is to calibrate it to a single gas and use it for a single gas. If needed, <a href="https://www.scribner.com/wp-content/uploads/2017/06/Application-Note-Gas-correction-factors.pdf">gas correction factors (GCFs)</a> can be used to flow a different type of gas. Generally, a N<sub>2</sub>-based MFC is used. A list of common GCFs can be found <a href="https://www.mksinst.com/n/gas-correction-factors-for-thermal-based-mass-flow-controllers">here</a>.
+</p>
 
+<p>
+  MFCs have ranges in the SCCM (standard cubic centimeters per minute) or SLM (standard liters per minute range) range. Flowing the upper values of these scales is not always completely achievable, e.g., flowing 49 SLM through a 50 SLM MFC may not happen (this is based on personal experience). Often times the bottom and top 10% ranges aren't used. MFCs come with a zeroing function—normally in the form of a button for digital devices and a potentiometer for analog devices—that allow the user to tell it when there is zero gas flowing through it. Brooks Instruments offers the following <a href="https://www.brooksinstrument.com/en/blog/is-your-mfc-displayingoutputting-a-flow-signal-or-negative-flow-with-no-gas">zeroing advice</a>:
+</p>
 
+<blockquote>
+  <ul>
+    <li>
+      Allow for a warm-up time of at least 45 minutes to get to normal operating temperatures [this is especially important when using thermal MFCs]
+    </li>
+    <li>
+      It is preferable to zero at process conditions (meaning inlet pressure should be the same as the normal device operation)
+    </li>
+    <li>
+      Close a downstream shutoff valve and open the MFC valve using a setpoint or valve override (VOR) open command.  This will fill the lines up to the shutoff valve and pressure will equalize across the MFC.
+    </li>
+    <li>
+      Allow 30 seconds minimum for stabilization
+    </li>
+    <li>
+      Monitor the output (PV) signal
+    </li>
+  </ul>
+</blockquote>
 
+<p>
+  Wikipedia describes the MFC's inlet pressure requirement well:
+</p>
 
+<blockquote>
+  Mass flow controllers require the supply gas or liquid to be within a specific pressure range. Low pressure will starve the MFC of fluid and cause it to fail to achieve its setpoint. High pressure may cause erratic flow rates.
+</blockquote>
 
+<p>
+  Thermal MFC operation is <a href="https://www.mksinst.com/mam/celum/celum_assets/mks/resources/MassFlowTechnology-TechNote.pdf?0">explained by MKS</a>:
+</p>
 
+<blockquote>
+  <p>
+    The sensor is mounted on a side stream that takes a known ratio of the gas flow passing through the MFM. In a three-wire sensor configuration, the MFM uses high temperature coefficient of resistance wires as sensors to measure the temperature differential (\(\Delta T = T_{2} - T_{1}\)), across a heater mounted on the side stream as shown in Figure 4. This temperature differential is directly proportional to the mass flow rate:
+  </p>
+  \[\text{mass flow rate} = \frac{\alpha \cdot P_{W}}{\Delta T \cdot C_{p}}\]
+  <p>
+    where \(P_{W}\) is the heater power setting, \(C_{p}\) is the heat capacity of the gas, and \(\alpha\) is a proportionality constant.
+  </p>
+  <p>
+    Thermal MFCs are both accurate and repeatable, precisely controlling gas flows between 2 and 100% of their Full Scale reading with a resolution of 0.1%
+  </p>
+</blockquote>
 
+<p>
+  Proportional solenoid valves are generally used as the controlling element in an MFC. Pneumatic- or servo-driven motors may also be used, but solenoid-driven valves are generally more reliable and accurate.
+</p>
+
+<p>
+  MFCs are set as normally open (NO) or normally closed (NC). (NO) MFCs should be used when it's fine for the gas to be flowing the entire time, e.g., an MFC that allows N<sub>2</sub> to purge a loading area or non-processing chamber. If something interrupts the MFC's operation, it simply goes back to being completely open. (NC) MFCs should be used for hazardous gases or when it being fully open after an issue can present problems with the process it's being used for.
+</p>
 
 
 
