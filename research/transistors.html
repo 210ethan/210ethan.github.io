@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transistors</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+- gate oxide: considerations, types, node size vs. gate ox thickness, purpose
+- self-aligned processes
+- https://en.wikipedia.org/wiki/Dennard_scaling
+- https://en.wikipedia.org/wiki/Polysilicon_depletion_effect
+- DIBL and GIDL
+-->
+
+<h1 id="transistors">Transistors: Overview, Considerations, Technologies</h1>
+
+<p>
+  Overview and considerations on transistors. Information taken from a variety of sources.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#purpose">Purpose</a>
+  </li>
+  <li>
+    <a href="#physics">Physics</a>
+  </li>
+  <li>
+    <a href="#overview">Overview</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="purpose">Purpose</h2>
+
+<p>
+  This page is solely for me to increase my knowledge of transistors to do better at my job. I work as a fab equipment engineer, so understanding the processes and how my equipment can affect them is crucial.
+</p>
+
+<p>
+  Individual unit processes are covered only enough to adequately explain device operation and performance.
+</p>
+
+<hr>
+
+<h2 id="physics">Physics</h2>
+
+
+
+<hr>
+
+<h2 id="overview">Overview</h2>
+
+<p>
+  Here is the basic flow of creating a MOSFET. Thicknesses are not exactly to scale, but get the point across comparatively.
+</p>
+
+<p>
+  Clean the wafer thoroughly to remove any impurities and ensure the substrate (silicon, in most cases) is clean and ready for deposition.
+</p>
+
+<p>
+  A field oxide is thermally-grown to electrically isolate transistors from one another on the horizontal plane. The middle of the field ox is then etched away to expose the area the transistor will be formed in.
+</p>
+
+<img src="media/post_field_ox.png" class="center">
+<figcaption align="middle">
+  Cross-section after field ox deposition and etching
+</figcaption>
+
+<p>
+  The <a href="#gate_oxide">gate oxide</a> is grown on the exposed area of Si between the field ox. The gate electrode (generally polysilicon). Since there is no convenient way to selectively choose the areas the poly are deposited (special circumstances/tools do exist), this is a blanket depositions, meaning it covers the entire substrate, including field ox.
+</p>
+
+<p>
+  The gate electrode material is selectively etched everywhere except the gate itself, leaving the entire gate ox and a "block" of poly.
+</p>
+
+<img src="media/post_gate_dep.png" class="center">
+<figcaption align="middle">
+  Cross-section after gate ox and poly dep and poly etch
+</figcaption>
+
+<p>
+  <a href="implant.html">Ion implanation</a> is used to introduce impurities, or dope, the Si areas underneath the gate ox and between the poly and field ox. These areas are called the source and the drain.
+</p>
+
+<img src="media/post_implant.png" class="center">
+<figcaption align="middle">
+  Cross-section after ion implantation
+</figcaption>
+
+<p>
+  The device is then heated to diffuse the impurities deeper—both horizontally and vertically—into the Si.
+</p>
+
+<img src="media/post_diffusion.png" class="center">
+<figcaption align="middle">
+  Cross-section after post-implant diffusion (note the p-Si areas are larger than before)
+</figcaption>
+
+<p>
+  Conductive contacts now need to be connected to the source and drain. The gate ox is removed, a conductive material (some type of metal) is deposited, then patterned.
+</p>
+
+<img src="media/post_contacts.png" class="center">
+<figcaption align="middle">
+  Cross-section after gate ox removal and contact patterning
+</figcaption>
+
+
+<hr>
+
+<h2 id="gate_oxide">Gate Oxide</h2>
+
+<p>
+  The gate oxide is a dielectric layer that separates the substrate and gate electron (often polysilicon), forming a capacitor of-sorts between the two.
+</p>
+
+
+
+<h3 id="gate_ox_materials">Types</h3>
+
+<p>
+  Not every gate oxide has to be SiO<sub>2</sub>. Other materials that are used generally have high \Kappa values (pronounced high-K, the dielectric constant) and includes HfO<sub>2</sub>, ZrO<sub>2</sub>, and TiO<sub>2</sub>, to name a few.
+</p>
+
+
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>
