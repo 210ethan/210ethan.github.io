@@ -162,7 +162,7 @@
   The \(N(x)\) equation above is a simple <a href="https://en.wikipedia.org/wiki/Gaussian_function">Gaussian function</a>, but is not entirely representative of how actual implant profiles look. To better simulate real profiles, the <a href="https://en.wikipedia.org/wiki/Pearson_distribution">Pearson IV distribution</a> and <a href="https://en.wikipedia.org/wiki/Moment_(mathematics)">moments</a> are used, which accomodate for the skewness that often occurs.
 </p>
 
-<img src="media/boron_pearson_iv.png" alt="boron_pearson_iv" width="200" class="center">
+<img src="media/implant/boron_pearson_iv.png" alt="boron_pearson_iv" width="200" class="center">
 <figcaption align="middle">Boron distribution in Si at 30, 100, 300, 800 keV - the skewness becomes more obvious (<a href="https://inis.iaea.org/collection/NCLCollectionStore/_Public/07/234/7234550.pdf?r=1#page=62">source</a>)</figcaption>
 
 <p>
@@ -199,21 +199,21 @@
   The integral limits are from 0 to \(\infty\) because a negative number would not make sense when referring to depth. Using all of those, the Pearson equation can be solved and specific values substituted in to the IV solution. For specifics, see <a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion Implantation.pdf#page=8">pages 8-12</a> of Dr. Alan Doolittle's lecture.
 </p>
 
-<img src="media/range_straggle_values.png" alt="range_straggle_values" width="200" class="center">
+<img src="media/implant/range_straggle_values.png" alt="range_straggle_values" width="200" class="center">
 <figcaption align="middle">Range and straggle values as a function of energy for common dopant species (<a href="http://tuttle.merc.iastate.edu/ee432/topics/doping/ion_implant.pdf">source</a>)</figcaption>
 
 <p>
   A typical concentration vs. depth Gaussian curve is shown below:
 </p>
 
-<img src="media/p_implant_profile.png" alt="p_implant_profile" width="200" class="center">
+<img src="media/implant/p_implant_profile.png" alt="p_implant_profile" width="200" class="center">
 <figcaption align="middle">Concentration vs. depth for a P<sup>+</sup> implant through a SiO<sub>2</sub> mask into a Si substrate (<a href="https://www.researchgate.net/figure/Ion-implantation-of-boron-Profile4_fig4_267370002">source</a>)</figcaption>
 
 <p>
   The concentration profile makes intuitive sense, especially if you rotate the image 90° and superimpose the mask and substrate onto it:
 </p>
 
-<img src="media/p_implant_profile_superimposed.png" alt="p_implant_profile_superimposed" width="200" class="center">
+<img src="media/implant/p_implant_profile_superimposed.png" alt="p_implant_profile_superimposed" width="200" class="center">
 <figcaption align="middle">Depth vs. concentration for a P<sup>+</sup> implant with mask and substrate superimposed (<a href="https://www.researchgate.net/figure/Ion-implantation-of-boron-Profile4_fig4_267370002">source</a>)</figcaption>
 
 <p>
@@ -254,7 +254,7 @@
 
 \[x_{j} = \sqrt{R^{2} - \frac{w_{2}^{2}}{4}} - \sqrt{R^{2} - \frac{w_{1}^{2}}{4}}\]
 
-<img src="media/groove_stain_method.png" alt="groove_stain_method" width="200" class="center">
+<img src="media/implant/groove_stain_method.png" alt="groove_stain_method" width="200" class="center">
 <figcaption align="middle">Groove-and-stain method (Source: Texas A&M University <a href="https://catalog.tamu.edu/undergraduate/course-descriptions/ecen/">ECEN 472</a> Laboratory Manual)</figcaption>
 
 <h3 id="stopping">Stopping</h3>
@@ -265,7 +265,7 @@
 
 \[S(E) = S_{n} + S_{e} = \frac{dE_{n}}{dx} + \frac{dE_{e}}{dx}\]
 
-<img src="media/stopping_power_vs_velocity.png" alt="stopping_power_vs_velocity" width="200" class="center">
+<img src="media/implant/stopping_power_vs_velocity.png" alt="stopping_power_vs_velocity" width="200" class="center">
 <figcaption align="middle">Stopping power as function of ion velocity (ion energy) (<a href="https://www.researchgate.net/figure/Nuclear-and-electronic-components-of-the-ion-stopping-power-as-a-function-of-ion_fig1_265496484">source</a>)</figcaption>
 
 <p>
@@ -344,7 +344,7 @@
   Multiple ions can form from the same source gas. For example, BF<sub>3</sub> may ionize into <sup>10</sup>B<sup>+</sup>, <sup>11</sup>B<sup>+</sup>, <sup>10</sup>BF<sup>+</sup>, <sup>11</sup>BF<sup>+</sup>, F<sub>2</sub><sup>+</sup>, <sup>10</sup>BF<sub>2</sub><sup>+</sup>, and <sup>11</sup>BF<sub>2</sub><sup>+</sup>. To find the relative percentage of each in the plasma, the gas spectrum, which shows the beam current vs. atomic masses, needs to be analyzed.
 </p>
 
-<img src="media/bf3_gas_spectrum.png" alt="bf3_gas_spectrum" width="200" class="center">
+<img src="media/implant/bf3_gas_spectrum.png" alt="bf3_gas_spectrum" width="200" class="center">
 <figcaption align="middle">Gas spectrum of BF<sub>3</sub> (<a href="https://www.researchgate.net/figure/Section-of-a-BF3-mass-spectrum_fig2_258385914">source</a>)</figcaption>
 
 <p>
@@ -372,7 +372,7 @@
   Where \(B\) is the magnetic field strength, \(m\) is the species' mass, \(V_{ext}\) is the extracting voltage, \(v = \sqrt{\frac{2qV_{ext}}{m}}\) is the ion velocity, and \(q\) is the species' charge. Depending on the species' mass, some may go less than, equal to, or greater than the desired angle.
 </p>
 
-<img src="media/magnetic_sector.png" alt="magnetic_sector" width="200" class="center">
+<img src="media/implant/magnetic_sector.png" alt="magnetic_sector" width="200" class="center">
 <figcaption align="middle">Magnetic sector operation (<a href="https://chem.libretexts.org/Bookshelves/Analytical_Chemistry/Supplemental_Modules_(Analytical_Chemistry)/Instrumental_Analysis/Mass_Spectrometry/Mass_Spectrometers_(Instrumentation)/Mass_Analyzers_(Mass_Spectrometry)">source</a>)</figcaption>
 
 <p>
@@ -423,7 +423,7 @@
   In electrostatic scanning, variable electric fields in both the x and y direction scan the beam across a stationary wafer. This requires a narrow beam, which is generally given by low dose and low current implants. Electrostatic scanning is avoided on high current tools because the beam tends to expand with higher currents, causing poor scanning control. The tilt angle will also vary as the beam scans over the wafer, causing channeling and uniformity issues.
 </p>
 
-<img src="media/scanning_figures.png" alt="scanning_figures" width="200" class="center">
+<img src="media/implant/scanning_figures.png" alt="scanning_figures" width="200" class="center">
 <figcaption align="middle">Electrostatic and semi-electrostatic/mechanical scanning (<a href="https://www.amazon.com/Fabrication-Engineering-Nanoscale-Electrical-Computer/dp/0195320174">source</a>)</figcaption>
 
 
@@ -491,7 +491,7 @@
   High energies can cause strong cross-linking of the resist, making removal more difficult than normal. However, because high-energy ions don't make it to the bottom of the resist, a lift-off process can be performed to more easily remove the strongly-cross-linked parts of the resist.
 </p>
 
-<img src="media/photoresist_removal.png" alt="photoresist_removal" width="200" class="center">
+<img src="media/implant/photoresist_removal.png" alt="photoresist_removal" width="200" class="center">
 <figcaption align="middle">Lift-off process to remove strongly-cross-linked photoresist</figcaption>
 
 <h4 id="dielectric_metal_masks">Dielectric and Metal Masks</h4>
@@ -500,19 +500,19 @@
   If the photoresist mask has been ruled out, the other two options are dielectric, such as SiO<sub>2</sub> or Si<sub>3</sub>N<sub>4</sub>, or metals, such as Ti, W, or silicides of either (TiSi<sub>2</sub>, WSi<sub>2</sub>). Range and straggle of the implanted species into the selected material should be chosen. Denser materials are obviously better masks.
 </p>
 
-<img src="media/implant_mask_data.png" alt="implant_mask_data" width="200" class="center">
+<img src="media/implant/implant_mask_data.png" alt="implant_mask_data" width="200" class="center">
 <figcaption align="middle">Boron ranges in various masking materials (<a href="https://alan.ece.gatech.edu/ECE6450/Lectures/ECE6450L5-Ion%20Implantation.pdf">source</a>)</figcaption>
 
 <p>
   Other materials have been analyzed using a range of energies and species:
 </p>
 
-<img src="media/sio2_implant_mask.png" alt="sio2_implant_mask" width="200" class="center">
+<img src="media/implant/sio2_implant_mask.png" alt="sio2_implant_mask" width="200" class="center">
 <figcaption align="middle">Range and straggle of various species into SiO<sub>2</sub> (<a href="https://www.worldcat.org/title/projected-range-statistics-semiconductors-and-related-materials/oclc/682061198?referer=di&ht=edition">source</a>)</figcaption>
 
 <p></p>
 
-<img src="media/az111_implant_mask.png" alt="az111_implant_mask" width="200" class="center">
+<img src="media/implant/az111_implant_mask.png" alt="az111_implant_mask" width="200" class="center">
 <figcaption align="middle">Range and straggle of various species into AZ111 photoresist (<a href="https://www.worldcat.org/title/projected-range-statistics-semiconductors-and-related-materials/oclc/682061198?referer=di&ht=edition">source</a>)</figcaption>
 
 <p>
@@ -525,7 +525,7 @@
   Channeling occurs when the ion beam is angled such that there are few obstacles, in this case, atoms, in its path. Take B<sup>+</sup>. Its atomic radius is around <a href="https://en.wikipedia.org/wiki/Atomic_radii_of_the_elements_%28data_page%29">85 pm</a> ("p" being pico, or 10<sup>-12</sup>). Viewing the <a href="https://en.wikipedia.org/wiki/Diamond_cubic">diamond cubic structure</a> of Si from the [110] direction provides very wide openings, or channels, for the ion beam to penetrate. Ions can travel extremely far into the lattice if the beam angle is orthogonal to the axis.
 </p>
 
-<img src="media/si_channeling.png" alt="si_channeling" width="200" class="center">
+<img src="media/implant/si_channeling.png" alt="si_channeling" width="200" class="center">
 <figcaption align="middle">Si lattice as viewed from [110] direction (<a href="https://www.youtube.com/watch?v=x3VTw9vojvc">source</a>)</figcaption>
 
 <p>
@@ -566,14 +566,14 @@
   Additionally, there will be a shadowing effect if <i>any</i> tilt angle is used.
 </p>
 
-<img src="media/tilt_shadowing.png" alt="tilt_shadowing" width="200" class="center">
+<img src="media/implant/tilt_shadowing.png" alt="tilt_shadowing" width="200" class="center">
 <figcaption align="middle">Shadowing as a result of tilting</figcaption>
 
 <p>
   To fix this, a twist angle is added. The twist rotates the substrates so the shadowed region will be exposed to the ion beam. A <a href="http://eprints.usm.my/9830/1/THE_EFFECT_OF_IMPLANT_ANGLE_AND_RESIST_SHADOWING_IN_SUBMICRON_IMPLANT_TECHNOLOGY.pdf#page=21">"quad" implant</a> may also be performed by implanting at 0, 90°, 180°, and 270°.
 </p>
 
-<img src="media/twist_tilt_angle.png" alt="twist_tilt_angle" width="200" class="center">
+<img src="media/implant/twist_tilt_angle.png" alt="twist_tilt_angle" width="200" class="center">
 <figcaption align="middle">Twist and tilt angle (ignore the crystal orientations) (<a href="https://www.iue.tuwien.ac.at/phd/wittmann/node7.html#SECTION00723200000000000000">source</a>)</figcaption>
 
 <p id="critical_angle">
