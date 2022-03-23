@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Acceleration</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/ethan_morse_favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<h1 id="acceleration">Acceleration</h1>
+
+<p>
+  Acceleration, or lack thereof, on machines and in life.
+</p>
+
+<p>
+  Part I: <a href="deceleration.html">Deceleration</a>
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#examples">Examples</a>
+  </li>
+  <li>
+    <a href="#output_effort">Output vs. Effort Curve</a>
+  </li>
+  <li>
+    <a href="#coasting">Coasting</a>
+  </li>
+  <li>
+    <a href="#uphill">Uphill</a>
+  </li>
+  <li>
+    <a href="#suggestions">Suggestions</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="examples">Examples</h2>
+
+<p>
+  Per <a href="http://eodg.atm.ox.ac.uk/user/dudhia/rowing/physics/ergometer.html">The Physics of Ergometers</a>, the "power is (approximately) related to the cube of the flywheel speed":
+</p>
+
+<p class="center">
+  \[P = k \omega^{3}\]
+</p>
+
+<p>
+  Meaning that eight times the amount of power is required to increase the flywheel speed by two times, giving the following power vs. pace curve:
+</p>
+
+<img src="media/acceleration/rowing_pace_power_graph.png" class="center">
+
+<p>
+  Increasing pace from 2:00 to 1:55 min per 500 m requires a 27 W power improvement, whereas increasing pace from 1:25 to 1:20 min per 500 m requires a 114 W power improvement. In other words, a 4.2% increase in pace requires a 13.3% increase in power, whereas a 5.9% increase in pace requires a 20% increase in power. What can't be accurately factored into the calculation is the toll that the upper ranges of power places on the athlete compared to lower ranges. Fatigue sets in exponentially as fast.
+</p>
+
+<p>
+  For <a href="https://www.gribble.org/cycling/power_v_speed.html">cycling</a>, power (effort) vs. speed (output) is also a cubic function:
+</p>
+
+<blockquote>
+  One of the scary implications of this equation is that at high speed, the power you have to produce is proportional to the cube of your velocity. So, to increase your speed by 25%, you need to nearly double your wattage!
+</blockquote>
+
+<p>
+  <a href="https://www.mpgforspeed.com/">MPG For Speed</a> gives an overview of the effect speed has on gas consumption and total commute time. Given a daily 20-mile highway commute with a 30-highway-mpg car and gas prices at $4.00/gal, the following table and message is outputted:
+</p>
+
+<table class="center">
+<thead><tr><th>Speed</th><th>Daily Travel Time</th><th>Effective MPG</th><th>Cost/day</th><th>Cost/year</th></tr></thead><tbody>
+ <tr align="middle"><td>55 MPH</td><td>22 min.</td><td>30.0</td><td>$2.67</td><td>$974.55</td></tr>
+ <tr align="middle"><td>60 MPH</td><td>20 min.</td><td>29.1</td><td>$2.75</td><td>$1,003.75</td></tr>
+ <tr align="middle"><td>65 MPH</td><td>18 min.</td><td>27.6</td><td>$2.90</td><td>$1,058.50</td></tr>
+ <tr align="middle"><td>70 MPH</td><td>17 min.</td><td>24.9</td><td>$3.21</td><td>$1,171.65</td></tr>
+ <tr align="middle"><td>75 MPH</td><td>16 min.</td><td>23.1</td><td>$3.46</td><td>$1,262.90</td></tr>
+ <tr align="middle"><td>80 MPH</td><td>15 min.</td><td>21.6</td><td>$3.70</td><td>$1,350.50</td></tr>
+</tbody></table>
+
+<blockquote>
+  Your bottom line: If you normally travel at 75 mph, you could be saving yourself $259.15 per year if you drove at 60mph - and you'd only be making your [daily] total commute 4 minutes longer.
+</blockquote>
+
+<hr>
+
+<h2 id="output_effort">Output vs. Effort Curve</h2>
+
+<p>
+  These three cases are examples of what I broadly refer to as the output vs. effort curve (or, to be a bit proud, Ethan's Output-Effort Curve), which takes many shapes depending on the application, but often follows the trajectory of an asymptotic function in quadrant I with a positive x-intercept. The generic curve looks like:
+</p>
+
+<!--
+\[\text{O(E)} = -\frac{Y(M-E)}{E}\]
+-->
+
+<img src="media/acceleration/output_effort.png" class="center">
+
+<p>
+  Where:
+</p>
+
+<ul>
+  <li>
+    \(E\) is the effort input
+  </li>
+  <li>
+    \(Y\) is the asymptotic value the \(O(E)\) can never exceed
+  </li>
+  <li>
+    \(M\) is the minimum effort value required to achieve an output
+  </li>
+</ul>
+
+<p>
+  There are a few points to make about this curve.
+</p>
+
+<p>
+  First, there is a minimum effort required to produce an output. The curve doesn't exist at \(E = 0\). It only exists beginning at \(E > 0\) and output only becomes positive at \(E > M\). Growth only happens with sufficient stimulation. Doing a couple of push-ups a day won't produce results. Studying a language for 30 minutes won't produce results. There is a minimum threshold for everything that involves effort and output.
+</p>
+
+<p>
+  Second, there exist <i>negative</i> outputs for \(E < M\). This output exists more in the mental realm rather than the physical. Putting in effort and seeing no tangible results drains motivation, decreasing the likelihood of effort being expended in the future, making regression (or negative output) more likely. Positive output reinforces the effort being put in, zero output teaches it isn't worth it.
+</p>
+
+<p>
+  Third, as in the examples, most progress towards higher outputs are made at lower effort levels, whereas there are diminishing returns at higher effort levels. There is no universal sweet spot, as it changes on an individual basis (both in regards to the person and the activity).
+</p>
+
+<hr>
+
+<h2 id="coasting">Coasting</h2>
+
+<p>
+  Another case of diminishing returns is seen when attempting to accelerate while already going fast. That extra burst of effort will do little to improve speed.
+</p>
+
+<p>
+  The time spent going fast should (probably) not be spent trying to go faster, but in other, more productive ways.
+</p>
+
+<p>
+  First, notice how that speed was attained. Was significant effort applied? Did gravity do most of the work? Was there some maneuvering and finesse between obstacles that allowed for speed to pick up? A combination of all three or two? <a href="../knowledge/review.html">Review</a> is a huge part of my productivity philosophy, and it's incredibly applicable here. Learning and subsequently practicing how to get up to speed efficiently is key to increasing the initial part of the curve.
+</p>
+
+<img src="media/acceleration/output_effort_multiple.png" class="center">
+
+<p>
+  See the similar curves above. All of them have the same minimum effort needed to produce results and same limit. y1 is the same curve from the original graph. However, y2 and y3 both close to peak output much faster than y1. Learning, reviewing, and practicing helps to facilitate this. Strength work as related to endurance work is a prime example: athletes with stronger X (e.g., legs for cyclists) can output power faster and at a lower effort level.
+</p>
+
+<p>
+  Second, is there a way to decrease effort while maintaining speed or increasing speed while maintaining effort? Relaxing, delegating, or changing positions are all low-energy actions that can make a difference in the long run.
+</p>
+
+<hr>
+
+<h2 id="uphill">Uphill</h2>
+
+<p>
+  To attack on the climb or not?
+</p>
+
+<p>
+  There are two schools of thought. On one hand, attacks while in competition are a potent psychological weapon. Competitors see an ever-increasing effort (of course it has to stop <i>somewhere</i>) and wonder where the asymptote is. On the other hand, the risk of burning out before reaching the top is greatly increased, possibly shifting the entire curve down and stretching it out (i.e., the same effort as before gives lower output) for the remainder of the effort.
+</p>
+
+<hr>
+
+<h2 id="suggestions">Suggestions</h2>
+
+<p>
+  Understand that output does not scale linearly with effort. It will taper off at some point.
+</p>
+
+<p>
+  Recognize the existence of \(M\) and when nothing is being outputted, question the amount of effort being applied.
+</p>
+
+<p>
+  Review previous efforts and look for ways to more efficiently reach a certain output value.
+</p>
+
+<p>
+  Get past the apex of Ethan's Output-Effort Curve and turn on cruise control. Any more effort put forth can likely be used elsewhere.
+</p>
+
+<p>
+  Total effort is limited by both energy and time. Only so many objectives can be worked on at any given time. Choose wisely.
+</p>
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>

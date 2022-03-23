@@ -78,7 +78,7 @@ def export_library():
     export_button.send_keys(Keys.RETURN)
 
     # wait for library to be exported
-    time.sleep(120)
+    time.sleep(90)
 
     # go to link
     driver.get("https://www.goodreads.com/review_porter/export/75258150/goodreads_export.csv")
@@ -100,12 +100,12 @@ def export_library():
 def csv_to_xlsx():
 
     # delete existing goodreads export to prevent overwriting
-    if path.exists("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/media/goodreads_library_export.xlsx"):
-        os.remove("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/media/goodreads_library_export.xlsx")
+    if path.exists("/Users/EthanMorse/Documents/personal/website/210ethan.github.io/knowledge/media/books/goodreads_library_export.xlsx"):
+        os.remove("/Users/EthanMorse/Documents/personal/website/210ethan.github.io/knowledge/media/books/goodreads_library_export.xlsx")
 
     # rewrite .csv file contents to .xlsx file using pandas and xlsxwriter engine
     csv_file = pd.read_csv("/Users/EthanMorse/Downloads/goodreads_library_export.csv")
-    csv_file.to_excel("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/media/goodreads_library_export.xlsx", engine = "xlsxwriter")
+    csv_file.to_excel("/Users/EthanMorse/Documents/personal/website/210ethan.github.io/knowledge/media/books/goodreads_library_export.xlsx", engine = "xlsxwriter")
 
     # delete .csv file to prevent future overwriting
     os.remove("/Users/EthanMorse/Downloads/goodreads_library_export.csv")
@@ -190,12 +190,12 @@ def create_html_table(row_list):
 def delete_append_to_file(final_table):
 
     # open html file for reading, assign contents to variable lines
-    with open("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/books.html", "r") as html_file:
+    with open("/Users/EthanMorse/Documents/personal/website/210ethan.github.io/knowledge/books.html", "r") as html_file:
         lines = html_file.readlines()
 
     # open file for writing, check if "<table>" is in line.
     # If yes, effectively delete by writing all other lines
-    with open("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/books.html", "w") as html_file:
+    with open("/Users/EthanMorse/Documents/personal/website/210ethan.github.io/knowledge/books.html", "w") as html_file:
         for line in lines:
             if "<table>" not in line:
                 html_file.write(line)
@@ -204,7 +204,7 @@ def delete_append_to_file(final_table):
     html_file.close()
 
     # open file for appending
-    html_file = open("/Users/EthanMorse/Documents/personal/website/ethanmorse.github.io/knowledge/books.html", "a")
+    html_file = open("/Users/EthanMorse/Documents/personal/website/210ethan.github.io/knowledge/books.html", "a")
 
     # create string with all html info, include closing html tags
     file_contents = final_table + "</body></html>"
@@ -224,7 +224,7 @@ def delete_append_to_file(final_table):
 
 def main():
 
-    #export_library()
+    export_library()
 
     csv_to_xlsx()
 
