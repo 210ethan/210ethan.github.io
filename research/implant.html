@@ -127,7 +127,7 @@
 </p>
 
 <p>
-  While \(E_{i}\) cannot change, \(E_{F}\) can based on the number of ionized impurities present in the substrate. When an n-type dopant is added, \(E_{F}\) shifts up towards the conduction band, decreasing the \(E_{C} - E_{F}\) gap. Similarly, when a p-type dopant is added, \(E_{F}\) shifts down towards the valence band, decreasing the \(E_{F} - E_{V}\) gap. Because there are now electrons sitting at the new n-type \(E_{F}\) level, even a small amount of thermal energy can excite them into the conduction band, creating current. For the p-type, electrons can also be excited to \(E_{F}\), leaving holes in the valence band, creating currrent.
+  While \(E_{i}\) cannot change, \(E_{F}\) can based on the number of ionized impurities present in the substrate. When an n-type dopant is added, \(E_{F}\) shifts up towards the conduction band, decreasing the \(E_{C} - E_{F}\) gap. Similarly, when a p-type dopant is added, \(E_{F}\) shifts down towards the valence band, decreasing the \(E_{F} - E_{V}\) gap. Because there are now electrons sitting at the new n-type \(E_{F}\) level, even a small amount of thermal energy can excite them into the conduction band, creating current. For the p-type, electrons can also be excited to \(E_{F}\), leaving holes in the valence band, creating current.
 </p>
 
 <p>
@@ -159,7 +159,7 @@
 \[N(x) = N_{0} \exp\left(-\frac{(x - R_{p})^{2}}{2\Delta R_{p}^{2}}\right) = \frac{\phi}{\Delta R_{p} \sqrt{2\pi}} \exp\left(-\frac{(x - R_{p})^{2}}{2\Delta R_{p}^{2}}\right)\]
 
 <p>
-  The \(N(x)\) equation above is a simple <a href="https://en.wikipedia.org/wiki/Gaussian_function">Gaussian function</a>, but is not entirely representative of how actual implant profiles look. To better simulate real profiles, the <a href="https://en.wikipedia.org/wiki/Pearson_distribution">Pearson IV distribution</a> and <a href="https://en.wikipedia.org/wiki/Moment_(mathematics)">moments</a> are used, which accomodate for the skewness that often occurs.
+  The \(N(x)\) equation above is a simple <a href="https://en.wikipedia.org/wiki/Gaussian_function">Gaussian function</a>, but is not entirely representative of how actual implant profiles look. To better simulate real profiles, the <a href="https://en.wikipedia.org/wiki/Pearson_distribution">Pearson IV distribution</a> and <a href="https://en.wikipedia.org/wiki/Moment_(mathematics)">moments</a> are used, which accommodate for the skewness that often occurs.
 </p>
 
 <img src="media/implant/boron_pearson_iv.png" alt="boron_pearson_iv" width="200" class="center">
@@ -329,7 +329,7 @@
 <h3 id="sources">Sources</h3>
 
 <p>
-  The most common dopants are boron, phosphorus, and arsenic. Aluminum and antimony are occassionally used, but their high <a href="https://en.wikipedia.org/wiki/Thermal_diffusivity">diffusivity</a> pose issues for devices.
+  The most common dopants are boron, phosphorus, and arsenic. Aluminum and antimony are occasionally used, but their high <a href="https://en.wikipedia.org/wiki/Thermal_diffusivity">diffusivity</a> pose issues for devices.
 </p>
 
 <p>
@@ -545,7 +545,7 @@
 </ul>
 
 <p>
-  The mask height and channel width must be considerd when tilting. Basic trigonometry requires a tilt angle no larger than:
+  The mask height and channel width must be considered when tilting. Basic trigonometry requires a tilt angle no larger than:
 </p>
 
 \[\theta_{\text{tilt}} = \tan^{-1}\left(\frac{w_{\text{channel}}}{h_{\text{mask}}}\right)\]
@@ -611,6 +611,20 @@
 
 <p>
   (If you have an original source for this equation, please <a href="../about/about.html#contact">contact me</a>.)
+</p>
+
+<h4 id="v_curve">V-Curve</h4>
+
+<p>
+  Isaacs and Cornell discuss the V-curve in their <a href="https://sst.semiconductor-digest.com/2013/10/how-to-verify-incident-implant-angles-on-medium-current-implants/">How to verify incident implant angles on medium current implants</a>:
+</p>
+
+<blockquote>
+  The standard production test to determine if the angle of implant is accurate involves implanting 5 to 7 wafers tilted around a theoretical channeling angle, annealing the wafers to activate the implant, and charting the sheet resistance vs. implanted angle to find the channel.
+</blockquote>
+
+<p>
+  This test is recommended following any type of maintenance that may affect the beam line. Source changes, for example, are excluded.
 </p>
 
 <h3 id="uniformity">Uniformity</h3>
