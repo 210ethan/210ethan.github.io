@@ -83,6 +83,11 @@ iframe {
 		   margin: 0 auto;
 		}
 
+video {
+		   display: block;
+		   margin: 0 auto;
+		}
+
 figcaption {
 		   text-align: center;
 		}
