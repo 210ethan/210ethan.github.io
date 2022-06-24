@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Notes 2: Economics, Medicine, (Geo)politics, Technology</title>
+  <title>Notes 2: Economics, Medicine, (Geo)politics, Technology, Science</title>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <link rel="icon" href="../media/ethan_favicon.png">
 </head>
@@ -51,9 +51,12 @@ technology:
   - notes on practical electronics for inventors
   - techn
 
+science:
+
+
 -->
 
-<h1 id="notes2">Notes 2: Economics, Medicine, (Geo)politics, Technology</h1>
+<h1 id="notes2">Notes 2: Economics, Medicine, (Geo)politics, Technology, Science</h1>
 
 <p>
   This is a place for me to take notes and write thoughts on economics, medicine, (geo)politics, and technology.
@@ -118,6 +121,14 @@ technology:
       </li>
       <li>
         <a href="#technology_mass_flow_controllers">Mass Flow Controllers</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="#science">Science</a>
+    <ul>
+      <li>
+        <a href="#science_doe">Design of Experiments</a>
       </li>
     </ul>
   </li>
@@ -660,15 +671,97 @@ resistances
   MFCs are set as normally open (NO) or normally closed (NC). (NO) MFCs should be used when it's fine for the gas to be flowing the entire time, e.g., an MFC that allows N<sub>2</sub> to purge a loading area or non-processing chamber. If something interrupts the MFC's operation, it simply goes back to being completely open. (NC) MFCs should be used for hazardous gases or when it being fully open after an issue can present problems with the process it's being used for.
 </p>
 
+<hr>
 
+<h2 id="science">Science</h2>
 
+<h3 id="science_doe">Design of Experiments (DOE)</h3>
 
+<h4 id="science_doe_overview">Overview</h4>
 
+<p>
+  The following notes are taken from NIST's <a href="https://www.itl.nist.gov/div898/handbook/pri/pri.htm">Process Improvement chapter</a> of their <a href="https://www.itl.nist.gov/div898/handbook/index.htm">Engineering Statistics Handbook</a>.
+</p>
 
+<p>
+  DOE is used to maximize the amount of information given per individual experiment (as part of a set of experiments). This advantageous in terms of time, effort, and cost. More information per unit time is obviously good; experiments don't have to spend as much effort collecting data; and experiments can be costly—minimizing number of experiments to get the same information is beneficial for funders and experimenters.
+</p>
 
+<p>
+  Inefficient design can lead to little information but high effort and cost. A little thinking can go a long way!
+</p>
 
+<p>
+  Two models are used to fit curves to data. Linear and quadratic (respectively shown below):
+</p>
 
+\[Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + \beta{12}X_{1}X_{2} + \text{experimental error}\]
 
+\[Y = \beta_{11}X_{1}^{2} + \beta_{22}X_{2}^{2} + \beta_{33}X_{3}^{2}\]
+
+<p>
+  In these models, \(X_{1}\) and \(X_{2}\) are the main effects (or controlled inputs, or factors) and the \(\beta\) terms are coefficients. The \(X_{1}X_{2}\) term is used to check for interactions between the two. For the linear model (and quadratic, but the following is often not included), many more factors can be included, but the model becomes quite complicated with \(2^{n}\) terms.
+</p>
+
+<h4 id="science_doe_applications">Applications</h4>
+
+<ul>
+  <li>
+    Choosing between two options
+  </li>
+  <li>
+    Discover which factors have the largest (or smallest) effect on an output
+  </li>
+  <li>
+    Hitting a target
+  </li>
+  <li>
+    Maximizing or minimizing a response
+  </li>
+  <li>
+    Reducing variation
+  </li>
+</ul>
+
+<h4 id="science_doe_considerations">Considerations</h4>
+
+<ul>
+  <li>
+    Check performance of gauges/measurement devices first. Accurate measurement is crucial to interpreting results correctly. If an instrument works fine during one run but is unknowingly faulty during the next, the data immediately becomes invalid, yet the experimenter still uses it! Instruments should be calibrated before any important work. If possible, select instruments that report when they are faulty.
+  </li>
+  <li>
+    Keep the experiment simple. More complex experiments leave more room open for error and unintended factors.
+  </li>
+  <li>
+    Avoid unplanned changes. Again, this leaves room for error.
+  </li>
+  <li>
+    Preserve all the raw data. Don't delete, don't summarize and delete. Digital storage is cheap enough that there should be no issue with holding onto all the data.
+  </li>
+  <li>
+    How stable is the process? Ideally, the process should be stable and robust before experimenting is done on it.
+  </li>
+</ul>
+
+<p>
+  Notes on residuals:
+</p>
+
+<blockquote>
+  Residuals are the differences between the observed and predicted responses
+</blockquote>
+
+<blockquote>
+  Residuals can be thought of as elements of variation unexplained by the fitted model. Since this is a form of error, the same general assumptions apply to the group of residuals that we typically use for errors in general: one expects them to be (roughly) normal and (approximately) independently distributed with a mean of 0 and some constant variance.
+</blockquote>
+
+<p>
+  Histograms, normal probability plots, and dot plots can be used to check the behavior of residuals. What happens if the three figures do not show a normally-distributed residual set? S-shaped NPPs imply bimodal distributions, where a very rough L-shaped (or flipped-along-its-vertical-axis L) graph implies a unimodal distribution at one extreme.
+</p>
+
+<p>
+  Residuals can also be tested over the course of multiple experiments to check for time dependency.
+</p>
 
 
 
@@ -677,25 +770,6 @@ resistances
 
 <h2 id="see_also">See Also</h2>
 
-<ul>
-  <li>
-    niplav's Notes:
-    <ul>
-      <li>
-        <a href="https://niplav.github.io/notes.html">Notes</a>
-      </li>
-      <li>
-        <a href="https://niplav.github.io/notes_on_ethics.html">Notes on Ethics</a>
-      </li>
-      <li>
-        <a href="https://niplav.github.io/notes_on_predictions.html">Notes on Predictions</a>
-      </li>
-      <li>
-        <a href="https://niplav.github.io/notes_on_politics_especially_economics.html">Notes on Politics, Especially Economics</a>
-      </li>
-    </ul>
-  </li>
-</ul>
 
 
 </body>
