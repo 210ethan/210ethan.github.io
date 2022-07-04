@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title></title>
+  <title>Fabs: More Than You Wanted to Know</title>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <link rel="icon" href="../media/favicon.png">
 </head>
@@ -13,14 +13,68 @@
 <!--
 
 - https://www.mckinsey.com/industries/advanced-electronics/our-insights/semiconductor-design-and-manufacturing-achieving-leading-edge-capabilities
-- https://www.mks.com/n/semiconductor-utilities-overview
+
+- this article focuses on 300mm facilities
+- enclaves of fabs and why they're there: Hillsboro, Chandler, Austin, Dallas, Israel
+  - is actual location desirable or because all of the supporting facilities
+- construction:
+  - phases
+  - foundation
+    - https://colingordon.com/research/seismic-isolation-of-semiconductor-production-facilities/
+  - who designs it?
+  - https://books.google.com/books?hl=en&lr=&id=d4GpW63HCCAC&oi=fnd&pg=PA299#v=onepage&q&f=false
+
+- cost:
+  - when does it become "worth it"?
+  - average cost
+  - https://smithsonianchips.si.edu/ice/cd/CEICM/SECTION6.pdf
+- manufacturing:
+  - equations
+  - photo tools are constraint
+    - most important tool in the fab!!
+  - MES
+  - smart manufacturing
+  - delivery systems
+- layout:
+  - are tools layed out in a specific fashion?
+  - photo tools central to fab?
+  - metal vs non-metal locations
+  - https://www.sciencedirect.com/science/article/abs/pii/S0360835216300390
+- cleanroom design itself:
+  - class definitions
+  - how to achieve clean air
+- facilities:
+  - bulk gas
+  - DMOS6 as the "island"
+  - https://www.mks.com/n/semiconductor-utilities-overview
+  - water: city, DI, IWW
+    - some fabs use double-digit percentage of city supplies
+    - http://large.stanford.edu/courses/2020/ph240/multani2/
+    - https://spectrum.ieee.org/fabs-cut-back-water-use
+    - https://en.wikipedia.org/wiki/Klaiber%27s_law
+  - environmental impact:
+    - water
+    - electric
+    - waste
+  - waste:
+    - scrubbers
+
+- laws:
+  - https://en.wikipedia.org/wiki/Moore%27s_second_law
+  -
+
+- https://semiliterate.substack.com/p/no-permits-no-fabs
+-
+
+
+
 
 -->
 
-<h1 id=""></h1>
+<h1 id="fab">Fabs: More Than You Wanted to Know</h1>
 
 <p>
-
+  A detailed look into semiconductor fab construction, design, and considerations.
 </p>
 
 <hr>
@@ -29,7 +83,10 @@
 
 <ul>
   <li>
-
+    <a href="#introduction">Introduction</a>
+  </li>
+  <li>
+    <a href="#cost">Cost</a>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -37,6 +94,69 @@
 </ul>
 
 <hr>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>
+  What is a fab anyway? Short for semiconductor <b>fab</b>rication facility or plant, a fab is where computer chips are made. <a href="https://en.wikipedia.org/wiki/Wafer_(electronics)">Wafers</a>, generally made of silicon, are put through hundreds to thousands of individual processes and tests in a fab before being diced into individual chips (called die) and packaged for actual use by the customer. Some companies, such as Texas Instruments and Intel, build and operate their own fabs (these are called <a href="https://en.wikipedia.org/wiki/Integrated_device_manufacturer">integrated device manufacturers</a>). Others outsource the physical chip-making process to foundries, or companies that exclusively create chips for others. Companies that do this are considered <a href="https://en.wikipedia.org/wiki/Fabless_manufacturing">fabless</a>. This is done due to how expensive building and operating a fab is. Why go through all the trouble when billions of dollars and millions of man-hours can be saved by giving the work to someone else who will do it faster and better?
+</p>
+
+<p>
+  Fabs help drive technological advancement from a hardware perspective, while supplying other industries with their required electronics (see <a href="https://en.wikipedia.org/wiki/2020%E2%80%93present_global_chip_shortage">2020-present global chip shortage</a>). They are undeniably important to the world economy and progress, so by extension, improving their ease of construction and feasibility is important.
+</p>
+
+<hr>
+
+<h2 id="cost">Cost</h2>
+
+<p>
+  Building and running a fab is expensive. Really expensive. <a href="https://en.wikipedia.org/wiki/Moore%27s_second_law">Moore's Second Law</a> states that the cost of a fab will double every four years, and this has held roughly true per the following plot (note this is a semi-log plot, so the linearity means it's actually an exponential relationship):
+</p>
+
+<img src="media/fab/moores_second_law.jpeg">
+<figcaption>
+  (<a href="https://www.chiphistory.org/367-rising-wafer-fab-costs-and-moore-s-2nd-law-fact-or-fiction">source</a>)
+</figcaption>
+
+<p>
+  Fab cost depends on a multitude of factors:
+</p>
+
+<ul>
+  <li>
+    Technology: While a vast majority of fab equipment is common throughout all fabs and can be used on any node size, <a href="https://en.wikipedia.org/wiki/Photolithography">photolithography</a> systems are by far the most expensive and must be chosen based on node size. ASML's <a href="https://www.asml.com/en/products/euv-lithography-systems">EUV lithography tool</a>, designed for the smallest technologies, costs upward of $200MM, with their next-gen system being <a href="https://www.reuters.com/technology/intel-orders-asml-machine-still-drawing-board-chipmakers-look-an-edge-2022-01-19/">more than $340MM</a>. (For reference, the best cost estimate I could find for a single-wafer deposition system from AMAT is <a href="https://www.extremetech.com/extreme/106899-beyond-22nm-applied-materials-the-unsung-silicon-hero">$2-6MM</a>.) Fab cleanliness must also increase as node size decreases.
+  </li>
+  <li>
+    Capacity: Running at full capacity (or the most number of wafers that can be processing in the fab without causing major buildups in specific areas) costs much more due to the required consumables (parts needed for maintenance, process gases and materials).
+  </li>
+  <li>
+    Size: Larger fabs obviously cost more. No information could be found on cost vs. size.
+  </li>
+</ul>
+
+<h3 id="wafer_size">Wafer Size</h3>
+
+<p>
+  Wafer sizes have increase progressively over the history of electronics, starting at measly 1-inch wafers and now at the industry standard of 300 mm. Some fabs still use 150 mm and 200 mm wafers. <a href="https://semiengineering.com/this-is-what-450mm-wafers-look-like/">450 mm wafers</a> have been proposed and the Global 450 Consortium created by relevant companies, but has since shut down because of lack of interest and expected return on investment. 300 mm is size of the foreseeable future with no plans to increase.
+</p>
+
+<img src="media/fab/wafer_size.webp">
+
+<p>
+  Because 300 mm is constant for all new fabs, there will be no analysis done on the advantages/disadvantages of moving to 450 mm.
+</p>
+
+<h3 id="return">Return on Investment</h3>
+
+
+
+
+
+
+
+
+<h3 id="cost_literature">Literature</h3>
+
 
 
 
