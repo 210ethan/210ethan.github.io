@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Fabs: More Than You Wanted to Know</title>
+  <title>Fabs: Much More Than You Wanted to Know</title>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <link rel="icon" href="../media/favicon.png">
 </head>
@@ -14,9 +14,7 @@
 
 - https://www.mckinsey.com/industries/advanced-electronics/our-insights/semiconductor-design-and-manufacturing-achieving-leading-edge-capabilities
 
-- this article focuses on 300mm facilities
-- enclaves of fabs and why they're there: Hillsboro, Chandler, Austin, Dallas, Israel
-  - is actual location desirable or because all of the supporting facilities
+
 - construction:
   - phases
   - foundation
@@ -28,6 +26,7 @@
   - when does it become "worth it"?
   - average cost
   - https://smithsonianchips.si.edu/ice/cd/CEICM/SECTION6.pdf
+
 - manufacturing:
   - equations
   - photo tools are constraint
@@ -35,15 +34,21 @@
   - MES
   - smart manufacturing
   - delivery systems
+  - https://en.wikipedia.org/wiki/Scheduling_(production_processes)
+  - job shop scheduling
+
 - layout:
   - are tools layed out in a specific fashion?
   - photo tools central to fab?
+    - https://tigerprints.clemson.edu/cgi/viewcontent.cgi?article=2703&context=all_theses
   - metal vs non-metal locations
   - https://www.sciencedirect.com/science/article/abs/pii/S0360835216300390
   - if you put all types in one location and location goes down, all types go down
+
 - cleanroom design itself:
   - class definitions
   - how to achieve clean air
+  - bay and chase
 - facilities:
   - bulk gas
   - DMOS6 as the "island"
@@ -62,7 +67,7 @@
 
 - laws:
   - https://en.wikipedia.org/wiki/Moore%27s_second_law
-  -
+  - https://en.wikipedia.org/wiki/Klaiber%27s_law
 
 - https://semiliterate.substack.com/p/no-permits-no-fabs
 -
@@ -72,7 +77,7 @@
 
 -->
 
-<h1 id="fab">Fabs: More Than You Wanted to Know</h1>
+<h1 id="fab">Fabs: Much More Than You Wanted to Know</h1>
 
 <p>
   A detailed look into semiconductor fab construction, design, and considerations.
@@ -88,6 +93,9 @@
   </li>
   <li>
     <a href="#cost">Cost</a>
+  </li>
+  <li>
+    <a href="#location">Location</a>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -125,7 +133,7 @@
 
 <ul>
   <li>
-    Technology: While a vast majority of fab equipment is common throughout all fabs and can be used on any node size, <a href="https://en.wikipedia.org/wiki/Photolithography">photolithography</a> systems are by far the most expensive and must be chosen based on node size. ASML's <a href="https://www.asml.com/en/products/euv-lithography-systems">EUV lithography tool</a>, designed for the smallest technologies, costs upward of $200MM, with their next-gen system being <a href="https://www.reuters.com/technology/intel-orders-asml-machine-still-drawing-board-chipmakers-look-an-edge-2022-01-19/">more than $340MM</a>. (For reference, the best cost estimate I could find for a single-wafer deposition system from AMAT is <a href="https://www.extremetech.com/extreme/106899-beyond-22nm-applied-materials-the-unsung-silicon-hero">$2-6MM</a>.) Fab cleanliness must also increase as node size decreases.
+    Technology: While a majority of fab equipment is common throughout all fabs and can be used on any node size, <a href="https://en.wikipedia.org/wiki/Photolithography">photolithography</a> systems are by far the most expensive and must be chosen based on node size (as well as some other specialized systems). ASML's <a href="https://www.asml.com/en/products/euv-lithography-systems">EUV lithography tool</a>, designed for the smallest technologies, costs upward of $200MM, with their next-gen system being <a href="https://www.reuters.com/technology/intel-orders-asml-machine-still-drawing-board-chipmakers-look-an-edge-2022-01-19/">more than $340MM</a>. For reference, the best cost estimate I could find for a single-wafer deposition system from AMAT is <a href="https://www.extremetech.com/extreme/106899-beyond-22nm-applied-materials-the-unsung-silicon-hero">$2-6MM</a>. Fab cleanliness must also increase as node size decreases.
   </li>
   <li>
     Capacity: Running at full capacity (or the most number of wafers that can be processing in the fab without causing major buildups in specific areas) costs much more due to the required consumables (parts needed for maintenance, process gases and materials).
@@ -135,21 +143,56 @@
   </li>
 </ul>
 
+<p>
+  For reference:
+</p>
+
+<ul>
+  <li>
+    Samsung's <a href="https://www.samsung.com/us/sas/Taylor">Taylor, TX fab</a> is expected to cost $17B, "which includes buildings, property improvements, machinery and equipment"
+  </li>
+  <li>
+    Texas Instrument's <a href="https://news.ti.com/texas-instruments-breaks-ground-on-new-300-mm-semiconductor-wafer-fabrication-plants-in-sherman-texas">Sherman fabs</a> are expected to cost upwards of $30B
+  </li>
+</ul>
+
 <h3 id="wafer_size">Wafer Size</h3>
 
 <p>
-  Wafer sizes have increase progressively over the history of electronics, starting at measly 1-inch wafers and now at the industry standard of 300 mm. Some fabs still use 150 mm and 200 mm wafers. <a href="https://semiengineering.com/this-is-what-450mm-wafers-look-like/">450 mm wafers</a> have been proposed and the Global 450 Consortium created by relevant companies, but has since shut down because of lack of interest and expected return on investment. 300 mm is size of the foreseeable future with no plans to increase.
+  Wafer sizes have increase progressively over the history of electronics, starting at measly 1-inch wafers and now at the industry standard of 300 mm. Some fabs still use 150 mm and 200 mm wafers. <a href="https://semiengineering.com/this-is-what-450mm-wafers-look-like/">450 mm wafers</a> have been proposed and the Global 450 Consortium created by relevant companies, but has since shut down because of lack of interest and expected return on investment. 300 mm is the size of the foreseeable future with no plans to increase.
 </p>
 
 <img src="media/fab/wafer_size.webp">
 
 <p>
-  Because 300 mm is constant for all new fabs, there will be no analysis done on the advantages/disadvantages of moving to 450 mm.
+  Because 300 mm is constant for all new fabs, there will be no analysis done on the advantages/disadvantages of moving to 450 mm. Chris Mack outlines the whys for 450 mm <a href="http://www.lithoguru.com/scientist/essays/why450.html">here</a>.
 </p>
 
 <h3 id="return">Return on Investment</h3>
 
+<p>
+  No literature nor statistics were found ROI for new fabs. Time frames of 18 months to three years have been cited without sources.
+</p>
 
+<p>
+  Factors for ROI include:
+</p>
+
+<ul>
+  <li>
+    Capacity: How many wafers can be run at a single time?
+  </li>
+  <li>
+    Technology: Is the final product going to sell for a lot of money?
+  </li>
+  <li>
+    Cycle Time: How quickly can wafers be produced?
+  </li>
+</ul>
+
+<p>
+  Obviously, companies want to produce more wafers faster and cheaper.
+</p>
 
 
 
@@ -157,6 +200,116 @@
 
 
 <h3 id="cost_literature">Literature</h3>
+
+https://smithsonianchips.si.edu/ice/cd/CEICM/SECTION6.pdf
+
+[FINISH]
+
+
+<hr>
+
+<h2 id="location">Location</h2>
+
+<p>
+  A handful of factors are considered when deciding where to build a new fab.
+</p>
+
+<h3 id="location_incentives">Incentives</h3>
+
+<p>
+  Financial incentives in the form of tax breaks, subsidies, and cheap labor are incredibly attractive to companies. Take the <a href="https://www.dallasnews.com/business/technology/2021/12/29/incentive-package-to-lure-samsung-to-taylor-is-the-biggest-in-texas-history/">$954MM worth of incentives Samsung received</a> for its Taylor fab:
+</p>
+
+<blockquote>
+  <p>
+    [Samsung] will be rebated 92.5% of its city property taxes during the initial decade of the project, 90% in the second decade and 85% in the third. The city has estimated the combined value of those rebates at $467.8 million, based on an assumption that there will be no change to its property tax rate over the 30-year life of the agreement.
+  </p>
+  <p>
+    Taylor also will extend water and sewer service to the site of the development, at an estimated cost of $18 million.
+  </p>
+  <p>
+    $172.1 million in property tax rebates from Williamson County over 20 years, assuming no change in the property tax rate. The county’s agreement calls for a 90% property tax rebate for Samsung during the first 10 years of the project, with an extension for another 10 years at 85% if the company is in compliance with the terms. The American-Statesman calculated the total value of the county tax rebates based on the same development schedule for the project used by the city of Taylor. The county also will foot the bill for about $120 million in roadwork near the site, such as improvements to County Roads 401 and 404, and portions of the planned Southeast Loop to connect Texas 130 to U.S. 79. Those projects were already in the long-range transportation plan, county officials said, although they’ll be accelerated in certain cases.
+  </p>
+  <p>
+    A $314 million, 10-year property tax break from the Taylor Independent School District. Samsung will still pay all of its school taxes that go to fund school district debt, but it will pay just a fraction of the portion earmarked for maintenance and operations over the duration of the deal. The tax break is being granted under the state’s Chapter 313 incentive program, which will expire Dec. 31, 2022, because it wasn’t renewed during the recent session of the state Legislature. The expiration won’t affect deals put in place before then.
+  </p>
+  <p>
+    $27 million from the Texas Enterprise Fund, a deal-closing tool used by the governor’s office as a final carrot to sway corporate decisions in competitive situations. In addition, the Texas Department of Transportation will pay $80 million of the cost for section 3 of the Southeast Loop. Funding for about $40 million of construction costs for section 2 of the loop has yet to be identified, Williamson County officials said.
+  </p>
+</blockquote>
+
+<p>
+  All things considered, this is extremely beneficial for all parties involved. The company is able to save vast sums of money; the politicians that made the deal happen get positive PR for the economics gains to be made; the city creates jobs and most industries within the jurisdiction are positively affected.
+</p>
+
+[FINISH, reference CHIPS act, all the others laws/proposals]
+
+
+
+<h3 id="location_support">Support</h3>
+
+<p>
+  Many companies support fabs. Equipment manufacturers often have field service engineers (FSE) located at fabs to fix tools in case of issues. Chemical and gas suppliers, like Air Liquide, set up shop nearby to expedite delivery of processing material. Part manufacturers have warehouses in the vicinity that are ready to dispatch much-needed parts. Building a fab in a place that doesn't have these complementary services makes getting them much more difficult. The support companies would have to invest significant funds into this new location, instead of just increasing manpower at their current locations.
+</p>
+
+<p>
+  This is my theory (although it may be established as the cause) as to the Pareto-ness of fab locations: having the support companies in place makes maintaining the fab much easier and less costly, so it's simpler to build in those locations—a variant of the <a href="https://en.wikipedia.org/wiki/Matthew_effect">Matthew effect</a>.
+</p>
+
+<p>
+  An competent workforce must be available to pick and choose from. Building a fab in a podunk town in Kansas gives access to few workers, while 30 minutes outside Austin is enough to attract the city's top talent. In the same vein, the city (or compensation) must be desirable enough that employees are actually willing to work there.
+</p>
+
+<h3 id="location_geography">Geography</h3>
+
+<p>
+  Fabs are climate-controlled and must be kept at very specific temperature and humidity ranges. Temperatures range from 19-23 °C and relative humidity (how much water vapor is in a water-air mixture compared to the maximum amount possible) from <a href="https://sst.semiconductor-digest.com/2003/10/why-control-humidity-in-a-cleanroom/">30-50%</a>, with tolerances now reaching <a href="https://insights.globalspec.com/article/15490/semiconductor-temperature-control-systems-and-humidity-regulation">0.5%</a> in the most critical areas. While the infrastructure is generally robust and can maintain the climate well, it helps when the weather outside the fab isn't too different.
+</p>
+
+<p>
+  Seismic and weather-related hazards can cause potential delays of shipping (incoming and outgoing), <a href="https://www.zdnet.com/article/samsung-reopens-austin-chip-plant-after-shutdown-from-winter-storm/">a complete shutdown of the factory</a>, or even employees not being able to come in. Mitigation of these factors is discussed later. This is one reason Arizona (Phoenix, specifically) is an attractive choice for fabs: no earthquakes, tornadoes, or devastating storms.
+</p>
+
+<h3 id="location_geopolitics">Geopolitics</h3>
+
+<p>
+  Geopolitics can hinder access to the product supply chain—both incoming and outgoing. For example, a fab in Ukraine would have a difficult time getting parts and shipping out wafers in March 2022. Fabs should ideally be located in places not under the threat of war. As an interesting point, there are unconfirmed rumors of <a href="https://en.wikipedia.org/wiki/TSMC">TSMC</a> rigging their factories to blow in case China invades.
+</p>
+
+<h3 id="location_utilities">Utilities</h3>
+
+<p>
+  Availability and cost of utilities (water and electricity) can make a significant change in the initial and recurring costs of a fab.
+</p>
+
+<p>
+  Samsung Austin spent <a href="https://www.statesman.com/story/news/2016/09/26/samsungs-monthly-austin-water-bill-roughly-700000-a-month/9913815007/">$700,000/mo</a> in 2016 on water, despite a 40% recycle rate. Surprisingly enough, <a href="https://www.austintexas.gov/sites/default/files/files/Water/Rates/CommercialPublicRates_2022.pdf">commercial rates</a> have actually decreased (weighted averages of $5.40<sub>2022</sub> vs. $6.02<sub><a href="https://www.austintexas.gov/sites/default/files/files/Water/Rates/CommercialPublicRates_2018.pdf">2018</a></sub> per 1,000 gallons). Compared to the <a href="https://www.phoenix.gov/waterservices/customerservices/rateinfo">Phoenix, AZ rates</a> of $6.02<sub>2022</sub>, Austin is still substantially cheaper.
+</p>
+
+<p>
+  But what about actual availability? For example, Arizona is in its <a href="https://new.azwater.gov/drought/drought-status">27th year of a long-term drought</a>, making water scarce. Intel has made an effort for <a href="https://www.intel.com/content/www/us/en/environment/water-restoration-arizona.html">water restoration projects</a> in Arizona, and due to their efforts to increase recycling rate, keeping the fab running after the necessary initial water amount is met is much easier.
+</p>
+
+<p>
+  [cheap electric, stable]
+</p>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+<h2 id="construction">Construction</h2>
+
+
+
 
 
 
