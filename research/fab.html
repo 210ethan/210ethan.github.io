@@ -6,6 +6,11 @@
   <link rel="icon" href="../media/favicon.png">
 </head>
 
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
 <body>
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
@@ -292,25 +297,52 @@ https://smithsonianchips.si.edu/ice/cd/CEICM/SECTION6.pdf
 </p>
 
 <p>
-  [cheap electric, stable]
+  Electricity is the other major component of fab utilities. Actual usage varies by technology, throughput, etc., but some characterizations have been made:
 </p>
 
+<ul>
+  <li>
+    <a href="https://www.researchgate.net/publication/237511031_Power_consumption_of_semiconductor_Fabs_in_Taiwan_area">Power consumption of semiconductor Fabs in Taiwan area</a> (PDF <a href="https://dokumen.tips/documents/power-consumption-of-semiconductor-fabs-in-taiwan.html">here</a>): "The average power consumption per unit product (wafer) area is 1.432 kWh/cm2". This report was published in 2003, but can serve as a good baseline and comparison for how far fabs have progressed since kWh is a price-independent unit.
+  </li>
+  <li>
+    <a href="https://www.epri.com/research/products/TR-113499">Worldwide Fab Energy Survey Report</a>: "On average, the fabs in this study consumed 7.45 kWh/inch(2) (1.15 kWh/cm(2)) of wafer processed and 0.393 kWh of electrical energy per unit of production", where unit of production is defined as "square inches of wafer processed per year multiplied by the average number of mask layers per wafer processed". This report was published in 2000, but can serve as a good baseline and comparison for how far fabs have progressed since kWh is a price-independent unit.
+  </li>
+  <li>
+    <a href="https://www.mckinsey.com/~/media/mckinsey/dotcom/client_service/operations/pdfs/bringing_fabenergyefficiency.ashx">Bringing energy efficiency to the fab</a>: "Large semiconductor fabs use as much as 100 megawatt-hours of power each hour ... electricity can account for up to 30 percent of fab operating costs". Shockingly, no sources are cited so this is taken with a hefty grain of salt.
+  </li>
+</ul>
 
+<p>
+  While these don't specify total kWh used on a periodic basis, an idea can be had by using a low 300 mm wafer per month example of 600 WPD. Assuming cushion on either side and no issues in the line (ha!), the fab's throughput is 18,000 WPM (600 WPD for 30 days):
+</p>
 
+\[\text{monthly power consumption} = 18 \times 10^{3} \times \pi \times 15^{2} * 1.432 = 5.8 \times 10^{6} \, \text{kWh}\]
 
+<p>
+  The aforementioned paper, <a href="https://www.researchgate.net/publication/237511031_Power_consumption_of_semiconductor_Fabs_in_Taiwan_area">Power consumption of semiconductor Fabs in Taiwan area</a>, supports this with their finding of 300-400 MWh per day, or 9-12 million kWh per day. It's easy to see why electricity cost is so crucial to low operating costs and ultimately a profitable fab.
+</p>
 
+<p>
+  But what's cost if it isn't reliable? During the <a href="https://en.wikipedia.org/wiki/February_13%E2%80%9317,_2021_North_American_winter_storm">February 2021 North American winter storm</a>, Samsung's Austin fab was <a href="https://www.sammobile.com/news/samsung-temporarily-shuts-down-chip-plant-texas-usa/">forced to shut down</a> by Austin officials, causing $270MM in damages. Their new fab's location in Taylor, TX, is conveniently located near an ERCOT facility, which is rumored to be intentional for electricity reliability purposes.
+</p>
 
-
-
-
-
+<p>
+  Reliability also relates with geography and climate: all things equal, locations with more severe weather are more likely to experience power issues during said storms.
+</p>
 
 <hr>
 
 <h2 id="construction">Construction</h2>
 
+<h3 id="construction_foundation">Foundation</h3>
 
+<p>
+  Like most things in life, a strong foundation must be formed to prevent future issues. And if the foundation isn't strong, someone's head is going on the chopping block, because that's a whole lotta money.
+</p>
 
+<p>
+  Colin Gordon & Associates' <a href="https://colingordon.com/wp-content/uploads/2012/07/af4b37fcb6b62ea52d471e6da7ed9540.pdf">Seismic Isolation of Semiconductor Production Facilities</a> gives a glimpse into what is needed for earthquake-prone fabs.
+</p>
 
 
 
