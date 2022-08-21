@@ -93,3 +93,8 @@ video {
 figcaption {
 		   text-align: center;
 		}
+
+pre {
+		    display: inline;
+		    margin: 0;
+		}

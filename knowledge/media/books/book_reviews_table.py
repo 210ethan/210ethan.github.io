@@ -49,7 +49,7 @@ from os import path
 #   - sign in to goodreads
 #   - export, download library
 # =============================================================================
-
+"""
 def export_library():
 
     # open Chrome webdriver
@@ -88,7 +88,7 @@ def export_library():
 
     # close Chrome webdriver
     driver.close()
-
+"""
 
 # =============================================================================
 # csv_to_xlsx function:
@@ -224,7 +224,7 @@ def delete_append_to_file(final_table):
 
 def main():
 
-    export_library()
+    #export_library()
 
     csv_to_xlsx()
 

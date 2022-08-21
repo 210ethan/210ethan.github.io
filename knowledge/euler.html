@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Euler Solutions</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+  <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/styles/default.min.css">
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.3/highlight.min.js"></script>
+      <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+
+
+
+-->
+
+<h1 id="euler">Project Euler Solutions</h1>
+
+<p>
+  My solutions to Project Euler problems.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#overview">Overview</a>
+  </li>
+  <li>
+    <a href="#problems">Problems</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="overview">Overview</h2>
+
+<p>
+  More information on Project Euler can be found <a href="https://projecteuler.net/about">here</a>. My purpose in doing this is to increase my algorithm skills and learn a bit in the process. Each problem will include my initial thoughts, my initial solution (annotated), and the ideal solution (likely taken from somewhere else). I take notes along the way, so things may be copied from other sites.
+</p>
+
+<p>
+  Solution guides:
+</p>
+
+<ul>
+  <li>
+    <a href="https://github.com/luckytoilet/projecteuler-solutions">Numerical answers</a>
+  </li>
+  <li>
+    <a href="https://www.s-anand.net/euler.html">Python solutions</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="problems">Problems</h2>
+
+<h3 id="problemx">Problem X</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=x">Problem X</a>
+</p>
+
+<blockquote>
+
+</blockquote>
+
+<h4>Solution</h4>
+
+<p>
+
+</p>
+
+<pre>
+  <code class="python">
+
+  </code>
+</pre>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h3 id="problem10">Problem 10</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=10">Problem 10</a>
+</p>
+
+<blockquote>
+  The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17. Find the sum of all the primes below two million.
+</blockquote>
+
+<h4>Solution</h4>
+
+<p>
+  We can loop through every number from three to two million in steps of two (since even numbers are guaranteed to not be prime) and then add two to make up for it missing at the start. (We cannot start at one because that will be considered a prime number.) One problem: this solution takes an incredibly long time to run—multiple seconds!
+</p>
+
+<pre>
+  <code class="python">
+    sum = 0
+    for i in range(3,2000000,2):
+        if isprime(i):
+            sum += i
+    print(sum+2)
+  </code>
+</pre>
+
+<p>
+  I've already reduced the search space by half through only checking odd numbers. Upon looking, the <a href="https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes">Sieve of Eratosthenes</a> seems like the most efficient solution. So let's see if I can code it with no help to get the answer faster:
+</p>
+
+
+
+<h3 id="problem5">Problem 5</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=5">Problem 5</a>
+</p>
+
+<blockquote>
+  2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder. What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?
+</blockquote>
+
+<h4>Solution</h4>
+
+<p>
+
+</p>
+
+<pre>
+  <code class="python">
+    i = 1
+    while (i>0):
+        if is_divisible(i,20):
+            print(i)
+            break
+        else:
+            i += 1
+            print(i)
+    print(i)
+  </code>
+</pre>
+
+
+<h3 id="problem4">Problem 4</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=4">Problem 4</a>
+</p>
+
+<blockquote>
+  A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99. Find the largest palindrome made from the product of two 3-digit numbers.
+</blockquote>
+
+<h4>Solution</h4>
+
+<p>
+  Brute force is obvious here. Create the 100<sup>2</sup>-long list of products, then work backwards from there by converting each to a string and checking the first and last digit, the second and the penultimate, etc. We cannot start counting down (i.e., <code>for i in range(999,100,-1)</code>) because it would lead to a false positive. We also cannot assume it will be a six-digit number.
+</p>
+
+<pre>
+  <code class="python">
+    largest = 0
+    for i in range(100,999):
+        for j in range(100,999):
+            num = str(i*j)
+            if (len(num) == 5):
+                if (num[0] == num[-1]) and (num[1] == num[-2]):
+                    if (int(num) > largest):
+                        largest = int(num)
+            if(len(num) == 6):
+                if (num[0] == num[-1]) and (num[1] == num[-2]) and (num[2] == num[-3]):
+                    if (int(num) > largest):
+                        largest = int(num)
+    print(largest)
+  </code>
+</pre>
+
+<p>
+
+</p>
+
+<h3 id="problem3">Problem 3</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=3">Problem 3</a>
+</p>
+
+<blockquote>
+  The prime factors of 13195 are 5, 7, 13 and 29. What is the largest prime factor of the number 600851475143?
+</blockquote>
+
+<h4>Solution</h4>
+
+<p>
+  The search space of this is up to the square root of the number. We can also start from the largest number and work backwards until we find the first (or last), and thus largest, prime factor.
+</p>
+
+<pre>
+  <code class="python">
+    num = 600851475143
+    ss = int(math.sqrt(num))
+    for i in range(ss,1,-1):
+        if (num % i == 0) and isprime(i):
+            break
+    print(i)
+  </code>
+</pre>
+
+<p>
+  The fanciest method uses the <a href="http://en.wikipedia.org/wiki/Fundamental_theorem_of_arithmetic">Fundamental Theorem of Arithmetic</a>, stating that:
+</p>
+
+<blockquote>
+  Any integer greater than 1 is either a prime number, or can be written as a unique product of prime numbers (ignoring the order).
+</blockquote>
+
+<pre>
+  <code class="python">
+    n = 600851475143
+    i = 2
+    while (i * i < n):
+        while (n % i == 0):
+            n = n / i
+        i += 1
+    print(n)
+  </code>
+</pre>
+
+
+<h3 id="problem2">Problem 2</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=2">Problem 2</a>
+</p>
+
+<blockquote>
+  Each new term in the Fibonacci sequence is generated by adding the previous two terms. By starting with 1 and 2, the first 10 terms will be: 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ... By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
+</blockquote>
+
+
+<h4>Solution</h4>
+
+<p>
+  Initial thoughts: generate the Fibonacci sequence and check if F<sub>n</sub> is even. If so, add to sum.
+</p>
+
+<pre>
+  <code class="python">
+    even_sum = 0
+    fib1 = 0
+    fib2 = 1
+    fib3 = 0
+    while (fib3 < 4000000):
+        fib3 = fib1 + fib2
+        if (fib3 % 2 == 0):
+            even_sum += fib3
+        fib1 = fib2
+        fib2 = fib3
+    print(even_sum)
+  </code>
+</pre>
+
+
+<h3 id="problem1">Problem 1</h3>
+
+<p>
+  Link: <a href="https://projecteuler.net/problem=1">Problem 1</a>
+</p>
+
+<blockquote>
+  If we list all the natural numbers below 10 that are multiples of 3 or 5, we get 3, 5, 6 and 9. The sum of these multiples is 23. Find the sum of all the multiples of 3 or 5 below 1000.
+</blockquote>
+
+<h4>Solution</h4>
+
+<pre>
+  <code class="python">
+    multiples = 0
+    for i in range (3,1000):
+        if (i % 3 == 0) or (i % 5 == 0):
+            multiples += i
+  </code>
+</pre>
+
+<p>
+  I could not find a better solution.
+</p>
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>
