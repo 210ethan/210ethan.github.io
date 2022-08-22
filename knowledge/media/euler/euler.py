@@ -40,7 +40,15 @@ def p10():
     print(sum+2)
 
 
-
+def p6():
+    sum_squares = 0
+    square_sum = 0
+    for i in range(1,101):
+        sum_squares += i*i    
+    for j in range (1,101):
+        square_sum += j
+    diff = square_sum*square_sum - sum_squares
+    print(diff)
 
 
         
@@ -121,6 +129,6 @@ def p1():
 
 def main():
 
-    p10_2()
+    p6()
 
 main()
