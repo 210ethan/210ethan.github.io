@@ -1,5 +1,21 @@
 import math
 
+def bubble():
+    
+    nums = [1, 3, 2, 7, 6, 8, 10, 15, 13, 100, 93, 91]
+
+    for i in range(1,len(nums)):
+        
+        for j in range(len(nums)-1):
+            
+            if nums[j] > nums[j+1]:
+                placeholder = nums[j+1]
+                nums[j+1] = nums[j]
+                nums[j] = placeholder
+                
+    print(nums)
+
+
 def isprime(i):
 
     for j in range(2,int(math.sqrt(i))+1):
@@ -129,6 +145,6 @@ def p1():
 
 def main():
 
-    p6()
+    bubble()
 
 main()
