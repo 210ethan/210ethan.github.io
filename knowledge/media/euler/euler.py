@@ -30,6 +30,263 @@ def is_divisible(num,limit):
             return False
     return True
 
+def romanToInt(s):
+        
+    sum = 0
+    dict =  {"I":1, "V":5, "X":10, "L":50, "C":100, "D":500, "M":1000}
+    """
+    for i in range(1, len(s)):
+        if (dict[s[i]] > dict[s[i-1]]):
+            value = dict[s[i]] - dict[s[i-1]]
+            i += 2
+        else:
+            value = dict[s[i-1]]
+        sum += value
+        print("added: ",value)
+        print("total: ",sum)
+        print("i: ",i)
+    print(sum)
+     """
+    for i in range(len(s)-1):
+        # if the next value if larger than current, subtract current from next
+        if (dict[s[i]] < dict[s[i+1]]):
+            sum -= dict[s[i]]
+        else:
+            sum += dict[s[i]]   
+
+    print(sum + dict[s[-1]])
+    
+def longestCommonPrefix(strs):
+    
+    # check for min length
+    minlen = len(strs[0])
+    for i in strs:
+        if (len(i) < minlen):
+            minlen = len(i)
+    # only need to check up to the first minlen characters of all strings
+    # starting with the first one
+    
+    # start with first letter of first word
+    # loop through entire list and check if they are all the same
+        # if not, return empty
+        # if yes, loop back and check second lette
+    prefix = ""
+    for j in range(0,minlen):
+        
+        # first letters of first word based on j in index
+        # only goes up to minlen
+        letter = strs[0][j]
+        
+        # iterate through length of strs list
+        for k in range(1,len(strs)):
+            # if the jth letter of the kth string
+            if (strs[k][j] == letter):
+                continue
+            else:
+                print(prefix)
+                return prefix
+        prefix += letter
+    
+    print(prefix)
+    return prefix
+    
+
+def parentheses(s):
+    
+    """
+    test cases:
+    ()
+    ((([[{}]])))
+    (())[[]]{{}}
+        stack = (
+    ()(([]{{[]}}[[]])[])
+    """
+    """
+    stack = []
+
+    for i in range(0,len(s)):
+
+        if ((s[i] == "(") or (s[i] == "[") or (s[i] == "{")):
+            print(s[i])
+            stack.append(s[i])
+            print("current stack: ", stack)
+
+        if (stack[-1] == "(" and s[i+1] == ")"):
+            stack.pop()
+            #print("pop: (")
+
+        elif (stack[-1] == "[" and s[i+1] == "]"):
+            stack.pop()
+            #print("pop: [")
+
+        elif (stack[-1] == "{" and s[+1] == "}"):
+            stack.pop()
+            #print("pop: {")
+        
+        #print("End: ",stack)
+
+    if (len(stack) == 0):
+        return True
+    else:
+        return False
+    """
+    """
+    stack = []
+    num_pop = 0
+    
+    if (len(s) % 2 != 0):
+        return False
+
+    for i in range(0,len(s)-1):
+        
+        
+        if ((s[i] == "(") or (s[i] == "[") or (s[i] == "{")):
+            stack.append(s[i])
+            print(stack)
+            
+        if ((s[i] == ")") or (s[i] == "]") or (s[i] == "}")):
+
+
+        if (len(stack > 0 and stack[-1] == "(" and s[i+1] == ")"):
+            stack.pop()
+            num_pop += 1
+
+        elif (len(stack) > 0 and stack[-1] == "[" and s[i+1] == "]"):
+            stack.pop()
+            num_pop += 1
+
+        elif (len(stack) > 0 and stack[-1] == "{" and s[i+1] == "}"):
+            stack.pop()
+            num_pop += 1
+            
+        # this fails bc after popping it is zero but still on the close parentheses
+        if ((len(stack) == 0) and ((s[i] == ")") or (s[i] == "]") or (s[i] == "}"))):
+            print(s[i])
+            print("False1")
+            return False
+
+
+    print(stack)
+    if ((len(stack) == 0) and (num_pop > 0)):
+        print("True")
+        return True
+    else:
+        print("false2")
+        return False
+    """
+    """
+    stack = []
+    
+    if (len(s) % 2 != 0):
+        return False
+
+    for i in range(0,len(s)-1):
+        
+        
+        if ((s[i] == "(") or (s[i] == "[") or (s[i] == "{")):
+            stack.append(s[i])
+            print(stack)
+        
+        if (stack[-1] == "(" and s[i] == ")"):
+            stack.pop()
+        else:
+            print("false1")
+            return False
+
+        if (stack[-1] == "[" and s[i] == "]"):
+            stack.pop()
+        else:
+            print("false2")
+            return False
+
+        if (stack[-1] == "{" and s[i] == "}"):
+            stack.pop()
+        else:
+            print("false3")
+            return False
+    
+    print("true")
+    return True
+    """
+    
+    stack = []
+    
+    # check every char in string
+    for i in range(0,len(s)):
+        
+        # if opening bracket, push to stack
+        if ((s[i] == "(") or (s[i] == "[") or (s[i] == "{")):
+            stack.append(s[i])
+
+        # if closing bracket, check top of stack
+        elif ((s[i] == ")") and (len(stack) > 0) and (stack[-1] == "(")):
+            stack.pop()
+         
+        elif ((s[i] == "]") and (len(stack) > 0) and (stack[-1] == "[")):
+            stack.pop()
+            
+        elif ((s[i] == "}") and (len(stack) > 0) and (stack[-1] == "{")):
+            stack.pop()
+        
+        else:
+            print("false1")
+            return False
+        
+    if (len(stack) > 0):
+        print("false2")
+    else:
+        print("True")
+        return True
+    
+def mergeTwoLists(list1,list2):
+    
+    """
+    list1 = 1 2 4
+    list2 = 1 3 4
+    i = 0
+    j = 0
+    while (something):
+        if (list1[i] <= list2[j]):
+            list3.append(list1[i])
+            i += 1
+        else:
+            list3.append(list2[j])
+            j += 1
+    """
+    
+    list3 = []
+    i = 0
+    j = 0
+    total_len = len(list1) + len(list2)
+    
+    if len(list1) == 0:
+        list3 = list2
+    elif len(list2) == 0:
+        list3 = list1
+    
+    while (len(list3) < total_len):
+        if (i < len(list1) and j < len(list2)):
+            if (list1[i] <= list2[j]):
+                list3.append(list1[i])
+                i += 1
+            else:
+                list3.append(list2[j])
+                j += 1
+        if (i>=len(list1)):
+            list3.extend(list2[j:])
+        elif (j>=len(list1)):
+            list3.extend(list1[i:])
+        print(list3)
+
+    print(list3)
+
+def main():
+
+    #mergeTwoLists([1,2,4,7,9,2000],[1,3,4,11,15,1999])
+    mergeTwoLists([0],[])
+
+main()
+
 
 def p10_2():
     
@@ -143,8 +400,3 @@ def p1():
             multiples += i
     print(multiples)
 
-def main():
-
-    bubble()
-
-main()
