@@ -6,28 +6,14 @@
   <link rel="icon" href="../media/favicon.png">
 </head>
 
-<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-</script>
-
 <body>
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
 
-<!--
-- mention how it would be nice to find older data of pumping rates to compare to now
-- cost-benefit of how much stations lose by playing ads vs how much they profit
-- https://thehustle.co/why-most-gas-stations-dont-make-money-from-selling-gas/amp/
-
-
-
--->
-
 <h1 id="gas">Ads and Gas Pumping Rate</h1>
 
 <p>
-  Does gas pumping rate correlate to whether or not there is a screen playing ads?
+  Do gas stations intentionally throttle pumping rates to improve profits?
 </p>
 
 <hr>
@@ -39,6 +25,15 @@
     <a href="#background">Background</a>
   </li>
   <li>
+    <a href="#collection">Data Collection</a>
+  </li>
+  <li>
+    <a href="#results">Results</a>
+  </li>
+  <li>
+    <a href="#economics">Economics</a>
+  </li>
+  <li>
     <a href="#see_also">See Also</a>
   </li>
 </ul>
@@ -48,11 +43,11 @@
 <h2 id="background">Background</h2>
 
 <p>
-  I used to drive a lot. Almost 600 miles every or every other weekend, plus a 14-mile round trip commute to work three to five times a week. Even the most fuel-efficient car would be gasping for fuel, and my Camry was no exception. That's when I noticed that the gas pumping rate seemed dramatically lower than what I remember. I may have been more patient back in the day or at least didn't stare at the gallon counter going up trying to figure out when it would be done so I could get on with my day, but what's definitely new is the presence of screens that play a variety of videos: sometimes they're funny, sometimes they're ads, sometimes it's even a vocabulary lesson (I'm serious).
+  I used to drive a lot. Almost 600 miles every or every other weekend, plus a 14-mile round trip commute to work three to five times a week. Even the most fuel-efficient car would be gasping for fuel, and my Camry was no exception. That's when I noticed that the gas pumping rate seemed dramatically lower than what I remember. I may have been more patient back in the day or at least didn't stare at the gallon counter going up trying to figure out when it would be done so I could get on with my day, but what's definitely new is the presence of screens that play a variety of videos: sometimes they're funny, sometimes they're ads, sometimes it's even a vocabulary lesson.
 </p>
 
 <p>
-  That got me thinking: have companies deliberately slowed pumping rates to expose their customers to more ads per pump? In theory, it makes sense. There aren't enough customers throughout the day to merit the fastest safe pumping rate possible, and intuition tells us more ads means the consumer is more likely to see something that interests him and/or possibly become more convinced that they should purchase the advertised product.
+  That got me thinking: have companies deliberately slowed pumping rates to expose their customers to more ads per pump? In theory, it makes sense. There aren't enough customers throughout the day to merit the fastest safe pumping rate possible, and intuition tells us more ads means the consumer is more likely to see something that interests him and/or possibly become more convinced that they should purchase the advertised product. Throttling flow is done simply by placing a flow restrictor somewhere before the nozzle. The smaller the orifice, the less flow at a given pressure (here's an unbranded <a href="https://s3.us-west-2.amazonaws.com/wakegov.com.if-us-west-2/prod/documents/2020-10/Flow%20Rate%20in%20Holes%20Drilled%20PVC.pdf">example calculation</a> I found on the internet that I am going to blindly trust).
 </p>
 
 <p>
@@ -64,7 +59,11 @@
 </blockquote>
 
 <p>
-  No mention is made of a lower limit for pumping rate, meaning it's possible rates are being throttled.
+  No mention is made of a lower limit for pumping rate, meaning it's possible rates can be throttled.
+</p>
+
+<p>
+  Total volume of gasoline pumped is measured by using a <a href="https://en.wikipedia.org/wiki/Metering_pump">metering pump</a>.
 </p>
 
 <hr>
@@ -72,30 +71,29 @@
 <h2 id="collection">Data Collection</h2>
 
 <p>
-  The data collection was simple: every time I filled up my gas tank, no matter the amount, I noted the following:
+  The data collection was simple. Every time I filled up my gas tank I noted the following:
 </p>
 
 <ul>
   <li>
-    Date: The date the gas was pumped
+    Pumping rate in units of gallons per minute
   </li>
   <li>
-    Gallons per second: Pumping rate [gal/s]
+    Presence of advertisements
   </li>
   <li>
-    Video: was the video of ads, other, or no video?
+    Brand of gas station, e.g., Shell
   </li>
   <li>
-    Company: Name of gas station, e.g., Shell
+    Station location
+  </li>
+  <li>
+    Pump number
   </li>
 </ul>
 
 <p>
-  I set the trigger to automatically pump and left it until the fill was complete.
-</p>
-
-<p>
-  In order to expedite data collection, I filled up much more frequently than my normal 1/2-remaining amount. Additionally, I assume pumping rate is linear throughout the pumping.
+  I set the pump trigger to automatically pump and left it until it automatically shut off.
 </p>
 
 <h3 id="confounders">Confounders</h3>
@@ -109,11 +107,11 @@
 </p>
 
 <p>
-  Second, a poor or old pump can provide sub-optimal performance, regardless of the rate the station is calling for. There's no way to convenient way to verify the pump model and status.
+  Second, a poor or old pump can provide sub-optimal performance, regardless of the rate the station is calling for. There's no way convenient way to verify the pump model and status.
 </p>
 
 <p>
-  Third, overall station design. Does each nozzle have its own pump, or are they shared across multiple nozzles? Too much pump sharing reduces the pumping capability and thus pump rate per nozzle. How wide and long are the delivery lines?
+  Third, overall station design. Does each nozzle have its own pump, or are they shared across multiple nozzles? Too much pump sharing reduces the pumping capability and thus pump rate per nozzle. How wide are the delivery lines?
 </p>
 
 <p>
@@ -122,33 +120,142 @@
 
 <hr>
 
-<h2 id="analysis">Data Analysis</h2>
+<h2 id="results">Results</h2>
 
 <p>
-  Please <a href="../about/about.html#contact">contact me</a> for the complete set of data.
+  The complete set of data can be found <a href="https://github.com/210ethan/210ethan.github.io/blob/master/research/media/gas/gas.csv">here</a>.
 </p>
 
+<p>
+  The difference in averages is seemingly well-accounted for in the standard deviations:
+</p>
 
+<table>
+  <caption>
+    Pumping Rate Data Based on Presence of Advertisements
+  </caption>
+  <tr>
+    <th align="middle">Ads Present</th>
+    <th align="middle">Average (gpm)</th>
+    <th align="middle">Standard Deviation (gpm)</th>
+    <th align="middle">Number of Samples</th>
+    <tr align="middle"><td>Yes</td><td>8.603</td><td>1.457</td><td>42</td></tr>
+    <tr align="middle"><td>No</td><td>8.491</td><td>1.133</td><td>19</td></tr>
+  </tr>
+</table>
 
+<p>
+  An <a href="https://www.graphpad.com/quickcalcs/ttest2/">unpaired t-test</a> gives the following results:
+</p>
 
+<ul>
+  <li>
+    Two-tailed p value of 0.7498, so not statistically significant
+  </li>
+  <li>
+    95% confidence interval of -0.575 to 0.798
+  </li>
+  <li>
+    t = 0.3244
+  </li>
+  <li>
+    df = 59
+  </li>
+  <li>
+    Standard error of difference = 0.343
+  </li>
+</ul>
 
+<h3 id="brands">Brands</h3>
 
+<p>
+  No major differences were found between different brands of gas:
+</p>
 
+<table>
+  <caption>
+    Pumping Rate Data of Different Brands
+  </caption>
+  <tr>
+    <th align="middle">Brand</th>
+    <th align="middle">Average (gpm)</th>
+    <th align="middle">Standard Deviation (gpm)</th>
+    <th align="middle">Number of Samples</th>
+    <tr align="middle"><td>Chevron</td><td>8.231</td><td>0.603</td><td>8</td></tr>
+    <tr align="middle"><td>Exxon</td><td>8.588</td><td>1.055</td><td>25</td></tr>
+    <tr align="middle"><td>QT</td><td>9.038</td><td>N/A</td><td>1</td></tr>
+    <tr align="middle"><td>Racetrac</td><td>7.461</td><td>N/A</td><td>1</td></tr>
+    <tr align="middle"><td>Shell</td><td>8.393</td><td>2.146</td><td>12</td></tr>
+    <tr align="middle"><td>Valero</td><td>8.738</td><td>0.787</td><td>14</td></tr>
+  </tr>
+</table>
 
+<h3 id="summary">Summary</h3>
 
+<p>
+  No major differences were noted between YA and NA gas stations.
+</p>
 
+<p>
+  The amount of data collected is meager and more collection should be done to improve the trustworthiness of the results.
+</p>
 
+<hr>
 
+<h2 id="economics">Economics</h2>
 
+<p>
+  Zachary Crockett's <a href="https://thehustle.co/why-most-gas-stations-dont-make-money-from-selling-gas/">Why most gas stations don’t make money from selling gas</a> examines the economics of running a gas station and where the money does—and doesn't—come from. A bit surprisingly, "gas stations make an average net margin of just 1.4% on their fuel" while "the goods inside these stores ... account for ~30% of the average gas station’s revenue, yet bring in 70% of the profit".
+</p>
 
+<p>
+  I could not find any literature on the effectiveness of gas station ads, so general ad effectiveness will have to be looked at.
+</p>
 
+<p>
+  Regarding exposure time and purchasing intentions, Burton et al.'s <a href="https://www.journalofadvertisingresearch.com/content/59/1/27.short">Revisiting the Relationship between Ad Frequency and Purchase Intentions</a> found that "consumers who saw an advertisement 10 or more times had greater purchase intentions than consumers with less exposure". While frequency is obviously different from duration, frequency is cumulative duration in a sense, so it's not entirely unreasonable to extrapolate from one to the other.
+</p>
 
+<p>
+  Slide 7 of <a href="https://www.iab.com/wp-content/uploads/2016/05/YuMe_IAB-NewFronts-Lunch-Presentation-2016.pdf">Does Every Second Count? Understanding New Video Ad Lengths</a> shows that purchase intent continues to increase past the 15-second mark all the way up to 45-60 seconds, which well past the upper bound for possible gas station ads.
+</p>
+
+<p>
+  Overall, throttling pumping rates is probably worthwhile for the owner for a few reasons:
+</p>
+
+<ul>
+  <li>
+    Up to a certain point, consumers probably don't remember where the slow pumps are, so they will continue to go to stations as needed or as convenient.
+  </li>
+  <li>
+    Gas stations are rarely completely full of customers, so slowing rates will not prevent new customers from pulling in to fill up.
+  </li>
+  <li>
+    Extra ad exposure time can only maintain or increase the likelihood that someone purchases said good. I can't think of a time I've really wanted something, seen an ad for it, and then immediately wanted it <i>less</i>. People know how to make ads nowadays!
+  </li>
+  <li>
+    Ads are just another source of income for the owner. Examples rates can be found <a href="https://www.bluelinemedia.com/gas-station-advertising#rates">here</a> (although I'm not sure how representative they are):
+    <blockquote>
+      <ul>
+        <li>
+          15 second spots: range of $1,195 to $1,395 per gas station per 4 week period (includes all screens in station).
+        </li>
+        <li>
+          30 second spots: range of $1,495 to $1,795 per gas station per 4 week period (includes all screens in station)
+        </li>
+      </ul>
+    </blockquote>
+  </li>
+</ul>
+
+<p>
+  All this being said, throttling flow rates seems like a good idea if the owner is entirely profit-driven and doesn't care about the customer wasting their life sitting at a gas station waiting for their gas to pump.
+</p>
 
 <hr>
 
 <h2 id="see_also">See Also</h2>
-
-
 
 </body>
 </html>
