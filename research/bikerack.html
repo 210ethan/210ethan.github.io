@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cost-Benefit Analysis of Bike Rack Positions</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<h1 id="bikerack">Cost-Benefit Analysis of Bike Rack Positions</h1>
+
+<p>
+  Roof vs. hitch.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#background">Background</a>
+  </li>
+  <li>
+    <a href="#calculations">Calculations</a>
+  </li>
+  <li>
+    <a href="#results">Results</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>
+  Last year I got rear-ended by a semi truck with mine and my friend's bikes on the back. My friend's bike was totaled while my chainstay was bent. The trucker's insurance paid for everything, but it was still a massive pain-in-the-butt: my friend was out of a bike for a few months while he sourced new parts, I was concerned about the integrity of my frame while riding some rather rocky trails, and the now-bent rack didn't fit properly on my now-bent trunk door.
+</p>
+
+<p>
+  This problem could have been avoided had I been using a roof rack, but that would be at the literal expense of aerodynamics, which got me thinking: which is more economically advisable, a roof rack or a hitch rack?
+</p>
+
+<img src="media/bikerack/semi.JPG">
+<figcaption>
+  Fuuuuucccccckkkkkkkkkkkkk
+</figcaption>
+
+<hr>
+
+<h2 id="calculations">Calculations</h2>
+
+<p>
+  <a href="https://suspensiontraveler.com/bike-racks-gas-mileage/">Suspension Traveler's compiled data</a> shows the following negative fuel efficiency effects for below 60 mph:
+</p>
+
+<table>
+<tr align="middle"><td>below 60 mph:</td><td>Subcompact</td><td>Sedan</td><td>SUV</td></tr>
+<tr align="middle"><td>Roof bike rack (loaded)</td><td>16%</td><td>15%</td><td>7%</td></tr>
+<tr align="middle"><td>Hitch bike rack (loaded)</td><td>14%</td><td>13%</td><td>5%</td></tr>
+<tr align="middle"><td>Roof bike rack (empty)</td><td>3%</td><td>2%</td><td>1%</td></tr>
+<tr align="middle"><td>Hitch bike rack (empty)</td><td>1%</td><td>1%</td><td>0%</td></tr>
+</table>
+
+<p>
+  And the following for above 60 mph:
+</p>
+
+<table>
+<tr align="middle"><td>above 60 mph:</td><td>Subcompact</td><td>Sedan</td><td>SUV</td></tr>
+<tr align="middle"><td>Roof bike rack (loaded)</td><td>30%</td><td>28%</td><td>19%</td></tr>
+<tr align="middle"><td>Hitch bike rack (loaded)</td><td>27%</td><td>25%</td><td>12%</td></tr>
+<tr align="middle"><td>Roof bike rack (empty)</td><td>14%</td><td>11%</td><td>5%</td></tr>
+<tr align="middle"><td>Hitch bike rack (empty)</td><td>4%</td><td>3%</td><td>2%</td></tr>
+</table>
+
+<p>
+  For simplicity's sake, we will look at a sedan going above 60 mph with a loaded roof rack vs. a loaded hitch rack with a baseline fuel efficiency of 30 mpg. For abbreviations, we will use BL (baseline), RR (roof rack), and HR (hitch rack).
+</p>
+
+<p>
+  Assumptions include the following:
+</p>
+
+<ul>
+  <li>
+    RRs and HRs have the same level of security for the bike, both in terms of theft and it falling off the vehicle
+  </li>
+  <li>
+    Everything is equal when comparing (bike, vehicle, etc) (obviously)
+  </li>
+</ul>
+
+<h3 id="efficiency">Efficiency</h3>
+
+<p>
+  Fuel efficiency of RR is:
+</p>
+
+<p class="center">
+  FE<sub>RR</sub> = FE<sub>BL</sub> &times; (1.00 - 0.28) = 21.6 mpg
+</p>
+
+<p>
+  And for HR:
+</p>
+
+<p class="center">
+  FE<sub>HR</sub> = FE<sub>BL</sub> &times; (1.00 - 0.25) = 22.5 mpg
+</p>
+
+<p>
+  This means that for the <a href="https://www.caranddriver.com/auto-loans/a32880477/average-mileage-per-year/">average person who drives 14,000 miles per year</a> at an average per gallon cost of $3.00, we get:
+</p>
+
+<p class="center">
+  Cost<sub>RR</sub> = 14,000 / FE<sub>RR</sub> &times; 3.00 = $1950/year
+</p>
+
+<p class="center">
+  Cost<sub>HR</sub> = 14,000 / FE<sub>HR</sub> &times; 3.00 = $1870/year
+</p>
+
+<p>
+  Or an $80/year difference. Not much!
+</p>
+
+<h3 id="accidents">Accidents</h3>
+
+<p>
+  Supposedly for every 1000 miles you drive, your chances of getting into a car accident are 1 in 366. If we multiply this by 14 to get total miles driven, the chances of getting into a car accident are:
+</p>
+
+<p class="center">
+  Chances of car accident = 14 &times; 1/366 = 3.83%
+</p>
+
+<p>
+  If we take the average upper-end bike cost to be $4,000 and the <a href="https://www.iii.org/fact-statistic/facts-statistics-uninsured-motorists">percentage of uninsured motorists</a> who won't pay for the damages to be 12.6%, the expected value spent per year on damaged bikes is:
+</p>
+
+<p class="center">
+  Dollars per year on damaged bikes: 0.0383 &times; $4,000 &times;  0.126 = $19
+</p>
+
+<p>
+  Just using this, it would take around four years for a roof rack to become worth it. However, this doesn't take into account defensive driving techniques that can be used to minimize the risk of an accident.
+</p>
+
+<img src="media/bikerack/roof.png">
+<figcaption>
+  (R)oof (rack)
+</figcaption>
+
+<h3 id="convenience">Convenience</h3>
+
+<p>
+  It takes approximately the same amount of time to put a bike on a RR vs. a HR on a sedan, but accessing the trunk with a HR can be inconvenient. The impact is probably negligible so I will ignore it.
+</p>
+
+<hr>
+
+<h2 id="results">Results</h2>
+
+<p>
+  Roof racks <i>probably</i> win out over hitch racks if everything can be kept equal. Can it? I don't know and won't find out because I already bought an expensive hitch rack that I'll use forever.
+</p>
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>
