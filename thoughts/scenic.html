@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Google Maps Scenic Routes</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+
+Offers scenic route based on how much time can be spared
+
+calculates scenicness based on total green/blue colors in screen, elevation gain and contour maps, and number of “scenic” pics taken and sights along the route
+
+-->
+
+<h1 id="maps">Google Maps Scenic Routes</h1>
+
+<p>
+  Choosing the long(er) way for fun.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#time">Time Ain't Always Everything</a>
+  </li>
+  <li>
+    <a href="#calculation">Scenicness Calculation</a>
+  </li>
+  <li>
+    <a href="#features">Features</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="time">Time Ain't Always Everything</h2>
+
+<p>
+  People act like time is always the most important factor on the journey from point A to B, when in fact it's enjoyability. In some cases, enjoyability is maximized by the lowest journey time because traffic is atrocious, more time can be spent at the destination, etc. In other cases, safety is the largest contributor: people would prefer an extra hour if it meant improving their survival odds by a decent amount. And in other-other cases, the raw enjoyability itself is the largest contributor, i.e., the journey is enjoyable because the journey itself. This enjoyment can come from the views, smells, sounds, memories and conversations conjured by something on the route.
+</p>
+
+<p>
+  And yet no mass market navigation app offers a scenic route option.
+</p>
+
+<hr>
+
+<h2 id="calculation">Scenicness Calculation</h2>
+
+<p>
+  Automatically quantifying scenicness is arguably challenging, but some rough attempts can be made. A segment is hereby defined as the stretch of route between intersections.
+</p>
+
+<h3>Pixel Color and Variation</h3>
+
+<p>
+  A street view image that is primarily blue or green may mean there is a lot of water, sky, or greenery, all of which are generally associated with scenicness.
+</p>
+
+<p>
+  Pixel color variation is likely not a good indicator.
+</p>
+
+<h3>Contour Maps</h3>
+
+<p>
+  Higher elevations relative to surrounding areas offer better vantage points, thus are generally more scenic than their lower counterparts. Of course, being able to actually see around said high area matters, so if trees are blocking the view, it doesn't matter.
+</p>
+
+<h3>People</h3>
+
+<p>
+  Run a sentiment analysis on pictures
+</p>
+
+<h3>AI</h3>
+
+<p>
+  The first action is training a model on what's scenic and what's not. This can be broken up into a few training categories (city, mountains, beaches, etc.) for a variety of routes and variation within routes.
+</p>
+
+<p>
+  Once the model is accurate, street view images would be fed to to take a four-point average of the front, left, right, and up views' scenicness. If there are positive outliers, weight them more heavily since we are looking for maximum scenicness in a view. For lengthy segments, perform X number of four-point averages, where X is determined by some equation I have no idea of, then average again, weighting any outliers accordingly.
+</p>
+
+
+<h3>Final Calculation</h3>
+
+<p>
+  A map of all segments would be created along with their associated travel times. All possible segments' scenicnesses and times that make up a route would be calculated, then the best one chosen that fits the constraints. (I'm not familiar with optimization methods, so I'm sure not all options would need to be calculated.)
+</p>
+
+
+<hr>
+
+<h2 id="features">Features</h2>
+
+<h3>Maximum Added Time</h3>
+
+<p>
+  If my journey is a three-hour drive, I don't want an eight-hour scenic drive, but maybe I want a four-hour one.
+</p>
+
+<p>
+  Users would be allowed to enter maximum added time to put an upper bound on the total trip length.
+</p>
+
+<p>
+
+</p>
+
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <a href="https://onthearts.com/p/the-scenic-route-in-google-maps">The Scenic Route in Google Maps</a>: (I didn't read this before coming up with the above)
+  </li>
+</ul>
+
+</body>
+</html>
