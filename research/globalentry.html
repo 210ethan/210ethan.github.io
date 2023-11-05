@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Global Entry Cost-Benefit Analysis</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<h1 id="globalentry">Global Entry Cost-Benefit Analysis</h1>
+
+<p>
+  Definitely worth it for flexing, but financially?
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#background">Background</a>
+  </li>
+  <li>
+    <a href="#costs">Costs</a>
+  </li>
+  <li>
+    <a href="#benefits">Benefits</a>
+  </li>
+  <li>
+    <a href="other">Other</a>
+  </li>
+  <li>
+    <a href="#conclusion">Conclusion</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>
+  <a href="https://www.cbp.gov/travel/trusted-traveler-programs/global-entry">Global Entry</a> (GE) "is a U.S. Customs and Border Protection (CBP) program that allows expedited clearance for pre-approved, low-risk travelers upon arrival in the United States". It includes <a href="https://www.cbp.gov/travel/trusted-traveler-programs/tsa-precheck">TSA PreCheck</a> (TSAPC), "expedites traveler screening through participating TSA security checkpoints".
+</p>
+
+<p>
+  GE costs $100 and is valid for five years. Top-tier travel credit cards often reimburse the customer for the application fee for both GE and TSAPC.
+</p>
+
+<hr>
+
+<h2 id="costs">Costs</h2>
+
+<p>
+  Both averages and worst-case scenarios should be examined.
+</p>
+
+<p>
+  First, the application cost of $100 (assuming one's card doesn't reimburse):
+</p>
+
+<p class="center">
+  application_fee = $100
+</p>
+
+<p>
+  Second, the application time, both in filling out the form and traveling to an enrollment center for the interview portion. The form takes about 15 minutes to fill out, where t is how much one values their time per hour:
+</p>
+
+<p class="center">
+  form_cost = 0.25 hr &times; t $/hr = $(0.25 &times; X)
+</p>
+
+<p>
+  Travel cost is a bit trickier, so averages (erring on the higher side) will be used:
+</p>
+
+<p class="center">
+  travel_cost = (1 hr driving + 1 hr interview) &times; t $/hr + $20 parking + $10 gas + $15 depreciation = $(2 &times; t + 45)
+</p>
+
+<p>
+  Leading to a total cost of:
+</p>
+
+<p class="center">
+  total_cost = application_fee + form_cost + travel_cost = $(2.25 &times; t + 145)
+</p>
+
+<hr>
+
+<h2 id="benefits">Benefits</h2>
+
+<p>
+  Benefits depend on how busy one's airport is and how many flights—both domestic and international—they go on per year.
+</p>
+
+<p>
+  First, time saved for getting through a TSA checkpoint. TSA estimates <a href="https://www.tsa.gov/precheck">99% of TSAPC passengers waited less than 10 minutes in line</a>. Miller's <a href="https://upgradedpoints.com/travel/airports/average-tsa-security-wait-times-us-airports/">Average TSA Security Wait Times by U.S. Airport</a> shows a grand average of 15.3 min.
+</p>
+
+<p>
+  But the 0-10 minute range is not a uniform distribution because there is a minimum amount of time spent in line—say three minutes—giving an average time of seven minutes in line. Thus the average time saved per flight is:
+</p>
+
+<p class="center">
+  tsa_time_saved = 15.3 - 7 = 8 min/any flight
+</p>
+
+<p>
+  Second, time saved for getting through customs upon arrival in the U.S. Miller's <a href="https://upgradedpoints.com/travel/airports/average-wait-times-at-immigration-and-customs/">Average Airport Immigration & Customs Wait Times Across the U.S.</a> shows a grand average of 18 min. While there was no data to be found on on Global Entry times, my personal experience has me clearing customs in 2 min on average:
+</p>
+
+<p class="center">
+  customs_time_saved = 18 - 2 = 16 min/international flight
+</p>
+
+<p>
+  Leading to a total benefit of the following, where f is any flight, i is international flight, and t is how much one values their time per hour:
+</p>
+
+<p class="center">
+  total_benefit = (8 &times; f + 16 &times; i) * t / 60
+</p>
+
+<hr>
+
+<h2 id="other">Other</h2>
+
+<p>
+  There are more considerations that can be taken into account if desired:
+</p>
+
+<ul>
+  <li>
+    There is less variance in TSAPC wait times (99% were through in less than 10 min) than the standard security line, meaning there's no need to arrive as early.
+  </li>
+  <li>
+    While waiting in line isn't fun, you will likely still be waiting at your gate. The difference in fun (or lack thereof) can be calculated accordingly.
+  </li>
+  <li>
+    Value of time changes over time. When I got GE in 2020, I valued my time much less than I do now.
+  </li>
+  <li>
+    Waiting time after customs. I often have to wait a while for the shuttle to take me to the remote parking lot, meaning I'm not saving as much time.
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="comparison">Comparison</h2>
+
+<p>
+  The actual analysis depends entirely on how much one values their time and the amount of flights taken per year, but looking at an average person can give some insight. Remember that the costs are effectively fixed, while the benefits multiply by five (assuming the f and i are in units of flights/year) because of the five-year validity of GE.
+</p>
+
+<p>
+  Data was sparse, but Our World in Data has numbers for <a href="https://ourworldindata.org/grapher/air-trips-per-capita?tab=chart&time=earliest..latest&country=~USA">Number of air travel trips per capita, 2018 to 2019</a>, where the average U.S. citizen took 2.06 flights per year. Assuming 1.5 of these are international gives:
+</p>
+
+<p class="center">
+  total_benefit = (8 &times; (2 &times; 5) + 16 &times; (1.5 &times; 5)) / 60 &times; t = $(3.4 &times; t)
+</p>
+
+<p>
+  Setting the cost and benefit equations equal to each other:
+</p>
+
+<p class="center">
+  3.3t = 2.25t + 145
+</p>
+<p class="center">
+  1.05t = 145
+</p>
+
+<p class="center">
+  t = 138 $/hr
+</p>
+
+<p>
+  The average American must value their time at 126 $/hr or more in order for Global Entry to be considered worth it.
+</p>
+
+<p>
+  Just for fun, if time is valued at 25 or 50 or 100 $/hr, how many flights does on need to take per year for it to be worth it? (Obviously, the less one values their time the more flights they would need to make up for it.)
+</p>
+
+<p class="center">
+  (8f + 16i) * (25 or 50 or 100) / 60 = (201 or 258 or 370)
+</p>
+
+<p class="center">
+  8f + 16i = (482 or 310 or or 222)
+</p>
+
+<p>
+  With two variables, the possibilities are numerous. A few options for each tier (remember, this is over five years):
+</p>
+
+<ul>
+  <li>
+    25 $/hr: f = 45 and i = 9, or 9 flights per year with 2 of them being international. A bit much!
+  </li>
+  <li>
+    50 $/hr: f = 25 and i = 7, or 5 flights per year with 1-2 of them being international. A bit more reasonable, but still a lot for the average person.
+  </li>
+  <li>
+    100 $/hr: f = 18 and i = 5, or 3.5 flights per year with 1 of them being international. Much more reasonable!
+  </li>
+</ul>
+
+<p>
+  As seen, the greater someone values their time, the fewer flights they need to take for GE to be worth it.
+</p>
+
+<p>
+  And the ultimate question: has my GE purchase been worth it? I will work backwards from number of flights taken to how much I must value my time, and then see if I value my time more than that.
+</p>
+
+<p class="center">
+  (8 &times; 14 + 16 &times; 4) / 60 &times; t = 2.25t + 145
+</p>
+
+<p class="center">
+  t = 213 $/hr
+</p>
+
+<p>
+  This is way higher than what I value my time at, but if I extrapolate my flight frequency out to 2024 and 2025, I get:
+</p>
+
+<p class="center">
+  (8 &times; 22 + 16 &times; 8) / 60 &times; t = 2.25t + 145
+</p>
+
+<p class="center">
+  t = 51 $/hr
+</p>
+
+<p>
+  This is probably right around where I value my time, if not a bit higher.
+</p>
+
+<hr>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>
+  GE is probably only worth it if:
+</p>
+
+<ol>
+  <li>
+    You travel a lot
+  </li>
+  <li>
+    You really value your time
+  </li>
+  <li>
+    Some combination of 1 and 2, where both are relatively high
+  </li>
+</ol>
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <a href="https://jamesclear.com/value-of-time">The Value of Time: How Much is Your Time Really Worth?</a>
+  </li>
+</ul>
+
+</body>
+</html>
