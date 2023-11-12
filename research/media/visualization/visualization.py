@@ -4,6 +4,11 @@ import pyaudio
 
 import requests
 
+import time
+
+import tkinter
+from PIL import Image, ImageTk
+
 from openai import OpenAI
 client = OpenAI()
 
@@ -15,10 +20,8 @@ image urls:
       img-WRX171bmiNMYh3OEkcpPkjnA.png
 todo:
     - put main() subfunctions in X min while loop
-
-    - save image_url as .png
+    - record audio
     - display image
-
 
 """
 
@@ -29,7 +32,7 @@ def record():
     # reference https://people.csail.mit.edu/hubert/pyaudio/docs/
     
     # the file name output you want to record into
-    audio_file = "conversation2.wav"
+    audio_file = "conversation.wav"
     
     # set the chunk size of 1024 samples
     chunk = 1024
@@ -91,13 +94,14 @@ def record():
     
     # close the file
     wf.close()
+    
 
 def transcribe():
     
     # reference https://platform.openai.com/docs/guides/speech-to-text
 
     # specify audio file location
-    audio_file = open("conversation.wav", "rb")
+    audio_file = open("conversation.m4a", "rb")
     print("1")
     # transcribe using OpenAI's Whisper model
     # return transcript as string format
@@ -147,7 +151,7 @@ def image(summary):
       n=1,)
 
     image_url = response.data[0].url
-    print("5")
+    print(image_url)
 
     return image_url
 
@@ -159,11 +163,29 @@ def save(image_url):
     with open("conversation.png", "wb") as f:
         f.write(response.content)
         
-"""
-def display(picture):
+
+def display():
     
-    # code goes here
-"""
+    picture = Image.open("conversation.png")
+    
+    root = tkinter.Tk()
+    w, h = root.winfo_screenwidth(), root.winfo_screenheight()
+    root.overrideredirect(1)
+    root.geometry("%dx%d+0+0" % (w, h))
+    root.focus_set()    
+    root.bind("<Escape>", lambda e: (e.widget.withdraw(), e.widget.quit()))
+    canvas = tkinter.Canvas(root,width=w,height=h)
+    canvas.pack()
+    canvas.configure(background='black')
+    imgWidth, imgHeight = picture.size
+    if imgWidth > w or imgHeight > h:
+        ratio = min(w/imgWidth, h/imgHeight)
+        imgWidth = int(imgWidth*ratio)
+        imgHeight = int(imgHeight*ratio)
+        picture = picture.resize((imgWidth,imgHeight), Image.ANTIALIAS)
+    image = ImageTk.PhotoImage(picture)
+    imagesprite = canvas.create_image(w/2,h/2,image=image)
+    root.mainloop()
 
 def main():
     
@@ -179,8 +201,34 @@ def main():
     # generate image of conversation
     image_url = image(summary)
     
-    picture = save(image_url)
+    # save image of conversation
+    save(image_url)
     
-    display(picture)
+    # display image of conversation
+    display()
+    
+"""
+def main():
+    
+    while(True):
+    
+        # record conversation
+        record()
+    
+        # transcribe conversation
+        transcript = transcribe()
+    
+        # summarize conversation
+        summary = summarize(transcript)
+        
+        # generate image of conversation
+        image_url = image(summary)
+        
+        picture = save(image_url)
+        
+        display(picture)
+        
+        time.sleep(300)
+"""
     
 main()
