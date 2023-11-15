@@ -12,10 +12,6 @@
 
 <!--
 
-So it seems like everything leads to war there was the nuclear bomb going off in the end the people marching Planes dropping bombs things like that. I Like the first part of Starting with fish to dinosaurs to cavemen. It also seemed like a progressive rise in Like power it starts with the fish and then it ends up politicians are kind of at the end along with military power It seems like it progresses like that all throughout It's basically it starts with war and it ends with war and the whole time It's just power is escalating and It's it probably the message is that
-
-the conversation discusses how everything seems to lead to war, with references to nuclear bombs, marching people, and planes dropping bombs. The first part of the conversation mentions the progression from fish to dinosaurs to cavemen, highlighting a rise in power. It is noted that politicians and military power are at the forefront towards the end. The conversation concludes that there is a continuous escalation of power and suggests that the message may be that war is inevitable throughout history.
-
 -->
 
 <h1 id="visualization">Conversation Visualization</h1>
@@ -63,31 +59,70 @@ the conversation discusses how everything seems to lead to war, with references 
 
 <ol>
   <li>
-    Voice: Record X minutes of conversation
+    Voice: Record a conversation
   </li>
   <li>
-    Text: Transcribe the voice recording into text, then summarize
+    Text: Transcribe the audio recording and summarize
   </li>
   <li>
     Image: Create an image based on the transcription
   </li>
 </ol>
 
+<p>
+  Throw this in a simple while loop that continues to go so long as there aren't any errors and power is maintained.
+</p>
+
+<img src="media/visualization/broccoli.png">
+<figcaption>
+  The conversation starts with [name] discussing a poker tournament he is hosting on Friday with some friends. The other person asks if the friends playing poker are also from church, to which [name] replies that he is not sure. The conversation then takes a random turn as they start discussing the taste and smell of broccoli. They talk about how the broccoli shrinks when microwaved due to the starches and expansion of frozen water. The person suggests that if you microwaved a cup of ice, it would become more full, while [name] disagrees and says it would be less full.
+</figcaption>
+
 <h3>Software</h3>
 
 <p>
-  I used OpenAI to keep everything in the same ecosystem: Whisper for transcription, GPT for summarization, and DALL·E for image generation.
+  I used OpenAI and its API to keep everything in the same ecosystem: Whisper for transcription, GPT for summarization, and DALL·E for image generation.
 </p>
 
-[include individual steps on how to get this set up]
+<img src="media/visualization/alignment.jpg">
+<figcaption>
+  Shortening timelines $10.64 at a time
+</figcaption>
 
 <p>
-  My code was pretty straightforward (<a href="media/visualization/visualization.py">.py file link</a>):
+  Code can be found here: <a href="media/visualization/visualization.py">visualization.py</a>.
 </p>
+
+<p>
+  Here are the not-quite-foolproof-because-if-you're-reading-this-you-probably-have-some-technological-ability instructions to get the software working:
+</p>
+
+<ol>
+  <li>
+    Download Python3, all packages used in visualization.py, and visualization.py
+  </li>
+  <li>
+    Create an OpenAI account
+  </li>
+  <li>
+    Follow OpenAI's <a href="https://platform.openai.com/docs/quickstart?context=python">Developer quickstart guide</a>
+  </li>
+  <li>
+    Allow microphone and accessibility access to the program that will run visualization.py
+  </li>
+</ol>
 
 <h3>Hardware</h3>
 
+<p>
+  Hardware is user-dependent and offers a few options:
+</p>
 
+<ul>
+  <li>
+    
+  </li>
+</ul>
 
 [how i made the frame]
 
@@ -97,6 +132,35 @@ the conversation discusses how everything seems to lead to war, with references 
 
 
 
+<hr>
+
+<h2 id="examples">Examples</h2>
+
+<p>
+  The first full run through of the record-transcribe-summarize-visualize logic was after watching Pearl Jam's <a href="https://www.youtube.com/watch?v=aDaOgu2CQtI">Do the Evolution</a>.
+</p>
+
+<p>
+  Transcription was:
+</p>
+
+<blockquote>
+  So it seems like everything leads to war there was the nuclear bomb going off in the end the people marching Planes dropping bombs things like that. I Like the first part of Starting with fish to dinosaurs to cavemen. It also seemed like a progressive rise in Like power it starts with the fish and then it ends up politicians are kind of at the end along with military power It seems like it progresses like that all throughout It's basically it starts with war and it ends with war and the whole time It's just power is escalating and It's it probably the message is that
+</blockquote>
+
+<p>
+  Summary was:
+</p>
+
+<blockquote>
+  the conversation discusses how everything seems to lead to war, with references to nuclear bombs, marching people, and planes dropping bombs. The first part of the conversation mentions the progression from fish to dinosaurs to cavemen, highlighting a rise in power. It is noted that politicians and military power are at the forefront towards the end. The conversation concludes that there is a continuous escalation of power and suggests that the message may be that war is inevitable throughout history.
+</blockquote>
+
+<p>
+  And the image was:
+</p>
+
+<img src="media/visualization/war.png">
 
 <hr>
 
