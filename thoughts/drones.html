@@ -10,22 +10,6 @@
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
 
-<!--
-
-- xUmbrella for rainy and sunny days, diameter customizable
-fans keep you cool
-- xlaser to guide the path for minimum wetness/sun exposure and maximum tree coverage
-- xcan hold your stuff (Fanny pack)
-- xcamera
-- how quiet???
-
-specs: battery life, noise, altitude limit, weight limit, speed limit, audio quality
-
-
-rank features, then order them and their respective spec accordingly
-
--->
-
 <h1 id="drones">Personal Convenience Drones</h1>
 
 <p>
@@ -44,10 +28,13 @@ rank features, then order them and their respective spec accordingly
     <a href="#features">Features</a>
   </li>
   <li>
-    <a href="#specifications">Specifications</a>
+    <a href="#considerations">Considerations</a>
   </li>
   <li>
     <a href="#impact">Impact</a>
+  </li>
+  <li>
+    <a href="#commercialization">Commercialization</a>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -70,10 +57,6 @@ rank features, then order them and their respective spec accordingly
   Mobile and desktop apps are available to control the drone and check its diagnostics.
 </p>
 
-<p>
-  Limits of the features are covered in the <a href="#specifications">Specifications section</a>.
-</p>
-
 <h3 id="navigation">Navigation</h3>
 
 <p>
@@ -84,21 +67,15 @@ rank features, then order them and their respective spec accordingly
   When walking on uneven or precarious ground, the PCD detects the best path to avoid water or awkward and/or dangerous body positions. LIDAR allows the detection of elevation increases/or decreases or incoming obstacles to maintain a constant distance to the user.
 </p>
 
-[picture]
-
 <p>
   When walking through undesired weather (whether that be rain or shine), the PCD chooses the path to minimize the undesired affect: for rain, it will choose the path least likely to have puddles and most likely to have cover; for sun, it will choose the path most likely to have shade.
 </p>
-
-[picture]
 
 <h3 id="umbrella">Umbrella</h3>
 
 <p>
   An umbrella will unfold from above the PCD to protect the user from rain, hail, and general debris. The PCD is able to detect wind direction and speed to accommodate and adjust for angle of the rain/hail/debris.
 </p>
-
-[picture]
 
 <p>
   The diameter is customizable. For users who plan to use PCDs in wider spaces (parks, neighborhood walks), a wider umbrella may be more fitting. For those using PCDs in narrow spaces (sidewalks, nature trails), narrower umbrellas are better.
@@ -114,30 +91,16 @@ rank features, then order them and their respective spec accordingly
   Speakers can play music from any app at a range of volumes. Users may command the drone to play audio as desired ("Gerald, play Modern Life is War's album Fever Hunting")
 </p>
 
-<p>
-  See <a href="#specifications_audio">Audio Specifications</a> for information on sound quality and volume.
-</p>
-
 <h3 id="storage">Storage</h3>
 
 <p>
-  Two (2) hooks, a lockable compartment, and water bottle cage allow the user to safely store items without having to hold or keep track of them. Umbrellas, clothes, and bags can hang on the hooks. Small items (jewelry, wallets. lighters, food) can be placed into the compartment for safekeeping. Beverages can be placed into the cage for easy access.
-</p>
-
-[picture]
-
-<p>
-  See <a href="#specifications_storage">Storage Specifications</a> for information on weight limits and dimensions.
+  Two (2) hooks, a lockable compartment, and water bottle cage allow the user to safely store items without having to hold or keep track of them. Umbrellas, clothes, and bags can hang on the hooks. Small items (jewelry, wallets. lighters, food) can be placed into the compartment for safekeeping and accessed via the phone app, digital or analog keypad, or key. Beverages can be placed into the cage for easy access.
 </p>
 
 <h3 id="camera">Camera</h3>
 
 <p>
-  A pivotable camera allows pictures and videos to be taken using voice commands ("Gerald, take a picture") or through the user's phone app. Adjustments can be made through the app or by physically moving the camera (angle and focus quality not guaranteed!).
-</p>
-
-<p>
-  See <a href="#specifications_camera">Camera Specifications</a> for information on camera quality.
+  Pivotable main and wide-angle cameras allow pictures and videos to be taken using voice commands ("Gerald, take a picture") or through the user's phone app. Adjustments can be made through the app or by physically moving the camera (angle and focus quality not guaranteed!).
 </p>
 
 <h3 id="phone">Phone</h3>
@@ -149,11 +112,7 @@ rank features, then order them and their respective spec accordingly
 <h3 id="charging">Charging</h3>
 
 <p>
-  Solar cells convert light into electricity to supplement the rechargeable battery.
-</p>
-
-<p>
-  See <a href="#specifications_charging">Charging Specifications</a> for information on charging capabilities.
+  Solar cells convert light into electricity to supplement the rechargeable battery. The battery is easily replaceable for long-distance journeys where charging isn't available.
 </p>
 
 <h3 id="size">Size</h3>
@@ -162,83 +121,102 @@ rank features, then order them and their respective spec accordingly
   The PCD maintains a small footprint while operational and is able to fold when non-operational for ease of transport.
 </p>
 
-[FINISH]
-
-<p>
-  See <a href="#specifications_size">Size Specifications</a> for information on size.
-</p>
-
 <h3 id="hide">Hide Mode</h3>
 
 <p>
   The PCD will "go away" when commanded to hide ("Gerald, hide"). Going away consists of either flying high enough above the user such that no one notices or literally going away until it is called back by the app.
 </p>
 
-[FINISH]
-
 <hr>
 
-<h2 id="specifications">Specifications</h2>
+<h2 id="considerations">Considerations</h2>
 
-<h3 id="specifications_noise">Noise Specifications</h3>
+<h3 id="considerations_noise">Noise Considerations</h3>
 
 <p>
-  Noise is an important factor when considering the drone design and requires tradeoffs in multiple areas. Ultimately, this is what makes this entire project unfeasible: drones are just too loud. If one person had a PCD flying low, others would be annoyed at how loud it was, if not the person (and anyone they're with) themselves! Even if the PCD hover value was quite high, every time it comes down the noise would be obnoxious. If everyone had a PCD, the world would be chaos. Even then, it's worth continuing to explore specifications for when (if) drones do become quiet (and for fun!).
+  Noise is an important factor when considering the drone design and requires tradeoffs in multiple areas. Ultimately, noise is what makes this entire project infeasible: drones are just too loud. If one person had a PCD flying low, others would be annoyed at how loud it was, if not the person (and anyone they're with) themself! Even if the PCD hover value was quite high, every time it comes down the noise would be obnoxious. And if <i>everyone</i> had a PCD, the world would be chaos.
 </p>
 
 <p>
-  First, what are the independent variables causing drone noise to increase, and how much weight do each of them carry (no pun intended)?
-</p>
-
-<p>
-  From Brush's <a href="https://www.acentech.com/resources/drone-noise-a-new-challenge-in-acoustics/">Drone Noise – A New Challenge in Acoustics</a>
+  As an aside, the propeller blades generate the most noise, as Brush details in his <a href="https://www.acentech.com/resources/drone-noise-a-new-challenge-in-acoustics/">Drone Noise – A New Challenge in Acoustics</a>
 </p>
 
 <blockquote>
   the dominant (unweighted) sound levels are produced at the propeller blade pass frequencies, which are in the 100 to 300 Hz range for most small drones. Secondary sound sources can originate from the electric motors and vibration of the airframe. Strong harmonics of the blade pass frequencies have been measured all the way up to several kHz, and can often be the dominant tones on an A-weighted basis. The individual manipulation of each rotor occasionally sets up a beating condition when the blade pass frequencies are only slightly different from one another. The rapidly changing and asynchronous rotor speeds needed when maneuvering or even hovering in windy conditions can exhibit significant sound amplitude fluctuations.
 </blockquote>
 
-https://www.frontiersin.org/articles/10.3389/fpace.2022.1004828/full
+<h3 id="considerations_space">Space Considerations</h3>
 
+<p>
+  Assuming noise is no longer an issue, the next obstacle is physical space, which becomes more difficult as PCDs become more prevalent.
+</p>
 
+<p>
+  A few mitigation options:
+</p>
 
-
-
-
-
-
-<h3 id="specifications_navigation">Navigation Specifications</h3>
-
-<h3 id="specifications_umbrella">Umbrella Specifications</h3>
-
-<h3 id="specifications_audio">Audio Specifications</h3>
-
-<h3 id="specifications_storage">Storage Specifications</h3>
-
-<h3 id="specifications_camera">Camera Specifications</h3>
-
-<h3 id="specifications_phone">Phone Specifications</h3>
-
-<h3 id="specifications_charging">Charging Specifications</h3>
-
-<h3 id="specifications_size">Size Specifications</h3>
-
-
-
-
+<ul>
+  <li>
+    Raise the PCD price enough such that it is out of most people's budgets. This will further establish PCDs as both a good and bad status indicator (see <a href="#impact">Impact section</a>).
+  </li>
+  <li>
+    Evenly distribute PCD usage days across the week with special deals or agreements for desirable weekends. This likely gets into governmental regulations and a why-can't-I-use-what-I-bought revolt.
+  </li>
+  <li>
+    Price usage based on PCD heat. Using a PCD in the middle of nowhere costs nothing, while using it where a bunch of others bears a significant cost.
+  </li>
+  <li>
+    Pay for PCD elevations in high-usage areas, where if flying closer to the user is desirable (rainy, very sunny) it costs more.
+  </li>
+</ul>
 
 <hr>
 
 <h2 id="impact">Impact</h2>
 
-navigational difficulties--not an issue since nobody knows streets anyway
+<h3 id="impact_navigation">Navigation Abilities</h3>
 
+<p>
+  People would likely not get worse at self-navigation. Phones are already mindlessly used to get from point A to point B without thinking about street names, directions, public transit routes, etc.
+</p>
+
+<h3 id="impact_attention">Attention</h3>
+
+<p>
+  Ability to pay attention to one's surrounding may get worse as the person mindlessly follows the drone's laser to their destination.
+</p>
+
+<h3 id="impact_health">Health</h3>
+
+<p>
+  While unlikely, users may be inclined to purchase more things (e.g., food) when out shopping because they don't have to carry as much thanks to the drone's hooks. This leads to less physical exertion while walking and more eating.
+</p>
+
+<h3 id="impact_status">Status</h3>
+
+<p>
+  Would drones indicate high status for users? It all comes down to price: if expensive, then likely yes.
+</p>
+
+<hr>
+
+<h2 id="commercialization">Commercialization</h2>
+
+<p>
+  As <a href="https://news.ycombinator.com/item?id=28776008">Gwern has said</a>:
+</p>
+
+<blockquote>
+  I've never asked a cent, because ideas are cheap, and timing/implementation everything
+</blockquote>
+
+<p>
+  If someone ends up reading this and attempts to commercialize PCDs, please <a href="../about/about.html#contact">contact me</a> because I would strongly consider investing.
+</p>
 
 <hr>
 
 <h2 id="see_also">See Also</h2>
-
-
 
 </body>
 </html>
