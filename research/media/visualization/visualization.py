@@ -191,7 +191,7 @@ def main():
     length = 45
 
     # how long to display image for
-    display_time = 540
+    display_time = 240
 
     # index 1 for number of pictures
     num_pics = 1
