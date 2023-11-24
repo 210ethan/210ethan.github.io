@@ -113,7 +113,7 @@ def transcribe():
     return transcript
 
 
-def summarize(transcript):
+def summarize(transcript, gpt_model):
 
     # reference https://platform.openai.com/docs/guides/text-generation/chat-completions-api
 
@@ -122,7 +122,7 @@ def summarize(transcript):
 
     # summarize transcript
     response = client.chat.completions.create(
-      model="gpt-3.5-turbo",
+      model=gpt_model,
       messages=[
         {"role": "system", "content": request}])
 
@@ -134,16 +134,16 @@ def summarize(transcript):
     return summary
 
 
-def image(summary):
+def image(summary, dalle_model, image_size, image_quality):
 
     # reference https://platform.openai.com/docs/guides/images
 
     # generate image based on gpt summary
     response = client.images.generate(
-      model="dall-e-3",
+      model=dalle_model,
       prompt=summary,
-      size="1024x1024",
-      quality="standard",
+      size=image_size,
+      quality=image_quality,
       n=1,)
 
     # extract image url
@@ -187,14 +187,27 @@ def display(file_name):
 
 def main():
 
-    # how long to record for
+    # how long to record for (units = seconds)
     length = 45
 
-    # how long to display image for
-    display_time = 240
+    # how long to display image for (units = seconds)
+    display_time = 540
 
-    # index 1 for number of pictures
+    # index 1 for number of pictures since multiple pics will be created
     num_pics = 1
+
+    # reference https://platform.openai.com/docs/guides/text-generation
+    # options: gpt-4, gpt-4 turbo, gpt-3.5-turbo
+    gpt_model = "gpt-3.5-turbo"
+
+    # reference https://platform.openai.com/docs/guides/images/introduction?context=node
+    # options: dall-e-3, dall-e-2
+    dalle_model = "dall-e-3"
+    # dall-e-3 options: 1024x1024, 1024x1792 or 1792x1024
+    # dall-e-2 options: 1024x1024, 512x512, 256x256
+    image_size = "1024x1024"
+    # options: standard, hd
+    image_quality = "standard"
 
     while(True):
 
@@ -205,10 +218,10 @@ def main():
         transcript = transcribe()
 
         # summarize conversation
-        summary = summarize(transcript)
+        summary = summarize(transcript, gpt_model)
 
         # generate image of conversation
-        image_url = image(summary)
+        image_url = image(summary, dalle_model, image_size, image_quality)
 
         # save image of conversation
         file_name = save(image_url, num_pics)
