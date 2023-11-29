@@ -16,6 +16,8 @@ client = OpenAI()
 
 todo:
     - display image on full screen
+    - create flask app:
+        - https://realpython.com/python-web-applications/
 
 """
 
@@ -197,7 +199,7 @@ def main():
     num_pics = 1
 
     # reference https://platform.openai.com/docs/guides/text-generation
-    # options: gpt-4, gpt-4 turbo, gpt-3.5-turbo
+    # options: gpt-4, gpt-4-turbo, gpt-3.5-turbo
     gpt_model = "gpt-3.5-turbo"
 
     # reference https://platform.openai.com/docs/guides/images/introduction?context=node
