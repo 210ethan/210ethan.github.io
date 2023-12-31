@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Questionnaire</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f0f0f0;
+      text-align: center;
+      margin: 50px;
+    }
+
+    #question-container {
+      max-width: 400px;
+      margin: auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<div id="question-container">
+  <h2>Questionnaire</h2>
+
+  <div id="questions">
+    <!-- Questions will be dynamically added here -->
+  </div>
+
+  <button onclick="showResponses()">Submit</button>
+</div>
+
+<script>
+  // Array to store questions and responses
+  const questions = [
+    "What is your name?",
+    "How old are you?",
+    "Where do you live?",
+    "What is your favorite color?",
+  ];
+
+  // Function to create HTML elements for questions
+  function createQuestionElements() {
+    const questionsContainer = document.getElementById('questions');
+
+    questions.forEach((question, index) => {
+      const inputElement = document.createElement('input');
+      inputElement.type = 'text';
+      inputElement.placeholder = question;
+      inputElement.id = `response${index}`;
+      questionsContainer.appendChild(inputElement);
+    });
+  }
+
+  // Function to collect and display responses
+  function showResponses() {
+    const responses = [];
+
+    questions.forEach((question, index) => {
+      const responseElement = document.getElementById(`response${index}`);
+      const responseValue = responseElement.value.trim();
+      responses.push(`${question}: ${responseValue}`);
+    });
+
+    const responseMessage = responses.join('\n');
+    alert(`Thank you for completing the questionnaire!\n\nResponses:\n${responseMessage}`);
+  }
+
+  // Initialize the questionnaire on page load
+  window.onload = function () {
+    createQuestionElements();
+  };
+</script>
+
+</body>
+</html>

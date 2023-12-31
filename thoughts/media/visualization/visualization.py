@@ -11,17 +11,6 @@ import pyautogui
 from openai import OpenAI
 client = OpenAI()
 
-
-"""
-
-todo:
-    - display image on full screen
-    - create flask app:
-        - https://realpython.com/python-web-applications/
-
-"""
-
-
 def record(length):
 
     # reference https://thepythoncode.com/article/play-and-record-audio-sound-in-python
