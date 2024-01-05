@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AI-Generated Music for Learning</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+
+- post to LW
+- post to HN
+
+-->
+
+<h1 id="aimusic">AI-Generated Music for Learning</h1>
+
+<p>
+  Fun, productive, and easy!
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#motivation">Motivation</a>
+  </li>
+  <li>
+    <a href="#implementation">Implementation</a>
+  </li>
+  <li>
+    <a href="#combination">Combination with Current Learning Methods</a>
+  </li>
+  <li>
+    <a href="#examples">Appendix I: Lyric Examples</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="motivation">Motivation</h2>
+
+<p>
+  Mnemonic devices are considered effective learning tools (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6851171/">Radović & Manzey, 2019</a>, <a href="https://psycnet.apa.org/record/2008-02761-001">Wolgemuth, Cobb, & Alwell, 2008</a>, <a href="https://psycnet.apa.org/record/2001-11204-006">Scruggs and Mastropieri, 2000</a>).
+</p>
+
+<p>
+  Music is a prominent device; remembering song lyrics, even longer information like phone numbers (see (or hear in your head) the song <a href="https://en.wikipedia.org/wiki/867-5309/Jenny">867-5309/Jenny</a>), is significantly easier than remembering similar series of words without the singer's voice and instruments in the background. Coupling this with the fact that music is fun to listen to and AI-generated musical abilities are improving rapidly and the following comes naturally.
+</p>
+
+[perform literature review; add more literature]
+
+<hr>
+
+<h2 id="implementation">Implementation</h2>
+
+<h3 id="lyrics">Lyrics</h3>
+
+<p>
+  Lyrics can be generated using a large-language model (LLM) using fill-in-the-blank prompt like:
+</p>
+
+<blockquote>
+  Create a(n) [number]-verse [style of music, e.g., country, rap, metal] that teaches the listener [information]
+</blockquote>
+
+<p>
+  Extra conditions or qualifiers can be added, such as:
+</p>
+
+<ul>
+  <li>
+    Have a [music style] feature in the middle
+  </li>
+  <li>
+    In the style of [artist]
+  </li>
+  <li>
+    Use keywords such as [keyword1], [keyword2]
+  </li>
+  <li>
+    Use a level of detail a [grade level] grader could understand
+  </li>
+</ul>
+
+[add more prompt qualifiers here]
+
+<p>
+  It's important that the song is catchier and more entertaining than it is informative, else the listener will be turned off and not listen, defeating the entire purpose. Disguising the information within the lyrics is the best option, but requires superb LLM prompting skills.
+</p>
+
+<h3 id="integration">Integration</h3>
+
+<p>
+  Using a service like [service1] or [service2]
+</p>
+
+[service1 example]
+
+[service1 example]
+
+[service2 example]
+
+[service2 example]
+
+<hr>
+
+<h2 id="combination">Combination with Current Learning Methods</h2>
+
+<p>
+  There are obviously many learning methods available: te
+</p>
+
+<hr>
+
+<h2 id="examples">Appendix I: Lyric Examples</h2>
+
+<p>
+  My prompt engineering skills are not strong and I don't have GPT-4 access, but with better prompts and a better model I'm sure the songs would be more informative and catchier.
+</p>
+
+<p>
+  Choruses are removed for brevity purposes.
+</p>
+
+<p>
+  <b>I</b>
+</p>
+
+<p>
+  Prompt:
+</p>
+
+<blockquote>
+  Create an eight-verse country song that teaches the listener what the noble gases are, their properties, and how they're different from other periodic table elements.
+</blockquote>
+
+<p>
+  GPT-3.5 response:
+</p>
+
+<blockquote>
+  <p>
+    Well, gather 'round folks, let me sing you a tune, <br>
+    'Bout elements noble, under the moon. <br>
+    They're rare gases, with style and grace, <br>
+    In the periodic table, holdin' their space.
+  </p>
+  <p>
+    Helium's light, makes balloons soar high, <br>
+    Inert and stable, it'll never say goodbye. <br>
+    Neon's the glow in the city night, <br>
+    Bright and colorful, a mesmerizing sight. <br>
+  </p>
+  <p>
+    Argon's a filler in the air we breathe, <br>
+    In light bulbs it glows, just like a sheath. <br>
+    They don't bond with others, they stand alone, <br>
+    In the noble gases zone they've grown. <br>
+  </p>
+  <p>
+    Krypton's a hero in comic lore, <br>
+    In the periodic table, it's so much more. <br>
+    Xenon lights up those fancy signs, <br>
+    With noble gases, the light always shines. <br>
+  </p>
+  <p>
+    Radon's a gas that creeps from the ground, <br>
+    Radioactive and heavy, in basements found. <br>
+    They don't form compounds, don't play that game, <br>
+    Staying noble, they'll never change. <br>
+  </p>
+  <p>
+    No electrons to give, none to take, <br>
+    They're happy in their noble gas state. <br>
+    With a full outer shell, they're content, <br>
+    Unlike other elements, they're not bent. <br>
+  </p>
+  <p>
+    In the atmosphere, they're a rare delight, <br>
+    Shining bright, like stars at night. <br>
+    Nonmetals with a regal flair, <br>
+    In the periodic table, they're beyond compare. <br>
+  </p>
+  <p>
+    So, that's the story of these gases so fine, <br>
+    In the noble gases, the elements align. <br>
+    Stable and noble, they stand apart, <br>
+    In the periodic table, they've won our heart. <br>
+  </p>
+</blockquote>
+
+<p>
+  <b>II</b>
+</p>
+
+<p>
+  Prompt:
+</p>
+
+<blockquote>
+  Create an eight-line rap song that teaches the listener what a band gap is and why it's important to transistors. Include keywords like Fermi level, electrons, holes, and valence level.
+</blockquote>
+
+<p>
+  GPT-3.5 response:
+</p>
+
+<blockquote>
+  <p>
+    Yo, let me drop some knowledge, listen to the sound, <br>
+    Talking 'bout band gaps, in the tech playground. <br>
+    Fermi level vibes, where electrons chill, <br>
+    In the semiconductor groove, keeping it real. <br>
+  </p>
+  <p>
+    Valence level hustle, where electrons dance, <br>
+    Locked in place, in a solid-state trance. <br>
+    Crossing the band gap, they become so bold, <br>
+    Creating holes, in the story told. <br>
+  </p>
+  <p>
+    In the conduction band, electrons find their place, <br>
+    They're the charge carriers, in the tech race. <br>
+    Holes in the valence, like a missing link, <br>
+    Transistors amplify, man, that's the sync. <br>
+  </p>
+  <p>
+    Band gap, essential for the switch, <br>
+    In transistors' world, it's the perfect pitch. <br>
+    Controlling current flow, with precision and class, <br>
+    In the semiconductor dance, making tech amass. <br>
+  </p>
+</blockquote>
+
+<p>
+  <b>III</b>
+</p>
+
+<p>
+  Prompt:
+</p>
+
+<blockquote>
+  Create a four-verse heavy metal screamo song that teaches the listener about the human heart's structure, operation, and common failure modes.
+</blockquote>
+
+<p>
+  GPT-3.5 response:
+</p>
+
+<blockquote>
+  <p>
+    In the chamber of blood, where darkness prevails, <br>
+    The heart, a metal fortress, pumping life's tales. <br>
+    A muscular beat, a rhythm so fierce, <br>
+    Four chambers unite, a symphony fierce. <br>
+  </p>
+  <p>
+    Ventricles pulsating, arteries scream, <br>
+    The aorta roars, in this crimson dream. <br>
+    Aortic valve slams, like thunderous roar, <br>
+    The heart, a metal beast, forevermore. <br>
+  </p>
+  <p>
+    Atria, the gates, where blood first arrives, <br>
+    In this pumping metal heart, where life strives. <br>
+    Valves like iron doors, opening wide, <br>
+    Blood surges forth, a crimson tide. <br>
+  </p>
+  <p>
+    Mitral and tricuspid, they guard the keep, <br>
+    In this metal heart, secrets run deep. <br>
+    Atrioventricular, a metal divide, <br>
+    In the heavy metal heart, life's bound to collide. <br>
+  </p>
+  <p>
+    But in this fortress of metal might, <br>
+    Darkness may strike, in the dead of night. <br>
+    Atherosclerosis, a sinister foe, <br>
+    Clogging the arteries, a deadly throw. <br>
+  </p>
+  <p>
+    Myocardium, a metal stronghold, <br>
+    Contracting fiercely, in tales untold. <br>
+    But when weakened, the metal shall break, <br>
+    Heart failure echoes, a deadly quake. <br>
+  </p>
+  <p>
+    Stenosis and regurgitation, they creep, <br>
+    Valves failing, in the metal keep. <br>
+    Pumping fades, in this metal core, <br>
+    The heart, a battlefield, forevermore. <br>
+  </p>
+</blockquote>
+
+<p>
+  <b>IV</b>
+</p>
+
+<p>
+  Prompt:
+</p>
+
+<blockquote>
+  Create a four-verse indie song in the style of The Lumineers that teaches the listener about how large-language models work, their implications for the future, and any limitations they have. Use as technical language as possible.
+</blockquote>
+
+<p>
+  GPT-3.5 response:
+</p>
+
+<blockquote>
+  <p>
+    In the circuits and the wires, where data flows,<br>
+    A language model awakens, in ones and zeros.<br>
+    It learns the patterns, the syntax so fine,<br>
+    Deep in the code, where the secrets align.
+  </p>
+  <p>
+    Through layers it traverses, in a neural dance,<br>
+    Absorbing data, giving language a chance.<br>
+    Unleashing responses, it seems to understand,<br>
+    Yet, behind the scenes, it's lines of code so grand.
+  </p>
+  <p>
+    Predictions and prose, it weaves with grace,<br>
+    A virtual mind, in the digital space.<br>
+    Yet limitations linger, like shadows in the light,<br>
+    A reminder that perfection's not in sight.
+  </p>
+  <p>
+    So here we stand, on the edge of the new,<br>
+    With whispers in the code, and futures to pursue.<br>
+    Embrace the knowledge, but with open eyes,<br>
+    For in the algorithms, humanity lies.
+  </p>
+</blockquote>
+
+<p>
+  <b>V</b>
+</p>
+
+<p>
+  Prompt:
+</p>
+
+<blockquote>
+  Create a four-verse alternative rock song in the style of Green Day that teaches the listener about how chocolate is made, what the difference is between types of chocolate, benefits and harms of chocolate, and historical chocolate controversies.
+
+</blockquote>
+
+<p>
+  GPT-3.5 response:
+</p>
+
+<blockquote>
+  <p>
+    In the heart of the cacao, where the beans unfold,<br>
+    A tale of chocolate, in a story untold.<br>
+    Roasted and crushed, the magic begins,<br>
+    From bean to bar, where the sweetness wins.
+  </p>
+
+  <p>
+    From the Swiss Alps to the Belgian pride,<br>
+    Different types of chocolate, taking us for a ride.<br>
+    Dark with antioxidants, a bitter embrace,<br>
+    Milk with its creaminess, a comforting grace.
+  </p>
+
+  <p>
+    The cocoa buzz, a mood enhancer they say,<br>
+    But moderation is key, in the chocolate ballet.<br>
+    Controversies of the past, in a cocoa haze,<br>
+    Fair trade whispers, through the chocolate maze.
+  </p>
+  <p>
+    So here's to the cocoa, in its bittersweet song,<br>
+    A treat for the soul, in a world so wrong.<br>
+    From ancient Aztecs to Willy Wonka's delight,<br>
+    In the magic of chocolate, we find our respite.
+  </p>
+</blockquote>
+
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>
