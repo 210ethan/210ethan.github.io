@@ -50,14 +50,30 @@
 <h2 id="motivation">Motivation</h2>
 
 <p>
-  Mnemonic devices are considered effective learning tools (see <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6851171/">Radović & Manzey, 2019</a>, <a href="https://psycnet.apa.org/record/2008-02761-001">Wolgemuth, Cobb, & Alwell, 2008</a>, <a href="https://psycnet.apa.org/record/2001-11204-006">Scruggs and Mastropieri, 2000</a>).
+  Mnemonic devices are considered effective learning tools from countless studies:
 </p>
+
+<ul>
+  <li>
+    <a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6851171/">Radović & Manzey, 2019</a>
+  </li>
+  <li>
+    <a href="https://psycnet.apa.org/record/2008-02761-001">Wolgemuth, Cobb, & Alwell, 2008</a>
+  </li>
+  <li>
+    <a href="https://psycnet.apa.org/record/2001-11204-006">Scruggs and Mastropieri, 2000</a>
+  </li>
+  <li>
+    <a href="https://psycnet.apa.org/record/1991-26116-001">Yalch, 1991</a>
+  </li>
+  <li>
+    <a href="https://scholarship.miami.edu/esploro/outputs/991031447964102976?institution=01UOML_INST&skipUsageReporting=true&recordUsage=false">Murakami, 2017</a>
+  </li>
+</ul>
 
 <p>
-  Music is a prominent device; remembering song lyrics, even longer information like phone numbers (see (or hear in your head) the song <a href="https://en.wikipedia.org/wiki/867-5309/Jenny">867-5309/Jenny</a>), is significantly easier than remembering similar series of words without the singer's voice and instruments in the background. Coupling this with the fact that music is fun to listen to and AI-generated musical abilities are improving rapidly and the following comes naturally.
+  Music is a prominent device; remembering song lyrics, even longer information like phone numbers (see (or hear in your head) the song <a href="https://en.wikipedia.org/wiki/867-5309/Jenny">867-5309/Jenny</a>), is significantly easier than remembering similar series of words without the singer's voice and instruments in the background. Coupling this with the fact that music is fun to listen to and AI-generated musical abilities are improving rapidly and the following idea comes naturally.
 </p>
-
-[perform literature review; add more literature]
 
 <hr>
 
@@ -80,49 +96,67 @@
 <ul>
   <li>
     Have a [music style] feature in the middle
+    <ul>
+      <li>
+        Ex: rap in the middle of a country song
+      </li>
+    </ul>
   </li>
   <li>
     In the style of [artist]
+    <ul>
+      <li>
+        Ex: Drake, Lil Yachty, Tim McGraw
+      </li>
+    </ul>
   </li>
   <li>
     Use keywords such as [keyword1], [keyword2]
+    <ul>
+      <li>
+        Ex: if talking about transistors, keywords can be Fermi level and conduction band
+      </li>
+    </ul>
   </li>
   <li>
     Use a level of detail a [grade level] grader could understand
+    <ul>
+      <li>
+        Ex: third grader, if the song is targeted at a third-grade audience
+      </li>
+    </ul>
+  </li>
+  <li>
+    Have a [type of mood] mood
+    <ul>
+      <li>
+        Ex: upbeat, gloomy, melancholy
+      </li>
+    </ul>
   </li>
 </ul>
-
-[add more prompt qualifiers here]
 
 <p>
   It's important that the song is catchier and more entertaining than it is informative, else the listener will be turned off and not listen, defeating the entire purpose. Disguising the information within the lyrics is the best option, but requires superb LLM prompting skills.
 </p>
 
-<h3 id="integration">Integration</h3>
+<h3 id="generation">Generation</h3>
 
 <p>
-  Using a service like [service1] or [service2]
+  There are plenty of AI music generators available on the internet. I used <a href="https://www.suno.ai/">Suno AI</a> for the <a href="#examples">examples</a> below.
 </p>
-
-[service1 example]
-
-[service1 example]
-
-[service2 example]
-
-[service2 example]
 
 <hr>
 
 <h2 id="combination">Combination with Current Learning Methods</h2>
 
 <p>
-  There are obviously many learning methods available: te
+  Music cannot replace the tried-and-true practice of good ol' studying and practice problems, but it can supplement it. Listening to the music regularly and attempting to sing along will help commit it to memory.
 </p>
 
 <hr>
 
-<h2 id="examples">Appendix I: Lyric Examples</h2>
+<h2 id="examples">Appendix I: Examples</h2>
 
 <p>
   My prompt engineering skills are not strong and I don't have GPT-4 access, but with better prompts and a better model I'm sure the songs would be more informative and catchier.
@@ -132,9 +166,7 @@
   Choruses are removed for brevity purposes.
 </p>
 
-<p>
-  <b>I</b>
-</p>
+<h3>I</h3>
 
 <p>
   Prompt:
@@ -200,8 +232,22 @@
 </blockquote>
 
 <p>
-  <b>II</b>
+  <a href="https://www.suno.ai/">Suno AI</a> generations:
 </p>
+
+<audio controls>
+  <source src="media/aimusic/gases1.mp3" type="audio/mp3">
+</audio>
+
+<p>
+
+</p>
+
+<audio controls>
+  <source src="media/aimusic/gases2.mp3" type="audio/mp3">
+</audio>
+
+<h3>II</h3>
 
 <p>
   Prompt:
@@ -243,8 +289,22 @@
 </blockquote>
 
 <p>
-  <b>III</b>
+  <a href="https://www.suno.ai/">Suno AI</a> generations:
 </p>
+
+<audio controls>
+  <source src="media/aimusic/bandgap1.mp3" type="audio/mp3">
+</audio>
+
+<p>
+
+</p>
+
+<audio controls>
+  <source src="media/aimusic/bandgap2.mp3" type="audio/mp3">
+</audio>
+
+<h3>III</h3>
 
 <p>
   Prompt:
@@ -304,8 +364,22 @@
 </blockquote>
 
 <p>
-  <b>IV</b>
+  <a href="https://www.suno.ai/">Suno AI</a> generations:
 </p>
+
+<audio controls>
+  <source src="media/aimusic/heart1.mp3" type="audio/mp3">
+</audio>
+
+<p>
+
+</p>
+
+<audio controls>
+  <source src="media/aimusic/heart2.mp3" type="audio/mp3">
+</audio>
+
+<h3>IV</h3>
 
 <p>
   Prompt:
@@ -346,9 +420,7 @@
   </p>
 </blockquote>
 
-<p>
-  <b>V</b>
-</p>
+<h3>V</h3>
 
 <p>
   Prompt:
@@ -392,12 +464,31 @@
   </p>
 </blockquote>
 
+<p>
+  <a href="https://www.suno.ai/">Suno AI</a> generations:
+</p>
+
+<audio controls>
+  <source src="media/aimusic/chocolate1.mp3" type="audio/mp3">
+</audio>
+
+<p>
+
+</p>
+
+<audio controls>
+  <source src="media/aimusic/chocolate2.mp3" type="audio/mp3">
+</audio>
 
 <hr>
 
 <h2 id="see_also">See Also</h2>
 
-
+<ul>
+  <li>
+    <a href="movies.html">Using Movies to Teach</a>: Low-cost integration of valuable lessons into movies
+  </li>
+</ul>
 
 </body>
 </html>
