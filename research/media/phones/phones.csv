@@ -1,0 +1,60 @@
+Name,Prediction (1 = 1 iPhone),Actual (1 = iPhone),Success?,Gender,Brier Score,,Statistics,Value
+JT,0,0,1,M,N/A,,Number of women,23
+Me,1,1,1,F,N/A,,With iphones,20
+Me,1,1,1,F,N/A,,How often I was right about them having iPhones (%),95
+Ee,1,1,1,F,N/A,,Number of men,6
+Ke,1,1,1,F,N/A,,With iphones,2
+Pe,1,1,1,F,N/A,,How often I was right about them having iPhones (%),0
+Ee,1,1,1,F,N/A,,,
+BW,0,0,1,M,N/A,,8,
+DR,0,0,1,M,N/A,,6,
+Ce,1,1,1,F,N/A,,9,
+Ce,1,1,1,F,N/A,,45,
+ZM,0,0,1,F,N/A,,50,
+Ae,1,0,0,F,N/A,,,
+BT,0,1,0,F,N/A,,,
+Ae,1,1,1,F,N/A,,,
+Te,1,1,1,F,N/A,,,
+SF,0,0,1,M,N/A,,,
+MC,0,1,0,M,N/A,,,
+Ne,1,1,1,F,N/A,,,
+He,1,0,0,F,N/A,,,
+Ke,1,1,1,F,N/A,,,
+Ke,1,1,1,F,N/A,,,
+Me,1,1,1,F,N/A,,,
+Se,1,1,1,F,N/A,,,
+Ge,1,1,1,F,N/A,,,
+Be,1,1,1,F,N/A,,,
+Le,1,1,1,F,N/A,,,
+Ae,1,1,1,F,N/A,,,
+EC,0,1,0,M,N/A,,,
+Me,75,1,1,F,0.0625,,Statistics,Value
+Me,90,1,1,F,0.01,,Number of women,25
+Ee,75,1,1,F,0.0625,,With iphones,24
+Fe,70,1,1,F,0.09,,How often I was right about them having iPhones (%),95.83333333
+ED,20,0,1,M,0.64,,Number of men,5
+Na,75,1,1,M,0.0625,,With iphones,4
+Le,70,1,1,F,0.09,,How often I was right about them having iPhones (%),75
+Ae,80,1,1,F,0.04,,,
+Ke,85,1,1,F,0.0225,,Brier score,0.112
+Pe,70,1,1,F,0.09,,Brier score without participant Te,0.084741379
+Ee,60,1,1,F,0.16,,,
+Be,80,1,1,F,0.04,,,
+Se,80,1,1,F,0.04,,,
+PI,70,1,1,M,0.09,,,
+Ee,75,1,1,F,0.0625,,,
+AI,80,1,1,M,0.04,,,
+Ee,90,1,1,F,0.01,,,
+Me,85,1,1,F,0.0225,,,
+Re,80,1,1,F,0.04,,,
+Se,85,1,1,F,0.0225,,,
+CI,40,1,0,M,0.16,,,
+Je,80,1,1,F,0.04,,,
+Je,70,1,1,F,0.09,,,
+Le,90,1,1,F,0.01,,,
+AX,25,1,0,F,0.0625,,,
+Se,65,1,1,F,0.1225,,,
+Ke,75,1,1,F,0.0625,,,
+Te,95,0,0,F,0.9025,,,
+Me,70,1,1,F,0.09,,,
+Ae,65,1,1,F,0.1225,,,

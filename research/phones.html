@@ -15,17 +15,10 @@
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
 
-<!--
-- how does probability change based on market share of iphones vs. noniphones?
-  - eg if 75% of population is iphone, does my probability change to 75% vs 25%? how bad is my prediction if i guess iphone and get notiphone?
-
-
--->
-
 <h1 id="phones">Predicting iPhone vs. Non-iPhone Users</h1>
 
 <p>
-  Can you really tell if someone is an iPhone or non-iPhone user without actually seeing their phone?
+  Can you tell if someone is going to mess up the group chat?
 </p>
 
 <hr>
@@ -38,6 +31,12 @@
   </li>
   <li>
     <a href="#results">Results</a>
+  </li>
+  <li>
+    <a href="#summary">Summary</a>
+  </li>
+  <li>
+    <a href="#data">Appendix I: Data</a>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -86,8 +85,20 @@
 <h2 id="results">Results</h2>
 
 <p>
-  The following data was collected from 05 April 2022 to 15 January 2024.
+  Data was collected from 05 April 2022 to 15 January 2024 during in-person interactions and over a dating app. I started off with just yes-no prediction and transitioned to probabilistic predictions.
 </p>
+
+<p>
+  See <a href="data">Appendix I: Data</a> for the full dataset.
+</p>
+
+<h3 id="statistics">Statistics</h3>
+
+<p>
+  I used the <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score</a> to calculate my accuracy:
+</p>
+
+\[BS = \frac{1}{n} \sum_{i = 1}^{n} (p_{i} - o_{i})^2\]
 
 <p>
   Some basic statistics:
@@ -95,28 +106,145 @@
 
 <ul>
   <li>
-    n: 59
+    n: 59 (48 female, 11 male)
   </li>
   <li>
-    n (females):
+    Correct about women's phone: 90%
+  </li>
+  <li>
+    Correct about men's phone: 73%
+  </li>
+  <li>
+    Correct about owning an iPhone: 90%
+  </li>
+  <li>
+    Correct about owning a non-iPhone: 67%
+  </li>
+  <li>
+    Average Brier score: 0.112
   </li>
 </ul>
 
-[DATA HERE]
+<p>
+  These numbers mean nothing unless I compare them to the iPhone vs. non-iPhone market shares:
+</p>
 
-\[BS = \frac{1}{n} \sum_{i = 1}^{n} (p_{i} - o_{i})^2\]
+<ul>
+  <li>
+    67% of 18-29 year-olds use iPhone (<a href="https://www.statista.com/forecasts/911113/smartphone-os-share-by-age-group-in-the-us">source</a>)
+  </li>
+  <li>
+    Apple held 55% of the market as of 2Q23 (<a href="https://www.statista.com/statistics/620805/smartphone-sales-market-share-in-the-us-by-vendor/">source</a>)
+  </li>
+  <li>
+    I could not find information on age-gender-brand numbers. This would have been the most valuable dataset. I suspect 18-29 year-old women own iPhones at a much higher rate than the aforementioned 67%, with the rate going even higher with income.
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="summary">Summary</h2>
 
 <p>
-
+  I did decently better than chance when predicting women's phones and only slightly better than chance when predicting men's phones.
 </p>
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/rCZkp023MdY?start=630"></iframe>
 
 <hr>
 
+<h2 id="data">Appendix I: Data</h2>
+
+<p>
+  More information that could make this dataset better:
+</p>
+
+<ul>
+  <li>
+    Age
+  </li>
+  <li>
+    Income
+  </li>
+  <li>
+    Percentage of close friends and family members with iPhones
+  </li>
+  <li>
+    Occupation
+  </li>
+  <li>
+    Housing location
+  </li>
+</ul>
+
+<table align="center">
+  <thead><tr><th>Name</th><th>Prediction (1 = 1 iPhone)</th><th>Actual (1 = iPhone)</th><th>Success?</th><th>Gender</th><th>Brier Score</th></tr></thead>
+    <tbody>
+     <tr align="middle"><td>JT</td><td>0</td><td>0</td><td>1</td><td>M</td><td>N/A</td></tr>
+     <tr align="middle"><td>Me</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Me</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ee</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ke</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Pe</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ee</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>BW</td><td>0</td><td>0</td><td>1</td><td>M</td><td>N/A</td></tr>
+     <tr align="middle"><td>DR</td><td>0</td><td>0</td><td>1</td><td>M</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ce</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ce</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>ZM</td><td>0</td><td>0</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ae</td><td>1</td><td>0</td><td>0</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>BT</td><td>0</td><td>1</td><td>0</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ae</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Te</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>SF</td><td>0</td><td>0</td><td>1</td><td>M</td><td>N/A</td></tr>
+     <tr align="middle"><td>MC</td><td>0</td><td>1</td><td>0</td><td>M</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ne</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>He</td><td>1</td><td>0</td><td>0</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ke</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ke</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Me</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Se</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ge</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Be</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Le</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>Ae</td><td>1</td><td>1</td><td>1</td><td>F</td><td>N/A</td></tr>
+     <tr align="middle"><td>EC</td><td>0</td><td>1</td><td>0</td><td>M</td><td>N/A</td></tr>
+     <tr align="middle"><td>Me</td><td>75</td><td>1</td><td>1</td><td>F</td><td>0.0625</td></tr>
+     <tr align="middle"><td>Me</td><td>90</td><td>1</td><td>1</td><td>F</td><td>0.01</td></tr>
+     <tr align="middle"><td>Ee</td><td>75</td><td>1</td><td>1</td><td>F</td><td>0.0625</td></tr>
+     <tr align="middle"><td>Fe</td><td>70</td><td>1</td><td>1</td><td>F</td><td>0.09</td></tr>
+     <tr align="middle"><td>ED</td><td>20</td><td>0</td><td>1</td><td>M</td><td>0.64</td></tr>
+     <tr align="middle"><td>Na</td><td>75</td><td>1</td><td>1</td><td>M</td><td>0.0625</td></tr>
+     <tr align="middle"><td>Le</td><td>70</td><td>1</td><td>1</td><td>F</td><td>0.09</td></tr>
+     <tr align="middle"><td>Ae</td><td>80</td><td>1</td><td>1</td><td>F</td><td>0.04</td></tr>
+     <tr align="middle"><td>Ke</td><td>85</td><td>1</td><td>1</td><td>F</td><td>0.0225</td></tr>
+     <tr align="middle"><td>Pe</td><td>70</td><td>1</td><td>1</td><td>F</td><td>0.09</td></tr>
+     <tr align="middle"><td>Ee</td><td>60</td><td>1</td><td>1</td><td>F</td><td>0.16</td></tr>
+     <tr align="middle"><td>Be</td><td>80</td><td>1</td><td>1</td><td>F</td><td>0.04</td></tr>
+     <tr align="middle"><td>Se</td><td>80</td><td>1</td><td>1</td><td>F</td><td>0.04</td></tr>
+     <tr align="middle"><td>PI</td><td>70</td><td>1</td><td>1</td><td>M</td><td>0.09</td></tr>
+     <tr align="middle"><td>Ee</td><td>75</td><td>1</td><td>1</td><td>F</td><td>0.0625</td></tr>
+     <tr align="middle"><td>AI</td><td>80</td><td>1</td><td>1</td><td>M</td><td>0.04</td></tr>
+     <tr align="middle"><td>Ee</td><td>90</td><td>1</td><td>1</td><td>F</td><td>0.01</td></tr>
+     <tr align="middle"><td>Me</td><td>85</td><td>1</td><td>1</td><td>F</td><td>0.0225</td></tr>
+     <tr align="middle"><td>Re</td><td>80</td><td>1</td><td>1</td><td>F</td><td>0.04</td></tr>
+     <tr align="middle"><td>Se</td><td>85</td><td>1</td><td>1</td><td>F</td><td>0.0225</td></tr>
+     <tr align="middle"><td>CI</td><td>40</td><td>1</td><td>0</td><td>M</td><td>0.16</td></tr>
+     <tr align="middle"><td>Je</td><td>80</td><td>1</td><td>1</td><td>F</td><td>0.04</td></tr>
+     <tr align="middle"><td>Je</td><td>70</td><td>1</td><td>1</td><td>F</td><td>0.09</td></tr>
+     <tr align="middle"><td>Le</td><td>90</td><td>1</td><td>1</td><td>F</td><td>0.01</td></tr>
+     <tr align="middle"><td>AX</td><td>25</td><td>1</td><td>0</td><td>F</td><td>0.0625</td></tr>
+     <tr align="middle"><td>Se</td><td>65</td><td>1</td><td>1</td><td>F</td><td>0.1225</td></tr>
+     <tr align="middle"><td>Ke</td><td>75</td><td>1</td><td>1</td><td>F</td><td>0.0625</td></tr>
+     <tr align="middle"><td>Te</td><td>95</td><td>0</td><td>0</td><td>F</td><td>0.9025</td></tr>
+     <tr align="middle"><td>Me</td><td>70</td><td>1</td><td>1</td><td>F</td><td>0.09</td></tr>
+     <tr align="middle"><td>Ae</td><td>65</td><td>1</td><td>1</td><td>F</td><td>0.1225</td></tr>
+  </tbody>
+</table>
+
+<hr>
+
 <h2 id="see_also">See Also</h2>
-
-
 
 </body>
 </html>
