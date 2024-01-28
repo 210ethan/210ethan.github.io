@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Updating Trustworthiness</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+
+
+
+-->
+
+<h1 id="trustworthiness">Updating Trustworthiness</h1>
+
+<p>
+  Calculating flakiness one commitment at a time.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#theory">Theory</a>
+  </li>
+  <li>
+    <a href="#scoring">Scoring</a>
+  </li>
+  <li>
+    <a href="#method">Method</a>
+  </li>
+  <li>
+    <a href="#results">Results</a>
+  </li>
+  <li>
+    <a href="#thoughts">Thoughts</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="theory">Theory</h2>
+
+<p>
+  Trust holds our society together. We trust others not to steal our things, to not tell secrets, to uphold commitments they made.
+</p>
+
+<p>
+  Lack of trust destroys society. It pins others against each other. It siloes individuals into single units, separated from their community, forcing them to fend for themselves.
+</p>
+
+<p>
+  Assigning a trustworthiness score (TWS) to an individual is valuable because it provides an expected value for a commitment. The range is from 0 (pathological liar, doubt everything they say unless there is substantial proof otherwise) to 1 (perfectly trustworthy, never doubt anything they say). A few examples:
+</p>
+
+<ul>
+  <li>
+    Alyosha's TWS is 10. He has agreed to meet at 10:00am. It is very unlikely he will be there at 10:00am, so I should arrive later than 10:00am to accommodate. The exact time offset can be determined if there is a history of his lack of punctuality.
+  </li>
+  <li>
+    Mitya's TWS is 90. He has agreed to complete the work task by Friday at 5:00pm. It is very likely that the task will be complete, so there is little need to follow up, unless it's very important. Simply including a note in the original request to notify when it's complete will suffice.
+  </li>
+  <li>
+    Ivan's TWS is 50. He has agreed to follow an exercise plan I put together for him. It is unlikely he will follow it to the letter, but I still expect some sort of adherence, so I built that into the program: there are more mess-around days to encourage Ivan to at least get out and do fun exercise rather than nothing at all.
+  </li>
+</ul>
+
+<p>
+  There are a few obvious problems with taking this mindset towards others, but counterarguments exist.
+</p>
+
+<p>
+  First, it can remove valuable expectations and standards from one's behavior. Alyosha should be held accountable for showing up at the agreed-upon 10:00am and I shouldn't have to accommodate for him. If I tell him his consistent tardiness is bothersome and he cares about me, then he should start showing up early or on time. And if he doesn't change his ways? While I'm a proponent of friends abiding by the practice of if-it's-important-to-you-it's-important-to-me, sometimes it just doesn't work that way and it's not worth nixing the friendship, but rather accommodating them and their foibles.
+</p>
+
+<p>
+  Second, cultural norms dictate different expectations. My culture is one of punctuality and upholding commitments when they're made. Others may value time much less and think saying "I'll do this" is a statement of weak conviction. But what matters is the culture that the relationship is operating in. There is some give-and-take, but some take precedence over others. Company A must abide by company B's culture when trying to win over their business. Person A must abide by person B's culture when person B is leading the effort.
+</p>
+
+<p>
+  Third, communication must be open and straightforward before updating a TW value. The score recipient may not be aware of the hidden contract they're being placed under.
+</p>
+
+<p>
+  And the answer to the question of why all of this? Adults rarely change their ways and I want to know what to expect when dealing with others.
+</p>
+
+<hr>
+
+<h2 id="scoring">Scoring</h2>
+
+<p>
+  The <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score (BS)</a> is used to score probabilistic predictions:
+</p>
+
+\[BS = \frac{1}{n} \sum_{i = 1}^{n} (p_{i} - o_{i})^2\]
+
+<p>
+  The BS being used as a TWS score can't work because:
+</p>
+
+<ul>
+  <li>
+    Those are my predictions about someone else's behavior, and another person may give a different \(p_{i}\) for said event
+  </li>
+  <li>
+    My predictions about their behavior can get better, but their trustworthiness can either continue to increase or decrease, meaning I can have the same BS for very trustworthy and untrustworthy persons
+  </li>
+</ul>
+
+<p>
+  I need a formula that satisfies the following conditions:
+</p>
+
+<ul>
+  <li>
+    Increase TWS if the event resolves as true
+  </li>
+  <li>
+    Decrease TWS if the event resolves as false
+  </li>
+  <li>
+    Averages over the course of the events or takes into account history
+  </li>
+  <li>
+    Asymptotic in nature
+  </li>
+</ul>
+
+<p>
+  A modified sigmoid function comes naturally:
+</p>
+
+\[TWS = \frac{1}{1 + ae^{-(x-b)}}\]
+
+OR
+
+\[TWS = \frac{1}{1 + ae^{-bx}}\]
+
+<p>
+  where \(x\) is a running counter of true resolutions (+1) and false resolutions (-1). The \(a\) and \(b\) terms helps to stretch the function over the x-axis so one's trustworthiness isn't absolutely tarnished or overblown by a few flukes.
+</p>
+
+<p>
+  This score can then be turned into the likelihood of completing an individual commitment, eventually regressing or progressing to the individual's mean trustworthiness.
+</p>
+
+<hr>
+
+<h2 id="method">Method</h2>
+
+<p>
+  I collected trustworthiness data on multiple people, including myself, to see if this formula held. I did not take into account words of estimative probability (e.g., "definitely", "probably", etc)—if they said they were going to do it, they're committed to it. The WEPs can come after a score is established to estimate individual commitments.
+</p>
+
+<p>
+  I decided on the following equation:
+</p>
+[DECIDE ON VALUE OF A AND B]
+
+\[TWS = \frac{1}{1 + e^{-(x-b)}}\]
+
+<p>
+  I suspect that this gamification will cause two changes in my life. First, I will make fewer commitments. This is probably a bad thing. Second, commitments that I do make will be stronger. This is a good thing.
+</p>
+
+
+
+
+
+
+
+
+
+
+
+<hr>
+
+<h2 id="results">Results</h2>
+
+
+
+
+
+
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <a href="https://www.overcomingbias.com/p/signals-are-foreverhtml">Signals Are Forever</a>
+  </li>
+</ul>
+
+</body>
+</html>
