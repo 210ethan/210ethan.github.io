@@ -17,7 +17,7 @@
 
 <!--
 
-
+- use the gompertz curve!!
 
 -->
 
@@ -57,26 +57,18 @@
 <h2 id="theory">Theory</h2>
 
 <p>
-  Trust holds our society together. We trust others not to steal our things, to not tell secrets, to uphold commitments they made.
-</p>
-
-<p>
-  Lack of trust destroys society. It pins others against each other. It siloes individuals into single units, separated from their community, forcing them to fend for themselves.
-</p>
-
-<p>
-  Assigning a trustworthiness score (TWS) to an individual is valuable because it provides an expected value for a commitment. The range is from 0 (pathological liar, doubt everything they say unless there is substantial proof otherwise) to 1 (perfectly trustworthy, never doubt anything they say). A few examples:
+  Assigning a trustworthiness score (TWS) to an individual is valuable because it provides an expected value for a commitment. The range is from 0 (pathological liar, doubt everything they say unless there is substantial, incontrovertible evidence otherwise) to 1 (perfectly trustworthy, never doubt anything they say and assume what they say is completely true without evidence). A few examples:
 </p>
 
 <ul>
   <li>
-    Alyosha's TWS is 10. He has agreed to meet at 10:00am. It is very unlikely he will be there at 10:00am, so I should arrive later than 10:00am to accommodate. The exact time offset can be determined if there is a history of his lack of punctuality.
+    Alyosha's TWS is 0.1, or 10%. He has agreed to meet at 10:00am. It is very unlikely he will be there at 10:00am, so I should arrive later than 10:00am to accommodate. The exact time offset can be determined if there is a history of his lack of punctuality.
   </li>
   <li>
-    Mitya's TWS is 90. He has agreed to complete the work task by Friday at 5:00pm. It is very likely that the task will be complete, so there is little need to follow up, unless it's very important. Simply including a note in the original request to notify when it's complete will suffice.
+    Mitya's TWS is 0.9, or 90%. He has agreed to complete a work task by Friday at 5:00pm. It is very likely that the task will be complete, so there is little need to follow up, unless it's very important. Simply including a note in the original request to notify when it's complete will suffice.
   </li>
   <li>
-    Ivan's TWS is 50. He has agreed to follow an exercise plan I put together for him. It is unlikely he will follow it to the letter, but I still expect some sort of adherence, so I built that into the program: there are more mess-around days to encourage Ivan to at least get out and do fun exercise rather than nothing at all.
+    Ivan's TWS is 50, or 50%. He has agreed to follow an exercise plan I put together for him. It is unlikely he will follow it to the letter, but I still expect some sort of adherence, so I built that into the program: there are more mess-around days to encourage Ivan to at least get out and do fun exercise rather than nothing at all.
   </li>
 </ul>
 
@@ -105,25 +97,6 @@
 <h2 id="scoring">Scoring</h2>
 
 <p>
-  The <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score (BS)</a> is used to score probabilistic predictions:
-</p>
-
-\[BS = \frac{1}{n} \sum_{i = 1}^{n} (p_{i} - o_{i})^2\]
-
-<p>
-  The BS being used as a TWS score can't work because:
-</p>
-
-<ul>
-  <li>
-    Those are my predictions about someone else's behavior, and another person may give a different \(p_{i}\) for said event
-  </li>
-  <li>
-    My predictions about their behavior can get better, but their trustworthiness can either continue to increase or decrease, meaning I can have the same BS for very trustworthy and untrustworthy persons
-  </li>
-</ul>
-
-<p>
   I need a formula that satisfies the following conditions:
 </p>
 
@@ -135,63 +108,71 @@
     Decrease TWS if the event resolves as false
   </li>
   <li>
-    Averages over the course of the events or takes into account history
+    Averages over the course of the events or takes into account history of events
   </li>
   <li>
-    Asymptotic in nature
+    Asymptotic in nature as the independent variable's magnitude grows
   </li>
 </ul>
 
 <p>
-  A modified sigmoid function comes naturally:
+  A sigmoid function with coefficient and offset options comes naturally:
 </p>
 
-\[TWS = \frac{1}{1 + ae^{-(x-b)}}\]
-
-OR
-
-\[TWS = \frac{1}{1 + ae^{-bx}}\]
+\[TWS = \frac{1}{1 + ae^{b-ax}}\]
 
 <p>
-  where \(x\) is a running counter of true resolutions (+1) and false resolutions (-1). The \(a\) and \(b\) terms helps to stretch the function over the x-axis so one's trustworthiness isn't absolutely tarnished or overblown by a few flukes.
+  where \(x\) is a running counter of true resolutions (x += 1) and false resolutions (x -= 1), \(a\) adjusts the y-axis scaling near low values of \(x\), preventing or allowing one's trustworthiness to be tarnished or overblown by a few flukes, and \(b\) offsets the scale left and right to make it more difficult to achieve high or low trustworthiness, depending on whether it's positive or negative. This score can then be turned into the likelihood of completing an individual commitment, eventually regressing or progressing to the individual's mean trustworthiness.
 </p>
 
 <p>
-  This score can then be turned into the likelihood of completing an individual commitment, eventually regressing or progressing to the individual's mean trustworthiness.
+  (A <a href="https://en.wikipedia.org/wiki/Gompertz_function">Gompertz function</a>, a variation of the sigmoid function in the form of \(TWS(x) = e^{-e^{-cx}}\), can also be used, but the standard sigmoid feels cleaner.
 </p>
+
+<p>
+  A few considerations on the function:
+</p>
+
+<ul>
+  <li>
+    <p>
+      \(x\) contributions can be weighted based on confidence levels (high confidence corresponds to \(x > 1\) for a single event; low confidence is \(x < 1\)), increasing TWS when high-confidence commitments come true and vice versa. [FINISH CAN I BRIERSCOREIZE THIS?]
+    </p>
+    <p>
+      This concept allows us to Brier-score-ize by greatly rewarding high-confidence true resolutions and penalizing high-confidence false resolutions. The <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score (BS)</a> is used to score probabilistic predictions, where \(p_{i}\) is the probability and \(o_{i}\) is the outcome, where 1 is true and 0 is false. The squaring helps to penalize larger errors more than smaller errors, a characteristic that is also desired in trusting relationships.
+    </p>
+    \[BS = (p_{i} - o_{i})^2\]
+    <p>
+      
+    </p>
+
+  </li>
+  <li>
+    \(a\) values should be less than one because trustworthiness doesn't just jump up or down given a single event; it takes multiple events to get a solid idea of one's TWS.
+  </li>
+  <li>
+    <p>
+      \(b\) values should be zero when there is no information. (This is obviously a contentious take, but in my ancedotal experience it roughly holds.) They should also be often be zero because a person's true and false resolutions cancel each other out, with exceptions being made for major true resolutions and minor false resolutions (see note on weighting \(x\) values above).
+    </p>
+    <p>
+      \(b\) values can be offset in either direction when relevant information is known (reputation, etc).
+    </p>
+  </li>
+  <li>
+    Outside of a piecewise function, there's no way to make it difficult to gain score and easy to lose score. This is a limitation of this model.
+  </li>
+</ul>
+
+
+[shape of curve examples]
 
 <hr>
 
 <h2 id="method">Method</h2>
 
 <p>
-  I collected trustworthiness data on multiple people, including myself, to see if this formula held. I did not take into account words of estimative probability (e.g., "definitely", "probably", etc)—if they said they were going to do it, they're committed to it. The WEPs can come after a score is established to estimate individual commitments.
+  I was going to collect data on this, but found it too burdensome and like it wouldn't have gotten done.
 </p>
-
-<p>
-  I decided on the following equation:
-</p>
-[DECIDE ON VALUE OF A AND B]
-
-\[TWS = \frac{1}{1 + e^{-(x-b)}}\]
-
-<p>
-  I suspect that this gamification will cause two changes in my life. First, I will make fewer commitments. This is probably a bad thing. Second, commitments that I do make will be stronger. This is a good thing.
-</p>
-
-
-
-
-
-
-
-
-
-
-
-<hr>
-
-<h2 id="results">Results</h2>
 
 
 
