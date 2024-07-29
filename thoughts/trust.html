@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Updating Trustworthiness - 210ethan</title>
+  <title>The Trust Function - 210ethan</title>
   <link rel="stylesheet" type="text/css" href="../css/main.css">
   <link rel="icon" href="../media/favicon.png">
 </head>
@@ -15,13 +15,7 @@
 
 <h3 id="home"><a href="../index.html">Home</a></h3>
 
-<!--
-
-- use the gompertz curve!!
-
--->
-
-<h1 id="trustworthiness">Updating Trustworthiness</h1>
+<h1 id="trust">The Trust Function</h1>
 
 <p>
   Calculating flakiness one commitment at a time.
@@ -36,16 +30,10 @@
     <a href="#theory">Theory</a>
   </li>
   <li>
-    <a href="#scoring">Scoring</a>
+    <a href="#function">Function</a>
   </li>
   <li>
-    <a href="#method">Method</a>
-  </li>
-  <li>
-    <a href="#results">Results</a>
-  </li>
-  <li>
-    <a href="#thoughts">Thoughts</a>
+    <a href="#summary">Summary</a>
   </li>
   <li>
     <a href="#see_also">See Also</a>
@@ -85,16 +73,12 @@
 </p>
 
 <p>
-  Third, communication must be open and straightforward before updating a TW value. The score recipient may not be aware of the hidden contract they're being placed under.
-</p>
-
-<p>
-  And the answer to the question of why all of this? Adults rarely change their ways and I want to know what to expect when dealing with others.
+  Third, communication of expectations must be open and straightforward before updating one's TWS. The score recipient may not be aware of the expectation they're being held to.
 </p>
 
 <hr>
 
-<h2 id="scoring">Scoring</h2>
+<h2 id="function">Function</h2>
 
 <p>
   I need a formula that satisfies the following conditions:
@@ -119,14 +103,19 @@
   A sigmoid function with coefficient and offset options comes naturally:
 </p>
 
-\[TWS = \frac{1}{1 + ae^{b-ax}}\]
+\[TWS(x) = \frac{1}{1 + ae^{b-ax}}\]
 
 <p>
   where \(x\) is a running counter of true resolutions (x += 1) and false resolutions (x -= 1), \(a\) adjusts the y-axis scaling near low values of \(x\), preventing or allowing one's trustworthiness to be tarnished or overblown by a few flukes, and \(b\) offsets the scale left and right to make it more difficult to achieve high or low trustworthiness, depending on whether it's positive or negative. This score can then be turned into the likelihood of completing an individual commitment, eventually regressing or progressing to the individual's mean trustworthiness.
 </p>
 
+<img src="media/trust/sigmoid.png" style="width:350px">
+<figcaption>
+  Standard sigmoid function
+</figcaption>
+
 <p>
-  (A <a href="https://en.wikipedia.org/wiki/Gompertz_function">Gompertz function</a>, a variation of the sigmoid function in the form of \(TWS(x) = e^{-e^{-cx}}\), can also be used, but the standard sigmoid feels cleaner.
+  (A <a href="https://en.wikipedia.org/wiki/Gompertz_function">Gompertz function</a> can also be used, but the standard sigmoid with an offset feels cleaner.)
 </p>
 
 <p>
@@ -136,49 +125,90 @@
 <ul>
   <li>
     <p>
-      \(x\) contributions can be weighted based on confidence levels (high confidence corresponds to \(x > 1\) for a single event; low confidence is \(x < 1\)), increasing TWS when high-confidence commitments come true and vice versa. [FINISH CAN I BRIERSCOREIZE THIS?]
+      \(x\) contributions can be weighted based on confidence levels (high confidence corresponds to \(x > 1\) for a single event; low confidence is \(x < 1\)), increasing TWS when high-confidence commitments come true and vice versa.
     </p>
     <p>
-      This concept allows us to Brier-score-ize by greatly rewarding high-confidence true resolutions and penalizing high-confidence false resolutions. The <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score (BS)</a> is used to score probabilistic predictions, where \(p_{i}\) is the probability and \(o_{i}\) is the outcome, where 1 is true and 0 is false. The squaring helps to penalize larger errors more than smaller errors, a characteristic that is also desired in trusting relationships.
+      This concept allows us to Brier-score-ize the function by greatly rewarding high-confidence true resolutions and penalizing high-confidence false resolutions. The <a href="https://en.wikipedia.org/wiki/Brier_score">Brier score (BS)</a> is used to score probabilistic predictions, where \(BS = (p_{i} - o_{i})^2\) with \(p_{i}\) being the probability and \(o_{i}\) the outcome (1 is true and 0 is false). The squaring helps to penalize larger errors more than smaller errors, a characteristic that is also desired in trusting relationships.
     </p>
-    \[BS = (p_{i} - o_{i})^2\]
     <p>
-      
+      But there are different rewards and penalties depending on the confidence levels and outcomes:
     </p>
-
+    <ul>
+      <li>
+        High confidence of true (or low confidence of false) with true outcome: person is trustworthy, reward them more than the standard x += 1
+        <ul>
+          <li>
+            Ex: Alice says she will get the job done by the deadline and the job gets done (this should be normal behavior, hence the only-a-bit-more than normal reward for her calibration)
+          </li>
+        </ul>
+      </li>
+      <li>
+        High confidence of true (or low confidence of false) with false outcome: person is untrustworthy, penalize them much more than the standard x -= 1
+        <ul>
+          <li>
+            Ex: Bob says he will get the job done by the deadline and the job does not get done
+          </li>
+        </ul>
+      </li>
+      <li>
+        Low confidence of true (or high confidence of false) with true outcome: person is neither trustworthy nor untrustworthy and definitely not calibrated, reward them with the standard x += 1
+        <ul>
+          <li>
+            Ex: Charles says he won't get the job done by the deadline and the job gets done
+          </li>
+        </ul>
+      </li>
+      <li>
+        Low confidence of true (or high confidence of false) with false outcome: person is trustworthy and calibrated, reward them with the standard x += 1
+        <ul>
+          <li>
+            Ex: Delaney says she doesn't know if she'll get the job done by the deadline and the job does not get done
+          </li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      How to mathematize this is left as an exercise for the reader (read: I'm not sure how to do it).
+    </p>
   </li>
   <li>
     \(a\) values should be less than one because trustworthiness doesn't just jump up or down given a single event; it takes multiple events to get a solid idea of one's TWS.
   </li>
   <li>
     <p>
-      \(b\) values should be zero when there is no information. (This is obviously a contentious take, but in my ancedotal experience it roughly holds.) They should also be often be zero because a person's true and false resolutions cancel each other out, with exceptions being made for major true resolutions and minor false resolutions (see note on weighting \(x\) values above).
+      \(b\) values should be zero when there is no information. (This is obviously a contentious take that goes against the conventional wisdom of "trust until proven otherwise", but in my ancedotal experience it roughly holds.) They should also be often be zero because a person's true and false resolutions cancel each other out, with exceptions being made for major true resolutions and minor false resolutions (see note on weighting \(x\) values above).
     </p>
     <p>
       \(b\) values can be offset in either direction when relevant information is known (reputation, etc).
     </p>
   </li>
   <li>
-    Outside of a piecewise function, there's no way to make it difficult to gain score and easy to lose score. This is a limitation of this model.
+    Outside of a piecewise function, there's no way to make it difficult to gain score and easy to lose score if you want to be more guarded against others. This is a limitation of this mathemtical portion of the model, but can easily extend to the non-math version.
+  </li>
+  <li>
+    Excuses and reasons may be used to add or subtract values from x depending on their reasonableness and truthfulness.
   </li>
 </ul>
 
-
-[shape of curve examples]
-
 <hr>
 
-<h2 id="method">Method</h2>
+<h2 id="summary">Summary</h2>
 
 <p>
-  I was going to collect data on this, but found it too burdensome and like it wouldn't have gotten done.
+  Keep a running mental tally of how consistent people are with their commitments to get a better idea of their likelihood of fulfilling future commitments.
 </p>
 
+<p>
+  Let important commitments or those they say they will get done count for much more than unimportant commitments or those they say may not get done.
+</p>
 
+<p>
+  Trustworthy people should have a more difficult time losing trust than gaining it. The inverse—untrustworthy people should have an easier time losing trust—is also true.
+</p>
 
-
-
-
+<p>
+  Do what you say you're going to do.
+</p>
 
 <hr>
 
