@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Bayesian Calculations of Apocalyptic Cabin Visitors - 210ethan</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script type="text/javascript" id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
+</script>
+
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<!--
+
+
+
+-->
+
+<h1 id="cabin">Bayesian Calculations of Apocalyptic Cabin Visitors</h1>
+
+<p>
+  Should you sacrifice yourself if some weirdos come a'knocking?
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#background">Background</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>
+  M. Night Shyamalan's <a href="https://www.imdb.com/title/tt15679400/">Knock at the Cabin</a> tells the story of a family—two men and their adopted daughter—meeting a polite, yet insistent, group of strangers who come to the family's cabin claiming the world will end if they don't sacrifice one of themselves. The strangers know this because of a vision they all had at the same time.
+</p>
+
+<p>
+  The following events happen after the strangers sacrifice one of their own to further delay the impending doom:
+</p>
+
+<ul>
+  <li>
+    Tsunamis
+  </li>
+  <li>
+    Disease (in the form of the flu)
+  </li>
+  <li>
+    Plane crashes
+  </li>
+</ul>
+
+<p>
+  The whole "you wouldn't do X if your friend told you to" spiel my parents would tell me when I was young was, and still is, bullshit. What if I replaced "your friend told you to" with "multiple highly improbable events occurred"? You bet your ass I'd follow the lemmings and expect you to do the same.
+</p>
+
+<p>
+  This essay will help me decide if I should sacrifice myself if I'm ever in the position of that poor family.
+</p>
+
+<hr>
+
+<h2 id="calculations">Calculations</h2>
+
+<p>
+  First, a short primer on Bayes' theorem. The <a href="https://arbital.com/p/bayes_rule/?l=1zq">Bayes' rule: Guide</a> is Yudkowsky-approved and a good summary with multiple difficulty levels. Bayes' theorem states that: 
+</p>
+
+\[P(A|B) = \frac{P(B|A) \times P(A)}{P(B)}\]
+
+<p>
+  where:
+</p>
+
+<ul>
+  <li>
+    \(P(A|B)\) is the probability of \(A\) given \(B\) is true, and vice versa for B given A
+  </li>
+  <li>
+    \(P(A)\), \(P(B)\) is the probability of A and B
+  </li>
+</ul>
+
+<p>
+  In other words, if the ones of the right-hand probabilities change (priors), then the left-hand probability, \(P(A|B)\) or the posterior, should also change. This is referred to as updating.
+</p>
+
+<p>
+  The question is: what is the probability of an apocalypse happening given tsunamis, disease, and plane crashes are occurring?
+</p>
+
+<p>
+  This can be formulated as:
+</p>
+
+<p class="center">
+  P(A | T, D, C) = P(T, D, C | A) &times; P(A) &divide; P(T, D, C)
+</p>
+
+<p>
+  We can further break it up to individual probabilities:
+</p>
+
+<p class="center">
+  P(A | T, D, C) = P(T | A) &times; P(D | A) &times; P(C | A) &times; P(A) &divide; (P(T) &times; P(D) &times; P(C))
+</p>
+
+<h3>Tsunamis: P(T | A) and P(T)</h3>
+
+<p>
+  What is the probability of massive tsunamis given an apocalyse is occurring?
+</p>
+
+<p>
+  Probably pretty high. Remember, an apocalypse is "the complete final destruction of the world" or "an event involving destruction or damage on a catastrophic scale". 
+</p>
+
+<p>
+  I'll assign P(T | A) a value of 0.6, or 60%:
+</p>
+
+<p class="center">
+  P(T | A) = 0.6
+</p>
+
+<p>
+  According to <a href="https://tsunami.gov/?page=tsunamiFAQ">U.S. Tsunami Warning Center</a>, damaging tsunamis occur about twice per decade. That's two in 3,650 days, a value of 0.00005, or 0.005% chance of a tsunami occurring on any given day.
+</p>
+
+<p>
+  But we can further fine-tune this value given the information that an 8.6-magnitude earthquake, originating from the <a href="https://en.wikipedia.org/wiki/Cascadia_subduction_zone">Cascadia Subduction Zone</a>, hit the Oregon coast. <a href="https://www.sciencedaily.com/releases/2010/05/100524121250.htm">Oregon State University concluded</a> there is "more than a one-in-three chance that [a >8.0-magnitude earthquake] will happen within the next 50 years". If we assume the probability is uniform across time, it becomes a 0.00002027, or 0.002027% chance, a massive tsunami happens on any given day.
+</p>
+
+<p>
+  Thus, the probability of either of these happening on a given day is 0.00007, or 0.007%:
+</p>
+
+<p class="center">
+  P(T) = 0.00007
+</p>
+
+<h3>Disease: P(D | A) and P(D)</h3>
+
+<p>
+  What is the probability of a plague given an apocalyse is occurring?
+</p>
+
+
+
+
+
+
+
+
+<h3>Plane Crashes: P(C | A) and P(C)</h3>
+
+<p>
+  What is the probability of a many planes crashing given an apocalyse is occurring?
+</p>
+
+<p>
+  Probably not as high for a few reasons:
+</p>
+
+<ul>
+  <li>
+    Loss of airplane electronics
+  </li>
+</ul>
+
+<p>
+  
+</p>
+
+<p>
+  I'll assign P(T | A) a value of 0.6, or 60%:
+</p>
+
+<p class="center">
+  P(T | A) = 0.6
+</p>
+
+
+
+
+<p>
+  The widely-cited figure of a plane crashing is 1 in 1.2 million, or 0.00000083, or 0.000083%. (LINK TO STUDY)
+</p>
+
+<p class="center">
+  P(C) = 0.00000083
+</p>
+
+
+
+
+
+
+<h3 id=""></h3>
+
+
+
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+
+
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Concert Voting - 210ethan</title>
+  <link rel="stylesheet" type="text/css" href="../css/main.css">
+  <link rel="icon" href="../media/favicon.png">
+</head>
+
+<body>
+
+<h3 id="home"><a href="../index.html">Home</a></h3>
+
+<h1 id="concertvoting">Concert Voting</h1>
+
+<p>
+  Crowdsourcing playlists for maximum fan satisfaction.
+</p>
+
+<hr>
+
+<h2 id="contents">Contents</h2>
+
+<ul>
+  <li>
+    <a href="#background">Background</a>
+  </li>
+  <li>
+    <a href="#proposal">Proposal</a>
+  </li>
+  <li>
+    <a href="#precedents">Precedents</a>
+  </li>
+  <li>
+    <a href="#data">Data</a>
+  </li>
+  <li>
+    <a href="#implementation">Implementation</a>
+  </li>
+  <li>
+    <a href="#see_also">See Also</a>
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="background">Background</h2>
+
+<p>
+  There's always a song that an artist doesn't play that everyone wants to hear. There's also always a song that an artist does play that no one wants to hear. This is a lose-lose for the concertgoers, and even though concerts are probably mostly for the people on stage to live out their wildest dreams of being a rockstar, concertgoers should also enjoy the concert.
+</p>
+
+<p>
+  What if the concertgoers got to choose the setlist themselves so that most people get what they want and don't get what they don't want?
+</p>
+
+<p>
+  Of course, all of this hinges on the question of who the show is for. Is it for the artist, who has worked tirelessly on their songs and want to share their fruits of their labor with the world in the order and style that they choose? Or is it for the fans, the ones who gave them their platform and fame, the ones who provided feedback by way of number of listens and comments, the ones who paid for the show in time and money? Or is it for both, an unspoken, mutually-beneficial agreement between artist and fan in which the fan places trust in the artist to do what they believe is best for both parties by the fan getting most of the songs they want and the artist getting to do it in accordance with their vision of the concert?
+</p>
+
+<hr>
+
+<h2 id="proposal">Proposal</h2>
+
+<p>
+  Upon the tour announcement and up to when tickets went on sale, fans can vote on the X songs they want to be played at the concert. (Only Y songs, where Y < X, would actually be played per show. It must be limited since the artist can't practice all of their discography.) This allows older songs to be played in case the artist is touring for a new album that has certain songs people don't want to hear.
+</p>
+
+<p>
+  When fans buy individual show tickets, there's an option to choose Y songs from the list of X. Voting closes 24 hours before the concert.
+</p>
+
+<p>
+  The top Y most-voted-on songs are played. Any tiebreaks or similar would be deferred to the artist. 
+</p>
+
+<hr>
+
+<h2 id="precedents">Precedents</h2>
+
+<p>
+  There are few times this has been done, and even fewer public voting results and corresponding setlists:
+</p>
+
+<ul>
+  <li>
+      Per <a href="https://old.reddit.com/r/YourBaroness/comments/rygstu/set_list_voting/">this Reddit thread</a>, Baroness attempted to do this, but seemed to fail for technical reasonsaccording to the comments:
+      <blockquote>
+        Each ticket order will receive a link in the purchase confirmation email to vote for songs in our setlist for the respective show.
+      </blockquote>
+  </li>
+  <li>
+    <a href="https://web.archive.org/web/20240816225318/https://vote.wallowsmusic.com/">Wallows did this</a> for their 2024 tour
+  </li>
+  <li>
+    <a href="https://web.archive.org/web/20220713213810/https://vote.rollingstones.com/">The Rolling Stones has done this</a> since at least since 2021 (per the Internet Archive)
+  </li>
+  <li>
+    <a href="https://www.theguardian.com/music/2013/nov/27/metallica-european-tour-fans-pick-setlist">Metallica did this</a> for their 2014 tour.
+  </li>
+</ul>
+
+<hr>
+
+<h2 id="data">Data</h2>
+
+<p>
+  I polled a few people (including myslf) on their favorite artist's top 10 songs and compared it to Spotify's top 10. On average, people want to hear about half of the artist's most popular songs. My guess is that fandom and percent match are inversely correlated, i.e., bigger fans probably want to hear more obscure songs, up to a certain floor.
+</p>
+
+<table align="center">
+  <caption>
+    Preferred vs. Actual Setlists
+  </caption>
+  <tr>
+    <th align="middle">Artist</th>
+    <th align="middle">% Match</th>
+    <tr align="middle"><td>La Dispute</td><td>30</td></tr>
+    <tr align="middle"><td>Touché Amore</td><td>40</td></tr>
+    <tr align="middle"><td>Justin Bieber</td><td>60</td></tr>
+    <tr align="middle"><td>Ed Sheeran</td><td>60</td></tr>
+    <tr align="middle"><td>P!nk</td><td>60</td></tr>
+    <tr align="middle"><td>Florence + The Machine</td><td>70</td></tr>
+    <tr align="middle"><td>The Airborne Toxic Event</td><td>20</td></tr>
+    <tr align="middle"><td><b>Average</b></td><td><b>49</b></td></tr>
+  </tr>
+</table>
+
+<hr>
+
+<h2 id="benefits">Benefits</h2>
+
+<h3 id="turnout">Turnout</h3>
+
+<p>
+  This feature could potentially improve audience turnout by building up the hope of hearing their favorite song(s)—if a concert is worth $25 to a fan and tickets are $30, they may be willing to pay the extra $5 for the chance of hearing certain songs made possible by their voting. And in theory, they are already effectively gambling when they buy tickets in hopes of hearing some of their favorite songs.
+</p>
+
+<h3 id="publicrelations">Public Relations</h3>
+
+<p>
+  The artists would be seen as "of the people", that they care what their fans want to hear and don't just play things that they want to or what gives them the most hype/press/attention.
+</p>
+
+<p>
+  Fans may be more inclined to share about them on social media ("OMG, [artist] finally played that one song people have been begging them to 4ever!") on by word of mouth, buy merchandise as a token of appreciation and support, or even go to nearby shows for a second round of their favorite songs live.
+</p>
+
+<hr>
+
+<h2 id="implementation">Implementation</h2>
+
+<p>
+  Implementing this into an existing platform (Ticketmaster, StubHub, Live Nation, etc) should be trivial. Just add a voting feature to the band's page, then when tickets are released, provide a custom one-time code to each customer as their password to their show's voting site.
+</p>
+
+<hr>
+
+<h2 id="see_also">See Also</h2>
+
+<ul>
+  <li>
+    <a href="https://www.musicbusinessworldwide.com/how-acts-can-fully-monetise-their-setlist/">How Live Acts Can Fully Monetize Their Setlist</a>
+  </li>
+</ul>
+
+</body>
+</html>
